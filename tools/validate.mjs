@@ -21,19 +21,26 @@ const SEVERITIES = ["trivial", "minor", "major"];
 // Table keys provided by the wfrp4e system or the wfrp4e-core module, used in mutation text.
 const EXTERNAL_TABLE_KEYS = new Set(["hitloc", "minormis", "majormis", "species", "eyes", "stinking-drunk", "corruption", "mutatephys", "mutatemental"]);
 
-// Known, PDF-dependent issues: reported as warnings, not errors. Remove an entry once fixed.
-const KNOWN = [
-  /^Table Minor Mental Corruption: range gap at \[22,24\] \(expected start 20\)/,
-  /^Table Vulnerability: formula 1d101/,
-  /^Table Major Physical Corruption \[25,26\] Chthonian Crawler: links a minor mutation/,
-  /^Table Major Physical Corruption \[92,92\] Unnatural Arms: links a minor mutation/,
-  /^Table Trivial Physical Corruption \[99,99\] Uncanny Resemblance: links a mental mutation/,
+// Known issues still open: reported as warnings, not errors. Remove an entry once fixed.
+const KNOWN = [];
+
+// Placements that look wrong but are exactly as printed in The Mutant's Handbook v1.1: reported as notes.
+// The table decides the severity of a rolled result; the item header is the catalogue entry's own label.
+const AS_PRINTED = [
+  [/^Table Major Physical Corruption \[25,26\] Chthonian Crawler: links a minor mutation/, "Major Physical table p16; catalogue header 'Minor Physical Mutation' p31"],
+  [/^Table Major Physical Corruption \[92,92\] Unnatural Arms: links a minor mutation/, "Major Physical table p16; catalogue header 'Minor Physical Mutation' p67"],
+  [/^Table Trivial Physical Corruption \[99,99\] Uncanny Resemblance: links a mental mutation/, "Trivial Physical table p14; catalogue header 'Trivial Mental Mutation, Tolerable' p69"],
 ];
 
 const errors = [];
 const warnings = [];
 const stats = { files: 0, docs: 0, scripts: 0, links: 0, tables: 0, results: 0, mutations: 0 };
-const report = (msg) => (KNOWN.some(re => re.test(msg)) ? warnings : errors).push(msg);
+const notes = [];
+const report = (msg) => {
+  const asPrinted = AS_PRINTED.find(([re]) => re.test(msg));
+  if (asPrinted) notes.push(`${msg} (as printed: ${asPrinted[1]})`);
+  else (KNOWN.some(re => re.test(msg)) ? warnings : errors).push(msg);
+};
 
 const docs = {}; // pack -> id -> doc
 const subIds = {}; // pack -> Set of embedded ids (journal pages, table results)
@@ -100,6 +107,10 @@ for (const [pack, d] of all) {
     for (const m of s.matchAll(/@Table\[([^\]]+)\]/g))
       if (!tableKeys.has(m[1]) && !EXTERNAL_TABLE_KEYS.has(m[1])) report(`${where}: @Table[${m[1]}] has no matching module table key`);
   }
+  for (const str of strings(d)) {
+    const m = str.match(/[\u{100000}-\u{10FFFF}\uE000-\uF8FF\u2000\u0129\uFB01\uFB02]|(?<![\w@\]}"=/.-])[a-z]+:u[a-z]+|(?<=[\s>]):u[a-z]+/u);
+    if (m) errors.push(`${where}: PDF copy-paste damage near '${str.slice(Math.max(0, m.index - 20), m.index + 20)}'`);
+  }
   for (const n of [d.name, ...(d.results ?? []).map(r => r.name), ...(d.pages ?? []).map(p => p.name)])
     if (/&[a-z]+;|&#\d+;/i.test(n ?? "")) errors.push(`${where}: HTML entity in name '${n}'`);
 }
@@ -153,6 +164,7 @@ for (const t of Object.values(docs.rolltables).filter(d => !isFolder(d))) {
 }
 
 console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts.`);
-if (warnings.length) console.log(`\n${warnings.length} known issue(s) needing the supplement PDF:\n  ${warnings.join("\n  ")}`);
+if (notes.length) console.log(`\n${notes.length} note(s), as printed in the handbook:\n  ${notes.join("\n  ")}`);
+if (warnings.length) console.log(`\n${warnings.length} known open issue(s):\n  ${warnings.join("\n  ")}`);
 if (errors.length) { console.error(`\n${errors.length} error(s):\n  ${errors.join("\n  ")}`); process.exit(1); }
 console.log("\nOK");
