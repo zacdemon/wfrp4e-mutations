@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Realism isn\u2019t for you; you entertain, exaggerate, and outright lie almost all the time. You gain -10 Fellowship for the reminder of the scene if you are caught lying about anything serious.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Realism isn’t for you; you entertain, exaggerate, and outright lie almost all the time. You gain -10 Fellowship for the reminder of the scene if you are caught lying about anything serious.</p>"
     },
     "gmdescription": {
       "type": "String",

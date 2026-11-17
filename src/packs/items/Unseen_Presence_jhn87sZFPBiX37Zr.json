@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p><p>There\u2019s something about you that makes others overlook you and forget about your presence. You gain the @UUID[Compendium.wfrp4e-core.items.Item.5KP9sOoLSGvj9EXp]{Beneath Notice} Talent, and if you make sure to not be in the centre of attention - like standing motionless and silent behind others - you can activate the benefits of that Talent as if your status is zero. You cannot gain this mutation if you already have @UUID[Compendium.artantares-mutations.items.Item.UZQt9vDlxKlrIl9D]{Magnetic Presence} or @UUID[Compendium.artantares-mutations.items.Item.kfRYjEQd9oAn8v2T]{Tantalising Aura}. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>There’s something about you that makes others overlook you and forget about your presence. You gain the @UUID[Compendium.wfrp4e-core.items.Item.5KP9sOoLSGvj9EXp]{Beneath Notice} Talent, and if you make sure to not be in the centre of attention - like standing motionless and silent behind others - you can activate the benefits of that Talent as if your status is zero. You cannot gain this mutation if you already have @UUID[Compendium.artantares-mutations.items.Item.UZQt9vDlxKlrIl9D]{Magnetic Presence} or @UUID[Compendium.artantares-mutations.items.Item.kfRYjEQd9oAn8v2T]{Tantalising Aura}. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

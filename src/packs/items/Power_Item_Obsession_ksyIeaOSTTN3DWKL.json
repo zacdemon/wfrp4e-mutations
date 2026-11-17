@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You have a special, precious, item that you believe is the source of your luck in life. You have -1 Fortune points when you don\u2019t have your power item on your person. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You have a special, precious, item that you believe is the source of your luck in life. You have -1 Fortune points when you don’t have your power item on your person. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

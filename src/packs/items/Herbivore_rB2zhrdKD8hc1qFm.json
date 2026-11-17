@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation</strong></p>\n<p>Your digestive system changes so that you can consume plant material; like grass and leaves, just like a goat or a cow. You can still eat meat , but as long as there is green vegetation around you\u2019ll never go hungry. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation</strong></p>\n<p>Your digestive system changes so that you can consume plant material; like grass and leaves, just like a goat or a cow. You can still eat meat , but as long as there is green vegetation around you’ll never go hungry. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

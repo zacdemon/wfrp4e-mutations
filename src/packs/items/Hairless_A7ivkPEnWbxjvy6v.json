@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>All your hair falls off from your entire body. Reduce your Fellowship with -5. You cannot get this mutation if you have Mane of Hair. If you get other mutations that would grant hair or fur they simply don\u2019t. The GM decides if you re-roll those results or not. This mutation can only be received once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>All your hair falls off from your entire body. Reduce your Fellowship with -5. You cannot get this mutation if you have Mane of Hair. If you get other mutations that would grant hair or fur they simply don’t. The GM decides if you re-roll those results or not. This mutation can only be received once.</p>"
     },
     "gmdescription": {
       "type": "String",

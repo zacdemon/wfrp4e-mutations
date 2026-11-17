@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation, Tolerable</strong></p><p>Your ageing slows and your expected life expectancy doubles. While this isn't noticeable in the day to day people around you will take notice as years pass and you remain young while they don\u2019t.</p>"
+      "value": "<p><strong>Minor Physical Mutation, Tolerable</strong></p><p>Your ageing slows and your expected life expectancy doubles. While this isn't noticeable in the day to day people around you will take notice as years pass and you remain young while they don’t.</p>"
     },
     "gmdescription": {
       "type": "String",

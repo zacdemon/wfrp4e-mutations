@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your front teeth grow into something that resembles that of a rodent, like a rat, squirrel or beaver. You gain the @UUID[Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv]{Bite} (SB+1) Creature Trait. You make twice the damage per turn on organic materials, like wood and leather, provided that you can gnaw on it (not just bite). You could for instance gnaw through a wooden fence or chomp a hole in a wooden staircase given enough time. Unfortunately, just like a rodent, you have to regularly gnaw with your teeth to wear them down, otherwise they\u2019ll just keep growing until you can\u2019t close your mouth. Hence, you are o en seen nibbling at things. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your front teeth grow into something that resembles that of a rodent, like a rat, squirrel or beaver. You gain the @UUID[Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv]{Bite} (SB+1) Creature Trait. You make twice the damage per turn on organic materials, like wood and leather, provided that you can gnaw on it (not just bite). You could for instance gnaw through a wooden fence or chomp a hole in a wooden staircase given enough time. Unfortunately, just like a rodent, you have to regularly gnaw with your teeth to wear them down, otherwise they’ll just keep growing until you can’t close your mouth. Hence, you are o en seen nibbling at things. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

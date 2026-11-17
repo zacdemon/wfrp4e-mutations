@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Mental Mutation, Tolerable</strong></p><p>Your mind has become severely damaged by the corruption that\u2019s festering in there. Your Intelligence and Initiative are reduced by -20 each.</p>"
+      "value": "<p><strong>Major Mental Mutation, Tolerable</strong></p><p>Your mind has become severely damaged by the corruption that’s festering in there. Your Intelligence and Initiative are reduced by -20 each.</p>"
     },
     "gmdescription": {
       "type": "String",

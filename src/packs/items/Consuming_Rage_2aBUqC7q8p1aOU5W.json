@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You carry a searing rage that has consumed almost all of your other ways to express negative emotions, such as grief, fear and anxiety. Strong negative emotions will make you explode into a fit of rage unless you manage to suppress it. You gain the @UUID[Compendium.wfrp4e-core.items.Item.hXcfygzujgyMN1uI]{Frenzy} Talent. At the 1st level you gain temporary Animosity towards your target, which doesn\u2019t have to result in violence. At 2nd level you gain @UUID[Compendium.wfrp4e-core.items.Item.E98mVLZgE8bX5vQW]{Hatred} instead which most certainly will. People that know you quickly learn not to jest at your expense.</p>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You carry a searing rage that has consumed almost all of your other ways to express negative emotions, such as grief, fear and anxiety. Strong negative emotions will make you explode into a fit of rage unless you manage to suppress it. You gain the @UUID[Compendium.wfrp4e-core.items.Item.hXcfygzujgyMN1uI]{Frenzy} Talent. At the 1st level you gain temporary Animosity towards your target, which doesn’t have to result in violence. At 2nd level you gain @UUID[Compendium.wfrp4e-core.items.Item.E98mVLZgE8bX5vQW]{Hatred} instead which most certainly will. People that know you quickly learn not to jest at your expense.</p>"
     },
     "gmdescription": {
       "type": "String",
