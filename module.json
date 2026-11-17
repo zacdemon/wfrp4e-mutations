@@ -17,6 +17,13 @@
           "verified": "9.6.1"
         }
       }
+    ],
+    "requires": [
+      {
+        "id": "wfrp4e-core",
+        "type": "module",
+        "reason": "Mutation items use icons from, and link Creature Traits, Talents and journal pages in, the WFRP4e Core Rulebook module."
+      }
     ]
   },
   "authors": [
