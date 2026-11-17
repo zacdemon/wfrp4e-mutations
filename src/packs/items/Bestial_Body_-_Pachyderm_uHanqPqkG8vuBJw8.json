@@ -4,7 +4,12 @@
   "effects": [],
   "flags": {
     "_sheetTab": {},
-    "core": {}
+    "core": {},
+    "artantares-mutations": {
+      "severity": "major",
+      "tolerable": false,
+      "variantOf": "bestial-body"
+    }
   },
   "system": {
     "description": {

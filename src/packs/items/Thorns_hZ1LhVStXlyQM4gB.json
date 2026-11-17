@@ -5,7 +5,11 @@
   "effects": [],
   "flags": {
     "_sheetTab": {},
-    "core": {}
+    "core": {},
+    "artantares-mutations": {
+      "severity": "minor",
+      "tolerable": false
+    }
   },
   "system": {
     "description": {
