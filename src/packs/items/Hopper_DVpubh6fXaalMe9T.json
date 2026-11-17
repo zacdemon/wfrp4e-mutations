@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your legs grow very powerful and gain a de nitively non-human bent to them. You gain the @UUID[Compendium.wfrp4e-core.items.Item.j6v78dnOOdCB6c3d]{Bounce} Creature Trait and reduce your Movement with -2. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your legs grow very powerful and gain a definitively non-human bent to them. You gain the @UUID[Compendium.wfrp4e-core.items.Item.j6v78dnOOdCB6c3d]{Bounce} Creature Trait and reduce your Movement with -2. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

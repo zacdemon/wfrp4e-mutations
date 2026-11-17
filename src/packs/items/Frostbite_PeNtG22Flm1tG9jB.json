@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>A terrible cold invades your body, covering your skin with hoarfrost and blackening your ngers and toes. Your touch is icy cold and in icts the @Condition[Stunned] Condition unless the recipient passes a <b>Challenging (+0) Endurance</b> Test. You can only stun someone once per scene. You gain the Immunity (Cold) mutation. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>A terrible cold invades your body, covering your skin with hoarfrost and blackening your fingers and toes. Your touch is icy cold and inflicts the @Condition[Stunned] Condition unless the recipient passes a <b>Challenging (+0) Endurance</b> Test. You can only stun someone once per scene. You gain the Immunity (Cold) mutation. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

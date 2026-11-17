@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>One of your eyes can leave its socket and oat in the air with Movement 3. You see what the eye sees and it can travel Willpower yards. I you become more separated than that you lose contact and the eye falls to the ground. It has @UUID[Compendium.wfrp4e-core.items.Item.8slW8CJ2oVTxeQ6q]{Size} (Tiny) and 1 Wound. A destroyed eye will regrow over a month. You can only gain this mutation as many times as you have eyes. </p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>One of your eyes can leave its socket and float in the air with Movement 3. You see what the eye sees and it can travel Willpower yards. If you become more separated than that you lose contact and the eye falls to the ground. It has @UUID[Compendium.wfrp4e-core.items.Item.8slW8CJ2oVTxeQ6q]{Size} (Tiny) and 1 Wound. A destroyed eye will regrow over a month. You can only gain this mutation as many times as you have eyes. </p>"
     },
     "gmdescription": {
       "type": "String",

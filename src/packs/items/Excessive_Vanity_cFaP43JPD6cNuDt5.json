@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You can become lost in your own mirror image; preening and posing. You need to admire your own re ection for 1d6 Rounds when given the change unless you manage to suppress (see Self-Control) the behaviour. You gain -10 Fellowship for the reminder of the scene if your excessive vanity strikes at an inappropriate moment.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You can become lost in your own mirror image; preening and posing. You need to admire your own reflection for 1d6 Rounds when given the change unless you manage to suppress (see Self-Control) the behaviour. You gain -10 Fellowship for the reminder of the scene if your excessive vanity strikes at an inappropriate moment.</p>"
     },
     "gmdescription": {
       "type": "String",

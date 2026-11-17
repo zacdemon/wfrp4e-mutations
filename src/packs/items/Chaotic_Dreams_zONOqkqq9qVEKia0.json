@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Your sleep is wrecked by foreboding and confusing visions. If you sleep at all you wake up soaked in sweat and possibly screaming. You gain 1 @Condition[Fatigued] Condition for the rst two hours of every day. You cannot suppress this mutation.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Your sleep is wrecked by foreboding and confusing visions. If you sleep at all you wake up soaked in sweat and possibly screaming. You gain 1 @Condition[Fatigued] Condition for the first two hours of every day. You cannot suppress this mutation.</p>"
     },
     "gmdescription": {
       "type": "String",

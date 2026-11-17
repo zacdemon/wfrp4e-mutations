@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your physiology changes, hips and legs bending, so that you move about on all fours like an animal with your eyes and nose close to the ground. Your skin darkens to a dark grey or black tone to better camou age you. You cant hold any items while moving, unless you have more than two arms, and you have a -20 modifier with armed ghting due to your awkward position. You gain the Dark Vision mutation, the @UUID[Compendium.wfrp4e-core.items.Item.Z91GFaT6FhEwyESU]{Tunnel Rat} and @UUID[Compendium.wfrp4e-core.items.Item.MGEPI4jNhymNIRVz]{Scale Sheer Surfaces} Talents. You cant gain this mutation i you already have the Centauroid mutation. You can only gain this mutation once. </p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your physiology changes, hips and legs bending, so that you move about on all fours like an animal with your eyes and nose close to the ground. Your skin darkens to a dark grey or black tone to better camouflage you. You can\u2019t hold any items while moving, unless you have more than two arms, and you have a -20 modifier with armed fighting due to your awkward position. You gain the Dark Vision mutation, the @UUID[Compendium.wfrp4e-core.items.Item.Z91GFaT6FhEwyESU]{Tunnel Rat} and @UUID[Compendium.wfrp4e-core.items.Item.MGEPI4jNhymNIRVz]{Scale Sheer Surfaces} Talents. You can\u2019t gain this mutation if you already have the Centauroid mutation. You can only gain this mutation once. </p>"
     },
     "gmdescription": {
       "type": "String",

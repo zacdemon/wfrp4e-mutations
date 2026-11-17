@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p>\n<p>Your deluded mind believes that you are o noble, maybe even royal, lineage. Choose the family name and status you believe you are born to. You will adopt the attitude and mannerism of someone of high station, as well as the trappings if you can aord them. Youll go any length to rationalise your supposedly @UUID[Compendium.wfrp4e-core.items.Item.1IVGksL10N7GVrw3]{Noble Blood}. You gain the @UUID[Compendium.wfrp4e-core.items.Item.x8g3U68oi8XzWiYr]{Commanding Presence} Talent.  You gain 1 @Condition[Fatigued] Condition if you act beneath your imaginary station. You cant get this mutation if you are an actual noble and you can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p>\n<p>Your deluded mind believes that you are o noble, maybe even royal, lineage. Choose the family name and status you believe you are born to. You will adopt the attitude and mannerism of someone of high station, as well as the trappings if you can afford them. You\u2019ll go any length to rationalise your supposedly @UUID[Compendium.wfrp4e-core.items.Item.1IVGksL10N7GVrw3]{Noble Blood}. You gain the @UUID[Compendium.wfrp4e-core.items.Item.x8g3U68oi8XzWiYr]{Commanding Presence} Talent.  You gain 1 @Condition[Fatigued] Condition if you act beneath your imaginary station. You can\u2019t get this mutation if you are an actual noble and you can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

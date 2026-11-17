@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>An enormous mouth with ja ed teeth gape from side to side over your belly. You gain the @UUID[Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv]{Bite} (SB+5) Creature Trait. Instead of biting to in ict damage you can choose to make an opposed Melee (Brawling) Test to grapple an opponent with your mouth. You can use your Maw as a Free Action by spending 1 Advantage. The Maw is always hungry and you gain the @UUID[Compendium.wfrp4e-core.items.Item.xneBqGOs1QS7kfUr]{Hungry} Creature Trait. You gain +20 in Fellowship when interacting with ogres who see the maw as a religious sign.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>An enormous mouth with jagged teeth gape from side to side over your belly. You gain the @UUID[Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv]{Bite} (SB+5) Creature Trait. Instead of biting to inflict damage you can choose to make an opposed Melee (Brawling) Test to grapple an opponent with your mouth. You can use your Maw as a Free Action by spending 1 Advantage. The Maw is always hungry and you gain the @UUID[Compendium.wfrp4e-core.items.Item.xneBqGOs1QS7kfUr]{Hungry} Creature Trait. You gain +20 in Fellowship when interacting with ogres who see the maw as a religious sign.</p>"
     },
     "gmdescription": {
       "type": "String",

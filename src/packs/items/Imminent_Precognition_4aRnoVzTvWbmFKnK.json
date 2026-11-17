@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p>\n<p>Your mind taps into the time stream continuum and always knows what will happen about half a second into the future. You're seldom surprised and o en the rst to react to things. You gain the @UUID[Compendium.wfrp4e-core.items.Item.0LdHytqyNmg2pcAX]{Combat Aware} Talent and +10 Initiative. Since your attention always is slightly out o sync with your peers, laughing too early at jokes and such, you gain -10 Fellowship.</p>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p>\n<p>Your mind taps into the time stream continuum and always knows what will happen about half a second into the future. You're seldom surprised and often the first to react to things. You gain the @UUID[Compendium.wfrp4e-core.items.Item.0LdHytqyNmg2pcAX]{Combat Aware} Talent and +10 Initiative. Since your attention always is slightly out o sync with your peers, laughing too early at jokes and such, you gain -10 Fellowship.</p>"
     },
     "gmdescription": {
       "type": "String",

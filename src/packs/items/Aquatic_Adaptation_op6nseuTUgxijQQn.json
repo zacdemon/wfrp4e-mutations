@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>You develop gills on the side of your neck or chest and can breathe freely under water. You gain webbing between your ngers and toes and your eyes are automatically covered by a retractable transparent lid when you're underwater. You gain the @UUID[Compendium.wfrp4e-core.items.Item.sJ3yX1kvzu2hgNq5]{Amphibious} Creature Trait. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>You develop gills on the side of your neck or chest and can breathe freely under water. You gain webbing between your fingers and toes and your eyes are automatically covered by a retractable transparent lid when you're underwater. You gain the @UUID[Compendium.wfrp4e-core.items.Item.sJ3yX1kvzu2hgNq5]{Amphibious} Creature Trait. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

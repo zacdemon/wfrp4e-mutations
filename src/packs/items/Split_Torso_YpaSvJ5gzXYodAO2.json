@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>Your upper body is split from the shoulder to the navel, like someone whos taken a strike from a zweihander head on. While it looks ghastly, it's not painful. Decide if your skin grows over the wound or if its le open, or i the gash is a huge, teeth lled maw... You gain Terror 1 and Agility -10. You can only wear custom made body armour. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>Your upper body is split from the shoulder to the navel, like someone who\u2019s taken a strike from a zweihander head on. While it looks ghastly, it's not painful. Decide if your skin grows over the wound or if it\u2019s left open, or if the gash is a huge, teeth filled maw... You gain Terror 1 and Agility -10. You can only wear custom made body armour. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

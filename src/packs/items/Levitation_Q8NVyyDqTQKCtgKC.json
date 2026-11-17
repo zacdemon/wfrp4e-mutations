@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Mental Mutation</strong></p>\n<p>e aethyric winds seem drawn to you and you move as if underwater, your clothes and hair bueted by strange currents - dri ing upwards and moving against the natural winds. It all looks :uite disturbing.  You can, with a successful <b>Challenging (+0) Willpower</b> Test, levitate your own body. You gain the Flight Creature Trait with a rating e:ual to your level in Levitation x30 for Willpower Bonus + SL Rounds. You suer a Minor Miscast if you Fumble your Willpower Test. Each additional time you gain this mutation the duration doubles.</p>"
+      "value": "<p><strong>Major Mental Mutation</strong></p>\n<p>The aethyric winds seem drawn to you and you move as if underwater, your clothes and hair buffeted by strange currents - drifting upwards and moving against the natural winds. It all looks quite disturbing.  You can, with a successful <b>Challenging (+0) Willpower</b> Test, levitate your own body. You gain the Flight Creature Trait with a rating equal to your level in Levitation x30 for Willpower Bonus + SL Rounds. You suffer a Minor Miscast if you Fumble your Willpower Test. Each additional time you gain this mutation the duration doubles.</p>"
     },
     "gmdescription": {
       "type": "String",

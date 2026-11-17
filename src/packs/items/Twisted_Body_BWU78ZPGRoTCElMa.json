@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>Your body is wracked by corruption, contorting your spine and limbs in a terrible manner. Your silhouette is striking in all the wrong ways. You suer -1 Movement, -2d10 Agility and -1d10 Toughness.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>Your body is wracked by corruption, contorting your spine and limbs in a terrible manner. Your silhouette is striking in all the wrong ways. You suffer -1 Movement, -2d10 Agility and -1d10 Toughness.</p>"
     },
     "gmdescription": {
       "type": "String",

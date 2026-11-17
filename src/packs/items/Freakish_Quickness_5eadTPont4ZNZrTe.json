@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your reaction speed is unnaturally fast. You dodge and weave like a blinding ash on the battle eld, keeping several enemies at bay at once and moving from foe to foe. Your gain +10 Initiative and the @UUID[Compendium.wfrp4e-core.items.Item.SgjJMBgc85aswvhm]{Relentless} Talent. You may use the Dodge skill to avoid missiles if you see when they are red. </p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your reaction speed is unnaturally fast. You dodge and weave like a blinding flash on the battlefield, keeping several enemies at bay at once and moving from foe to foe. Your gain +10 Initiative and the @UUID[Compendium.wfrp4e-core.items.Item.SgjJMBgc85aswvhm]{Relentless} Talent. You may use the Dodge skill to avoid missiles if you see when they are red. </p>"
     },
     "gmdescription": {
       "type": "String",

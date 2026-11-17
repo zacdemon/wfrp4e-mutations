@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>You receive a third eye that is positioned in your forehead to make a perfect triangle with your existing eyes. It grants the ability to triangulate distance and movement and you feel you perceive motion in the world around you as i you always know where they will be. You gain +10 Ballistic Skill and the @UUID[Compendium.wfrp4e-core.items.Item.phXzaUxl3mFqkmDq]{Sure Shot} Talent. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>You receive a third eye that is positioned in your forehead to make a perfect triangle with your existing eyes. It grants the ability to triangulate distance and movement and you feel you perceive motion in the world around you as if you always know where they will be. You gain +10 Ballistic Skill and the @UUID[Compendium.wfrp4e-core.items.Item.phXzaUxl3mFqkmDq]{Sure Shot} Talent. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

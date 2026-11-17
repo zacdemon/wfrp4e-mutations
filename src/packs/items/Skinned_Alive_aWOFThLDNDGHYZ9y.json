@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>Your skin peels away and falls o on your entire body revealing your muscles and bones. While the process is excruciatingly painful, your body adapts and you dont suer from it anymore a er a few days. You look like something out o a nightmare however, and your Fellowship is reduced by -20. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>Your skin peels away and falls off on your entire body revealing your muscles and bones. While the process is excruciatingly painful, your body adapts and you don\u2019t suffer from it anymore after a few days. You look like something out o a nightmare however, and your Fellowship is reduced by -20. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

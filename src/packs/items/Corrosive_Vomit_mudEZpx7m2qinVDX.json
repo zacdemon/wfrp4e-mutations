@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p>\n<p>Your stomach contains a vile brew of corrosive uids that you can spew at opponents. You gain the Vomit Creature Trait. Your stomach rumbles in a loud gurgling way that sounds very unhealthy. Your Stealth skill is reduced by -10. Each time you gain this Mutation the damage is increased by +1.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p>\n<p>Your stomach contains a vile brew of corrosive fluids that you can spew at opponents. You gain the Vomit Creature Trait. Your stomach rumbles in a loud gurgling way that sounds very unhealthy. Your Stealth skill is reduced by -10. Each time you gain this Mutation the damage is increased by +1.</p>"
     },
     "gmdescription": {
       "type": "String",

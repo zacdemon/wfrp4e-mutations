@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Small, sharp thorns protrude from your esh all over your body. Your Unarmed and Grappling attacks make +1 Damage. You can also, as an Action, launch a thorn at an opponent up to 10+SB yards away. You deal 1+SL damage on a successful Ballistic Skill Test. You can only wear custom armour. Roll 1d10, on a 8-10 your thorns are poisonous. Gain the @UUID[Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv]{Venom (Average)} Creature Trait. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Small, sharp thorns protrude from your flesh all over your body. Your Unarmed and Grappling attacks make +1 Damage. You can also, as an Action, launch a thorn at an opponent up to 10+SB yards away. You deal 1+SL damage on a successful Ballistic Skill Test. You can only wear custom armour. Roll 1d10, on a 8-10 your thorns are poisonous. Gain the @UUID[Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv]{Venom (Average)} Creature Trait. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your skin smoothes out, your hair shines, your lips fill out and your eyes sparkle - all in a supernaturally enhanced way. While you evoke desire it's clear that you're a mutant. You gain +10 Fellowship and the @UUID[Compendium.wfrp4e-core.items.Item.6l3jvIAvrKxt0lA9]{Attractive} (All) Talent. Your skin doesnt scar.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your skin smoothes out, your hair shines, your lips fill out and your eyes sparkle - all in a supernaturally enhanced way. While you evoke desire it's clear that you're a mutant. You gain +10 Fellowship and the @UUID[Compendium.wfrp4e-core.items.Item.6l3jvIAvrKxt0lA9]{Attractive} (All) Talent. Your skin doesn\u2019t scar.</p>"
     },
     "gmdescription": {
       "type": "String",

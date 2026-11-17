@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Once per day a moment of stress and anxiety (at the GMs discretion), like combat, social pressure or similar may trigger spectacular pain in your head. You must pass an <strong>Average (+20) Cool</strong> Test or gain 1 @Condition[Stunned] Condition as you stagger around with your hands to your head.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Once per day a moment of stress and anxiety (at the GM\u2019s discretion), like combat, social pressure or similar may trigger spectacular pain in your head. You must pass an <strong>Average (+20) Cool</strong> Test or gain 1 @Condition[Stunned] Condition as you stagger around with your hands to your head.</p>"
     },
     "gmdescription": {
       "type": "String",

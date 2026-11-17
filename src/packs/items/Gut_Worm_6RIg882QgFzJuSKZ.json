@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>A large, a ressive worm takes up residence in your belly. Whether its a parasite or some part of your biology thats taken a life of its own is unknown. What you do know is that its always hungry, hence so are you. You gain the @UUID[Compendium.wfrp4e-core.items.Item.xneBqGOs1QS7kfUr]{Hungry} Creature Trait. You may spend 1 Advantage to have the worm make a free attack on someone that youve engaged in melee - it launches itself from a hole in your stomach. The worm deals your SB+1 Damage if you succeed with a Ballistic Skill Test. The attack may be blocked by a shield, just like a projectile. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>A large, aggressive worm takes up residence in your belly. Whether it\u2019s a parasite or some part of your biology that\u2019s taken a life of its own is unknown. What you do know is that it\u2019s always hungry, hence so are you. You gain the @UUID[Compendium.wfrp4e-core.items.Item.xneBqGOs1QS7kfUr]{Hungry} Creature Trait. You may spend 1 Advantage to have the worm make a free attack on someone that you\u2019ve engaged in melee - it launches itself from a hole in your stomach. The worm deals your SB+1 Damage if you succeed with a Ballistic Skill Test. The attack may be blocked by a shield, just like a projectile. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

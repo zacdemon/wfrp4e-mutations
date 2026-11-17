@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p><p>The humours in your body ebb and flow with the phases of the moon Morrslieb. During nighttime when the moon is appearing large in the sky you are filled with energy and presence of mind, but when it's small or absent you feel lethargic. You're not aeffcted while the sun is in the sky.</p><p></p><table><tbody><tr><td><p>Morrslieb absent</p></td><td><p>-10 Initiative and -10 Willpower</p></td></tr><tr><td><p>Morrslieb small</p></td><td><p>-5 Initiative and -5 Willpower</p></td></tr><tr><td><p>Morrslieb large</p></td><td><p>+5 Initiative and +5 Willpower</p></td></tr><tr><td><p>Morrslieb full</p></td><td><p>+10 Initiative, +10 Willpower, +1 Fortune</p></td></tr></tbody></table>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>The humours in your body ebb and flow with the phases of the moon Morrslieb. During nighttime when the moon is appearing large in the sky you are filled with energy and presence of mind, but when it's small or absent you feel lethargic. You're not affected while the sun is in the sky.</p><p></p><table><tbody><tr><td><p>Morrslieb absent</p></td><td><p>-10 Initiative and -10 Willpower</p></td></tr><tr><td><p>Morrslieb small</p></td><td><p>-5 Initiative and -5 Willpower</p></td></tr><tr><td><p>Morrslieb large</p></td><td><p>+5 Initiative and +5 Willpower</p></td></tr><tr><td><p>Morrslieb full</p></td><td><p>+10 Initiative, +10 Willpower, +1 Fortune</p></td></tr></tbody></table>"
     },
     "gmdescription": {
       "type": "String",

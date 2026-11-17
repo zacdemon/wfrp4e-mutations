@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Somewhere on your head you develop a pronounced bulge that's capable of sensing the magnetic pull of the poles, much like birds do. You gain the @UUID[Compendium.wfrp4e-core.items.Item.afREA9q7v4Scuozn]{Orientation} Talent, but you dont even have to see the sky or environment to know which way is north. Reduce your Fellowship with -5. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Somewhere on your head you develop a pronounced bulge that's capable of sensing the magnetic pull of the poles, much like birds do. You gain the @UUID[Compendium.wfrp4e-core.items.Item.afREA9q7v4Scuozn]{Orientation} Talent, but you don\u2019t even have to see the sky or environment to know which way is north. Reduce your Fellowship with -5. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

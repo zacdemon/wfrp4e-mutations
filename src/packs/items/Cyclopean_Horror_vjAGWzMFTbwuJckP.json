@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>Roll 1d10. On 1-5 the eyes on your head merge into a large singular eye. Halve your BS since you lose the ability to see depth of eld. On 6-10 you grow an enormous, head-sized eye somewhere on your body. You can only wear custom armour on that body part. Roll on the @Table[hitloc]{Hit Locations} Table (WFRP page 159) to determine where. Hits to the body part have a 20% chance of striking the eye, giving the Damaging Quality (WFRP page 297) to the attack. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Roll 1d10. On 1-5 the eyes on your head merge into a large singular eye. Halve your BS since you lose the ability to see depth of field. On 6-10 you grow an enormous, head-sized eye somewhere on your body. You can only wear custom armour on that body part. Roll on the @Table[hitloc]{Hit Locations} Table (WFRP page 159) to determine where. Hits to the body part have a 20% chance of striking the eye, giving the Damaging Quality (WFRP page 297) to the attack. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

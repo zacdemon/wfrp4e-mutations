@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>You develop an angry red, aky rash with white heads that covers a portion of your body. Roll on the @Table[hitloc]{Hit Locations} Table to determine which part of the body is affected. Each additional time you gain this mutation it spreads to a new part of the body. If your head is affected your Fellowship is lowered by -10.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>You develop an angry red, flaky rash with white heads that covers a portion of your body. Roll on the @Table[hitloc]{Hit Locations} Table to determine which part of the body is affected. Each additional time you gain this mutation it spreads to a new part of the body. If your head is affected your Fellowship is lowered by -10.</p>"
     },
     "gmdescription": {
       "type": "String",

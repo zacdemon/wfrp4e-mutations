@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You crave bloodshed and love to ght. You gain the @UUID[Compendium.wfrp4e-core.items.Item.GbDyBCu8ZjDp6dkj]{Belligerent} Creature Trait. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You crave bloodshed and love to fight. You gain the @UUID[Compendium.wfrp4e-core.items.Item.GbDyBCu8ZjDp6dkj]{Belligerent} Creature Trait. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

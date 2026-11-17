@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your entire body is covered by a mass of tiny crawling creatures: insects, spiders, ies, butterflies or something similar. The effect is very disturbing and you gain the @UUID[Compendium.wfrp4e-core.items.Item.MVI0lXcg6vvtooAF]{Distracting} Creature Trait and reduce your Fellowship by -30. The swarm of creatures will jump onto anyone that is engaged in melee combat with you, causing @Fear[2]. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your entire body is covered by a mass of tiny crawling creatures: insects, spiders, flies, butterflies or something similar. The effect is very disturbing and you gain the @UUID[Compendium.wfrp4e-core.items.Item.MVI0lXcg6vvtooAF]{Distracting} Creature Trait and reduce your Fellowship by -30. The swarm of creatures will jump onto anyone that is engaged in melee combat with you, causing @Fear[2]. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

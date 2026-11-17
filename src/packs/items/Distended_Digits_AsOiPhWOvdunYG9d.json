@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your ngers grow long and spindly, making ne motor skills easier for you. You gain +1d10 Dexterity and lose -5 Fellowship. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your fingers grow long and spindly, making fine motor skills easier for you. You gain +1d10 Dexterity and lose -5 Fellowship. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p><p>Mundane pleasures no longer excite you and you can only receive titillation if you in ict or receive injuries. Whenever you deal or take 1 Wound you gain +5 Strength, Toughness and Willpower for 1d10 Rounds. You gain access to the @UUID[Compendium.wfrp4e-core.items.Item.hXcfygzujgyMN1uI]{Frenzy} Talent while under the effect. If you start frenzying it wont stop when the 1d10 duration of this mutation ends. Follow the normal rules instead. You may inflict a Wound on yourself to gain this modifier. The bonus does not stack, but new Wounds after the duration will renew the effect. Wounds from other mutations, like @UUID[Compendium.artantares-mutations.items.Item.XdbHWsUa59sLvLkN]{Unhealing Wound}, do not activate this mutation.</p>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>Mundane pleasures no longer excite you and you can only receive titillation if you inflict or receive injuries. Whenever you deal or take 1 Wound you gain +5 Strength, Toughness and Willpower for 1d10 Rounds. You gain access to the @UUID[Compendium.wfrp4e-core.items.Item.hXcfygzujgyMN1uI]{Frenzy} Talent while under the effect. If you start frenzying it won\u2019t stop when the 1d10 duration of this mutation ends. Follow the normal rules instead. You may inflict a Wound on yourself to gain this modifier. The bonus does not stack, but new Wounds after the duration will renew the effect. Wounds from other mutations, like @UUID[Compendium.artantares-mutations.items.Item.XdbHWsUa59sLvLkN]{Unhealing Wound}, do not activate this mutation.</p>"
     },
     "gmdescription": {
       "type": "String",

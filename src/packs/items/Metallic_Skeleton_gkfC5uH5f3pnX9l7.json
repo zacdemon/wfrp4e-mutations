@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation</strong></p><p>The bones in your body transform into a hard metal, like iron. While this cant be perceived from the outside, your weight increases by +50%. You gain +10 Toughness and you never suer from Broken Bone Critical Wounds unless the GM deems it plausible that the force of the attack would bend or break your metallic bones.</p>"
+      "value": "<p><strong>Trivial Physical Mutation</strong></p><p>The bones in your body transform into a hard metal, like iron. While this can\u2019t be perceived from the outside, your weight increases by +50%. You gain +10 Toughness and you never suffer from Broken Bone Critical Wounds unless the GM deems it plausible that the force of the attack would bend or break your metallic bones.</p>"
     },
     "gmdescription": {
       "type": "String",

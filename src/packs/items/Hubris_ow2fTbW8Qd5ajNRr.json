@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p>\n<p>You develop an idolised and grandiose self-image. You are vain, arrogant and prickly. Success is due to your involvement, failure is blamed on others. Criticism, disagreements and perceived slights are taken as personal attacks. You gain +10 on all social Tests that aim to put you in the centre of attention, claim glory or de ect criticism. You gain -10 on all Tests that         would assist someone else in achieving glory and attention, or that would make you appear humble. You gain the @UUID[Compendium.wfrp4e-core.items.Item.x8g3U68oi8XzWiYr]{Commanding Presence} Talent.</p>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p>\n<p>You develop an idolised and grandiose self-image. You are vain, arrogant and prickly. Success is due to your involvement, failure is blamed on others. Criticism, disagreements and perceived slights are taken as personal attacks. You gain +10 on all social Tests that aim to put you in the centre of attention, claim glory or deflect criticism. You gain -10 on all Tests that         would assist someone else in achieving glory and attention, or that would make you appear humble. You gain the @UUID[Compendium.wfrp4e-core.items.Item.x8g3U68oi8XzWiYr]{Commanding Presence} Talent.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You delight in in icting grievous wounds on your opponents - preferably up close and personal. You gain +5 WS and -5 BS and may add +10 when determining Critical Wounds.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You delight in inflicting grievous wounds on your opponents - preferably up close and personal. You gain +5 WS and -5 BS and may add +10 when determining Critical Wounds.</p>"
     },
     "gmdescription": {
       "type": "String",

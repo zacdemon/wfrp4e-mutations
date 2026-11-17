@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>You emit a horrid stench, a noxious miasma, that makes people cover their noses in disgust and start making involuntary retching sounds. You gain the @UUID[Compendium.wfrp4e-core.items.Item.MVI0lXcg6vvtooAF]{Distracting} Creature Trait and it affects all living creatures, except those whove become used to your smell (like your unlikely friends). You gain a -10 Fellowship modifier. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>You emit a horrid stench, a noxious miasma, that makes people cover their noses in disgust and start making involuntary retching sounds. You gain the @UUID[Compendium.wfrp4e-core.items.Item.MVI0lXcg6vvtooAF]{Distracting} Creature Trait and it affects all living creatures, except those who\u2019ve become used to your smell (like your unlikely friends). You gain a -10 Fellowship modifier. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

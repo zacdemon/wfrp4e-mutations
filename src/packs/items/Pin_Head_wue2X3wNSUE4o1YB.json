@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your head shrinks dramatically. You look terrifying and ridiculous at the same time. Your brain is s:ueezed by its new con nes and you gain the @UUID[Compendium.wfrp4e-core.items.Item.9GNpAqgsKzxZKJpp]{Stupid} Creature Trait. You can only wear custom made headwear. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your head shrinks dramatically. You look terrifying and ridiculous at the same time. Your brain is squeezed by its new confines and you gain the @UUID[Compendium.wfrp4e-core.items.Item.9GNpAqgsKzxZKJpp]{Stupid} Creature Trait. You can only wear custom made headwear. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

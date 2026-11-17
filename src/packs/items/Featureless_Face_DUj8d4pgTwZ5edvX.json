@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your face becomes a smooth surface of numb skin; your eyes, your nose and your ears are overgrown or fall off. Only your mouth remains as a horrible mockery of what your face once was. Somehow you retain your senses, but you nd it very hard to express emotions and gain -30 in Fellowship. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your face becomes a smooth surface of numb skin; your eyes, your nose and your ears are overgrown or fall off. Only your mouth remains as a horrible mockery of what your face once was. Somehow you retain your senses, but you find it very hard to express emotions and gain -30 in Fellowship. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -207,7 +207,7 @@
         "duplicateSource": null,
         "exportSource": null
       },
-      "description": "Venom: Your blood has the @UUID[Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv]{Venom (Average)} Creature Trait and a􀊚ects anyone that bites you, drinks your blood or happens to get your blood in a wound (if you smear it on your blade for example).",
+      "description": "Venom: Your blood has the @UUID[Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv]{Venom (Average)} Creature Trait and affects anyone that bites you, drinks your blood or happens to get your blood in a wound (if you smear it on your blade for example).",
       "name": "",
       "_key": "!tables.results!9t4nHhVABuyvvYNk.YbxIim2H4tjaCbN9"
     }

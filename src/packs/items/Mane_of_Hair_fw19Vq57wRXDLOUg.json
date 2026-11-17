@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>You grow a huge mane of hair, much like youd nd on a horse or a lion. You may no longer wear a helmet unless its part of a suit of Chaos Armour. If you cut the mane it regrows at the rate of 2 inches a week. You cant get this mutation if you have the Hairless mutation already. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>You grow a huge mane of hair, much like you\u2019d find on a horse or a lion. You may no longer wear a helmet unless it\u2019s part of a suit of Chaos Armour. If you cut the mane it regrows at the rate of 2 inches a week. You can\u2019t get this mutation if you have the Hairless mutation already. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Your hands work on their own accord when you are idle, producing strange and su estive messages. It may take the form of prophecies, dogmatic rants, commentary (He's lying!) and so on. If you can't read and write the messages can take the form of drawings, carvings, folded paper figures or anything else your hands can utilise. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Your hands work on their own accord when you are idle, producing strange and suggestive messages. It may take the form of prophecies, dogmatic rants, commentary (He's lying!) and so on. If you can't read and write the messages can take the form of drawings, carvings, folded paper figures or anything else your hands can utilise. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

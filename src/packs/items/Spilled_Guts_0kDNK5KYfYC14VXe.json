@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>A large hole opens up on your stomach and your guts start hanging out of it. You wear clothing or armour over it if you successfully bandage it rst to keep your entrails in, but any hit to the body gains the Damaging Weapon Quality (WFRP page 297) even if you wear armour. A called shot will automatically be a Critical Wound.  ere is a disturbing smell about you causing -5 Fellowship. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>A large hole opens up on your stomach and your guts start hanging out of it. You wear clothing or armour over it if you successfully bandage it first to keep your entrails in, but any hit to the body gains the Damaging Weapon Quality (WFRP page 297) even if you wear armour. A called shot will automatically be a Critical Wound.  There is a disturbing smell about you causing -5 Fellowship. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>You grow four long, spindly legs from out o body that enable you to crawl eortlessly on walls and ceilings. You gain the @UUID[Compendium.wfrp4e-core.items.Item.KII1gWnxIZ8HzmU5]{Wallcarawler} Creature Trait with a movement speed of 5. You also develop a special gland somewhere on your body that enables you to spray a sticky web at your prey. You gain the @UUID[Compendium.wfrp4e-core.items.Item.Bw6tQyzOhcl7aQ46]{Web} (T) Creature Trait with the range of SBx3. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>You grow four long, spindly legs from out o body that enable you to crawl effortlessly on walls and ceilings. You gain the @UUID[Compendium.wfrp4e-core.items.Item.KII1gWnxIZ8HzmU5]{Wallcarawler} Creature Trait with a movement speed of 5. You also develop a special gland somewhere on your body that enables you to spray a sticky web at your prey. You gain the @UUID[Compendium.wfrp4e-core.items.Item.Bw6tQyzOhcl7aQ46]{Web} (T) Creature Trait with the range of SBx3. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

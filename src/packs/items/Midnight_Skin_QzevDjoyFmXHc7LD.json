@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>e hue of your skin becomes completely black, seemingly absorbing light, while your eyes lose their pupils and irises and become milk white. You gain +20 Stealth when in shadows and darkness, unless you wear bright or colourful clothing of course. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>The hue of your skin becomes completely black, seemingly absorbing light, while your eyes lose their pupils and irises and become milk white. You gain +20 Stealth when in shadows and darkness, unless you wear bright or colourful clothing of course. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

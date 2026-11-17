@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>One of your feet becomes twisted and deformed. Your Movement is reduced by -1, your Agility by -5 and you can only wear custom footwear. Your Fellowship is reduced by -5. I you gain this mutation a second time, then the other foot is affected. You can only gain this mutation twice.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>One of your feet becomes twisted and deformed. Your Movement is reduced by -1, your Agility by -5 and you can only wear custom footwear. Your Fellowship is reduced by -5. If you gain this mutation a second time, then the other foot is affected. You can only gain this mutation twice.</p>"
     },
     "gmdescription": {
       "type": "String",

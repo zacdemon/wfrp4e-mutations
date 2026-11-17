@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation, Tolerable</strong></p><p>Your ageing accelerates and your expected life expectancy is halved for whats normal for your species. While this isn't noticeable in the day to day people around you will take notice as years pass and you grow old and grey while they don't.</p>"
+      "value": "<p><strong>Minor Physical Mutation, Tolerable</strong></p><p>Your ageing accelerates and your expected life expectancy is halved for what\u2019s normal for your species. While this isn't noticeable in the day to day people around you will take notice as years pass and you grow old and grey while they don't.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your tongue is too big and long to t into your mouth and lolls on the side of your mouth. You suer -10 to all Language Tests when speaking and lose -1d10 Fellowship. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your tongue is too big and long to fit into your mouth and lolls on the side of your mouth. You suffer -10 to all Language Tests when speaking and lose -1d10 Fellowship. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

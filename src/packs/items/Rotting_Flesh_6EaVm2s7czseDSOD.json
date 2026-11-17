@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>An unsettling rot has set into your esh. Your skin has taken an unhealthy hue and your body is literally drooping from your skeleton. Various in amed sores fester angrily and ma ots move freely in your putrid esh. You produce a rancid stench and an eager cloud of ies follow you in a buzzing cloud. You gain the @UUID[Compendium.wfrp4e-core.items.Item.V0c3qBU1CMm8bmsW]{Infected} and @UUID[Compendium.wfrp4e-core.items.Item.TBcdTlYSRH8Rd1x0]{Infestation} Creature Traits and your Fellowship can never be higher than 5. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>An unsettling rot has set into your flesh. Your skin has taken an unhealthy hue and your body is literally drooping from your skeleton. Various inflamed sores fester angrily and maggots move freely in your putrid flesh. You produce a rancid stench and an eager cloud of flies follow you in a buzzing cloud. You gain the @UUID[Compendium.wfrp4e-core.items.Item.V0c3qBU1CMm8bmsW]{Infected} and @UUID[Compendium.wfrp4e-core.items.Item.TBcdTlYSRH8Rd1x0]{Infestation} Creature Traits and your Fellowship can never be higher than 5. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

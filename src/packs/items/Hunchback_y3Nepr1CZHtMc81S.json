@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your spine twists and turns so that you are forced to hunch forward. is lowers your Movement by -1, your Fellowship by -5 and your Agility by -1d10.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your spine twists and turns so that you are forced to hunch forward. This lowers your Movement by -1, your Fellowship by -5 and your Agility by -1d10.</p>"
     },
     "gmdescription": {
       "type": "String",

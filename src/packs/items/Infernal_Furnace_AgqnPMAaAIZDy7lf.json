@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>In your chest burns a roaring re that emits icker ames when you open your mouth and that makes your ribs stand out as dark shadows as your skin is illuminated from within. You are never cold and light up a radius of 10 yards i you're shirtless. You gain the @UUID[Compendium.wfrp4e-core.items.Item.uqGxFOEqeurwkAO3]{Breath} TBx2 (Fire) Creature Trait and the Immunity (Fire) and Immunity (Cold) mutations. If you take Critical Wounds in the body then anyone within 2 yards must make an <strong>Average (+20) Endurance</strong> Test o gain 1 @Condition[Ablaze] Condition. When you die you explode, causing TBx3 Damage to anyone within TBx3 yards as well as 1 @Condition[Ablaze] Condition. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>In your chest burns a roaring fire that emits flicker flames when you open your mouth and that makes your ribs stand out as dark shadows as your skin is illuminated from within. You are never cold and light up a radius of 10 yards if you're shirtless. You gain the @UUID[Compendium.wfrp4e-core.items.Item.uqGxFOEqeurwkAO3]{Breath} TBx2 (Fire) Creature Trait and the Immunity (Fire) and Immunity (Cold) mutations. If you take Critical Wounds in the body then anyone within 2 yards must make an <strong>Average (+20) Endurance</strong> Test o gain 1 @Condition[Ablaze] Condition. When you die you explode, causing TBx3 Damage to anyone within TBx3 yards as well as 1 @Condition[Ablaze] Condition. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

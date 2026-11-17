@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your eyes either move to the sides of your head and become large, many faceted insect eyes - like that of a y - or you grow several small black eyes on your skull - like a spider. You gain 360 degree vision and the @UUID[Compendium.wfrp4e-core.items.Item.0LdHytqyNmg2pcAX]{Combat Aware} Talent. Your Fellowship is decreased by -20. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your eyes either move to the sides of your head and become large, many faceted insect eyes - like that of a fly - or you grow several small black eyes on your skull - like a spider. You gain 360 degree vision and the @UUID[Compendium.wfrp4e-core.items.Item.0LdHytqyNmg2pcAX]{Combat Aware} Talent. Your Fellowship is decreased by -20. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

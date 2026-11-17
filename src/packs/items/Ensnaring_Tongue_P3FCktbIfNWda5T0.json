@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p>\n<p>Your neck thickens as your tongue becomes long, limber and ropey - it extends down your throat to some hidden cavity in your chest. You can launch your tongue at opponents to Eniangle them. You gain the Tongue Attack SB (TBx2 yards) Creature Trait.  e tongue can be severed if it receives your TB Wounds, but it will regrow at a pace of 1 inch per week. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p>\n<p>Your neck thickens as your tongue becomes long, limber and ropey - it extends down your throat to some hidden cavity in your chest. You can launch your tongue at opponents to entangle them. You gain the Tongue Attack SB (TBx2 yards) Creature Trait.  The tongue can be severed if it receives your TB Wounds, but it will regrow at a pace of 1 inch per week. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

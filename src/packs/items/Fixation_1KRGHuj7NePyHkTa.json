@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You are obsessing over some puzzle or enigma, like an unsolved crime, a historical event, a hidden treasure, a lost lover or your own doom. Decide something together with the GM. In the spirals of your mind everything revolves around the object of your xation. You will strive to nd ways to further your :uest at inopportune times unless you manage to suppress (see Self-Control) the mutation. You gain the @UUID[Compendium.wfrp4e-core.items.Item.580fwhKfOZJFxMID]{Savant} Talent for a Lore related to your Target.</p>"
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You are obsessing over some puzzle or enigma, like an unsolved crime, a historical event, a hidden treasure, a lost lover or your own doom. Decide something together with the GM. In the spirals of your mind everything revolves around the object of your fixation. You will strive to find ways to further your quest at inopportune times unless you manage to suppress (see Self-Control) the mutation. You gain the @UUID[Compendium.wfrp4e-core.items.Item.580fwhKfOZJFxMID]{Savant} Talent for a Lore related to your Target.</p>"
     },
     "gmdescription": {
       "type": "String",

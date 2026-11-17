@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Your mind keeps dri ing and you tend to hum and sing while it does. You gain -5 Initiative. I you zone out at an inappropriate time, you gain -10 Fellowship for the reminder of the scene.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Your mind keeps drifting and you tend to hum and sing while it does. You gain -5 Initiative. If you zone out at an inappropriate time, you gain -10 Fellowship for the reminder of the scene.</p>"
     },
     "gmdescription": {
       "type": "String",

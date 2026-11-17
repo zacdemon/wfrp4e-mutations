@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation</strong></p><p>A section of your skin somewhere on your torso develops into a exible skin ap where you can store small items (Carries 1). e skin pouch is easy to conceal and you gain Stealth +20 i trying to hide it from someone whos frisking or inspecting you. Each additional time you gain this mutation you gain Carries +1.</p>"
+      "value": "<p><strong>Trivial Physical Mutation</strong></p><p>A section of your skin somewhere on your torso develops into a flexible skin flap where you can store small items (Carries 1). The skin pouch is easy to conceal and you gain Stealth +20 if trying to hide it from someone who\u2019s frisking or inspecting you. Each additional time you gain this mutation you gain Carries +1.</p>"
     },
     "gmdescription": {
       "type": "String",

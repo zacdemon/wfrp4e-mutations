@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your blood becomes cool and as a result your body temperature drops to room temperature, much like a snake or a lizard. is can make you uncomfortable to touch and you gain the Vulnerability (Cold) mutation. You become coldly calculating like a serpent too - gain the Cold-blooded Creature Trait. You lose -10 Fellowship. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your blood becomes cool and as a result your body temperature drops to room temperature, much like a snake or a lizard. This can make you uncomfortable to touch and you gain the Vulnerability (Cold) mutation. You become coldly calculating like a serpent too - gain the Cold-blooded Creature Trait. You lose -10 Fellowship. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

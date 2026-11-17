@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>You grow a large, fat hump on your back or shoulders that is twice the size of your head. While looking a bit ridiculous, the hump has the ability to store energy in a way that allows you to go without food and water for up to two weeks. When the hump is depleted it sags tiredly and youll have to over-eat the equivalent of days you wish to store in energy. Once full it swells proudly on your back. You gain +10 Endurance.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>You grow a large, fat hump on your back or shoulders that is twice the size of your head. While looking a bit ridiculous, the hump has the ability to store energy in a way that allows you to go without food and water for up to two weeks. When the hump is depleted it sags tiredly and you\u2019ll have to over-eat the equivalent of days you wish to store in energy. Once full it swells proudly on your back. You gain +10 Endurance.</p>"
     },
     "gmdescription": {
       "type": "String",

@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>You have a large, open wound that refuses to heal. Your Wounds are reduced by -1. Roll on the @Table[hitloc]{Hit Locations} Table to determine which part of the body is affected. Every time you gain this mutation it aects a new part of the body. Reduce your Fellowship by -10 if your head is affected.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>You have a large, open wound that refuses to heal. Your Wounds are reduced by -1. Roll on the @Table[hitloc]{Hit Locations} Table to determine which part of the body is affected. Every time you gain this mutation it affects a new part of the body. Reduce your Fellowship by -10 if your head is affected.</p>"
     },
     "gmdescription": {
       "type": "String",

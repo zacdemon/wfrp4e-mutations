@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>One of your arms (or whatever serves you as an arm) grows to twice its original size. You strike a very anatomically unbalanced gure and the bulging limb drags along the ground when you are walking and can only wear custom made armour. You gain the @UUID[Compendium.wfrp4e-core.items.Item.4MJJCiOKPkBByYwW]{Strike Mighty Blow} (SB) Talent when you attack with that arm and your weapon reach is increased by one level. You gain +10 Strength and -10 Dexterity and -5 Agility.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>One of your arms (or whatever serves you as an arm) grows to twice its original size. You strike a very anatomically unbalanced figure and the bulging limb drags along the ground when you are walking and can only wear custom made armour. You gain the @UUID[Compendium.wfrp4e-core.items.Item.4MJJCiOKPkBByYwW]{Strike Mighty Blow} (SB) Talent when you attack with that arm and your weapon reach is increased by one level. You gain +10 Strength and -10 Dexterity and -5 Agility.</p>"
     },
     "gmdescription": {
       "type": "String",

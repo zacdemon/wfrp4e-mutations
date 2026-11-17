@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation</strong></p>\n<p>Your heart is beating with a radiant glow that shines through the esh of your chest. Choose which hue that the light takes on. You can hide the glow by wearing clothing of a thicker material on your body. If you are bare-chested in the dark the illumination is comparable to a weak lantern with a 6 yard radius. Each time you gain this mutation the strength of the light and the illumination radius are doubled.</p>"
+      "value": "<p><strong>Trivial Physical Mutation</strong></p>\n<p>Your heart is beating with a radiant glow that shines through the flesh of your chest. Choose which hue that the light takes on. You can hide the glow by wearing clothing of a thicker material on your body. If you are bare-chested in the dark the illumination is comparable to a weak lantern with a 6 yard radius. Each time you gain this mutation the strength of the light and the illumination radius are doubled.</p>"
     },
     "gmdescription": {
       "type": "String",

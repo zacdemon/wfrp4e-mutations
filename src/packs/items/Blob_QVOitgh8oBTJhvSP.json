@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your spine dissolves and your body transforms from the shoulders down into a shapeless mass of esh. As your legs devolve your movement is halved (round up) and attacks that wouldve hit the legs become body hits instead. Your silhouette is similar to that of a snail with arms. You leave a slimy trail along the ground wherever you go. Your Agility is reduced by -20 and your Toughness is increased with +10. Since you lack legs you cant get mutations that alter legs - unless you gain the @UUID[Compendium.artantares-mutations.items.Item.3Wl9402VTU03Rrqv]{Additional Extremities} (Legs) mutation.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your spine dissolves and your body transforms from the shoulders down into a shapeless mass of flesh. As your legs devolve your movement is halved (round up) and attacks that would\u2019ve hit the legs become body hits instead. Your silhouette is similar to that of a snail with arms. You leave a slimy trail along the ground wherever you go. Your Agility is reduced by -20 and your Toughness is increased with +10. Since you lack legs you can\u2019t get mutations that alter legs - unless you gain the @UUID[Compendium.artantares-mutations.items.Item.3Wl9402VTU03Rrqv]{Additional Extremities} (Legs) mutation.</p>"
     },
     "gmdescription": {
       "type": "String",

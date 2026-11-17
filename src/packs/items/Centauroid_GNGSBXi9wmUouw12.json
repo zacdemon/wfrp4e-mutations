@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your lower body transforms into that of a four legged creature, much like that of a horse, and your silhouette is strikingly similar to that of a centaur. The new lower body matches your existing physi:ue, so unless you've gained some animalistic feature you have four humanoid legs. You gain +2 Movement, +10 Toughness, -10 Agility and the @UUID[Compendium.wfrp4e-core.items.Item.UmxGZRV0Lw3TZ0Kx]{Stride} Creature Trait. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your lower body transforms into that of a four legged creature, much like that of a horse, and your silhouette is strikingly similar to that of a centaur. The new lower body matches your existing physique, so unless you've gained some animalistic feature you have four humanoid legs. You gain +2 Movement, +10 Toughness, -10 Agility and the @UUID[Compendium.wfrp4e-core.items.Item.UmxGZRV0Lw3TZ0Kx]{Stride} Creature Trait. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

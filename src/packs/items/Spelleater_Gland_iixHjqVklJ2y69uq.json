@@ -15,7 +15,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>A purple gland the size of a cabbage grows out of your esh. Roll on the @Table[hitloc]{Hit Locations} Table to determine where. The gland absorbs magic. It reduces the SL of any spells that are directed at you by half (rounded down), and stores them in the purple, bulging outgrowth. You can lower the CN of a spell that you cast by -1 per stored SL (which are then consumed). If they're not used within a Round, the stored SL dissipates. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>A purple gland the size of a cabbage grows out of your flesh. Roll on the @Table[hitloc]{Hit Locations} Table to determine where. The gland absorbs magic. It reduces the SL of any spells that are directed at you by half (rounded down), and stores them in the purple, bulging outgrowth. You can lower the CN of a spell that you cast by -1 per stored SL (which are then consumed). If they're not used within a Round, the stored SL dissipates. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",
