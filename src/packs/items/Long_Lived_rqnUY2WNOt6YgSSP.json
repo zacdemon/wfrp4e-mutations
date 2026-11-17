@@ -1,0 +1,56 @@
+{
+  "name": "Long Lived",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation, Tolerable</strong></p><p>Your ageing slows and your expected life expectancy doubles. While this isn't noticeable in the day to day people around you will take notice as years pass and you remain young while they dont.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.ZOzvQYtskGawDPjF",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743369135353,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "rqnUY2WNOt6YgSSP",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!rqnUY2WNOt6YgSSP"
+}

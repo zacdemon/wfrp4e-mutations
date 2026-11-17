@@ -1,0 +1,56 @@
+{
+  "name": "Evil Eye",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p>\n<p>e whites of one of your eyes turn blood red and elicit a deeply unnerving feeling from anyone you rest your gaze upon. You may in ict crippling pain upon someone you look at. If you succeed with an <b>Opposed Willpower</b> Test the target doubles up in pain and gains 1 @Condition[Fatigued] Condition and must pass a <b>Hard (-20) Endurance</b> Test or gain the @Condition[Prone] Condition. I you fail the <b>Opposed Willpower</b> Test you gain 1 @Condition[Stunned] Condition. You can only gain this mutation twice.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.jnYRKaLL3k8SqcU7",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1742291789684,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "K82LhDZ9upriRI8J",
+  "sort": 3100000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!K82LhDZ9upriRI8J"
+}

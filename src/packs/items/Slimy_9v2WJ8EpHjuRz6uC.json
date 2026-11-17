@@ -1,0 +1,56 @@
+{
+  "name": "Slimy",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Tivial Physical Mutation, Tolerable</strong></p><p>Your skin exudes a slippery, viscous liquid much like a snail. This makes you look constantly sweaty and the slime soaks through your clothing. You gain the @UUID[Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp]{Contortionist} Talent and a +20 bonus for escaping a Grapple. Reduce your Fellowship with -10. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.NGOpMHlWbvuc0H5h",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743369642559,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "9v2WJ8EpHjuRz6uC",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!9v2WJ8EpHjuRz6uC"
+}

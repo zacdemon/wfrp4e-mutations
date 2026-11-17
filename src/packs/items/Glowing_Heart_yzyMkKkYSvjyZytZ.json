@@ -1,0 +1,56 @@
+{
+  "name": "Glowing Heart",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Trivial Physical Mutation</strong></p>\n<p>Your heart is beating with a radiant glow that shines through the esh of your chest. Choose which hue that the light takes on. You can hide the glow by wearing clothing of a thicker material on your body. If you are bare-chested in the dark the illumination is comparable to a weak lantern with a 6 yard radius. Each time you gain this mutation the strength of the light and the illumination radius are doubled.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.KXaKK1efJxmkPu98",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743375618091,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "yzyMkKkYSvjyZytZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!yzyMkKkYSvjyZytZ"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "artantares-mutations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "extract": "node tools/packs.mjs extract",
+    "build": "node tools/packs.mjs compile",
+    "validate": "node tools/validate.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.5",
+    "acorn": "^8.14.0"
+  }
+}

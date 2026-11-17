@@ -1,0 +1,56 @@
+{
+  "name": "Enlarged Sensory Organ",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>One of your sensory organs grows 50% in size, giving you the @UUID[Compendium.wfrp4e-core.items.Item.9h82z72XGo9tfgQS]{Acute Sense} Talent with the relevant specialisation. Reduce your Fellowship by -5.</p><p></p><table><tbody><tr><td><p>1d100</p></td><td><p>Organ</p></td></tr><tr><td><p>01-25</p></td><td><p>Eyes (1d10: 1-5 One, 6-10: Both)</p></td></tr><tr><td><p>26-50</p></td><td><p>Ears (1d10: 1-5 One, 6-10: Both)</p></td></tr><tr><td><p>51-75</p></td><td><p>Nose</p></td></tr><tr><td><p>76-100</p></td><td><p>Mouth</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.t5twgu60lBk8p0Gj",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743368832471,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "ZuMJvZkSU4GZ0lRe",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!ZuMJvZkSU4GZ0lRe"
+}

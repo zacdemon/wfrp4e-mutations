@@ -1,0 +1,56 @@
+{
+  "name": "Shapeshifter",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>For you the esh is something uid and you are not bound to one shape. You can, with a successful <strong>Challenging (+0) Endurance</strong> Test, transform yourself into the form of another humanoid of the same size as yourself. A fumbled roll will result in a @Table[minormis]{Minor Miscast}. You may choose any hair and eye colour et cetera. You will automatically fool anyone who lacks the @UUID[Compendium.wfrp4e-core.items.Item.OEjUvJKi0xmBwbS2]{Second Sight} Talent, though some might notice that behaviours and mannerisms don't match your looks. You have to have the chance to observe the species for at least an hour before assuming its shape. The transformation itself only takes 1 Round. You can retain the shape for Toughness Bonus + SL hours. While you can match the general characteristics of a particular person, you are not able to mimic their appearance completely. People might say that you look similar, but not the same. If you are Wounded while in an assumed shape, you must pass a <strong>Challenging (+0) Endurance</strong> Test with a -Wounds x 10 modifier or immediately transform back to your original shape. Seeing you transform will induce @Fear[1] to anyone who doesnt know you are a shapeshifter.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.EDdBG446vgqoqaPh",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743375618091,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "6aaQyP8Smcn99f5k",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!6aaQyP8Smcn99f5k"
+}

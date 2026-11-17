@@ -1,0 +1,278 @@
+{
+  "name": "Minor Mental Necromantic Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        12
+      ],
+      "drawn": false,
+      "_id": "ZLJxFMvcBAswbpCd",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340562,
+        "modifiedTime": 1782468851084,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Babble-tongue",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.665DjaOsBAYAcxUa",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.ZLJxFMvcBAswbpCd"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        13,
+        23
+      ],
+      "drawn": false,
+      "_id": "U0lydzreA8TJ59NP",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340562,
+        "modifiedTime": 1782468851084,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Dark Fate",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.fLPecgoBZmOYrEkU",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.U0lydzreA8TJ59NP"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        24,
+        34
+      ],
+      "drawn": false,
+      "_id": "zqJ6d2gZTP6q1Z3I",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340562,
+        "modifiedTime": 1782468851084,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Nihilistic Numbness",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.FKtq14oJQpQ41nES",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.zqJ6d2gZTP6q1Z3I"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        35,
+        45
+      ],
+      "drawn": false,
+      "_id": "1Fsox4gn0xEUiN1N",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340562,
+        "modifiedTime": 1782468851084,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Possessed",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.yHwwtGhVOCkJQGNa",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.1Fsox4gn0xEUiN1N"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        46,
+        56
+      ],
+      "drawn": false,
+      "_id": "Hs65O0hUMbO2ShiY",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340562,
+        "modifiedTime": 1782468851084,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Saint of the Damned",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.4IMKewJoixuLtVFD",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.Hs65O0hUMbO2ShiY"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        57,
+        67
+      ],
+      "drawn": false,
+      "_id": "nyTpREdlqsBeOV35",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340563,
+        "modifiedTime": 1782468851084,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Suspicious Mind",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.sgjiRs2oY05Qeg7j",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.nyTpREdlqsBeOV35"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        68,
+        78
+      ],
+      "drawn": false,
+      "_id": "18HOdWrioIAUW5x3",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340563,
+        "modifiedTime": 1782468851085,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Time Warp",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.BUHKnPkW8V9DXlHa",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.18HOdWrioIAUW5x3"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        79,
+        89
+      ],
+      "drawn": false,
+      "_id": "OmeYHrhEfmamOTpQ",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340563,
+        "modifiedTime": 1782468851085,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Touched",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.5yjm2u4hdsmgcClo",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.OmeYHrhEfmamOTpQ"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        90,
+        100
+      ],
+      "drawn": false,
+      "_id": "5myqOl6PeZgBNyHQ",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340563,
+        "modifiedTime": 1782468851085,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unending Malice",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.DPCJjHOXER1wpqno",
+      "description": "",
+      "_key": "!tables.results!u7CYXSLBK1AX2Vd1.5myqOl6PeZgBNyHQ"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "X6xZ0hUPwh934fho",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "minor-mental-necro"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468851084,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "u7CYXSLBK1AX2Vd1",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!u7CYXSLBK1AX2Vd1"
+}

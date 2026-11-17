@@ -1,0 +1,56 @@
+{
+  "name": "Dark Fate",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You are haunted by a vision of your demise and believe, correctly or not, that you are destined to suer this terrible doom. Even if the details o your end might be cryptic, you know with bone-chilling certainty that it will come to pass somehow, someday. You gain the @UUID[Compendium.wfrp4e-core.items.Item.fn8QNQQ1S2rh12Us]{Doomed} Talent. If you already have the @UUID[Compendium.wfrp4e-core.items.Item.fn8QNQQ1S2rh12Us]{Doomed} Talent the GM has an opportunity to change it if they desire to make it into something that they might work into their campaign. Upon perceiving signs that your dark fate is about to manifest you, real or not, the GM may cause @Fear[1] on you. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.vVHTVcLzSJcJoiyL",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743375618091,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "fLPecgoBZmOYrEkU",
+  "sort": 6000000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!fLPecgoBZmOYrEkU"
+}

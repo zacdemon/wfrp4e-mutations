@@ -1,0 +1,1383 @@
+{
+  "name": "Slaanesh Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        2
+      ],
+      "drawn": false,
+      "_id": "5FSwMYwTwsrElAx6",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339373,
+        "modifiedTime": 1782468850449,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Aberrant Agility",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.puiPC8DIIljOYY8X",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.5FSwMYwTwsrElAx6"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        3,
+        4
+      ],
+      "drawn": false,
+      "_id": "30NQCyrNCr08nIRD",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339374,
+        "modifiedTime": 1782468850450,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Addiction",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.fPZ6WhDgSEL2CRKA",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.30NQCyrNCr08nIRD"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        5,
+        6
+      ],
+      "drawn": false,
+      "_id": "9jsvhErCgbU33X0Q",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339374,
+        "modifiedTime": 1782468850450,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Additional Extremities",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.3Wl9402VTU03Rrqv",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.9jsvhErCgbU33X0Q"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        7,
+        8
+      ],
+      "drawn": false,
+      "_id": "yQBRmeBfQm4bhcnb",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339374,
+        "modifiedTime": 1782468850450,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Additional Head",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.CvsNIdqCVsuqLBqX",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.yQBRmeBfQm4bhcnb"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        9,
+        10
+      ],
+      "drawn": false,
+      "_id": "3pZ36XG3qorbyXgl",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339374,
+        "modifiedTime": 1782468850450,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Alluring Shape",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.hDwU27FbmH4ArUY4",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.3pZ36XG3qorbyXgl"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        11,
+        12
+      ],
+      "drawn": false,
+      "_id": "1puBoKSDvnIgInZ9",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339375,
+        "modifiedTime": 1782468850450,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bachtrachian Suckers",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.b1E7a0fIYEGE3LwX",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.1puBoKSDvnIgInZ9"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        13,
+        14
+      ],
+      "drawn": false,
+      "_id": "wnk6lz8ODYU4AEbC",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339375,
+        "modifiedTime": 1782468850450,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.6SS48Lr56mNYRBUK",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.wnk6lz8ODYU4AEbC"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        15,
+        16
+      ],
+      "drawn": false,
+      "_id": "MpKRFe7BHVsHnuA4",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339375,
+        "modifiedTime": 1782468850450,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Head",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.n0gTmkkVb0i1dGJD",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.MpKRFe7BHVsHnuA4"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        18
+      ],
+      "drawn": false,
+      "_id": "LMUblkUfmgdJHrxm",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339375,
+        "modifiedTime": 1781951339375,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Bestial Limbs: @UUID[Compendium.arcturus-mutations.items.Item.kBF92bihnlMRse9Q]{Bestial Arms} or @UUID[Compendium.arcturus-mutations.items.Item.ZAueEy6k65bO02qA]{Bestial Legs}",
+      "name": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.LMUblkUfmgdJHrxm"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        19,
+        20
+      ],
+      "drawn": false,
+      "_id": "jU87FtrYf6S27y7c",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339376,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Beweaponed Extremities",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.k1qaiaXzHOhgvoza",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.jU87FtrYf6S27y7c"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        21,
+        22
+      ],
+      "drawn": false,
+      "_id": "SAfMdBzdIurgZIs3",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339376,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bizarre Colouration",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.1ytty1tRb0mt8KGr",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.SAfMdBzdIurgZIs3"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        23,
+        24
+      ],
+      "drawn": false,
+      "_id": "Ftjed7UFA6DDElCO",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339376,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Cadaverously Thin",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Bo18hlJMiANiqz4u",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.Ftjed7UFA6DDElCO"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        25,
+        26
+      ],
+      "drawn": false,
+      "_id": "rSrMEyXquhzx5tWU",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339376,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Cold-blooded",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.FE7VTGvuPf4jyoh0",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.rSrMEyXquhzx5tWU"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        27,
+        28
+      ],
+      "drawn": false,
+      "_id": "dGYhQr2J86gAeN8P",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339376,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Distended Digits",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.AsOiPhWOvdunYG9d",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.dGYhQr2J86gAeN8P"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        29,
+        30
+      ],
+      "drawn": false,
+      "_id": "ETfz8thHzcRfjFBM",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339377,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Ecstatic Milk",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.zgtjGMadVpE40lpi",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.ETfz8thHzcRfjFBM"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        31,
+        32
+      ],
+      "drawn": false,
+      "_id": "HWbBIo0239FgiEHL",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339377,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Ensnaring Tongue",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.P3FCktbIfNWda5T0",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.HWbBIo0239FgiEHL"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        33,
+        34
+      ],
+      "drawn": false,
+      "_id": "V7P8qqGxlK2tirrl",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339377,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Entrancement",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.RXYYigURsYy1XiJ6",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.V7P8qqGxlK2tirrl"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        35,
+        36
+      ],
+      "drawn": false,
+      "_id": "cg1QtVBBKtk2QqJr",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339377,
+        "modifiedTime": 1782468850451,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Excessive Vanity",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.cFaP43JPD6cNuDt5",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.cg1QtVBBKtk2QqJr"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        37,
+        38
+      ],
+      "drawn": false,
+      "_id": "46yISBAxYxOk5cE2",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339378,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Extra Joints",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.vLqdmTYUKo9TmFdo",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.46yISBAxYxOk5cE2"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        39,
+        40
+      ],
+      "drawn": false,
+      "_id": "QfN74F7UzOHOy08p",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339378,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Facial Symmetry",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.bPpowKClxyVu0bac",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.QfN74F7UzOHOy08p"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        41,
+        42
+      ],
+      "drawn": false,
+      "_id": "EQoYx0FJUqHgqMtI",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339378,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Fangs",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.5V5B3xILSelJ8rXk",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.EQoYx0FJUqHgqMtI"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        43,
+        44
+      ],
+      "drawn": false,
+      "_id": "YnXGkpIPtvq2iZoz",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339379,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Featureless Face",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.DUj8d4pgTwZ5edvX",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.YnXGkpIPtvq2iZoz"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        45,
+        46
+      ],
+      "drawn": false,
+      "_id": "WZ4gDFUKpuOS4S0O",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339379,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Fixation",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.1KRGHuj7NePyHkTa",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.WZ4gDFUKpuOS4S0O"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        47,
+        48
+      ],
+      "drawn": false,
+      "_id": "EvfTZUgnlcP8DVlD",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339379,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Freakish Quickness",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.5eadTPont4ZNZrTe",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.EvfTZUgnlcP8DVlD"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        49,
+        50
+      ],
+      "drawn": false,
+      "_id": "Ro3n1W5nKwEcxKuG",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339379,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hairless",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.A7ivkPEnWbxjvy6v",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.Ro3n1W5nKwEcxKuG"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        51,
+        52
+      ],
+      "drawn": false,
+      "_id": "UfvC8kkOonuGUyM9",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339380,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Horns",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.oa1XVd4fxpW3vr84",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.UfvC8kkOonuGUyM9"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        53,
+        54
+      ],
+      "drawn": false,
+      "_id": "o2I496XKNXn0tIn2",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339380,
+        "modifiedTime": 1782468850452,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Immunity &amp; Vulnerability",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.TyOX7XQ24SWtcRUK",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.o2I496XKNXn0tIn2"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        55,
+        56
+      ],
+      "drawn": false,
+      "_id": "3smC8kh7Hx1eOP73",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339380,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Inhuman Beauty",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Zf5hivfLuYsSjO5H",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.3smC8kh7Hx1eOP73"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        57,
+        58
+      ],
+      "drawn": false,
+      "_id": "vW8C7sL3hL7UEdEw",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339380,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Long Spines",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.dgT7aiOUjtQehLbh",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.vW8C7sL3hL7UEdEw"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        59,
+        60
+      ],
+      "drawn": false,
+      "_id": "Mjj2GrgyfEwKWb8f",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339380,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Magnetic Presence",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.UZQt9vDlxKlrIl9D",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.Mjj2GrgyfEwKWb8f"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        61,
+        62
+      ],
+      "drawn": false,
+      "_id": "XixtCp5ardawEoJn",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339381,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Mane of Hair",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.fw19Vq57wRXDLOUg",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.XixtCp5ardawEoJn"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        63,
+        64
+      ],
+      "drawn": false,
+      "_id": "taDyX2uSOgz9fnqD",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339381,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Mark of Chaos",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.tEzD7kSwl5WjvxWM",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.taDyX2uSOgz9fnqD"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        65,
+        66
+      ],
+      "drawn": false,
+      "_id": "ND83br6IS03GzlQQ",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339381,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Monstrous Growth",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.7JvUETXYbbQFP4C6",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.ND83br6IS03GzlQQ"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        67,
+        68
+      ],
+      "drawn": false,
+      "_id": "DsQIA1I5BCkxtEQk",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339381,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Painseeker",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.vbX9BaaeBNjZTvPb",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.DsQIA1I5BCkxtEQk"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        69,
+        70
+      ],
+      "drawn": false,
+      "_id": "KBsRgg7NW97m8u6x",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339381,
+        "modifiedTime": 1782468850453,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Piercing Tongue",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Lhia23lxUCCvOQ9l",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.KBsRgg7NW97m8u6x"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        71,
+        72
+      ],
+      "drawn": false,
+      "_id": "QATi4FbsEUOf67NS",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339382,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Pincer Claw",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.SCt3ihkr5KLfsyJS",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.QATi4FbsEUOf67NS"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        73,
+        74
+      ],
+      "drawn": false,
+      "_id": "jSMEQjmALvn9l2Jz",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339382,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Protective Skin",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.jSMEQjmALvn9l2Jz"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        75,
+        76
+      ],
+      "drawn": false,
+      "_id": "2Hjrd2v8qwB3y49W",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339382,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Razor-sharp Claws",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.HCvKEsrNVqyJIIxP",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.2Hjrd2v8qwB3y49W"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        77,
+        78
+      ],
+      "drawn": false,
+      "_id": "8sCTT3b1wUUbQoaU",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339382,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Saint of the Damned",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.4IMKewJoixuLtVFD",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.8sCTT3b1wUUbQoaU"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        79,
+        80
+      ],
+      "drawn": false,
+      "_id": "KiSXnzLSbyBRMICU",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339382,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Savage Grace",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.P4DBUCyVQjNv8SBp",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.KiSXnzLSbyBRMICU"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        81,
+        82
+      ],
+      "drawn": false,
+      "_id": "iHuh7pcBpdKgizKD",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339383,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Skinned Alive",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.aWOFThLDNDGHYZ9y",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.iHuh7pcBpdKgizKD"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        83,
+        84
+      ],
+      "drawn": false,
+      "_id": "rEiDm45KbTmLWuDf",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339383,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Symbiotic Twins",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.3QMRnSGYSXcmQarc",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.rEiDm45KbTmLWuDf"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        85,
+        86
+      ],
+      "drawn": false,
+      "_id": "O7lgFNeKdoqaVHur",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339383,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Tail",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.sGSearHVJlNXVgWb",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.O7lgFNeKdoqaVHur"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        87,
+        88
+      ],
+      "drawn": false,
+      "_id": "9YFGAJaKOJVZmkBq",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339383,
+        "modifiedTime": 1782468850454,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Tantalising Aura",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.kfRYjEQd9oAn8v2T",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.9YFGAJaKOJVZmkBq"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        89,
+        90
+      ],
+      "drawn": false,
+      "_id": "VOpf44bkIWsYM77M",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339383,
+        "modifiedTime": 1782468850455,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Third Eye",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.QBS5qhPHv59SeCe4",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.VOpf44bkIWsYM77M"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        91,
+        92
+      ],
+      "drawn": false,
+      "_id": "b2d2mP8UofyMJGOF",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339384,
+        "modifiedTime": 1782468850455,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Thrill Seeker",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Y4wyoEVmxIus53EG",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.b2d2mP8UofyMJGOF"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        93,
+        94
+      ],
+      "drawn": false,
+      "_id": "9jIAKsdNqOGulmHQ",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339384,
+        "modifiedTime": 1782468850455,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.8ODkP7FV7rQrzIUk",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.9jIAKsdNqOGulmHQ"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        95,
+        96
+      ],
+      "drawn": false,
+      "_id": "dEmbC7EubEFtScKV",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339384,
+        "modifiedTime": 1782468850455,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Head",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.2yP7eu1aadXCqdEO",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.dEmbC7EubEFtScKV"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        97,
+        98
+      ],
+      "drawn": false,
+      "_id": "bsZYcBK6jwPZhy7R",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339384,
+        "modifiedTime": 1781951339384,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Unnatural Limbs: @UUID[Compendium.arcturus-mutations.items.Item.vy9zR0zjmshnVF0q]{Unnatural Arms} or @UUID[Compendium.arcturus-mutations.items.Item.Leho2dexUvJUsXYv]{Unnatural Legs}",
+      "name": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.bsZYcBK6jwPZhy7R"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        99,
+        100
+      ],
+      "drawn": false,
+      "_id": "2ppKjispXgNgHIEK",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339385,
+        "modifiedTime": 1782468850455,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Wings",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.DuwghgXUzmFLNGVA",
+      "description": "",
+      "_key": "!tables.results!CdEaFRmDs5dUCLFs.2ppKjispXgNgHIEK"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "hm54DD9tNk6emAnQ",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "slaanesh"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468850449,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "CdEaFRmDs5dUCLFs",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!CdEaFRmDs5dUCLFs"
+}

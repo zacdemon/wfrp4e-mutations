@@ -1,0 +1,56 @@
+{
+  "name": "Horns",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Large horns of bestial or daemonic resemblance grow out of your skull; like antlers, tusks or curved spikes. You gain the @UUID[Compendium.wfrp4e-core.items.Item.BqPZn6q3VHn9HUrW]{Horns} SB+3 Creature Trait. The horns can be cut off and filed down, but will regrow by the rate of 1 inch per week. Each additional time you gain this mutation the horns grow and deal +1 Damage.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.5ixkxVcBLgD2fIYn",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743371730847,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "oa1XVd4fxpW3vr84",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!oa1XVd4fxpW3vr84"
+}

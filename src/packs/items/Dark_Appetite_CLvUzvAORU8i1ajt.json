@@ -1,0 +1,56 @@
+{
+  "name": "Dark Appetite",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Trivial Mental Mutation</strong></p><p>You crave to consume something specific thats not socially acceptable, like blood, raw meat, lth, dung, rotten food, insects, books, leather or small living animals. Whatever it is, it doesnt make you sick. Youll need to suppress (see @UUID[Compendium.wfrp4e-mutations.mutations-journal.JournalEntry.uDGFazW9Nr0N6ABS.JournalEntryPage.9sK84Dvy3Ng36qXp#self-control]{Self-Control}) the urge to not act on it at inopportune times. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.WjXZnUHYdunssL5d",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743367952497,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "CLvUzvAORU8i1ajt",
+  "sort": 1700000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!CLvUzvAORU8i1ajt"
+}

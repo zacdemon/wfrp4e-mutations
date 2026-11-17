@@ -1,0 +1,56 @@
+{
+  "name": "Morbidity",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>Your mind and conversations stray to dark and appaling topics. You gain -10 Fellowship.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.iEp09G5cSPtsZIWH",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743369261493,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "nuRKhiZFHMOON5cb",
+  "sort": 7800000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!nuRKhiZFHMOON5cb"
+}

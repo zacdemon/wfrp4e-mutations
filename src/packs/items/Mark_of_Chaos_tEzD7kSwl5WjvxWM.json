@@ -1,0 +1,56 @@
+{
+  "name": "Mark of Chaos",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Trivial Physical Mutation</strong></p><p>A mark of the Chaos Gods appears somewhere on your body; as a birthmark, a scarring, a tattoo or something similar. Consult the @Table[hitloc]{Hit Locations} Table to determine where. en roll on the table below to see which mark that adorns you. If you already have a Chaos Patron, then you receive their mark. Showing the Mark to a Chaos worshipper will give you +5 Fellowship, or a +10 if they pray to the same Chaos God as your Mark.</p><table><tbody><tr><td><p>1d10</p></td><td><p>Result</p></td></tr><tr><td><p>1-2</p></td><td><p>Chaos Star: the circle of chaotic arrows (Chaos Undivided)</p></td></tr><tr><td><p>3-4</p></td><td><p>Khorne</p></td></tr><tr><td><p>5-6</p></td><td><p>Nurgle</p></td></tr><tr><td><p>7-8</p></td><td><p>Slaanesh</p></td></tr><tr><td><p>9-10</p></td><td><p>Tzeentch</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.uxERblIdTmaGNhwM",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743362081329,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "tEzD7kSwl5WjvxWM",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!tEzD7kSwl5WjvxWM"
+}

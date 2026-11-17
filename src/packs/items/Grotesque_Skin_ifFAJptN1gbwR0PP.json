@@ -1,0 +1,56 @@
+{
+  "name": "Grotesque Skin",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your skin becomes covered with thousands o growths that make bizarre patterns on your skin. Consult the table below to determine which kind. ese growths provide no utility, but look very disturbing. You get a -20 Fellowship modifier. You can only gain this mutation once.</p><table><tbody><tr><td><p>1d10</p></td><td><p>Result</p></td></tr><tr><td><p>1</p></td><td><p>Eyes</p></td></tr><tr><td><p>2</p></td><td><p>Ears</p></td></tr><tr><td><p>3</p></td><td><p>Fingers</p></td></tr><tr><td><p>4</p></td><td><p>Mouths</p></td></tr><tr><td><p>5</p></td><td><p>Nostrils</p></td></tr><tr><td><p>6</p></td><td><p>Nipples</p></td></tr><tr><td><p>7</p></td><td><p>Teeth</p></td></tr><tr><td><p>8</p></td><td><p>Toes</p></td></tr><tr><td><p>9</p></td><td><p>Tongues</p></td></tr><tr><td><p>10</p></td><td><p>Warts</p></td></tr></tbody></table><p></p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.zgbBhQEj8ozUCAVL",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743359192725,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "ifFAJptN1gbwR0PP",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!ifFAJptN1gbwR0PP"
+}

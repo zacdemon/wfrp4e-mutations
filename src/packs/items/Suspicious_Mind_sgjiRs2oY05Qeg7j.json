@@ -1,0 +1,56 @@
+{
+  "name": "Suspicious Mind",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You know that they are out to get you. They are working against you in numerous ways; spying on you, sabotaging your career, stealing your trappings, turning people against you and possibly even plotting to kill you. Consult the table below, or decide a suitable Target for your suspicion together with the GM. You gain @Fear[1] towards your Target, @UUID[Compendium.wfrp4e-core.items.Item.klCJX0mNpXYH5AIx]{Prejudice} (Target) and the @UUID[Compendium.wfrp4e-core.items.Item.AcnFuDKRemLI9ey7]{Nose for Trouble} Talent. If you gain this mutation again, you gain an additional Target.</p><table><tbody><tr><th><p>Range</p></th><th><p>Group</p></th></tr><tr><td><p>01-05</p></td><td><p>Academics (in general or from school)</p></td></tr><tr><td><p>06-10</p></td><td><p>Agitators (in general or movement)</p></td></tr><tr><td><p>11-15</p></td><td><p>Burghers (in general or from city)</p></td></tr><tr><td><p>16-20</p></td><td><p>Enemies of Men (Orcs or Skaven etc)</p></td></tr><tr><td><p>21-25</p></td><td><p>Cult of… (Sigmar or Verena etc)</p></td></tr><tr><td><p>26-30</p></td><td><p>Family of… (Rechtshandler or Voigt etc)</p></td></tr><tr><td><p>31-40</p></td><td><p>Law Enforcement (in general or province)</p></td></tr><tr><td><p>41-45</p></td><td><p>Guild of…(Dockhands or Bakers etc)</p></td></tr><tr><td><p>46-50</p></td><td><p>Nobles (in general or from province)</p></td></tr><tr><td><p>51-55</p></td><td><p>Peasants (in general or from province)</p></td></tr><tr><td><p>56-60</p></td><td><p>People of… (Bretonnia or Norsca etc)</p></td></tr><tr><td><p>61-65</p></td><td><p>Rogues (Charlatans or Thieves etc)</p></td></tr><tr><td><p>66-70</p></td><td><p>Ruinous Powers of… (Tzeentch etc)</p></td></tr><tr><td><p>71-75</p></td><td><p>Species of… (Dwarfs or Elves etc)</p></td></tr><tr><td><p>76-80</p></td><td><p>Tax Collectors (in general or province)</p></td></tr><tr><td><p>81-85</p></td><td><p>Undead (Vampires or Ghosts etc)</p></td></tr><tr><td><p>86-90</p></td><td><p>Witches (in general or from cabal)</p></td></tr><tr><td><p>91-95</p></td><td><p>Wizards (in general or from school)</p></td></tr><tr><td><p>96-100</p></td><td><p>Witchhunters</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.JCbkdbCWnMpyjGIB",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743371629815,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "sgjiRs2oY05Qeg7j",
+  "sort": 8400000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!sgjiRs2oY05Qeg7j"
+}

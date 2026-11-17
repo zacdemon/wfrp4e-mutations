@@ -1,0 +1,278 @@
+{
+  "name": "Major Mental Necromantic Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        12
+      ],
+      "drawn": false,
+      "_id": "xqCzAXkiEmTYXCM2",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339257,
+        "modifiedTime": 1782468850373,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Alien Mind",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.o4f3eyx32xV7H8lh",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.xqCzAXkiEmTYXCM2"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        13,
+        23
+      ],
+      "drawn": false,
+      "_id": "5Nx9uUAHMH8uqndE",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339257,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Anti-magic Aura",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.TAyMfzKGCFdwOYwa",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.5Nx9uUAHMH8uqndE"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        24,
+        34
+      ],
+      "drawn": false,
+      "_id": "qln8afwDAzgE6BWT",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339257,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Contagious Madness",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.GuTq80P4tRojiczG",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.qln8afwDAzgE6BWT"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        35,
+        45
+      ],
+      "drawn": false,
+      "_id": "PghCg9evC38OYHRB",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339258,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Ethereal",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.NMUdXDgEkCjlE6GW",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.PghCg9evC38OYHRB"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        46,
+        56
+      ],
+      "drawn": false,
+      "_id": "tKm5AMIW9s6gW537",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339258,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Life Leech",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.GJlK4rE5reveogkA",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.tKm5AMIW9s6gW537"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        57,
+        67
+      ],
+      "drawn": false,
+      "_id": "vWlnuRhDU2WZPIPm",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339258,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Malign Sorcerer",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.X4ruGmYz3pB8Rl3b",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.vWlnuRhDU2WZPIPm"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        68,
+        78
+      ],
+      "drawn": false,
+      "_id": "ajxHOvwF9CgOnGjr",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339258,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Miasma of Terror",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Kkb6klw2QKN21oY5",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.ajxHOvwF9CgOnGjr"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        79,
+        89
+      ],
+      "drawn": false,
+      "_id": "5lyNTQzNEk6pSK9J",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339258,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Petrifying Gaze",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.epdU1UMuZSfruZAk",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.5lyNTQzNEk6pSK9J"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        90,
+        100
+      ],
+      "drawn": false,
+      "_id": "I256pvG0olxEqL7F",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339259,
+        "modifiedTime": 1782468850374,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Spectral Companion",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.an2hgfmAgySL3qnp",
+      "description": "",
+      "_key": "!tables.results!7VRcRvKXo9pcEoMH.I256pvG0olxEqL7F"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "X6xZ0hUPwh934fho",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "major-mental-necro"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468850373,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "7VRcRvKXo9pcEoMH",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!7VRcRvKXo9pcEoMH"
+}

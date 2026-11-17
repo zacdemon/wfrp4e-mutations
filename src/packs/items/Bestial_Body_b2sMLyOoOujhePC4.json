@@ -1,0 +1,22 @@
+{
+  "name": "Bestial Body",
+  "sorting": "a",
+  "folder": "VaF7zB2JjYBYMTtK",
+  "type": "Item",
+  "_id": "b2sMLyOoOujhePC4",
+  "description": "",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742316936198,
+    "modifiedTime": 1743352424054,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1"
+  },
+  "_key": "!folders!b2sMLyOoOujhePC4"
+}

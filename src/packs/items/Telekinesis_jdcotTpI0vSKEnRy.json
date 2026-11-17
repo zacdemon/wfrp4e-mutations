@@ -1,0 +1,56 @@
+{
+  "name": "Telekinesis",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>Your mind develops the ability to control matter. You can, with an <strong>Average (+20) Willpower</strong> Test, move things with your mind at Willpower Bonus yards per Round for Willpower Rounds. Use your Willpower instead of your Strength when calculating how much you can carry or if the lifting is contested. You may also, with a successful <strong>Challenging (+0) Willpower</strong> and <strong>Ballistics</strong> Test, hurl throwing weapons, like knives and rocks at high speed at opponents. Replace Strength bonus with your Willpower Bonus for those feats. Fumbling when using your telekinetic powers cause a @Table[minormis]{Minor Miscast}. Small particles, like dirt and dust, behave strangely within a Willpower radius around you, lifting from the ground and starting to circle in the air. The effect is very disturbing.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.ncmxKUc6biAP05bV",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743371043007,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "jdcotTpI0vSKEnRy",
+  "sort": 6900000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!jdcotTpI0vSKEnRy"
+}

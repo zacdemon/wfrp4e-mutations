@@ -1,0 +1,629 @@
+{
+  "name": "Bestial Body",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        1,
+        5
+      ],
+      "drawn": false,
+      "_id": "9MsLeVp477YPyLlO",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339542,
+        "modifiedTime": 1782468850582,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Amphibian",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.GR120IUPgLTyw9uZ",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.9MsLeVp477YPyLlO"
+    },
+    {
+      "type": "document",
+      "weight": 2,
+      "range": [
+        6,
+        7
+      ],
+      "drawn": false,
+      "_id": "BunrlBq2MmYtMiMg",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339542,
+        "modifiedTime": 1782468850582,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Arthropods",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.7bGTqyrmqbiA21C1",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.BunrlBq2MmYtMiMg"
+    },
+    {
+      "type": "document",
+      "weight": 3,
+      "range": [
+        8,
+        10
+      ],
+      "drawn": false,
+      "_id": "R6pAIq3VYjf7mJ38",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339543,
+        "modifiedTime": 1782468850582,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Bat",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.N3SHuR57DOffKZxD",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.R6pAIq3VYjf7mJ38"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        11,
+        15
+      ],
+      "drawn": false,
+      "_id": "afHLt3nUEUGMuqCo",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339543,
+        "modifiedTime": 1782468850582,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Bear",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.RqGqgd9I8KZFBGTI",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.afHLt3nUEUGMuqCo"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        16,
+        20
+      ],
+      "drawn": false,
+      "_id": "pNMkw5lZ54zwCoG3",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339543,
+        "modifiedTime": 1782468850582,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Bird",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.bzAbPuriQW96fYmM",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.pNMkw5lZ54zwCoG3"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        21,
+        25
+      ],
+      "drawn": false,
+      "_id": "6mGa2WuI82L9ls45",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339543,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Bovine",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.4D974TEnuesJ67Gv",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.6mGa2WuI82L9ls45"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        26,
+        30
+      ],
+      "drawn": false,
+      "_id": "Uo2YBY4fOqSP3Bu0",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339544,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Canine",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.cedZHuOyStNJ2Ov1",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.Uo2YBY4fOqSP3Bu0"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        31,
+        35
+      ],
+      "drawn": false,
+      "_id": "YWqzt7PEgn4dtHhP",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339544,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Caprine",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.TRKUGJDYAN136rvG",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.YWqzt7PEgn4dtHhP"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        36,
+        40
+      ],
+      "drawn": false,
+      "_id": "HENzY52Qgg6k1bnf",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339544,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Cervid",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.O6hyq0G2RBtjZbm7",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.HENzY52Qgg6k1bnf"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        41,
+        45
+      ],
+      "drawn": false,
+      "_id": "NiuU6yECIetthr8e",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339544,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Feline",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.GXTvTdTvetxMrw1A",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.NiuU6yECIetthr8e"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        46,
+        50
+      ],
+      "drawn": false,
+      "_id": "ueS77EkWiOAEd1XI",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339545,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Fish",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.pqvVu1vDlBd1poEg",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.ueS77EkWiOAEd1XI"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        51,
+        55
+      ],
+      "drawn": false,
+      "_id": "NumZ96CGQvaYb86d",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339545,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Horse or Camel",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.mj6iSXv6naJFkDV9",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.NumZ96CGQvaYb86d"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        56,
+        60
+      ],
+      "drawn": false,
+      "_id": "Dg45gVwIFyeyP3eX",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339545,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Insect",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.lAq1h0EGo2q8xtXK",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.Dg45gVwIFyeyP3eX"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        61,
+        65
+      ],
+      "drawn": false,
+      "_id": "lpn7f4ch3bbkD1XH",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339546,
+        "modifiedTime": 1782468850583,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Lizard",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.YYycyTUuH48EYgJ0",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.lpn7f4ch3bbkD1XH"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        66,
+        70
+      ],
+      "drawn": false,
+      "_id": "DXVpfhtKrlnUchHs",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339546,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Mollusks",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.GvKpD5WGIOcHJDmi",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.DXVpfhtKrlnUchHs"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        71,
+        75
+      ],
+      "drawn": false,
+      "_id": "p3DJLZocCSKIvNwt",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339546,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Mustelidae",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.6rjv5FHPZCFlAk8J",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.p3DJLZocCSKIvNwt"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        76,
+        80
+      ],
+      "drawn": false,
+      "_id": "JlPAxyHA1XhgWvQA",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339546,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Pachyderm",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.uHanqPqkG8vuBJw8",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.JlPAxyHA1XhgWvQA"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        81,
+        85
+      ],
+      "drawn": false,
+      "_id": "AvCqDjM5nz5CcpYG",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339547,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Primate",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.qKzxELTIv65sLNDo",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.AvCqDjM5nz5CcpYG"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        86,
+        90
+      ],
+      "drawn": false,
+      "_id": "ld6YxxBaPR2fiZ0W",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339547,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Rodent",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.S5s6vu6RbxnFnbFM",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.ld6YxxBaPR2fiZ0W"
+    },
+    {
+      "type": "document",
+      "weight": 3,
+      "range": [
+        91,
+        93
+      ],
+      "drawn": false,
+      "_id": "2QnoUeJFqE6YRSzr",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339547,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Snake",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.oOkoGg5rduheY4No",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.2QnoUeJFqE6YRSzr"
+    },
+    {
+      "type": "document",
+      "weight": 2,
+      "range": [
+        94,
+        95
+      ],
+      "drawn": false,
+      "_id": "3t4tirQQaHYmdEd8",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339547,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Spider",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.P7qt4ysNotqIe4yZ",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.3t4tirQQaHYmdEd8"
+    },
+    {
+      "type": "document",
+      "weight": 5,
+      "range": [
+        96,
+        100
+      ],
+      "drawn": false,
+      "_id": "c0sWvrUesY3QGjHj",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339548,
+        "modifiedTime": 1782468850584,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bestial Body - Swine",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.KjnIdOxK9Zhk8odx",
+      "description": "",
+      "_key": "!tables.results!IrIkT60dgQeiUkHH.c0sWvrUesY3QGjHj"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "bestial-body",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1782468850582,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "IrIkT60dgQeiUkHH",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!IrIkT60dgQeiUkHH"
+}

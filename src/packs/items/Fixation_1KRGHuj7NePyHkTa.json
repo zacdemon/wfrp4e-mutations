@@ -1,0 +1,56 @@
+{
+  "name": "Fixation",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You are obsessing over some puzzle or enigma, like an unsolved crime, a historical event, a hidden treasure, a lost lover or your own doom. Decide something together with the GM. In the spirals of your mind everything revolves around the object of your xation. You will strive to nd ways to further your :uest at inopportune times unless you manage to suppress (see Self-Control) the mutation. You gain the @UUID[Compendium.wfrp4e-core.items.Item.580fwhKfOZJFxMID]{Savant} Talent for a Lore related to your Target.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.hXDdETdXuPXG6QtP",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1742291789684,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "1KRGHuj7NePyHkTa",
+  "sort": 400000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!1KRGHuj7NePyHkTa"
+}

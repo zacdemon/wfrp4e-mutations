@@ -1,0 +1,952 @@
+{
+  "name": "Minor Mental Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "ZzQfFB8JyI6XQJzm",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339822,
+        "modifiedTime": 1782468850743,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Babble-tongue",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.665DjaOsBAYAcxUa",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.ZzQfFB8JyI6XQJzm"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        2,
+        6
+      ],
+      "drawn": false,
+      "_id": "21eprE3U77KQSoEm",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339822,
+        "modifiedTime": 1782468850743,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bizarre Denial",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.g3z6pu24LDYEYQmu",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.21eprE3U77KQSoEm"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        7,
+        9
+      ],
+      "drawn": false,
+      "_id": "5G1c5gc96QEQ97Ws",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339822,
+        "modifiedTime": 1782468850743,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Blissful Ignorance",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.PrFqUwCYjlxTNTg1",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.5G1c5gc96QEQ97Ws"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        10,
+        12
+      ],
+      "drawn": false,
+      "_id": "uh8UFiABtCT9L6W9",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339823,
+        "modifiedTime": 1782468850743,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Chosen One",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.HRN7U7zQrF9bfUta",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.uh8UFiABtCT9L6W9"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        13,
+        15
+      ],
+      "drawn": false,
+      "_id": "bNJAt9eEbeAhU9Fx",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339823,
+        "modifiedTime": 1782468850743,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Consuming Rage",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.2aBUqC7q8p1aOU5W",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.bNJAt9eEbeAhU9Fx"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        16,
+        18
+      ],
+      "drawn": false,
+      "_id": "rbNEJIBlN8c1aHdK",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339823,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Dark Fate",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.fLPecgoBZmOYrEkU",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.rbNEJIBlN8c1aHdK"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "_id": "lrPsQ8m3d9h1XlsJ",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339823,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Doom Prophet",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.6Bo0c8yvFPZVxKYn",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.lrPsQ8m3d9h1XlsJ"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        22,
+        24
+      ],
+      "drawn": false,
+      "_id": "Rc1CwqZFULAG8BsQ",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339823,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "False Wizard",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.1oaEEK6BPblyiT7s",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.Rc1CwqZFULAG8BsQ"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        25,
+        27
+      ],
+      "drawn": false,
+      "_id": "J9u9xoeWaHLryPEy",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339824,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Fate of Glory",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.ezJIKUetLv2SgeTa",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.J9u9xoeWaHLryPEy"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        28,
+        32
+      ],
+      "drawn": false,
+      "_id": "sYtlpM9kfVg6Yzqy",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339824,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Fixation",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.1KRGHuj7NePyHkTa",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.sYtlpM9kfVg6Yzqy"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        33,
+        37
+      ],
+      "drawn": false,
+      "_id": "uhaWBPl59uQ9r8kh",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339824,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Fright",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.7ttpIvyRJsNrUQSS",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.uhaWBPl59uQ9r8kh"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        38,
+        38
+      ],
+      "drawn": false,
+      "_id": "0103LUpGzkc1zzFb",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339824,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Fugue",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.LQb81e4O3Yf319XO",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.0103LUpGzkc1zzFb"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        39,
+        40
+      ],
+      "drawn": false,
+      "_id": "xz6Hz04Pgugcw2Oj",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339824,
+        "modifiedTime": 1782468850744,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Horrid Scream",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.0pA6FMFJLOzI39FH",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.xz6Hz04Pgugcw2Oj"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        41,
+        44
+      ],
+      "drawn": false,
+      "_id": "Aw12oMtcoH6R01mu",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339825,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hubris",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.ow2fTbW8Qd5ajNRr",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.Aw12oMtcoH6R01mu"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        45,
+        47
+      ],
+      "drawn": false,
+      "_id": "jnIBCebTE20m4qhR",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339825,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Imminent Precognition",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.4aRnoVzTvWbmFKnK",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.jnIBCebTE20m4qhR"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        48,
+        51
+      ],
+      "drawn": false,
+      "_id": "jn5CTiFVomei59Xw",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339825,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Lunacy",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.hPNMhzLh4SNUOrJm",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.jn5CTiFVomei59Xw"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        52,
+        54
+      ],
+      "drawn": false,
+      "_id": "OrqsrY0ffze0GXs3",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339825,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Magic Numbers",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.pdjMQLqSNlp1KTe1",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.OrqsrY0ffze0GXs3"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        55,
+        57
+      ],
+      "drawn": false,
+      "_id": "CgCUYDxTU3dZTHBx",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339826,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Metamorphosis",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.ocvghSZxm5XBffTw",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.CgCUYDxTU3dZTHBx"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        58,
+        58
+      ],
+      "drawn": false,
+      "_id": "iWfWThU9nNfdC328",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339826,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Nihilistic Numbness",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.FKtq14oJQpQ41nES",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.iWfWThU9nNfdC328"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        59,
+        61
+      ],
+      "drawn": false,
+      "_id": "7S4wm88gJZPLiMrl",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339826,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Painseeker",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.vbX9BaaeBNjZTvPb",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.7S4wm88gJZPLiMrl"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        62,
+        64
+      ],
+      "drawn": false,
+      "_id": "GyX7ev8oxwp0LNgT",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339826,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Possessed",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.yHwwtGhVOCkJQGNa",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.GyX7ev8oxwp0LNgT"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        65,
+        67
+      ],
+      "drawn": false,
+      "_id": "PgNo3vxFLsTpNTLU",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339826,
+        "modifiedTime": 1782468850745,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Prince of Nothing",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.6sAnrBLI2CyS5P7M",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.PgNo3vxFLsTpNTLU"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        68,
+        70
+      ],
+      "drawn": false,
+      "_id": "2ttbJuRtVoXnvBgL",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339827,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Rebellious Mind",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.WJTwWHPYX0SyUaz4",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.2ttbJuRtVoXnvBgL"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        71,
+        73
+      ],
+      "drawn": false,
+      "_id": "wcGjqVoWWdIToNlP",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339827,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Saint of the Damned",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.4IMKewJoixuLtVFD",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.wcGjqVoWWdIToNlP"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        74,
+        76
+      ],
+      "drawn": false,
+      "_id": "8c7LFlBACJkMukvo",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339827,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Savage Mind",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.3Ur2gvrp0w4wDyk8",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.8c7LFlBACJkMukvo"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        77,
+        78
+      ],
+      "drawn": false,
+      "_id": "Klsv0iLvnHaYKlkw",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339827,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Scrying Touch",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.W8PLs5Xh2BbsqTXY",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.Klsv0iLvnHaYKlkw"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        79,
+        81
+      ],
+      "drawn": false,
+      "_id": "UMSRPnlbhFCR1W4C",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339827,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Soft-hearted",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.dh1S3eHhUFMqQa1Z",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.UMSRPnlbhFCR1W4C"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        82,
+        86
+      ],
+      "drawn": false,
+      "_id": "4uXa8FTqZlJjhp7h",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339828,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Suspicious Mind",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.sgjiRs2oY05Qeg7j",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.4uXa8FTqZlJjhp7h"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        87,
+        87
+      ],
+      "drawn": false,
+      "_id": "01xwiAeV1p1Z7g6t",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339828,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "The Big Joke",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.5yZK4fKMvRMhbXad",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.01xwiAeV1p1Z7g6t"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        88,
+        89
+      ],
+      "drawn": false,
+      "_id": "QrqMydne6OABlJ14",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339828,
+        "modifiedTime": 1782468850746,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Time Warp",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.BUHKnPkW8V9DXlHa",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.QrqMydne6OABlJ14"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        90,
+        92
+      ],
+      "drawn": false,
+      "_id": "Lnr3pskm5odG9rwz",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339828,
+        "modifiedTime": 1782468850747,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Touched",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.5yjm2u4hdsmgcClo",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.Lnr3pskm5odG9rwz"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        93,
+        97
+      ],
+      "drawn": false,
+      "_id": "AxD9KuZVpNetk5g7",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339828,
+        "modifiedTime": 1782468850747,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unending Malice",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.DPCJjHOXER1wpqno",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.AxD9KuZVpNetk5g7"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        98,
+        99
+      ],
+      "drawn": false,
+      "_id": "Y6YLzZDRnNXu67Zh",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339829,
+        "modifiedTime": 1782468850747,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unseen Presence",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.jhn87sZFPBiX37Zr",
+      "description": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.Y6YLzZDRnNXu67Zh"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "_id": "fb5oVLoD5MWmLfUf",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Roll on the <a class=\"table-click critical-roll\" data-table=\"mutation\" data-column=\"major-mental\"><i class=\"fas fa-list\"></i>Major Mental Corruption</a> Table",
+      "name": "",
+      "_key": "!tables.results!Ydsu3D4d4XV16RsP.fb5oVLoD5MWmLfUf"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "43GAW4JozCyd4oCU",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "minor-mental"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468850743,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "Ydsu3D4d4XV16RsP",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!Ydsu3D4d4XV16RsP"
+}

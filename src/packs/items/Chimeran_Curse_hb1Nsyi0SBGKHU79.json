@@ -1,0 +1,56 @@
+{
+  "name": "Chimeran Curse",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Corruption has made your body lose its ability to retain its form and its constantly changing from one monstrosity to the next. You do retain your size and humanoid shape however. For every scene you will have taken a new shape. The GM decides which form you take or if you should roll on the table below to determine it. You gain the physical (but not mental) Characteristics and Traits of your current shape, but retain your Skills and Talents. Changing your form through the @UUID[Compendium.wfrp4e-mutations.items.Item.6aaQyP8Smcn99f5k]{Shapeshifter} mutation or similar will pause your ongoing changes for the duration. You cannot gain the Skinwalker mutation, and if you have it you lose it. You can only gain this mutation once.</p><p></p><table><tbody><tr><td><p>1d100</p></td><td><p>Result</p></td></tr><tr><td><p>01-25</p></td><td><p><strong>Bestial:</strong> Roll on the @Table[bestial-body] Table.</p></td></tr><tr><td><p>26-50</p></td><td><p><strong>Civilised Species:</strong> Roll on the @Table[species]{Species} Table.</p></td></tr><tr><td><p>51-75</p></td><td><p><strong>Enemy of Men Species:</strong> Roll on the @Table[crossbreed] Table.</p></td></tr><tr><td><p>76-100</p></td><td><p><strong>Unnatural:</strong> Roll on the @Table[unnatural-body] Table.</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.XQRUgAdmlVbS9sjD",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1744673820825,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "hb1Nsyi0SBGKHU79",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!hb1Nsyi0SBGKHU79"
+}

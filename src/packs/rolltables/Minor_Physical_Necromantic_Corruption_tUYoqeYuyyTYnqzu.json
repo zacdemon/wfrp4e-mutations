@@ -1,0 +1,305 @@
+{
+  "name": "Minor Physical Necromantic Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        10
+      ],
+      "drawn": false,
+      "_id": "5JLuLsYrYOGBwKPO",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340534,
+        "modifiedTime": 1782468851056,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Acidic Saliva",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.U3JKj9OKPq37QY5W",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.5JLuLsYrYOGBwKPO"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        11,
+        20
+      ],
+      "drawn": false,
+      "_id": "jZyiOFlRs00ti39k",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340534,
+        "modifiedTime": 1782468851056,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bloodsucker",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.ZoRt8G8M0xyfdQpY",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.jZyiOFlRs00ti39k"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        21,
+        30
+      ],
+      "drawn": false,
+      "_id": "KIbSYDDxIBnDLQqG",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340534,
+        "modifiedTime": 1782468851056,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Corrosive Vomit",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.mudEZpx7m2qinVDX",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.KIbSYDDxIBnDLQqG"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        31,
+        40
+      ],
+      "drawn": false,
+      "_id": "MiIFz9RO6T2pwyhw",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340535,
+        "modifiedTime": 1782468851056,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Corrupted Blood",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.LxbHm5vyy4pmeYBm",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.MiIFz9RO6T2pwyhw"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        41,
+        50
+      ],
+      "drawn": false,
+      "_id": "w8cieYPmigReoWLC",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340535,
+        "modifiedTime": 1782468851056,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Fangs",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.5V5B3xILSelJ8rXk",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.w8cieYPmigReoWLC"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        51,
+        60
+      ],
+      "drawn": false,
+      "_id": "lPoM5c9rrx8rLPEL",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340535,
+        "modifiedTime": 1782468851057,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Long Spines",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.dgT7aiOUjtQehLbh",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.lPoM5c9rrx8rLPEL"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        61,
+        70
+      ],
+      "drawn": false,
+      "_id": "2hrULi58u7Pl93nL",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340535,
+        "modifiedTime": 1782468851057,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Questing Eye",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.1JIoDJOyY3JJTn04",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.2hrULi58u7Pl93nL"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        71,
+        80
+      ],
+      "drawn": false,
+      "_id": "aD1XA9xRKPWLeDL2",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340535,
+        "modifiedTime": 1782468851057,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Sensory Loss",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.fSWIrAVNeEypHeXs",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.aD1XA9xRKPWLeDL2"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        81,
+        90
+      ],
+      "drawn": false,
+      "_id": "OTYtDlkkRcMCad7c",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340536,
+        "modifiedTime": 1782468851057,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Short Lived",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.U1tmQ9d3ggeWoSbx",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.OTYtDlkkRcMCad7c"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        91,
+        100
+      ],
+      "drawn": false,
+      "_id": "8Nk7wJSooCU5Z9Jr",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951340536,
+        "modifiedTime": 1782468851057,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Spelleater Gland",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.iixHjqVklJ2y69uq",
+      "description": "",
+      "_key": "!tables.results!tUYoqeYuyyTYnqzu.8Nk7wJSooCU5Z9Jr"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "X6xZ0hUPwh934fho",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "minor-physical-necro"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468851056,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "tUYoqeYuyyTYnqzu",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!tUYoqeYuyyTYnqzu"
+}

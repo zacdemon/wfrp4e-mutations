@@ -1,0 +1,224 @@
+{
+  "name": "Unnatural Body",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 10,
+      "range": [
+        1,
+        10
+      ],
+      "drawn": false,
+      "_id": "JlPAxyHA1XhgWvQA",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339647,
+        "modifiedTime": 1782468850652,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body - Crystal",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.vLSTlah7YVpOsI7d",
+      "description": "",
+      "_key": "!tables.results!QnWN3lXqQMIEegiD.JlPAxyHA1XhgWvQA"
+    },
+    {
+      "type": "document",
+      "weight": 15,
+      "range": [
+        11,
+        25
+      ],
+      "drawn": false,
+      "_id": "AvCqDjM5nz5CcpYG",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339647,
+        "modifiedTime": 1782468850652,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body - Daemonic",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.tK1GQ1SfowDID2YC",
+      "description": "",
+      "_key": "!tables.results!QnWN3lXqQMIEegiD.AvCqDjM5nz5CcpYG"
+    },
+    {
+      "type": "document",
+      "weight": 15,
+      "range": [
+        26,
+        40
+      ],
+      "drawn": false,
+      "_id": "ld6YxxBaPR2fiZ0W",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339648,
+        "modifiedTime": 1782468850652,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body - Fenbeast",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.0JgudiKbmKATiYC9",
+      "description": "",
+      "_key": "!tables.results!QnWN3lXqQMIEegiD.ld6YxxBaPR2fiZ0W"
+    },
+    {
+      "type": "document",
+      "weight": 15,
+      "range": [
+        41,
+        55
+      ],
+      "drawn": false,
+      "_id": "2QnoUeJFqE6YRSzr",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339648,
+        "modifiedTime": 1782468850652,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body - Mechanoid",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.90vRde26UAXsY6m1",
+      "description": "",
+      "_key": "!tables.results!QnWN3lXqQMIEegiD.2QnoUeJFqE6YRSzr"
+    },
+    {
+      "type": "document",
+      "weight": 15,
+      "range": [
+        56,
+        70
+      ],
+      "drawn": false,
+      "_id": "3t4tirQQaHYmdEd8",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339648,
+        "modifiedTime": 1782468850652,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body - Metal",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.M0BPWc4Lf3eIQGSc",
+      "description": "",
+      "_key": "!tables.results!QnWN3lXqQMIEegiD.3t4tirQQaHYmdEd8"
+    },
+    {
+      "type": "document",
+      "weight": 15,
+      "range": [
+        71,
+        85
+      ],
+      "drawn": false,
+      "_id": "c0sWvrUesY3QGjHj",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339648,
+        "modifiedTime": 1782468850653,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body - Rock",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.zangfLtsu8HK5gyT",
+      "description": "",
+      "_key": "!tables.results!QnWN3lXqQMIEegiD.c0sWvrUesY3QGjHj"
+    },
+    {
+      "type": "document",
+      "weight": 15,
+      "range": [
+        86,
+        100
+      ],
+      "drawn": false,
+      "_id": "EAV2VxRmQ3eEnwjY",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339649,
+        "modifiedTime": 1782468850653,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body - Undead",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.XQfqLUAUtLygose9",
+      "description": "",
+      "_key": "!tables.results!QnWN3lXqQMIEegiD.EAV2VxRmQ3eEnwjY"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "unnatural-body",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1782468850652,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "QnWN3lXqQMIEegiD",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!QnWN3lXqQMIEegiD"
+}

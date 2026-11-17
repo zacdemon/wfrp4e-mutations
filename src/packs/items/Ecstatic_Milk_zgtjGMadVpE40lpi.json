@@ -1,0 +1,56 @@
+{
+  "name": "Ecstatic Milk",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>If you're male you grow a single breast, if you're female you grow 1d6. They produce a sweet, intoxicating milk that induces a sense of ecstasy in those who drink it. Part of the effect is making the induced crave vivid stimulus for their senses, preferably in exaggerated ways; through dance, sex, violence and so on. They gain the @UUID[Compendium.wfrp4e-core.items.Item.9h82z72XGo9tfgQS]{Acute Sense} (All) Talent, +1 Movement, +10 Agility and +10 Initiative for the duration of 4 hours per dose (only the duration stacks). Afterwards they gain 1 @Condition[Fatigued] Condition per consumed dose. The milk is highly addictive and anyone consuming it must pass an <strong>Easy (+20) Endurance</strong> Test or gain the @UUID[Compendium.wfrp4e-mutations.items.Item.fPZ6WhDgSEL2CRKA]{Addiction} (Ecstatic Milk) mutation. You are yourself immune to the effects of the milk. You can produce TB doses per day.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.5JUCndJ2rumutvsx",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1744674529290,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "zgtjGMadVpE40lpi",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!zgtjGMadVpE40lpi"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Warp Spasm",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>You can work yourself into an inhuman battle rage that warps your body beyond its mortal frame. Your muscles swell in riveting spasms, like surging waves ripping through your body. Your knee joints bend over backwards as you hurl yourself at your opponent, your shoulders dislocate with the force of your frenzy, your eyes bulge in their sockets and your cheeks peel away from your mouth revealing the teeth down to the bone. Your flesh is like clay being shaped by your mad fury. You gain the @UUID[Compendium.wfrp4e-core.items.Item.hXcfygzujgyMN1uI]{Frenzy}, @UUID[Compendium.wfrp4e-core.items.Item.oRx92ByVNEBN6YkK]{Berserk Charge} and @UUID[Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp]{Contortionist} Talents, the @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless} Creature Trait for the duration of the battle and cause @Fear[1]. Effects and penalties from Critical Wounds that have been ignored by the Painless Trait take effect when the Warp Spasm ends and you gain 1 @Condition[Fatigued] Condition.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.MQ7IVmi4bhA9LrW7",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742194994546,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "555PcOHz2eKrKfV8",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!555PcOHz2eKrKfV8"
+}

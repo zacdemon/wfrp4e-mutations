@@ -1,0 +1,191 @@
+{
+  "name": "Immunity",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 17,
+      "range": [
+        1,
+        17
+      ],
+      "drawn": false,
+      "_id": "8Ojw6Ex96WJ6Bwl3",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Disease: You never contract diseases or infections. You take on a dull yellowish tinge; in the whites of your eyes, fingernails, teeth and skin.",
+      "name": "",
+      "_key": "!tables.results!TdMmJol5tVxTwSav.8Ojw6Ex96WJ6Bwl3"
+    },
+    {
+      "type": "text",
+      "weight": 17,
+      "range": [
+        18,
+        34
+      ],
+      "drawn": false,
+      "_id": "E3YLfRrpKQv6epfz",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Cold: You take no damage from cold or low temperatures.",
+      "name": "",
+      "_key": "!tables.results!TdMmJol5tVxTwSav.E3YLfRrpKQv6epfz"
+    },
+    {
+      "type": "text",
+      "weight": 17,
+      "range": [
+        35,
+        51
+      ],
+      "drawn": false,
+      "_id": "KAt0j905cARmtlLk",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Fire: You take no damage from fire or high temperatures.",
+      "name": "",
+      "_key": "!tables.results!TdMmJol5tVxTwSav.KAt0j905cARmtlLk"
+    },
+    {
+      "type": "text",
+      "weight": 17,
+      "range": [
+        52,
+        68
+      ],
+      "drawn": false,
+      "_id": "YyMaNXgSH2KFWcrN",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Lightning: You take no damage from lightning or electricity.",
+      "name": "",
+      "_key": "!tables.results!TdMmJol5tVxTwSav.YyMaNXgSH2KFWcrN"
+    },
+    {
+      "type": "text",
+      "weight": 16,
+      "range": [
+        69,
+        84
+      ],
+      "drawn": false,
+      "_id": "VTUXjPN1kUZ8S5l6",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Magic: Automatically pass any Tests from spells against you. Magic and enchanted weapons (excluding Daemonic weapons) are treated as non-magical when used against you. You can only use Chaos and Daemonic magic (not Arcane Magic , Petty Magic , Bless , Invoke or Witch! ).",
+      "name": "",
+      "_key": "!tables.results!TdMmJol5tVxTwSav.VTUXjPN1kUZ8S5l6"
+    },
+    {
+      "type": "text",
+      "weight": 16,
+      "range": [
+        85,
+        100
+      ],
+      "drawn": false,
+      "_id": "SpeLaDULq1uYvS1D",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Poison: Poison, venom and drugs have no effect on you. You take on a lush greenish hue; in the whites of your eyes, 􀊹ngernails, teeth and skin.",
+      "name": "",
+      "_key": "!tables.results!TdMmJol5tVxTwSav.SpeLaDULq1uYvS1D"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "immunity",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1744148799544,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "TdMmJol5tVxTwSav",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!TdMmJol5tVxTwSav"
+}

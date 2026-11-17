@@ -1,0 +1,56 @@
+{
+  "name": "Temporal Instability",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>e corruption of your mind has broken the leash of time on you. You icker in and out o the time continuum, making you appear slightly slower or faster. It looks truly disturbing. Your temporal instability also gives you a special ability. You can, with a successful <strong>Challenging (+0) Willpower</strong> Test, plunge forward into the river of time. You gain an additional Movement and Action in your Turn. Roll 1d10; on a 10 you age a full year due to your temporal tinkering. You suer a @Table[majormis]{Major Miscast} if you Fumble your Willpower Test.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.jK9IrQ0HgBHq7e0I",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1742291789684,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "oGdNJEUL58WVLVYK",
+  "sort": 8000000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!oGdNJEUL58WVLVYK"
+}

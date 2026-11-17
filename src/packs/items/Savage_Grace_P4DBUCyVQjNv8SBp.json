@@ -1,0 +1,56 @@
+{
+  "name": "Savage Grace",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p>\n<p>You move like a combination of a predator and a dancer, your body a serpentine whirl o motion on the battle eld as you move among your opponents. You gain +5 WS, +10 Agility and the @UUID[Compendium.wfrp4e-core.items.Item.NDetl9BhAQBVnHKf]{Combat Master} and @UUID[Compendium.wfrp4e-core.items.Item.SgjJMBgc85aswvhm]{Relentless} Talents. Your unnatural grace makes it hard for you to blend in with a crowd. You get a -10 modifier                 when trying to use Stealth to blend in among people.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.hHS6akTs8cGYgxvA",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742119730045,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "P4DBUCyVQjNv8SBp",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!P4DBUCyVQjNv8SBp"
+}

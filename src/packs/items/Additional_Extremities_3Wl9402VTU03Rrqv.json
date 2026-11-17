@@ -1,0 +1,56 @@
+{
+  "name": "Additional Extremities",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>You grow additional limbs. Roll twice on the table below to determine what type of limb and how many. Each extra arm allows you to carry something in its hand (a torch, shield, weapon etc) and you gain +1 level in the @UUID[Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw]{Furious Assault} Talent per additional arm. Each extra leg gives you +1 level in the @UUID[Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA]{Sturdy} Talent. You also get +1 Move for every additional pair of legs. Tentacles give you the # @UUID[Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh]{Tentacles} (SB+3) Creature Trait, where # equals the number of tentacles you have.</p><p></p><table><tbody><tr><td colspan=\"4\"><p style=\"text-align: center\">Additional Limbs Table</p></td></tr><tr><td><p>1d10</p></td><td><p>Limbs</p></td><td><p>1d10</p></td><td><p>Amount</p></td></tr><tr><td><p>01-04</p></td><td><p>Arms</p></td><td><p>01-03</p></td><td><p>One</p></td></tr><tr><td><p>05-07</p></td><td><p>Legs</p></td><td><p>04-06</p></td><td><p>Two</p></td></tr><tr><td><p>08-10</p></td><td><p>Tentacles</p></td><td><p>07-08</p></td><td><p>Three</p></td></tr><tr><td><p></p></td><td><p></p></td><td><p>09-10</p></td><td><p>Four</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.deSpRcmPchJGzTGI",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743353423728,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "3Wl9402VTU03Rrqv",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!3Wl9402VTU03Rrqv"
+}

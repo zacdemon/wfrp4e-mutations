@@ -1,0 +1,56 @@
+{
+  "name": "Horrid Scream",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You can unleash a wave of psychic anxiety and dread by screaming from the top of your lungs. You may as an Action affect anyone within your Willpower yards. They receive 1 @Condition[Deafened] Condition and are subject to @Fear[1]. Creatures with the @UUID[Compendium.wfrp4e-core.items.Item.IPKRMGry6WotuS1G]{Skittish} Creature Trait receive 3 Broken @Condition[Conditions]. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.u53xDUyiEkiHyRJl",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743369914499,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "0pA6FMFJLOzI39FH",
+  "sort": 100000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!0pA6FMFJLOzI39FH"
+}

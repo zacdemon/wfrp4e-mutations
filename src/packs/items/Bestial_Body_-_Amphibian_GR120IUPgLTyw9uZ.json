@@ -1,0 +1,62 @@
+{
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-core.items.Item.sJ3yX1kvzu2hgNq5]{Amphibious}, @UUID[Compendium.wfrp4e-mutations.items.Item.b1E7a0fIYEGE3LwX]{Bachtrachian Suckers}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Rubbery), -10 Dexterity</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.FE7VTGvuPf4jyoh0]{Cold-Blooded}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Rubbery)</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-core.items.Item.sJ3yX1kvzu2hgNq5]{Amphibious}, @UUID[Compendium.wfrp4e-mutations.items.Item.DVpubh6fXaalMe9T]{Hopper}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Rubbery)</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Rubbery), Breathe underwater (technically hold breath for 3-8 hours)</li></ul>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.op4GKikIQee7JMXw",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742316936241,
+    "modifiedTime": 1744674019713,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": {
+      "worldId": "test",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "wfrp4e",
+      "systemVersion": "8.4.1"
+    }
+  },
+  "folder": "b2sMLyOoOujhePC4",
+  "name": "Bestial Body - Amphibian",
+  "_id": "GR120IUPgLTyw9uZ",
+  "sort": 500000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!GR120IUPgLTyw9uZ"
+}

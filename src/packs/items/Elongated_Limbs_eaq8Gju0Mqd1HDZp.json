@@ -1,0 +1,56 @@
+{
+  "name": "Elongated Limbs",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your arms, legs or neck (even though its not technically a limb, but Chaos doesnt care) grow signi cantly longer. Roll 1d10 to determine where you are affected: 1-4 Arms; 5-9 Legs; 10 Neck. Roll another 1d10: on a 9-10 your elongated limb is also elastic (see below). Long arms grow +50% longer and increase the Weapon Reach for any weapon you wield with one level, for instance making a Hand Weapons reach Long instead of Average. Opponents gain +20 when they in-fight against you. Long legs grow out an extra +50% and give you +1 Movement. Your height increases by the additional length of your legs. A long neck is 4-6 feet in length and either serpentine or giraffe-like. Your height increases by the additional length of your neck. Critical Head injuries have a +20 modifier. You cannot gain an elongated neck if you have the @UUID[Compendium.wfrp4e-mutations.items.Item.RpfB7ycGN9mnW8lX]{Headless} Mutation. If your limbs turn elastic you can retract them to normal length to hide your condition and also you can extend them an extra yard or two to make your reach greater (approximately 3 yards); for attacking opponents, grabbing things, looking above walls etc.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.afDaiGOBJlsMlLHt",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1744674529290,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "eaq8Gju0Mqd1HDZp",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!eaq8Gju0Mqd1HDZp"
+}

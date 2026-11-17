@@ -1,0 +1,56 @@
+{
+  "name": "Malign Sorcerer",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>Your mind becomes attuned to dark powers and you gain an instinctual understanding of a Lore. Dhar or Chaos energy flicker around you in an alarming fashion. Consult the table below to see which Lore you gain. If you have a patron of Chaos then you automatically gain their Lore. You cannot gain this mutation if Khorne is your patron. You do not gain Corruption if you level up the @UUID[Compendium.wfrp4e-core.items.Item.hiU7vhBOVpVI8c7C]{Chaos Magic} Talent through this mutation. Gaining this mutation several times will give you additional levels in the same Lore.</p><table><tbody><tr><td><p>1d100</p></td><td><p>Result</p></td></tr><tr><td><p>1-16</p></td><td><p>Arcane Magic (Daemonology)</p></td></tr><tr><td><p>17-32</p></td><td><p>Arcane Magic (Necromancy)</p></td></tr><tr><td><p>33-48</p></td><td><p>Arcane Magic (Witchcraft)</p></td></tr><tr><td><p>49-64</p></td><td><p>Chaos Magic (Nurgle)</p></td></tr><tr><td><p>65-80</p></td><td><p>Chaos Magic (Slaanesh)</p></td></tr><tr><td><p>81-100</p></td><td><p>Chaos Magic (Tzeentch)</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.9DmgwZkfkVn5VSGg",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743361968375,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "X4ruGmYz3pB8Rl3b",
+  "sort": 4900000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!X4ruGmYz3pB8Rl3b"
+}

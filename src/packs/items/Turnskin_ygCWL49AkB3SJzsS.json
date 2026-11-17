@@ -1,0 +1,56 @@
+{
+  "name": "Turnskin",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your true nature is revealed as you transform into a Beastman. Roll on the table below to determine which kind. Your Species is changed to Beastman and you gain the base Characteristics and Traits of your new Species. You retain your Skills, Talents and Mutations however. See WFRP page 331 to read more about Beastmen. You can only gain this mutation once.</p><p></p><table><tbody><tr><td><p>1d100</p></td><td><p>Result</p></td></tr><tr><td><p>01-25</p></td><td><p>Bray-Shaman</p></td></tr><tr><td><p>26-50</p></td><td><p>Gor</p></td></tr><tr><td><p>51-75</p></td><td><p>Ungor</p></td></tr><tr><td><p>76-100</p></td><td><p>Minotaur</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.1uiUyIDnqDpfPdld",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743359424262,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "ygCWL49AkB3SJzsS",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!ygCWL49AkB3SJzsS"
+}

@@ -1,0 +1,62 @@
+{
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Leathery Hide), @UUID[Compendium.wfrp4e-mutations.items.Item.HCvKEsrNVqyJIIxP]{Razor-sharp Claws}</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Leathery Hide), @UUID[Compendium.wfrp4e-mutations.items.Item.DuwghgXUzmFLNGVA]{Wings} (Medium)</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Leathery Hide), -2 Movement</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-core.items.Item.JQa5DLnTs2SEzRrc]{Dark Vision} (Sonar), @UUID[Compendium.wfrp4e-mutations.items.Item.5V5B3xILSelJ8rXk]{Fangs}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Leathery Hide)</li></ul>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.op4GKikIQee7JMXw",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742316936241,
+    "modifiedTime": 1744674135982,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": {
+      "worldId": "test",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "wfrp4e",
+      "systemVersion": "8.4.1"
+    }
+  },
+  "folder": "b2sMLyOoOujhePC4",
+  "name": "Bestial Body - Bat",
+  "_id": "N3SHuR57DOffKZxD",
+  "sort": 700000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!N3SHuR57DOffKZxD"
+}

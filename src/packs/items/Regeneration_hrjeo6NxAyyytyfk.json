@@ -1,0 +1,56 @@
+{
+  "name": "Regeneration",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your body heals itself at an incredible rate. You gain the @UUID[Compendium.wfrp4e-core.items.Item.SfUUdOGjdYpr3KSR]{Regenerate} Creature Trait. If you have a Vulnerability you cant regenerate Wounds in icted by your weakness. Roll 1d10, on a 10 you also gain the @UUID[Compendium.wfrp4e-core.items.Item.UsJ2uIOOtHA7JqD5]{Die Hard} Creature Trait, making you near unkillable. In its haste to heal you, your body doesnt care if it does a messy job of it and you are soon riddled with terrible scars, unless you have the Inhuman Beauty mutation. For every Critical Wound you regenerate you reduce your Fellowship with -1 due to the scarring. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.PRfoJnHrXxe1WiwZ",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743375618091,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "hrjeo6NxAyyytyfk",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!hrjeo6NxAyyytyfk"
+}

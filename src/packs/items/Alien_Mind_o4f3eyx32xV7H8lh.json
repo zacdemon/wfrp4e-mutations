@@ -1,0 +1,56 @@
+{
+  "name": "Alien Mind",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p>\n<p>Your mind has become so aberrant and foreign that you just dont think like almost any other sentient entity. Attempts to determine your emotions, thoughts, motivations and Ambitions receive a -30 modifier and you get a +20 modifier to resist magic and abilities that try to in uence or control your emotions or thoughts. Anyone using telepathy to create a connection with your mind must pass a <b>Challenging (+0) Cool</b> Test or gain the @Condition[Stunned] Condition. You make people around you deeply uncomfortable and you gain -20 Fellowship. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.Ijo1JDSjIhT5wsqI",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1742291789684,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "o4f3eyx32xV7H8lh",
+  "sort": 7900000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!o4f3eyx32xV7H8lh"
+}

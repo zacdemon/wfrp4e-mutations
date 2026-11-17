@@ -1,0 +1,22 @@
+{
+  "name": "Necromantic",
+  "sorting": "a",
+  "folder": "kce9ORxHh1YEEv8K",
+  "type": "RollTable",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797102,
+    "modifiedTime": 1744148797102,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1"
+  },
+  "_id": "X6xZ0hUPwh934fho",
+  "sort": 0,
+  "_key": "!folders!X6xZ0hUPwh934fho"
+}

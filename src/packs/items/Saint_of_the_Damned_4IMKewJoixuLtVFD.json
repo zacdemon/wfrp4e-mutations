@@ -1,0 +1,56 @@
+{
+  "name": "Saint of the Damned",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You're damned and you know it, and you intend to fulfil your role in the grand divine play that is life and spread damnation as far and wide as you can. It's not a compulsion - it's a mission. If you have a Chaos Patron you peddle their specific type of corruption, otherwise any type deprivation of the body, mind and soul will do. You gain the @UUID[Compendium.wfrp4e-core.items.Item.6l3jvIAvrKxt0lA9]{Attractive} or @UUID[Compendium.wfrp4e-core.items.Item.LzgxyMknSHjSkkeQ]{Cat-tongued} Talent. Make an <strong>Average (+20) Cool</strong> Test when you wake up every morning. If you pass you feel that you can relax your role as a temptator this day, but if you fail you must move at least one person to do something chaotic or amoral sometime during the day. For an honourable and upstanding citizen it might be enough to @UUID[Compendium.wfrp4e-core.items.Item.HIofcsDLjXGKzSZf]{Embezzle}, lie or fornicate, whereas for a depraved, drug-addicted @UUID[Compendium.wfrp4e-core.items.Item.r180vP86SlwyJc8W]{Criminal} something graver might be required - all dependent on the restrictions of their morals. If you do not manage to lure someone to act outside their morals you'll automatically fail any Rest Test o that night as you toss and turn, and gain 1 @Condition[Fatigued] Condition the following day.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.NTAKDT5PDtMEfaxi",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743376267572,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "4IMKewJoixuLtVFD",
+  "sort": 800000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!4IMKewJoixuLtVFD"
+}

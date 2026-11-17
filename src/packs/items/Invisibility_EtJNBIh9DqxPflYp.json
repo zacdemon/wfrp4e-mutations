@@ -1,0 +1,56 @@
+{
+  "name": "Invisibility",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>The winds of Ulgu are drawn to your corrupt psyche and parts of your body fade in and out of translucency when you're not concentrating. It looks truly disturbing. You can as an Action, with a successful <strong>Challenging (+0) Willpower</strong> Test, render yourself invisible for Willpower + SL Rounds. You suffer a @Table[minormis]{Minor Miscast} if you Fumble your Willpower Test. You automatically remain concealed for everyone except those with @UUID[Compendium.wfrp4e-core.items.Item.OEjUvJKi0xmBwbS2]{Second Sight}. They must pass a <strong>Challenging (+0) Perception</strong> Test to notice that you are nearby. The invisibility ends if you bring attention to yourself by making large noises or attacking someone. Each additional time you gain this mutation the duration doubles.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.XtKAd3fM7beSVYZD",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743372317510,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "EtJNBIh9DqxPflYp",
+  "sort": 2000000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!EtJNBIh9DqxPflYp"
+}

@@ -1,0 +1,165 @@
+{
+  "name": "Tail",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 20,
+      "range": [
+        1,
+        20
+      ],
+      "drawn": false,
+      "_id": "950xhQonTdrQmOxe",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Balanced Tail : You may reverse the dice for Tests that rely on balance (ex: turning a 61 into 16). You may choose the appearance o􀊗 your tail (feline, canine, reptile).",
+      "name": "",
+      "_key": "!tables.results!HAwqiT348X1zgiR5.950xhQonTdrQmOxe"
+    },
+    {
+      "type": "text",
+      "weight": 20,
+      "range": [
+        21,
+        40
+      ],
+      "drawn": false,
+      "_id": "sCj5dIMLI8eEurS0",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Mace Tail : You gain the Weapon (SB+3) Creature Attack with the Pummel  uality. You may spend 1 Advantage to gain a Free Action to attack (you can also attack normally as your primary attack).",
+      "name": "",
+      "_key": "!tables.results!HAwqiT348X1zgiR5.sCj5dIMLI8eEurS0"
+    },
+    {
+      "type": "text",
+      "weight": 20,
+      "range": [
+        41,
+        60
+      ],
+      "drawn": false,
+      "_id": "7q1Lq3l1syd9qZpB",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Prehensile Tail : You gain a flexible tail, similar to that of a monkey or a rat, that can hold items o􀊗 SB encumbrance. If you wield a weapon you may spend 1 Advantage to gain a Free Action attack (you can also attack normally as your primary attack).",
+      "name": "",
+      "_key": "!tables.results!HAwqiT348X1zgiR5.7q1Lq3l1syd9qZpB"
+    },
+    {
+      "type": "text",
+      "weight": 20,
+      "range": [
+        61,
+        80
+      ],
+      "drawn": false,
+      "_id": "9QKDGOOCmETVPgXq",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Saurian Tail : You gain a lizard or crocodile tail and the Tail Attack (SB+2) Creature Trait.",
+      "name": "",
+      "_key": "!tables.results!HAwqiT348X1zgiR5.9QKDGOOCmETVPgXq"
+    },
+    {
+      "type": "text",
+      "weight": 20,
+      "range": [
+        81,
+        100
+      ],
+      "drawn": false,
+      "_id": "LA3KncrFchC7MAlI",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Scorpion Stinger : You grow a curved, insectoid tail that ends in a venomous stinger. You gain the Weapon (SB+3) Creature Attack with the Impale quality and the Venomous (Average) Creature Trait. You may spend 1 Advantage to gain a Free Action attack (you can also attack normally as your primary attack).",
+      "name": "",
+      "_key": "!tables.results!HAwqiT348X1zgiR5.LA3KncrFchC7MAlI"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "tail",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1744148799544,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "HAwqiT348X1zgiR5",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!HAwqiT348X1zgiR5"
+}

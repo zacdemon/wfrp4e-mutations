@@ -1,0 +1,347 @@
+{
+  "name": "Crossbreed",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 8,
+      "range": [
+        1,
+        8
+      ],
+      "drawn": false,
+      "_id": "YU9oybGGiaV8c6W4",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Beastman: Bray-Shaman",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.YU9oybGGiaV8c6W4"
+    },
+    {
+      "type": "text",
+      "weight": 9,
+      "range": [
+        9,
+        17
+      ],
+      "drawn": false,
+      "_id": "jCEL0IOJmw2r4Jjd",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Beastman: Gor",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.jCEL0IOJmw2r4Jjd"
+    },
+    {
+      "type": "text",
+      "weight": 8,
+      "range": [
+        18,
+        25
+      ],
+      "drawn": false,
+      "_id": "LNyPpHF2S9c8KaNX",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Beastman: Minotaur",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.LNyPpHF2S9c8KaNX"
+    },
+    {
+      "type": "text",
+      "weight": 8,
+      "range": [
+        26,
+        33
+      ],
+      "drawn": false,
+      "_id": "wWPsoixyR1zcnATZ",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Beastman: Ungor",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.wWPsoixyR1zcnATZ"
+    },
+    {
+      "type": "text",
+      "weight": 8,
+      "range": [
+        34,
+        41
+      ],
+      "drawn": false,
+      "_id": "JSbS3RtwKY5rskPf",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Crypt Ghoul",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.JSbS3RtwKY5rskPf"
+    },
+    {
+      "type": "text",
+      "weight": 8,
+      "range": [
+        42,
+        49
+      ],
+      "drawn": false,
+      "_id": "cqSFSnNgT18Sz7oV",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Fimir",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.cqSFSnNgT18Sz7oV"
+    },
+    {
+      "type": "text",
+      "weight": 9,
+      "range": [
+        50,
+        58
+      ],
+      "drawn": false,
+      "_id": "cEkwu6hoFzqGX2AG",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Greenskin: Goblin",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.cEkwu6hoFzqGX2AG"
+    },
+    {
+      "type": "text",
+      "weight": 9,
+      "range": [
+        59,
+        67
+      ],
+      "drawn": false,
+      "_id": "41wc47FaLfi7Gbex",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Greenskin: Orc",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.41wc47FaLfi7Gbex"
+    },
+    {
+      "type": "text",
+      "weight": 9,
+      "range": [
+        68,
+        76
+      ],
+      "drawn": false,
+      "_id": "rrsfiY3uM4V25muF",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Skaven: Clanrat",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.rrsfiY3uM4V25muF"
+    },
+    {
+      "type": "text",
+      "weight": 8,
+      "range": [
+        77,
+        84
+      ],
+      "drawn": false,
+      "_id": "xnuhVN2YYMBORncl",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Skaven: Rat Ogre",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.xnuhVN2YYMBORncl"
+    },
+    {
+      "type": "text",
+      "weight": 9,
+      "range": [
+        85,
+        93
+      ],
+      "drawn": false,
+      "_id": "xTZaxOfTe3xvDuDs",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Skaven: Stormvermin",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.xTZaxOfTe3xvDuDs"
+    },
+    {
+      "type": "text",
+      "weight": 7,
+      "range": [
+        94,
+        100
+      ],
+      "drawn": false,
+      "_id": "3gqVL9IUgm9csa5x",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Troll",
+      "name": "",
+      "_key": "!tables.results!JydjUVBPAHnsg2ca.3gqVL9IUgm9csa5x"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "crossbreed",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1744148799544,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "JydjUVBPAHnsg2ca",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!JydjUVBPAHnsg2ca"
+}

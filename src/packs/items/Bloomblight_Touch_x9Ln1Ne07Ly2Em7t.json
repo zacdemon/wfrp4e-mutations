@@ -1,0 +1,56 @@
+{
+  "name": "Bloomblight Touch",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>Fruit ripens, owers bloom and branches sprout leaves sprout in your presence. When you move you leave a trail of lush vegetation and colourful owers and fruits in your wake. If you stay in place however things will become overripe and then start to rot rapidly. By touching a living creature and succeeding with a <strong>Challenging (+0) Willpower</strong> Test you can Heal them for Fellowship + SL Wounds. They will have to pass a <strong>Challenging (+0) Endurance</strong> Test or become afflicted by one of the symptoms in the table below for 1d10 days. See @UUID[Compendium.wfrp4e-core.journals.JournalEntry.NS3YGlJQxwTggjRX.JournalEntryPage.9ktDn8cwZj3KZWCH]{Diseases} for more information about the symptoms.</p><p></p><table><tbody><tr><td><p style=\"text-align: center\">1d100</p></td><td><p style=\"text-align: center\">Symptoms</p></td></tr><tr><td><p>01-20</p></td><td><p>Buboes</p></td></tr><tr><td><p>21-40</p></td><td><p>Fever</p></td></tr><tr><td><p>41-60</p></td><td><p>Flux</p></td></tr><tr><td><p>61-80</p></td><td><p>Nausea</p></td></tr><tr><td><p>81-100</p></td><td><p>Pox</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.Uzn5NfjA5hYvwM4y",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743367843604,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "x9Ln1Ne07Ly2Em7t",
+  "sort": 8600000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!x9Ln1Ne07Ly2Em7t"
+}

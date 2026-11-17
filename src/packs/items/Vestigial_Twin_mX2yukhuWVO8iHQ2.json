@@ -1,0 +1,56 @@
+{
+  "name": "Vestigial Twin",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>You grow a twin thats halfway fused into your body - with their underdeveloped upper body visible where it protrudes from your esh. Decide where you want your sibling to emerge: through your chest, your back or on your side? e twin has a personality of their own and will share opinions and try to in uence decisions.     Describe the Motivation, Short Term and Long Term Ambition of the twin.  e twin has limited ability to ful l their own destiny however as they only control their head and their two feeble arms.  Create Characteristics for the twin ( WFRP page 33), but with -30 WS, -30 BS, -30 S, -20 T, zero Agi and -20 Fellowship.  e twin does not get any Fate or Resilience points and have 0 Movement as they depend on you to move for them.  You get a -10 Agility modifier due to the weird appendage you have to carry around. Hits to the body have a 20% chance of striking the twin, making any Critical Wounds into head wounds. If the twin dies it will just be a dead appendage from there on.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.sXq5MBLBv5QobuMU",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742119730045,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "mX2yukhuWVO8iHQ2",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!mX2yukhuWVO8iHQ2"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Sensory Loss",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation, Tolerable</strong></p><p>One of your senses degenerates heavily making it hard to rely on. Maybe tumours or boils grow to cover it, or maybe it just atrophies. Consult the table below to determine which sense and what the impact is. You can only lose each sense once.</p><table><tbody><tr><th style=\"width: 50px;\"><p>1d10</p></th><th><p>Result</p></th></tr><tr><td><p>1-2</p></td><td><p>Hearing: Lose the Acute Sense (Hearing) Talent and suffer 1d10 permanent @Condition[Deafened] Conditions.</p></td></tr><tr><td><p>3-4</p></td><td><p>Sight: Lose the Acute Sense (Sight) Talent and suffer 1d10 permanent @Condition[Blinded] Conditions</p></td></tr><tr><td><p>5-6</p></td><td><p>Smell: You can no longer smell anything. Lose the Acute Sense (Smell) Talent. You can no longer use your smell for tracking.</p></td></tr><tr><td><p>7-8</p></td><td><p>Taste: You can no longer taste anything. Lose the Acute Sense (Taste) Talent and your Trade (Cook) Tests must reverse the die if that makes the result worse.</p></td></tr><tr><td><p>9-10</p></td><td><p>Touch: You grow numb. Lose the Acute Sense (Touch) Talent. WS is reduced by 1d10 and Dex by -2D10 . You gain the Painless Creature Trait.</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.dd5JwER6PklAOQZn",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743369556658,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "fSWIrAVNeEypHeXs",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!fSWIrAVNeEypHeXs"
+}

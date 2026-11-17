@@ -1,0 +1,22 @@
+{
+  "name": "Unnatural Body",
+  "sorting": "a",
+  "folder": "VaF7zB2JjYBYMTtK",
+  "type": "Item",
+  "_id": "6qeFntibkXZmzA2D",
+  "description": "",
+  "sort": 200000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742374670136,
+    "modifiedTime": 1743352426528,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1"
+  },
+  "_key": "!folders!6qeFntibkXZmzA2D"
+}

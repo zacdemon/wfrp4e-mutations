@@ -1,0 +1,56 @@
+{
+  "name": "Infernal Furnace",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>In your chest burns a roaring re that emits icker ames when you open your mouth and that makes your ribs stand out as dark shadows as your skin is illuminated from within. You are never cold and light up a radius of 10 yards i you're shirtless. You gain the @UUID[Compendium.wfrp4e-core.items.Item.uqGxFOEqeurwkAO3]{Breath} TBx2 (Fire) Creature Trait and the Immunity (Fire) and Immunity (Cold) mutations. If you take Critical Wounds in the body then anyone within 2 yards must make an <strong>Average (+20) Endurance</strong> Test o gain 1 @Condition[Ablaze] Condition. When you die you explode, causing TBx3 Damage to anyone within TBx3 yards as well as 1 @Condition[Ablaze] Condition. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.hU8Mgqeu3iYOfJxT",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742193844452,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "AgqnPMAaAIZDy7lf",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!AgqnPMAaAIZDy7lf"
+}

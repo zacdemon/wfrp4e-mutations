@@ -1,0 +1,56 @@
+{
+  "name": "Acidic Saliva",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>The saliva in your mouth turns into a potent acid that can damage most things except glass and gold. Fortunately the inside of your mouth and your stomach are immune. Your teeth weren't so lucky however and theyve all melted away. You don't need teeth anymore however as you can consume almost anything now; cloth, bones, small pieces of metal and so on. You can spit or drool on things to melt them with a +5 Damage. With a successful <strong>Ballistic</strong> Test you can attempt to spit at an opponent within SB+TB yards. The normal rules for ranged combat apply. You can use your acid saliva to spit or to consume things as many times a day as your TB. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.v2GrYlMX6CeYyWUb",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743372864117,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "U3JKj9OKPq37QY5W",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!U3JKj9OKPq37QY5W"
+}

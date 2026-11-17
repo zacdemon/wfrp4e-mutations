@@ -1,0 +1,56 @@
+{
+  "name": "Chosen One",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You're convinced that a god has chosen you to do their bidding in the Old World. Confer with the GM about which deity it is. You will adopt the trappings of a follower of that god - likely as a priest, nun or warrior priest - and you will call their name to perform blessings and invocations while making power poses. You will go any length to rationalise the lack of effect or claim credit for the results that spring from other sources - the gods work in mysterious ways after all. You gain the @UUID[Compendium.wfrp4e-core.items.Item.77p3QRKgFWakkndF]{Blather} Talent. Make an <strong>Average (+20) Cool</strong> Test when you wake up every morning to see if your powers are working. If you pass you feel that the attention of your god is elsewhere and not available and you won't do anything to rely on your powers for the rest of the day. If you fail you feel that your god is favourable and will try to use your powers when ordinary Talents or Skills would make more sense. If you are a priest, nun or warrior priest, you believe that you are the stuff of legend and that your powers by far outreach your actual capacity. The Chosen of Chaos believe their patron is the one granting them these powers. You cannot gain this mutation if you have the @UUID[Compendium.wfrp4e-core.items.Item.3O9clK7LGyuLTHPW]{Arcane Magic} Talent.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.y6Fz0ZN2aKi0zNc5",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743370676313,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "HRN7U7zQrF9bfUta",
+  "sort": 2500000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!HRN7U7zQrF9bfUta"
+}

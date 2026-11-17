@@ -1,0 +1,197 @@
+{
+  "name": "Trivial Mental Necromantic Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        17
+      ],
+      "drawn": false,
+      "_id": "XGEOzcJlirCDhxRc",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339229,
+        "modifiedTime": 1782468850337,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Addiction",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.fPZ6WhDgSEL2CRKA",
+      "description": "",
+      "_key": "!tables.results!4ezKtdI88Dc6YbkV.XGEOzcJlirCDhxRc"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        18,
+        34
+      ],
+      "drawn": false,
+      "_id": "10AmxMd8d79Xwcru",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339229,
+        "modifiedTime": 1782468850337,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Blood Lust",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.jv7JljTL9q4GXymp",
+      "description": "",
+      "_key": "!tables.results!4ezKtdI88Dc6YbkV.10AmxMd8d79Xwcru"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        35,
+        51
+      ],
+      "drawn": false,
+      "_id": "YkU1jQS7p7U4pqV5",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339229,
+        "modifiedTime": 1782468850337,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Dark Appetite",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.CLvUzvAORU8i1ajt",
+      "description": "",
+      "_key": "!tables.results!4ezKtdI88Dc6YbkV.YkU1jQS7p7U4pqV5"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        52,
+        68
+      ],
+      "drawn": false,
+      "_id": "3kcUBcjyZTbmQJNo",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339229,
+        "modifiedTime": 1782468850337,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Morbidity",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.nuRKhiZFHMOON5cb",
+      "description": "",
+      "_key": "!tables.results!4ezKtdI88Dc6YbkV.3kcUBcjyZTbmQJNo"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        69,
+        84
+      ],
+      "drawn": false,
+      "_id": "VLy6084wiJ0t0rY0",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339229,
+        "modifiedTime": 1782468850337,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Power Item Obsession",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.ksyIeaOSTTN3DWKL",
+      "description": "",
+      "_key": "!tables.results!4ezKtdI88Dc6YbkV.VLy6084wiJ0t0rY0"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        85,
+        100
+      ],
+      "drawn": false,
+      "_id": "KSamJh8DtRQk77pC",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339230,
+        "modifiedTime": 1782468850338,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Ticks",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.IJJuUecH4GjlXLlS",
+      "description": "",
+      "_key": "!tables.results!4ezKtdI88Dc6YbkV.KSamJh8DtRQk77pC"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "X6xZ0hUPwh934fho",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "trivial-mental-necro"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468850337,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "4ezKtdI88Dc6YbkV",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!4ezKtdI88Dc6YbkV"
+}

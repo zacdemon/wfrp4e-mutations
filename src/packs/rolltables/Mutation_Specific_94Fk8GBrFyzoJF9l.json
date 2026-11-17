@@ -1,0 +1,22 @@
+{
+  "name": "Mutation Specific",
+  "sorting": "a",
+  "folder": null,
+  "type": "RollTable",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799485,
+    "modifiedTime": 1744148799602,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1"
+  },
+  "_id": "94Fk8GBrFyzoJF9l",
+  "sort": 100000,
+  "_key": "!folders!94Fk8GBrFyzoJF9l"
+}

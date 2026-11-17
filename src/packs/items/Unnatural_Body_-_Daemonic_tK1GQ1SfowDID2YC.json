@@ -1,0 +1,62 @@
+{
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p>Your body turns into something of chaotic and otherworldly anatomy and appearance.</p><ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J]{Daemonic} (10). Pick one: +1 AP, @UUID[Compendium.wfrp4e-mutations.items.Item.HCvKEsrNVqyJIIxP]{Razor-sharp Claws}, or +10 Strength.</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J]{Daemonic} (10). Pick one: @UUID[Compendium.wfrp4e-core.items.Item.CV9btQn09S9Fn8Jk]{Strong Legs}, +1 Movement, or @UUID[Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA]{Sturdy}.</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J]{Daemonic} (9+) (replaces other @UUID[Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J]{Daemonic} scores), +10 Toughness, @UUID[Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn]{Fear} 2 (replaces lower @UUID[Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn]{Fear} scores).</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J]{Daemonic} (10), @UUID[Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn]{Fear} 1. Pick one: @UUID[Compendium.wfrp4e-core.items.Item.x0WMGwuQzReXcQrs]{Night Vision}, @UUID[Compendium.wfrp4e-mutations.items.Item.5V5B3xILSelJ8rXk]{Fangs}, or @UUID[Compendium.wfrp4e-mutations.items.Item.oa1XVd4fxpW3vr84]{Horns}.</li></ul>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.op4GKikIQee7JMXw",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742374684150,
+    "modifiedTime": 1744673709147,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": {
+      "worldId": "test",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "wfrp4e",
+      "systemVersion": "8.4.1"
+    }
+  },
+  "folder": "6qeFntibkXZmzA2D",
+  "name": "Unnatural Body - Daemonic",
+  "_id": "tK1GQ1SfowDID2YC",
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "sort": 700000,
+  "_key": "!items!tK1GQ1SfowDID2YC"
+}

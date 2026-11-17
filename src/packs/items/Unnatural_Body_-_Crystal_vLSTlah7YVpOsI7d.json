@@ -1,0 +1,62 @@
+{
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p>Your body consists of incredibly hard, but fragile, living crystal; like diamond, quartz, sapphire and so on.</p><ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), -5 Agility, +5 Toughness, -1 Wound per arm, +4 AP, +40% weight. Critical hit result of 71+ shatters the body part.</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), -5 Agility, +5 Toughness, -1 Wound per leg, +4 AP, +120% weight. Critical hit result of 71+ shatters the body part.</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), +10 Toughness, -5 Agility, -2 Wounds, +4 AP, +200% weight. Critical hit result of 71+ shatters the body, causing immediate death.</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), +4 AP, -5 Initiative, -1 Wound, +40% weight. Critical hit result of 71+ shatters the head, causing immediate death.</li></ul>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.op4GKikIQee7JMXw",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742374682441,
+    "modifiedTime": 1742374693633,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": {
+      "worldId": "test",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "wfrp4e",
+      "systemVersion": "8.4.1"
+    }
+  },
+  "folder": "6qeFntibkXZmzA2D",
+  "name": "Unnatural Body - Crystal",
+  "_id": "vLSTlah7YVpOsI7d",
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "sort": 500000,
+  "_key": "!items!vLSTlah7YVpOsI7d"
+}

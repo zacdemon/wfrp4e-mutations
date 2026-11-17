@@ -1,0 +1,56 @@
+{
+  "name": "Beweaponed Extremities",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>One or both of your arms (1d10: 1-8 One, 9-10 Both) transforms into an unholy weapon o bone or metal that is fused with your skeleton. You can no longer hold anything with your weaponized arm, since your hand is gone. If you are left with only one hand see @UUID[Compendium.wfrp4e-core.items.Item.zyocWSzEZEC826NS]{Ampuiated Parts (Hand)}. If you are left with no hands your Dexterity drops to 0. On the plus side you can never be disarmed. Roll 1d10 to determine what kind of weapon you are bestowed with and what Quality it has: </p><ul><li><p>1-5 Sword, Damaging</p></li><li><p>6-7 Axe, Hack</p></li><li><p>8-9 Mace, Pummel</p></li><li><p>10 Flail, Distract and Wrap</p></li></ul><p>You cannot gain this mutation again if both your arms are transformed. If only one of your arms are mutated, then the other one transforms upon gaining this a second time.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.dQIN0djBBOB6l7XY",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743376007893,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "k1qaiaXzHOhgvoza",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!k1qaiaXzHOhgvoza"
+}

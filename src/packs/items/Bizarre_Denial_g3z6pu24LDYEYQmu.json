@@ -1,0 +1,56 @@
+{
+  "name": "Bizarre Denial",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>Your mind refuses to acknowledge something specific, like halflings, horses or gunpowder. At 1st level you simply try to ignore the Target, looking away and not wanting to talk about it. At 2nd level your mind replaces them with something more acceptable to you. Halflings could become dwarfs to your mind's eye - with beards, gruff voices and everything. At 3rd level the Target just doesn't exist. Your brain renders them out of the picture completely. If you can't ignore their actions then you perceive it as freaky things happening to you; wounds appearing on your body, invisible barriers stopping and so on. Roll on the table below to choose a Target. Constantly convincing yourself and others of your point of view has made you quite the debater. You gain the @UUID[Compendium.wfrp4e-core.items.Item.41JhsSNW1Ttza3JK]{Argumentative} Talent.</p><p></p><table><tbody><tr><th><p>1d100</p></th><th><p>Category</p></th></tr><tr><td><p>01-10</p></td><td><p>Beast (Snakes, Horses, Birds etc)</p></td></tr><tr><td><p>11-20</p></td><td><p>Dark Power (Demons, Witches etc)</p></td></tr><tr><td><p>21-30</p></td><td><p>Enemy of Men (Orcs or Skaven etc)</p></td></tr><tr><td><p>31-50</p></td><td><p>Monsters (Dragons, Vampires etc)</p></td></tr><tr><td><p>51-60</p></td><td><p>Object (Books or Rope etc)</p></td></tr><tr><td><p>61-70</p></td><td><p>Occupation (Priests, Wizards…)</p></td></tr><tr><td><p>71-80</p></td><td><p>People of… (Bretonnia or Norsca etc)</p></td></tr><tr><td><p>81-90</p></td><td><p>Species of… (Dwarfs or Elves etc)</p></td></tr><tr><td><p>91-100</p></td><td><p>Technology (Engineering, Gunpowder etc)</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.G7qKFd2vKfqKnCWq",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743354211776,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "g3z6pu24LDYEYQmu",
+  "sort": 6300000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!g3z6pu24LDYEYQmu"
+}

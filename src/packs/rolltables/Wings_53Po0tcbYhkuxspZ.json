@@ -1,0 +1,139 @@
+{
+  "name": "Wings",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 30,
+      "range": [
+        1,
+        30
+      ],
+      "drawn": false,
+      "_id": "950xhQonTdrQmOxe",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Small: You can’t fly but the wings will break your fall and help you leap longer. You gain the @UUID[Compendium.wfrp4e-core.items.Item.CV9btQn09S9Fn8Jk]{Strong Legs} Talent and may halve all fall damage. You may hide these wings beneath a heavy coat.",
+      "name": "",
+      "_key": "!tables.results!53Po0tcbYhkuxspZ.950xhQonTdrQmOxe"
+    },
+    {
+      "type": "text",
+      "weight": 40,
+      "range": [
+        31,
+        70
+      ],
+      "drawn": false,
+      "_id": "sCj5dIMLI8eEurS0",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Medium: You gain the @UUID[Compendium.wfrp4e-core.items.Item.EO05HX7jql0g605A]{Flight (30)} Creature Trait. You can attempt to conceal these wings under heavy clothing with a -20 modifier. You can carry SB + TB Encumbrance points while flying.",
+      "name": "",
+      "_key": "!tables.results!53Po0tcbYhkuxspZ.sCj5dIMLI8eEurS0"
+    },
+    {
+      "type": "text",
+      "weight": 20,
+      "range": [
+        71,
+        90
+      ],
+      "drawn": false,
+      "_id": "7q1Lq3l1syd9qZpB",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Large: You gain the @UUID[Compendium.wfrp4e-core.items.Item.EO05HX7jql0g605A]{Flight (60)} Creature Trait. You can carry SBx2 + TB Encumbrance points while flying.",
+      "name": "",
+      "_key": "!tables.results!53Po0tcbYhkuxspZ.7q1Lq3l1syd9qZpB"
+    },
+    {
+      "type": "text",
+      "weight": 10,
+      "range": [
+        91,
+        100
+      ],
+      "drawn": false,
+      "_id": "9QKDGOOCmETVPgXq",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Huge: You gain the @UUID[Compendium.wfrp4e-core.items.Item.EO05HX7jql0g605A]{Flight (120)} Creature Trait. You can carry SBx3 + TB Encumbrance points while flying.",
+      "name": "",
+      "_key": "!tables.results!53Po0tcbYhkuxspZ.9QKDGOOCmETVPgXq"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "wings",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1744148799544,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "53Po0tcbYhkuxspZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!53Po0tcbYhkuxspZ"
+}

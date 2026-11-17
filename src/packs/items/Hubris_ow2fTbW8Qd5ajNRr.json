@@ -1,0 +1,56 @@
+{
+  "name": "Hubris",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p>\n<p>You develop an idolised and grandiose self-image. You are vain, arrogant and prickly. Success is due to your involvement, failure is blamed on others. Criticism, disagreements and perceived slights are taken as personal attacks. You gain +10 on all social Tests that aim to put you in the centre of attention, claim glory or de ect criticism. You gain -10 on all Tests that         would assist someone else in achieving glory and attention, or that would make you appear humble. You gain the @UUID[Compendium.wfrp4e-core.items.Item.x8g3U68oi8XzWiYr]{Commanding Presence} Talent.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.F3ZtjzkP8zgCturR",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1742291789684,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "ow2fTbW8Qd5ajNRr",
+  "sort": 8200000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!ow2fTbW8Qd5ajNRr"
+}

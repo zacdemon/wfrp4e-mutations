@@ -1,0 +1,56 @@
+{
+  "name": "Phantasmal Mind",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>Your thoughts intrude on reality as they bleed over as colourful images. They may or may not make sense to anyone else, but they do reflect your mood in vivid non-euclidean shapes that dance around your head. You can, with a successful <strong>Challenging (+0) Willpower</strong> Test, create an illusionary image of your choosing that lasts Willpower + (SL x 10) minutes. A fumbled roll will result in a @Table[minormis]{Minor Miscast}. You will automatically fool anyone without @UUID[Compendium.wfrp4e-core.items.Item.OEjUvJKi0xmBwbS2]{Second Sight}. Those with that Talent must pass a <strong>Difficulty (-10) Perception</strong> Test to notice the illusion. They must dispel the illusion to see through it. People outside the area of effect do not see the illusion. The illusion is static, but you can animate during a Round by making a <strong>Hard (-20) Willpower</strong> Test. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.SzTQaDcNFQPB6Fo9",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743371242895,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "llr5PyliT1clGsTZ",
+  "sort": 7500000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!llr5PyliT1clGsTZ"
+}

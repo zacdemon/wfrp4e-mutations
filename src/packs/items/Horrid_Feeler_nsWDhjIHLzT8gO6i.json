@@ -1,0 +1,56 @@
+{
+  "name": "Horrid Feeler",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>A long, prehensile tentacle or elephantine snout (1d10: 1-8 Tentacle; 9-10 Snout) grows out o your body (tentacle) or head (snout). e feeler functions as an arm and can hold things and has a very sensitive touch. You gain the @UUID[Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh]{Tentacles} (SB+3) Creature Trait and @UUID[Compendium.wfrp4e-core.items.Item.9h82z72XGo9tfgQS]{Acute Sense} (Touch). If you have a snout you can drink water and breathe through it as well.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.MeaWHSfQZoKoXajV",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742193757261,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "nsWDhjIHLzT8gO6i",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!nsWDhjIHLzT8gO6i"
+}

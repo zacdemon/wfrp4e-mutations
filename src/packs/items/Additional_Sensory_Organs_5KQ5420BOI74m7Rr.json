@@ -1,0 +1,56 @@
+{
+  "name": "Additional Sensory Organs",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Trivial Physical Mutation</strong></p><p>You sprout 1d6 additional eyes, ears, mouths or noses. Consult the table below to find out which kind and the @Table[hitloc]{Hit Locations} Table to find out where. The new sensory organs are fully functional, but apart from an eye in the back (which could grant the @UUID[Compendium.wfrp4e-core.items.Item.0LdHytqyNmg2pcAX]{Combat Aware} Talent if the GM is feeling generous) they aren't very likely to provide any special modifiers or abilities. If you're unlucky the new organ grows over an existing one, like a mouth over an eye.</p><p></p><table><tbody><tr><td><p>1d10</p></td><td><p>Sensory Organs</p></td></tr><tr><td><p>01-03</p></td><td><p>Eyes</p></td></tr><tr><td><p>04-05</p></td><td><p>Ears</p></td></tr><tr><td><p>06-08</p></td><td><p>Mouths</p></td></tr><tr><td><p>09-10</p></td><td><p>Noses</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.000AuPleKj1CfbZW",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743353610269,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "5KQ5420BOI74m7Rr",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!5KQ5420BOI74m7Rr"
+}

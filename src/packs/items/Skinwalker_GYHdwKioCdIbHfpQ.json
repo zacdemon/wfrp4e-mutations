@@ -1,0 +1,56 @@
+{
+  "name": "Skinwalker",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Youve gained the ability to assume the physical form of another creature by consuming it. By eating all the so parts, leaving only the bones behind, you can transform into an identical replica of the creature. While assuming that form you gain the same appearance, physical stats (S, T, Agi, Dex) and Creature Traits as the source had. You may assume the form of victims o humanoid species and normal beasts (not monsters, constructs, undead and so on) within 1 Size level from your own sSize. Consuming a form takes 4 hours. You can only consume one form at a time and will have to vomit out the previous victim's parts before consuming a new one, or to go back to your original form. You will automatically fool anyone who lacks the @UUID[Compendium.wfrp4e-core.items.Item.OEjUvJKi0xmBwbS2]{Second Sight} Talent, though some might notice that behaviours and mannerisms are dierent. Observers with @UUID[Compendium.wfrp4e-core.items.Item.OEjUvJKi0xmBwbS2]{Second Sight} still suffer a -20 modifier to notice your disguise. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.gJhom9GAjWLi3crf",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742194570890,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "GYHdwKioCdIbHfpQ",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!GYHdwKioCdIbHfpQ"
+}

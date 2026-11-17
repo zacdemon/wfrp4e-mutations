@@ -1,0 +1,56 @@
+{
+  "name": "Painseeker",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>Mundane pleasures no longer excite you and you can only receive titillation if you in ict or receive injuries. Whenever you deal or take 1 Wound you gain +5 Strength, Toughness and Willpower for 1d10 Rounds. You gain access to the @UUID[Compendium.wfrp4e-core.items.Item.hXcfygzujgyMN1uI]{Frenzy} Talent while under the effect. If you start frenzying it wont stop when the 1d10 duration of this mutation ends. Follow the normal rules instead. You may inflict a Wound on yourself to gain this modifier. The bonus does not stack, but new Wounds after the duration will renew the effect. Wounds from other mutations, like @UUID[Compendium.wfrp4e-mutations.items.Item.XdbHWsUa59sLvLkN]{Unhealing Wound}, do not activate this mutation.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.P8vFkTvPMXeGSuDi",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1744674529290,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "vbX9BaaeBNjZTvPb",
+  "sort": 8500000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!vbX9BaaeBNjZTvPb"
+}

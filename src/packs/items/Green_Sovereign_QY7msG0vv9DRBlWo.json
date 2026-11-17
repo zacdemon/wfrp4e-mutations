@@ -1,0 +1,56 @@
+{
+  "name": "Green Sovereign",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>Your mind develops the ability to control vegetation and plants within your Willpower yards. You can, with an <strong>Average (+20) Willpower</strong> Test, make plants do small things like shed leaves, ripen a fruit or rattle their branches. You may also, with a successful <strong>Challenging (+0) Willpower</strong> and <strong>Weapon Skill</strong> Test, strike opponents with branches (counts as an Improvised Weapon) or grapple them with roots and vines. Replace Strength Bonus with your Willpower Bonus for those feats. Fumbling when using your power causes a @Table[minormis]{Minor Miscast}. Vegetation and plants within a Willpower yards radius around you react to your presence, twigs, shrubs and straws of grass sway excitedly or bow in your direction, owers might bloom and fruit be dropped at your feet. The effect is clearly supernatural.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.9ywF7XGY98BRIQSc",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743370932510,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "QY7msG0vv9DRBlWo",
+  "sort": 4200000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!QY7msG0vv9DRBlWo"
+}

@@ -1,0 +1,269 @@
+{
+  "name": "Protective Skin",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 13,
+      "range": [
+        1,
+        13
+      ],
+      "drawn": false,
+      "_id": "kK8ALE0p6Kj80QMU",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Leathery Hide, like a horse or cow: +1 Armour and Flexible",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.kK8ALE0p6Kj80QMU"
+    },
+    {
+      "type": "text",
+      "weight": 13,
+      "range": [
+        14,
+        26
+      ],
+      "drawn": false,
+      "_id": "tNcPavJWTqEAOWTS",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Fur, like a dog or bear +1 Armour and Flexible. Immune to Exposure (Cold) , double effects from Exposure (Heat) (WFRP page 181).",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.tNcPavJWTqEAOWTS"
+    },
+    {
+      "type": "text",
+      "weight": 13,
+      "range": [
+        27,
+        39
+      ],
+      "drawn": false,
+      "_id": "8jdw3sOB2Qd3Sqku",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Feathers  a birdlike plumage: +1 Armour and Flexible",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.8jdw3sOB2Qd3Sqku"
+    },
+    {
+      "type": "text",
+      "weight": 13,
+      "range": [
+        40,
+        52
+      ],
+      "drawn": false,
+      "_id": "GHBtNoEDHOpeeLpk",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Rubbery Skin, like an octopus or frog: +1 Armour and Flexible",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.GHBtNoEDHOpeeLpk"
+    },
+    {
+      "type": "text",
+      "weight": 13,
+      "range": [
+        53,
+        65
+      ],
+      "drawn": false,
+      "_id": "qyqpta0rhVHfdJhD",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Bark, like and old oak: +1 Armour",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.qyqpta0rhVHfdJhD"
+    },
+    {
+      "type": "text",
+      "weight": 14,
+      "range": [
+        66,
+        79
+      ],
+      "drawn": false,
+      "_id": "8epSRJXQP80WWqHZ",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Scales, like a fish or lizard: +2 Armour and Flexible",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.8epSRJXQP80WWqHZ"
+    },
+    {
+      "type": "text",
+      "weight": 10,
+      "range": [
+        80,
+        89
+      ],
+      "drawn": false,
+      "_id": "Jm1U85hTHKHP10Pz",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Carapace, like a crab or beetle: +2 Armour , Impenetrable and Weakpoints",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.Jm1U85hTHKHP10Pz"
+    },
+    {
+      "type": "text",
+      "weight": 10,
+      "range": [
+        90,
+        99
+      ],
+      "drawn": false,
+      "_id": "XT1I0HkdkbEpKUgg",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Metal Plating; overlapping pieces of metal: +3 Armour and Impenetrable , Weakpoints, -10 Stealth .",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.XT1I0HkdkbEpKUgg"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "_id": "39gYYqcy6oxfv5Py",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Arcane Runes: Your skin is covered with mystical tattoos that 􀊺are up in colour when struck by non-magical weapons. 􀅁e runes provide +2 Armour against non-magical attacks and all non-magical weapons gain Weapon  uality Undamaging when striking you. 􀅁e runes are considered Flexible armour.",
+      "name": "",
+      "_key": "!tables.results!7iThcDnUARsnhQDu.39gYYqcy6oxfv5Py"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "protective-skin",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1745392229323,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "7iThcDnUARsnhQDu",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!7iThcDnUARsnhQDu"
+}

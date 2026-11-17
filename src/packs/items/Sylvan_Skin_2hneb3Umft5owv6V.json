@@ -1,0 +1,56 @@
+{
+  "name": "Sylvan Skin",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your skin transforms into something that resembles vegetation. Roll 1d10: 1-5, your skin turns into a supple green plant covering; 6-8, all your hair (including on your body) turns into grass; 9-10, your body is covered by green leaves. You sustain yourself by absorbing sunlight, just like a plant. As long as you have access to water and sunlight you dont need to eat ordinary food. Your blood turns green unless you have the @UUID[Compendium.wfrp4e-mutations.items.Item.LxbHm5vyy4pmeYBm]{Corrupted Blood} mutation. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.Alo5BzO5CEHrHB25",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1744674529290,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "2hneb3Umft5owv6V",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!2hneb3Umft5owv6V"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Atrophy",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Corruptive powers leech life out of a part o your body. Consult the table below to find out which. The affected part of the body is rendered useless, either falling off or hanging like a dry twig. Treat it as having been @UUID[Compendium.wfrp4e-core.journals.JournalEntry.NS3YGlJQxwTggjRX.JournalEntryPage.WCivInLZrqEtZzF4#amputated-parts]{amputated}. Roll 1d10 for determining left or right for things like arms and legs: 1-5 Left ; 6-10 Right.</p><p></p><table><tbody><tr><td><p>1d100</p></td><td><p>Body Part</p></td></tr><tr><td><p>01-05</p></td><td><p>Arm</p></td></tr><tr><td><p>06-17</p></td><td><p>Ear</p></td></tr><tr><td><p>18-29</p></td><td><p>Eye</p></td></tr><tr><td><p>30-44</p></td><td><p>Fingers (1d10/2)</p></td></tr><tr><td><p>45-49</p></td><td><p>Foot</p></td></tr><tr><td><p>50-54</p></td><td><p>Hand</p></td></tr><tr><td><p>55-59</p></td><td><p>Leg</p></td></tr><tr><td><p>60-70</p></td><td><p>Nose</p></td></tr><tr><td><p>71-80</p></td><td><p>Teeth (fall out)</p></td></tr><tr><td><p>81-95</p></td><td><p>Toes (1d10/2)</p></td></tr><tr><td><p>96-100</p></td><td><p>Tongue</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.adlDLIFASjKTvWpc",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743353914598,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "Db9gdM7FYh0eAmxd",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!Db9gdM7FYh0eAmxd"
+}

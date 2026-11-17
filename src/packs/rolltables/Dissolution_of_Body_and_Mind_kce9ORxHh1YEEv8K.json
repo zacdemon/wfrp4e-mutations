@@ -1,0 +1,22 @@
+{
+  "name": "Dissolution of Body and Mind",
+  "sorting": "a",
+  "folder": null,
+  "type": "RollTable",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797102,
+    "modifiedTime": 1744148797441,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1"
+  },
+  "_id": "kce9ORxHh1YEEv8K",
+  "sort": 100000,
+  "_key": "!folders!kce9ORxHh1YEEv8K"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Mental",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "OgoyrbRuvV9jl2Hg",
+  "description": "",
+  "sort": 200000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": null,
+    "modifiedTime": 1743352418426,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1"
+  },
+  "_key": "!folders!OgoyrbRuvV9jl2Hg"
+}

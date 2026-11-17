@@ -1,0 +1,529 @@
+{
+  "name": "Fright",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        1,
+        5
+      ],
+      "drawn": false,
+      "_id": "wzNdJHyMUr33kB1c",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Beasts",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.wzNdJHyMUr33kB1c"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        6,
+        10
+      ],
+      "drawn": false,
+      "_id": "jNAEKArTGfKUP5Yz",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Blood",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.jNAEKArTGfKUP5Yz"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        11,
+        15
+      ],
+      "drawn": false,
+      "_id": "qSJFKD16yT9PEeyV",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Confined Spaces",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.qSJFKD16yT9PEeyV"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        16,
+        20
+      ],
+      "drawn": false,
+      "_id": "erfaVRk8JvUSi7xM",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Darkness",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.erfaVRk8JvUSi7xM"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        21,
+        25
+      ],
+      "drawn": false,
+      "_id": "yfW423v3DSmbGDlL",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Enemy of Men (Orcs, Skaven...)",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.yfW423v3DSmbGDlL"
+    },
+    {
+      "type": "text",
+      "weight": 10,
+      "range": [
+        26,
+        35
+      ],
+      "drawn": false,
+      "_id": "4gu3FN5EGg1OQgRb",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Fire",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.4gu3FN5EGg1OQgRb"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        36,
+        40
+      ],
+      "drawn": false,
+      "_id": "rCsXSTNUZIDedjsR",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Forests",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.rCsXSTNUZIDedjsR"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        41,
+        45
+      ],
+      "drawn": false,
+      "_id": "4y8Lfg2vCU6mDa7J",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Insects and/or Spiders",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.4y8Lfg2vCU6mDa7J"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        46,
+        50
+      ],
+      "drawn": false,
+      "_id": "KeSXQ2xMKEr8d0WF",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Heights",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.KeSXQ2xMKEr8d0WF"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        51,
+        55
+      ],
+      "drawn": false,
+      "_id": "ftyEs8mxfmVs5k1p",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Mirrors",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.ftyEs8mxfmVs5k1p"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        56,
+        60
+      ],
+      "drawn": false,
+      "_id": "yranclKCrU6Cbesr",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Objects (Sharp, Religious…)",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.yranclKCrU6Cbesr"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        61,
+        65
+      ],
+      "drawn": false,
+      "_id": "ckwN2Rl212tir7c7",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Occupations (Priests, Wizards…)",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.ckwN2Rl212tir7c7"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        66,
+        70
+      ],
+      "drawn": false,
+      "_id": "sX6rM4HZtlXk7YdU",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Open Spaces",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.sX6rM4HZtlXk7YdU"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        71,
+        75
+      ],
+      "drawn": false,
+      "_id": "BWUlsQxV2Y6sscgG",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Open Water",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.BWUlsQxV2Y6sscgG"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        76,
+        80
+      ],
+      "drawn": false,
+      "_id": "GeKajXOvRYdKu6at",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Species (Dwarfs, Elves, Hal􀊹ngs…)",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.GeKajXOvRYdKu6at"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        81,
+        85
+      ],
+      "drawn": false,
+      "_id": "CDC0sJLRtVh1iIJx",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Technology (Engineering, Gunpowder…)",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.CDC0sJLRtVh1iIJx"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        86,
+        90
+      ],
+      "drawn": false,
+      "_id": "IDnyOxfocmgRg3FV",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Touch of skin",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.IDnyOxfocmgRg3FV"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        91,
+        95
+      ],
+      "drawn": false,
+      "_id": "PzyA0AkIL8QO6reS",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Uncleanliness and filth",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.PzyA0AkIL8QO6reS"
+    },
+    {
+      "type": "text",
+      "weight": 5,
+      "range": [
+        96,
+        100
+      ],
+      "drawn": false,
+      "_id": "jftHsd0coQ0wEBVI",
+      "img": "icons/svg/d10-grey.svg",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "13.342",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "description": "Undead",
+      "name": "",
+      "_key": "!tables.results!d4NLRzE7sOKtpjse.jftHsd0coQ0wEBVI"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "94Fk8GBrFyzoJF9l",
+  "flags": {
+    "wfrp4e": {
+      "key": "fright",
+      "column": ""
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148799544,
+    "modifiedTime": 1744148799544,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "formula": "1d100",
+  "_id": "d4NLRzE7sOKtpjse",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!d4NLRzE7sOKtpjse"
+}

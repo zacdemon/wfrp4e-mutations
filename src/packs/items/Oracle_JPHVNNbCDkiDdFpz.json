@@ -1,0 +1,56 @@
+{
+  "name": "Oracle",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p>\n<p>rough visions, dreams, daemonic whispers or by reading signs, you gain the ability to divine the future. Your eyes lose their irises and pupils, but remain functional.  You gain access to the Augury Skill as described in Winds of Magic page 44, and you gain +10 Advances in the skill per level in this mutation. You may use this ability once per day. A fumbled roll will result in a Minor Miscast.  You can also, with a successful <b>Challenging (+0) Willpower</b> Test, gain +10 Initiative and +1 Fortune per level in this mutation for a scene as you are able to sense what the future holds, second by second. You move with a deeply unnerving certainty when activating this power. Again, a fumbled roll will result in a Minor Miscast.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.1u3ChOx0RLE5NGQk",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743375618091,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "JPHVNNbCDkiDdFpz",
+  "sort": 2900000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!JPHVNNbCDkiDdFpz"
+}

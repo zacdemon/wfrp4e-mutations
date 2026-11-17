@@ -1,0 +1,56 @@
+{
+  "name": "Metamorphosis",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You're convinced that you're on the brink of a Great Change - something that will change the rules for everything! You are obsessed with experimenting to find ways to create new forms and states of being that break the established norms. You gain the @UUID[Compendium.wfrp4e-core.items.Item.2eq8Ejotk54AZYwX]{Artistic}, @UUID[Compendium.wfrp4e-core.items.Item.G4rPR0XGiYFUZWKi]{Pharmacist} or @UUID[Compendium.wfrp4e-core.items.Item.NP4EHyyh1yOLbsPU]{Surgery} Talent. Make an <strong>Average (+20) Cool</strong> Test when you wake up every morning. If you pass you feel that your experiments can wait until another day, but if you fail you must make some sort of experiment that pushes the boundaries of existence during the day. It might involve making drawings and schematics that illustrate new forms of life, drug inducement for yourself or another to move your mind beyond the thinkable, or a vivisection that involves putting body parts together in a new and fanciful way. If you do not manage to conduct an experiment you'll automatically fail any Rest Test of that night as you toss and turn, and gain 1 @Condition[Fatigued] Condition the following day.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.Yr6EyS01W5fZPcmZ",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743376124446,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "ocvghSZxm5XBffTw",
+  "sort": 8100000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!ocvghSZxm5XBffTw"
+}

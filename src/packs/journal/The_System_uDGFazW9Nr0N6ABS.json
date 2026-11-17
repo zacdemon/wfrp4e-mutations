@@ -1,0 +1,143 @@
+{
+  "name": "The System",
+  "_id": "uDGFazW9Nr0N6ABS",
+  "pages": [
+    {
+      "sort": 0,
+      "name": "Gaining Mutations",
+      "type": "text",
+      "_id": "ZH1gVG7XoAN9YeSc",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h2>Gaining Mutations</h2><p style=\"text-align:justify\">Gaining more Corruption points than the sum of your Willpower Bonus and Toughness Bonus forces you to pass a <strong>Challenging (+0) Endurance</strong> Test or gain a mutation. If you fail the Test, consult the table below to see if the nature of your corruption is mental or physical.</p><p></p><p><strong>Species Corruption Table</strong></p><table style=\"text-align:center\"><tbody><tr><th><p>Species</p></th><th><p>Physical</p></th><th><p>Mental</p></th></tr><tr><td><p>Dwarf</p></td><td><p>01-05</p></td><td><p>06-100</p></td></tr><tr><td><p>Elf</p></td><td><p>-</p></td><td><p>1-100</p></td></tr><tr><td><p>Halfling</p></td><td><p>-</p></td><td><p>1-100</p></td></tr><tr><td><p>Human</p></td><td><p>01-50</p></td><td><p>51-100</p></td></tr><tr><td><p>Gnome</p></td><td><p>01-50</p></td><td><p>51-100</p></td></tr><tr><td><p>Ogre</p></td><td><p>01-10</p></td><td><p>11-100</p></td></tr></tbody></table><p style=\"text-align:justify\">If you gain the physical corruption you reduce your Corruption points equal to your Toughness Bonus. For mental corruption you reduce them equal to your Willpower Bonus.</p><p></p><h3>Physical Corruption</h3><p style=\"text-align:justify\">Physical corruption manifests as alterations of the flesh of the unfortunate, or blessed depending on your perspective, and they range from relatively super cial changes to deeply unnatural transformations.</p><p></p><h3>Mental Corruption</h3><p style=\"text-align:justify\">Mental corruption twists the mind, introducing strange new thoughts and desires. It may start as curious but relatively harmless ideas and behaviours. Over time however, as corruption accumulates, the curious gives way to the weird and the heinous as the pain and confusion gives way to strange new ways of thinking and powerful abilities. While mental corruption may initially be easier to conceal than physical, the deteriorating level of self-control and the blooming dark cravings, challenges the ability of the a icted to conform with social convention - risking the attention from the witch hunters.</p><blockquote><p><strong>Corruption vs Mental Illness</strong></p><p>Portraying mental illness in role-playing games can be sensitive and diffcult. This supplement has no ambition of representing real-life mental illness in a realistic way. The intention is to capture a core theme of the WFRP setting - facing Lovecraftian horrors and the inevitable terror of having your own mind betray you as a result of the corrupting influence f those horrors. Corruption is an external force twisting the body, mind and soul - and the symptoms that arise from that.</p><p>Contemporary terminology (like schizoid, phobia or psychosis) has been avoided as much as possible when describing these mental symptoms, and they are cinematic simplifications meant to fit a world beset by daemons and undead.</p><p>It’s recommended that the GM discuss mental corruption in a session zero so that the group can voice any concerns and together decide how you portray it.</p></blockquote><p></p><h2>Mutation Severity</h2><p style=\"text-align:justify\">Once it’s established the nature of your corruption, consult the table below to determine the severity of your mutation. Add +10 on the roll for every mutation your Character already has up to your 4th mutation (making it a maximum of +40). Lastly, roll on the respective mutation table in the next chapter - A Catalogue of Change - to see which specific mutation you will develop.</p><p></p><p><strong>Mutation Severity Table</strong></p><table style=\"text-align:center\"><tbody><tr><th><p>1d100</p></th><th><p>Severity</p></th></tr><tr><td><p>1-60</p></td><td><p>Trivial Mutation</p></td></tr><tr><td><p>61-100</p></td><td><p>Minor Mutation</p></td></tr><tr><td><p>101-130</p></td><td><p>Major Mutation</p></td></tr><tr><td><p>131+</p></td><td><p>Chosen of Chaos</p></td></tr></tbody></table><p style=\"text-align:justify\">You may spend a Resilience point to avoid developing a mutation. If you do so, you still reduce your Corruption points as described above. You may roll first to see which mutation you would gain before spending your Resilience point.</p><p style=\"text-align:justify\"></p><h3>Trivial Mutations</h3><p style=\"text-align:justify\">While trivial mutations can be horrific changes for the individual they are alterations that often, with some discretion, are possible to hide. Most people with Trivial Mutations are able to keep on living in society.</p><p style=\"text-align:justify\"></p><h3>Minor Mutations</h3><p style=\"text-align:justify\">Minor mutations are more transformative and as such harder to conceal, but also tend to provide more modifiers and abilities. Minor mutations will be recognized on sight, either as the blasphemous corruption of Chaos they are (physical mutations) or as madness (mental mutations).</p><p style=\"text-align:justify\"></p><h3>Major Mutations</h3><p style=\"text-align:justify\">Major mutations are typically very transformative and much harder to conceal, but may also offer powerful modifiers and abilities. On exposure these mutations are immediately recognizable as the corruption of Chaos.</p><p></p><h3>Chosen of Chaos</h3><p style=\"text-align:justify\">If you roll the Chosen ofi Chaos result you have become blessed by one of The Chaos Gods.</p><p style=\"text-align:justify\">While this is great news if you’re a Slave to Darkness it most likely means that this is a good time to create a new Character… unless your GM is running a campaign where he’s ne with you championing the Ruinous Powers from the edge of society.</p><p style=\"text-align:justify\">If the latter is the case, consider picking up the <em>Tome of Corruption</em> for 2e and the homebrew  <em>Warriors of Chaos</em> supplement. In the appendix of this supplement you’ll find mutation tables for the respective chaos patron that can be used instead of those mentioned in the Tome of Corruption.</p><p></p><h2>Manifestation</h2><p style=\"text-align:justify\">While some mutations can erupt suddenly from the body or mind as full blown mutations, it’s more common that they develop over time.  The itching growth on the stomach that one day opens up as a glaring eye, or the building desire to taste rotten esh that eventually climaxes in a dark and shameful feast. If the Players want there are ample opportunities to make the dissolution of body and mind part of the story and not just about modifiers and abilities.</p><p></p><h2>Mutation Levels</h2><p style=\"text-align:justify\">Gaining the same mutation more than once will add the same modifiers again unless stated otherwise in the description of the mutation.</p><p style=\"text-align:justify\">Talents that you gain through mutations gain another level and the Difficulty of any Tests is increased (for resisting negative mutation effects) or decreased (for activating abilities) by one degree. For example, if a Muĩation provides a +10 Toughness Bonus, the same modiﬁers would apply again when rolling the same result again on the ĩable. The GM determines how that manifiests in the actual Muĩation.</p><p></p><h3>Negative Modifiers</h3><p style=\"text-align:justify\">Several mutations provide negative modifiers for Characteristics. You can never decrease lower than 0. Ignore further negative modifiers for that attribute.</p><p></p><h2>Corruption Limits</h2><p style=\"text-align:justify\">If you gain more physical mutations than your Toughness Bonus or more mental mutations than your Willpower Bonus, the corruption has ravaged your mortal shell beyond its limits and you become a mindless Chaos Spawn.</p><p style=\"text-align:justify\"></p><h3>Chaos Spawn</h3><p style=\"text-align:justify\">As Chaos Spawns are mindless beasts it’s time to roll a new Character and hope you never meet whatever became of the old one… The Chaos Spawn are described in more detail in the <em>Tome of Corruption</em>.</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "ownership": {
+        "default": -1,
+        "yWOr6WVvMImJ3rH1": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.wfrp4e-mutations.mutations-journal.JournalEntry.zHbiKbXkez1j4rDc.JournalEntryPage.ZH1gVG7XoAN9YeSc",
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "wfrp4e",
+        "systemVersion": "8.4.1",
+        "createdTime": 1742227434070,
+        "modifiedTime": 1746572400957,
+        "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+        "exportSource": null
+      },
+      "category": null,
+      "_key": "!journal.pages!uDGFazW9Nr0N6ABS.ZH1gVG7XoAN9YeSc"
+    },
+    {
+      "sort": 0,
+      "name": "Social Interaction",
+      "type": "text",
+      "_id": "9sK84Dvy3Ng36qXp",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<h2>Reactions to Mutations</h2><h3>Tolerable</h3><p style=\"text-align:justify\">Some of mutations, like Hairless, Hunchback, Morbidity and Hateful Impulses, are a bit odd but don't stand out enough to brand you a mutant. People might react with suspicion or disgust, but not with alarm. These mutations are labelled <em>Tolerable</em> and generally provide a negative Fellowship modifier, but do not cause @UUID[Compendium.wfrp4e-core.items.Item.Q2MCUrG2HppMcvN0]{Animosity} or @UUID[Compendium.wfrp4e-core.items.Item.Ib2YQYChktDFN93y]{Fear}.</p><p style=\"text-align:justify\">Keep in mind that The Old World is a setting that, while having deep distrust for the abnormal and corrupt, is riddled with people who display odd appearances and behaviours. In a world where healthcare is very limited the effects of disease, hard physical labour, terrifying dangers and violence provide plenty of dis gured and traumatised people to blend in among.</p><p style=\"text-align:justify\"></p><h3>Trivial</h3><p style=\"text-align:justify\">If ordinary folks are exposed to trivial mutations they gain @UUID[Compendium.wfrp4e-core.items.Item.klCJX0mNpXYH5AIx]{Prejudice (Mutants)} at an <strong>Average (+20) </strong>Difficulty unless stated otherwise in the description of the mutation. Mental mutations may cause @UUID[Compendium.wfrp4e-core.items.Item.klCJX0mNpXYH5AIx]{Prejudice (Mad Men)} at The GM’s discretion. Make the Difficulty one step worse per non-tolerable mutation being exposed.</p><p style=\"text-align:justify\"></p><h3>Minor</h3><p style=\"text-align:justify\">Ordinary people that are being exposed to minor mutations gain @UUID[Compendium.wfrp4e-core.items.Item.Q2MCUrG2HppMcvN0]{Animosity (Mutants)} at an <strong>Average (+20) </strong>Difficulty unless stated otherwise in the description of the mutation.</p><p style=\"text-align:justify\">Make the Difficulty one step worse per non-tolerable mutation being exposed.</p><p style=\"text-align:justify\">Minor mental mutations are typically only noticed when you lose self control and start behaving well beyond the social norm, like with Bizarre Denial, Unending Malice or Touched. Depending on the situation some people may call it corruption whereas others call it madness. If the latter is the case they gain @UUID[Compendium.wfrp4e-core.items.Item.klCJX0mNpXYH5AIx]{Prejudice (Mad Men)} instead of @UUID[Compendium.wfrp4e-core.items.Item.Q2MCUrG2HppMcvN0]{Animosity (Mutants)}.</p><p style=\"text-align:justify\"></p><h3>Major</h3><p style=\"text-align:justify\">When ordinary people are exposed to major mutations they are subject to @Fear[1] unless stated otherwise in the description of the mutation. Some major mental mutations only cause fear when others can perceive them. If a mutation causes Fear of a higher level, or Terror, then that takes precedence. The effects do not stack.</p><p style=\"text-align:justify\"></p><h2>Concealment</h2><p style=\"text-align:justify\">The first impulse of any civilised individual gaining a mutation is likely to hide it from view, lest the witch hunters eradicate you. Luckily people tend to clothe most of their bodies in everyday situations as modesty and chastity are valued traits in The Old World.</p><p style=\"text-align:justify\">Trivial physical mutations are generally <strong>Easy (+40)</strong> to conceal, like an Additional Appendage, Beastial Feature or Extra Joints.</p><p style=\"text-align:justify\">Minor physical mutations can often be concealed, although typically at <strong>Challenging (+0) </strong>Difficulty.</p><p style=\"text-align:justify\">Major physical mutations tend to be <strong>Very Hard (-30)</strong> or impossible to conceal, like Additional Extremities, or Burning Body.</p><p></p><h2>Self-Control</h2><p style=\"text-align:justify\">Mental corruptions that cause behavioural changes (like Urgent Profanity) or negative effects (like Pyrokinesis) can be suppressed for a scene (see Social Interaction) with a successful <strong>Challenging (+0) Cool</strong> Test to avoid drawing unwanted attention - unless stated otherwise in the description of the mutation. You cannot suppress effects that affect your Characteristics or modify Tests or provide Creature Traits (like Aethyric Leak, Hubris and Hungering Maw).</p><p style=\"text-align:justify\">The Difficulty is <strong>Average (+20)</strong> for Trivial mutations, <strong>Challenging (+0)</strong> for Minor and <strong>Difficult (-10)</strong> for Major.  The Difficulty is increased by one step per level you have in the mutation. If you fail the roll you may choose to spend Resolve to suppress the mutation anyway.</p><p style=\"text-align:justify\"></p><blockquote><p><strong>Player Agency</strong></p><p>Mental corruption can be tricky to implement in the game as it impacts a core tenet of what makes role-playing games fun - player agency. It’s recommended that, while the GM presents the challenge, it’s the Players who own how their Character acts. For example, if a Player fails a Cool Test for controlling their Bizarre Denial or Dark Appetite , it’s up to them to describe how their Player acts out their corruption - not the GM. Also, don’t have the Players make Tests for self-control all the time, that’s just tedious. Choose situations when it really matters - make it count - and where a failure can spawn intriguing circumstances!</p></blockquote>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "ownership": {
+        "default": -1,
+        "yWOr6WVvMImJ3rH1": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.wfrp4e-mutations.mutations-journal.JournalEntry.zHbiKbXkez1j4rDc.JournalEntryPage.9sK84Dvy3Ng36qXp",
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "wfrp4e",
+        "systemVersion": "8.4.1",
+        "createdTime": 1742227435747,
+        "modifiedTime": 1743373523715,
+        "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+        "exportSource": null
+      },
+      "category": null,
+      "_key": "!journal.pages!uDGFazW9Nr0N6ABS.9sK84Dvy3Ng36qXp"
+    },
+    {
+      "sort": 0,
+      "name": "Treatment",
+      "type": "text",
+      "_id": "shbn5L0hfwrKpfwd",
+      "system": {},
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "image": {},
+      "text": {
+        "format": 1,
+        "content": "<p style=\"text-align:justify\">While there is no unified, scientfific method of dealing with mutation in the Old World, there are those willing to offer treatment. Tetreatments are often expensive as the clients tend to be desperate and need both discretion and cutting edge remedies.</p><p style=\"text-align:justify\"></p><h2>Surgery</h2><p style=\"text-align:justify\">It is possible to find discreet physicians who out of compassion, greed or curiosity treat physical mutations. Among the upper echelons of society, where people have both status and gold, it’s not unknown to go on a prolonged retreat in some remote area and come back with renewed vigour and con dence, much like the family of a young noblewoman might do if she were to become pregnant before she’s been married away.</p><p style=\"text-align:justify\">The GM will decide the Difficulty of the surgery. Cutting of a stray nger is probably <strong>Very Easy (+60)</strong> whereas removing a vestigial twin is Very Hard (-), and a glowing heart or blob-form impossible. Consult the @UUID[Compendium.wfrp4e-core.items.Item.NP4EHyyh1yOLbsPU]{Surgery} Talent regarding the procedure and the table below to determine the result. In somecases, a body part might need to be @UUID[Compendium.wfrp4e-core.journals.JournalEntry.NS3YGlJQxwTggjRX.JournalEntryPage.WCivInLZrqEtZzF4#amputated-parts]{amputated}. At The GM’s discretion the mutation may eventually grow back even if the surgery was successful.</p><p></p><p><strong>Surgery Table</strong></p><table><tbody><tr><th style=\"width:80px\"><p>SL</p></th><th><p>Result</p></th></tr><tr><td style=\"text-align:center\"><p>-6</p></td><td><p><strong>We’ve got a bleeder!</strong> The patient dies on the operating table.</p></td></tr><tr><td style=\"text-align:center\"><p>-4 to -5</p></td><td><p><strong>Crippling failure.</strong> The mutation remains and your Strength, Toughness, and Agility are reduced by -1d10 each.</p></td></tr><tr><td style=\"text-align:center\"><p>-2 to -3</p></td><td><p><strong>Painful failure.</strong> The mutation remains and your Toughness is reduced by -1d10.</p></td></tr><tr><td style=\"text-align:center\"><p>-1 to -0</p></td><td><p><strong>Failure.</strong> The mutation remains, but you don’t suffer any additional trauma.</p></td></tr><tr><td style=\"text-align:center\"><p>0 to +1</p></td><td><p><strong>Partial success.</strong> Some part of your mutation was removed. The GM decides what that means in practice.</p></td></tr><tr><td style=\"text-align:center\"><p>+2 to +3</p></td><td><p><strong>Solid success!</strong> The mutation is removed!</p></td></tr><tr><td style=\"text-align:center\"><p>+4 to +5</p></td><td><p><strong>Impressive success!</strong> The mutation is removed and you don’t get a @Condition[Bleeding] Condition or an Infection.</p></td></tr><tr><td style=\"text-align:center\"><p>+6</p></td><td><p><strong>A surgical triumph!</strong> The goal is achieved with no complications, you don’t get a @Condition[Bleeding] Condition or an Infection. Your recovery time is halved.</p></td></tr></tbody></table><p style=\"text-align:justify\"></p><h2>Asylum &amp; Hospice</h2><p style=\"text-align:justify\">Many of the trivial and minor mental mutations can be mistaken for ordinary mental trauma and madness - something which some open minded institutions ofer treatment for. For the wealthy who have the means to pay for admission to an asylum, it’s not uncommon to have a relative admitted to calm their nerves.  The asylums are often found in the cities.</p><p style=\"text-align:justify\">The Healing Order of the Sisters of Shallya provides hospices, hospital-monasteries, throughout the Empire to help the poor and sick. These often lie somewhat secluded, away from the bustling cities.</p><p style=\"text-align:justify\">Admitted Character’s may undertake a Regimen Endeavour in an attempt to fortify themselves against their mental corruption, or maybe even cure it. If you pass a <strong>Very Hard (-30) Cool</strong> Test the level of mental corruption is reduced by 1. You need +6 SL to completely remove a mental corruption however (go from 1 to 0 levels). At The GM’s discretion the mutation may eventually return even if the Regimen was successful.</p><p style=\"text-align:justify\"></p><h2>Drugs</h2><p style=\"text-align:justify\">Apothecaries and herbalists are happy to sell remedies. The GM decides which drugs are effective for which type of mental mutation - perhaps Nightshade will help against Chaotic Nightmares for instance. If you want a more generic solution you can buy a week's worth of curatives for  GC that will reduce the Difficulty of any self-control Test by one level.</p><p style=\"text-align:justify\"></p><h2>Indulgence</h2><p style=\"text-align:justify\">While it certainly won’t lead to a cure, indulging your trivial or minor mental mutation can help alleviate some of its everyday pressure. The GM determines what you need at hand, and if you have to spend some coin in order to indulge your mutation.</p><p style=\"text-align:justify\">For example: Someone with a Dark Appetite may lock themselves in and fieasĩ, whereas someone with a Fixation could haunt the local library.</p><p style=\"text-align:justify\">If you undertake an Indulgence Endeavour and pass a <strong>Challenging (+0) Cool</strong> Test you may reduce the difficulty by one level for the coming SL days when you need to do a self-control Test for that particular corruption. Critical failure on the Cool Test causes you some sort of problem of The GM’s choosing as you stare too deep into the abyss; like forgetting about other Endeavours or ofending someone</p>"
+      },
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null,
+      "ownership": {
+        "default": -1,
+        "yWOr6WVvMImJ3rH1": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.wfrp4e-mutations.mutations-journal.JournalEntry.zHbiKbXkez1j4rDc.JournalEntryPage.shbn5L0hfwrKpfwd",
+        "duplicateSource": null,
+        "coreVersion": "13.342",
+        "systemId": "wfrp4e",
+        "systemVersion": "8.4.1",
+        "createdTime": 1742227437597,
+        "modifiedTime": 1743377487931,
+        "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+        "exportSource": null
+      },
+      "category": null,
+      "_key": "!journal.pages!uDGFazW9Nr0N6ABS.shbn5L0hfwrKpfwd"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742227424866,
+    "modifiedTime": 1742227424866,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "categories": [],
+  "_key": "!journal!uDGFazW9Nr0N6ABS"
+}

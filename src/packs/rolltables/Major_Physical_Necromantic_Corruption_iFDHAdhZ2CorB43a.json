@@ -1,0 +1,332 @@
+{
+  "name": "Major Physical Necromantic Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        10
+      ],
+      "drawn": false,
+      "_id": "oEjLDwMXZZvIFP6Y",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339977,
+        "modifiedTime": 1782468850846,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Additional Extremities",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.3Wl9402VTU03Rrqv",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.oEjLDwMXZZvIFP6Y"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        11,
+        19
+      ],
+      "drawn": false,
+      "_id": "QVt3UXnhwqc7evkU",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339977,
+        "modifiedTime": 1782468850846,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Atrophy",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Db9gdM7FYh0eAmxd",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.QVt3UXnhwqc7evkU"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        20,
+        28
+      ],
+      "drawn": false,
+      "_id": "zeTOdjq3I0JCELOl",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339977,
+        "modifiedTime": 1782468850846,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Crawling Skin",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.tgOHNN69tsQBhoEH",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.zeTOdjq3I0JCELOl"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        29,
+        37
+      ],
+      "drawn": false,
+      "_id": "i0qoPfVgbD8XrlW9",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339977,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "False Flesh",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.imo3dNzhrlp8SC1V",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.i0qoPfVgbD8XrlW9"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        38,
+        46
+      ],
+      "drawn": false,
+      "_id": "Titj70w85RlSjI4E",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339978,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Horrible Stench",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.lzCb0vkIElbwF13L",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.Titj70w85RlSjI4E"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        47,
+        55
+      ],
+      "drawn": false,
+      "_id": "c4gxhfNum7wkYi4V",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339978,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Plague Bearer",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.AgiU93BXXzWIkZOz",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.c4gxhfNum7wkYi4V"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        56,
+        64
+      ],
+      "drawn": false,
+      "_id": "Xk0d5ztXLQV1rLjI",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339978,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Rotting Flesh",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.6EaVm2s7czseDSOD",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.Xk0d5ztXLQV1rLjI"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        65,
+        73
+      ],
+      "drawn": false,
+      "_id": "HOAdsb43Ogh6wBUT",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339978,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Skinned Alive",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.aWOFThLDNDGHYZ9y",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.HOAdsb43Ogh6wBUT"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        74,
+        82
+      ],
+      "drawn": false,
+      "_id": "2h9bhrHM5alPRd2a",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339978,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Spilled Guts",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.0kDNK5KYfYC14VXe",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.2h9bhrHM5alPRd2a"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        83,
+        91
+      ],
+      "drawn": false,
+      "_id": "m8acjidoeVXTBmg6",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339979,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Swarmform",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.nqOLC6T6Vqn6nBGd",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.m8acjidoeVXTBmg6"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        92,
+        100
+      ],
+      "drawn": false,
+      "_id": "sp7fgVfNkCG9S81r",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339979,
+        "modifiedTime": 1782468850847,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unnatural Body",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.8ODkP7FV7rQrzIUk",
+      "description": "",
+      "_key": "!tables.results!iFDHAdhZ2CorB43a.sp7fgVfNkCG9S81r"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "X6xZ0hUPwh934fho",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "major-physical-necro"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468850846,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "iFDHAdhZ2CorB43a",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!iFDHAdhZ2CorB43a"
+}

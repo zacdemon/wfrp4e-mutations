@@ -1,0 +1,56 @@
+{
+  "name": "Symbiotic Twins",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>A new body grows on the back of your body and tears loose in excruciating pain. The twin is identical to you in every way; in appearance, Characteristics, Skills, Talents and Mutations. Both of you are completely covered by pink scar tissue on the back of your entire body, from head to toe, where you separated. Whether its because you share one soul or because your minds have some magical link, you have a telepathic bond and can communicate thoughts and feelings to each other as an Action regardless of distance. You always know in which direction your twin is. Through the bond you share you also share Wounds (but not Critical Wounds, Conditions, Psychology or Diseases) - if one dies so does the other! The twin becomes a new Character or NPC (that could be controlled by the same Player or the GM) that will develop their own Motivation, Short and Long Term Ambitions, and they will individually accumulate XP and Corruption from the point of their birth. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.QnD1JQqoxybOO91b",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743371926773,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "3QMRnSGYSXcmQarc",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!3QMRnSGYSXcmQarc"
+}

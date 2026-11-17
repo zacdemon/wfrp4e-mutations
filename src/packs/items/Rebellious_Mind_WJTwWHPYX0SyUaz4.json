@@ -1,0 +1,56 @@
+{
+  "name": "Rebellious Mind",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You become convinced that the established institutions are evil and that the existing power structure should be razed to the ground. You may choose whatever cause or reason for this. You gain the @UUID[Compendium.wfrp4e-core.items.Item.oGbDwnLOn3isPJpO]{Impassioned Zeal} Talent. Make an <strong>Average (+20) Cool</strong> Test when you wake up every morning. If you pass you feel that the rebellion can wait another day, but if you fail you must tell the world (if theres no one else, then your present company will have to su ce) of what has to be done sometime during the day. Such a sermon will take at least 30, impassioned, minutes. If you do not tell the world about your anarchistic ideals you'll automatically fail any Rest Test of that night as you toss and turn, and gain 1 @Condition[Fatigued] Condition the following day.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.EX90EH0gp7qmkuFf",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1742291789684,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "WJTwWHPYX0SyUaz4",
+  "sort": 4800000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!WJTwWHPYX0SyUaz4"
+}

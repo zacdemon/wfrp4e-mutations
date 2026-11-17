@@ -1,0 +1,62 @@
+{
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.HCvKEsrNVqyJIIxP]{Razor-sharp Claws}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur)</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-mutations.items.Item.sGSearHVJlNXVgWb]{Tail} (Balanced), +10 Agility</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.CV9btQn09S9Fn8Jk]{Strong Legs}</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv]{Bite} (SB+3), @UUID[Compendium.wfrp4e-core.items.Item.x0WMGwuQzReXcQrs]{Night Vision}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.ClOlztW6hH8rslbp]{Tracker}</li></ul>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.op4GKikIQee7JMXw",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742316936241,
+    "modifiedTime": 1744674293081,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": {
+      "worldId": "test",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "wfrp4e",
+      "systemVersion": "8.4.1"
+    }
+  },
+  "folder": "b2sMLyOoOujhePC4",
+  "name": "Bestial Body - Feline",
+  "_id": "GXTvTdTvetxMrw1A",
+  "sort": 1600000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!GXTvTdTvetxMrw1A"
+}

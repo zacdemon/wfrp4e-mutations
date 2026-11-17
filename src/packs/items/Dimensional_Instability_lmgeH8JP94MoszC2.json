@@ -1,0 +1,56 @@
+{
+  "name": "Dimensional Instability",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>The corruption of your mind has weakened the boundaries of reality for you. You flicker from time to time around your physical location - seemingly moving in rapid succession an inch here or an inch there. It looks truly disturbing. Your dimensional instability also gives you a special ability. You can, with a successful <strong>Average (+20) Willpower</strong> Test, as your Movement teleport to another location within Willpower yards that is in your line of sight. Unless you rest for 8 hours any additional teleportation will worsen the Diffculty by one degree. You may bring as many passengers as the number of SL you score, but you have to be in physical contact and the Difficulty worsen one level per passenger. You suffer a @Table[minormis]{Minor Miscast} if you Fumble your Test.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.1tMUaEpKx61It30o",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743368083933,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "lmgeH8JP94MoszC2",
+  "sort": 7600000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!lmgeH8JP94MoszC2"
+}

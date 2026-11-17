@@ -1,0 +1,56 @@
+{
+  "name": "Fright",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You've developed an irrational fear towards some specific type of creature, environment or experience. When faced with the object of your fright, it's causing you @Terror[1]. Roll on the @Table[fright] Table to determine the source of your fear, or consult the GM. If the result is a category, then pick something specific. For additional levels you may choose to increase the level of Terror for the same source, or add an additional source. You gain the @UUID[Compendium.wfrp4e-core.items.Item.jrFIFLhyOYwcyMUl]{Flee!} Talent, but it only applies when fleeing from the source of your fright.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.oUdlCZ6jItRtTxD4",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743360301361,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "7ttpIvyRJsNrUQSS",
+  "sort": 1500000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!7ttpIvyRJsNrUQSS"
+}

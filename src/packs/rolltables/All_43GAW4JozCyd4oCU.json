@@ -1,0 +1,22 @@
+{
+  "name": "All",
+  "sorting": "m",
+  "folder": "kce9ORxHh1YEEv8K",
+  "type": "RollTable",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797102,
+    "modifiedTime": 1744148797102,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1"
+  },
+  "_id": "43GAW4JozCyd4oCU",
+  "sort": 0,
+  "_key": "!folders!43GAW4JozCyd4oCU"
+}

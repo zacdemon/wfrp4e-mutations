@@ -1,0 +1,56 @@
+{
+  "name": "Entrancement",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>You can, with a successful <strong>Opposed Willpower</strong> Test, make someone desperately want to please you for your Willpower Bonus + SL hours. They do not follow your commands mindlessly and they retain their sense of self-preservation, but any social interaction you have with them has a +20 modifier. Using Charm and Intimidation you are likely to be able to cloud their judgement and play on their emotions like a well tuned harp. A Critical Success makes the target too eager and lovesick to act discreetly, causing a scene or a blunder. You may have as many (living) people entranced as your Willpower Bonus allows. Its almost impossible for you to not draw the attention of others and you get a -20 Stealth modifier around sentient beings that are within your Willpower yards. Entrancement doesn't automatically cause fear in others (see @UUID[Compendium.wfrp4e-mutations.mutations-journal.JournalEntry.uDGFazW9Nr0N6ABS.JournalEntryPage.9sK84Dvy3Ng36qXp#reactions-to-mutations]{Reactions to Mutations}), but victims that have shaken off your effect might begin to fear you.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.BlAf8J6NjbHsZFjk",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743371156138,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "RXYYigURsYy1XiJ6",
+  "sort": 4300000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!RXYYigURsYy1XiJ6"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Anti-magic Aura",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>Your mind becomes a vortex for chaotic energies that disrupts the Winds of Magic. No magic, except @UUID[Compendium.wfrp4e-core.items.Item.hiU7vhBOVpVI8c7C]{Chaos Magic}, has any effect within half of your Willpower yards. Spells falter, magic items temporarily lose their Magical quality, zombies drop to the ground and so on. Anyone with @UUID[Compendium.wfrp4e-core.items.Item.OEjUvJKi0xmBwbS2]{Second Sight} or @UUID[Compendium.wfrp4e-core.items.Item.6w30u0VPsAicrqb5]{Magical Sense} immediately senses your presence as something horrendously wrong. Others do not perceive your mutation, or at least not that you're the source of the effect. While you don't lose any non-Chaos magic abilities you are unable to use them due to your aura. The extraordinary pressure created by the swirl of magical forces that have your mind at the epicentre reduces your Initiative, Intelligence and Willpower with -10 each. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.aRMROuyUn9d3keOv",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743367569414,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "TAyMfzKGCFdwOYwa",
+  "sort": 4400000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!TAyMfzKGCFdwOYwa"
+}

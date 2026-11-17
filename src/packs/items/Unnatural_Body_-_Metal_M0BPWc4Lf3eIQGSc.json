@@ -1,0 +1,62 @@
+{
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p>Your body consists of living metals; iron, steel, gold, silver and so on.</p><ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Cold), +5 Strength, -5 Agility per arm, +3 AP, +80% weight.</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Cold), +5 Strength, -5 Agility per leg, +3 AP, +240% weight.</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Cold), +30 Toughness, +3 AP, +400% weight.</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb]{Magical}, @UUID[Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr]{Painless}, @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Fire), @UUID[Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk]{Immunity} (Cold), +3 AP, -10 Initiative, +80% weight. Immune to Stunned and Psychology. You can only use Chamon and @UUID[Compendium.wfrp4e-core.items.Item.hiU7vhBOVpVI8c7C]{Chaos Magic} Lores.</li></ul>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.op4GKikIQee7JMXw",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742374690234,
+    "modifiedTime": 1742374693633,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": {
+      "worldId": "test",
+      "uuid": null,
+      "coreVersion": "12.331",
+      "systemId": "wfrp4e",
+      "systemVersion": "8.4.1"
+    }
+  },
+  "folder": "6qeFntibkXZmzA2D",
+  "name": "Unnatural Body - Metal",
+  "_id": "M0BPWc4Lf3eIQGSc",
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "sort": 300000,
+  "_key": "!items!M0BPWc4Lf3eIQGSc"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Crossbreed",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Your body drastically transforms, changing you into a mix of your current species and a foreign type. Consult the @Table[crossbreed] Table to determine which species you transform into. Roll 1d10 to determine how far you transform into the new species: 1-4, 25%, 5-8, 50%, 9-10, 75%. Compare the characteristics of your current species with the new one. Multiply the difference per characteristic with the percentage of your transformation (25%, 50% or 75%) to calculate how your characteristics are affected. You may choose one Creature Trait per 25% of transformation. You and the GM determine how you change cosmetically. If you gain this mutation again you may choose if you want to roll for a new species or progress the level of transformation by +25% with your existing crossbreeding. If you reach 100% transformation then youve changed species into the new one. Change your base characteristics to that of your new race.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.8ISME8gENc1s1XBg",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743370149531,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "KCtwwubUI7vwFo8L",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!KCtwwubUI7vwFo8L"
+}

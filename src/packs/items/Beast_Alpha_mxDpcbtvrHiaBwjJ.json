@@ -1,0 +1,56 @@
+{
+  "name": "Beast Alpha",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>You may, with an <strong>Opposed Willpower</strong> Test, command an animal or an unintelligent (Intelligence 15 or below) and bestial monster to do your bidding. The beast has to be able to hear your voice. Domestic (@UUID[Compendium.wfrp4e-core.items.Item.V0naR1YbYCl0KIxp]{Broken}) animals have a +20 modifier and monsters -20. As your target can't form complex thoughts you have to convey intent rather than instructions, like Attack orc, Flee or Calm down. Beasts that you haven't asserted your dominance over at least once before, become nervous or a ressive in your presence. Beasts within your Willpower yards will either try to avoid you, show submission or challenge you.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.oASLzQuDI58RRGY4",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743367723486,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "mxDpcbtvrHiaBwjJ",
+  "sort": 7700000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!mxDpcbtvrHiaBwjJ"
+}

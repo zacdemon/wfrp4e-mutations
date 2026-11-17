@@ -1,0 +1,56 @@
+{
+  "name": "Werebeast",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>Much like the lycanthropes of legend you may transform your body into a humanoid with bestial resemblance. Roll on the @Table[bestial-body] Table to determine which kind of beast that lends its feature to you. Your body, head and all limbs are affected and gain the attributes described in the table. The transformation takes 1 Round and requires a successful <strong>Challenging (+0) Willpower</strong> Test with the modifier from the Morrslieb Table below. A fumbled roll causes a @Table[minormis]{Minor Miscast}. You can only gain this mutation once.</p><table><tbody><tr><td><p>Morrslieb absent or during the day</p></td><td><p>-20 to turn bestial, +20 to change back</p></td></tr><tr><td><p>Morrslieb small</p></td><td><p>-10 to turn bestial, +10 to change back</p></td></tr><tr><td><p>Morrslieb large</p></td><td><p>+10 to turn bestial, -10 to change back</p></td></tr><tr><td><p>Morrslieb full</p></td><td><p>+20 to turn bestial, -20 to change back</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.GfYDGvPxVbGDmzM2",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743370222144,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "NWySJCNM49xs4JY6",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!NWySJCNM49xs4JY6"
+}

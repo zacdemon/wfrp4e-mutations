@@ -1,0 +1,56 @@
+{
+  "name": "Spectral Companion",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Mental Mutation</strong></p><p>Your corrupted mind has attracted and become the host to a spectral entity. Roll 1d10 to determine of which kind:</p><ul><li><p>1-7: @UUID[Compendium.wfrp4e-core.actors.Actor.GgSxlomoV220kd3G]{Ghost}</p></li><li><p>8-9: @UUID[Compendium.wfrp4e-core.actors.Actor.TWy5l4uYTRAtjfit]{Tomb Banshee}</p></li><li><p>10: @UUID[Compendium.wfrp4e-core.actors.Actor.hMbcLVjk7eUdxtqC]{Cairn Wraith}</p></li></ul><p>The GM should create an NPC out of the spectral companion, complete with name and Ambitions - which the Character may or may not be privy to. While the companion is ever present it will remain unseen most of the time. It will whisper commentary, advice, promises and threats into the ear of the Character. If the Character is receptive to collaborating or bartering with the companion it can perform favours, like peeking into the next room, spreading terror or attacking people. It may also act on its behalf to further its own Ambitions. It will try to keep the Character alive as it will lose its anchor in the material world without the host. e companion cannot move more than its Willpower yards away from the Character. If the companion is destroyed it will reform and heal 1 Wound per day. The companion can be exorcised. Spectral Companion doesnt automatically cause Fear in others (see @UUID[Compendium.wfrp4e-mutations.mutations-journal.JournalEntry.uDGFazW9Nr0N6ABS.JournalEntryPage.9sK84Dvy3Ng36qXp#reactions-to-mutations]{Reactions to Mutations}), but your companion revealing themself might.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.Z6UzG0i5WYR3aYUP",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743372924329,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "an2hgfmAgySL3qnp",
+  "sort": 5300000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!an2hgfmAgySL3qnp"
+}

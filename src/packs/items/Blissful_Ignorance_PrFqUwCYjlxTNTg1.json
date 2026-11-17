@@ -1,0 +1,56 @@
+{
+  "name": "Blissful Ignorance",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>You've become convinced to the core of your being that everything is right in the world, that everything happens for a reason and that bad things dont happen. Poor people just prefer to live like that, starving people are just skinny, violent acts are for the greater good and accidents and diseases hide some greater meaning. You're disturbingly at ease in all situations, never resorting to ght or ight responses, and instead reason logically and rationalise about why it's for the best that things happen as they do. While this can sometimes make you oblivious or uncaring about danger, you can just as well commit horrible acts without remorse since you don't really have any morals anymore. You gain the @UUID[Compendium.wfrp4e-core.items.Item.8pVzgPkgWpTJvfhG]{Fearless} (Everything) Talent. You're always last in the Initiative order unless you successfully suppress the mutation.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.JfhGuGQFYXJtlaX8",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743367794303,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "PrFqUwCYjlxTNTg1",
+  "sort": 4000000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!PrFqUwCYjlxTNTg1"
+}

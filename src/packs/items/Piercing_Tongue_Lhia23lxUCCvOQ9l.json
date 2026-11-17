@@ -1,0 +1,56 @@
+{
+  "name": "Piercing Tongue",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your neck thickens as your tongue becomes long, sinuous and ending in a sharp point - it extends down your throat to some hidden cavity in your chest. You can launch your tongue at opponents up to 4 yards away dealing SB Damage on a successful Ballistic Skill Test. Your tongue has the Precise Weapon Quality. Roll 1d10; on 9-10 you gain the @UUID[Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv]{Venom (Average)} Creature Trait. I you have the @UUID[Compendium.wfrp4e-mutations.items.Item.ZoRt8G8M0xyfdQpY]{Bloodsucker} Mutation you may lodge the tongue in your victim and cause 1 Wound per Round until the victim succeeds with an <strong>Opposed Strength</strong> Test or cuts o your tongue (which can sustain 2 Wounds). Your tongue will regrow at the rate of 2 inches per week if cut o. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.5znfSUxq5vq0jVf8",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1744674529290,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "Lhia23lxUCCvOQ9l",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!Lhia23lxUCCvOQ9l"
+}

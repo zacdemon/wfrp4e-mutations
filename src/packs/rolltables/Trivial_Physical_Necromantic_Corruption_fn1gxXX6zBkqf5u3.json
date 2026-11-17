@@ -1,0 +1,251 @@
+{
+  "name": "Trivial Physical Necromantic Corruption",
+  "img": "systems/wfrp4e/ui/buttons/d10.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        13
+      ],
+      "drawn": false,
+      "_id": "qPMeqeZihLw9Ec8g",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339950,
+        "modifiedTime": 1782468850831,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Bleeder",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.FlPGiIMSmlBC3dBO",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.qPMeqeZihLw9Ec8g"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        14,
+        26
+      ],
+      "drawn": false,
+      "_id": "1C2wuJJyKiesDWxy",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339950,
+        "modifiedTime": 1782468850831,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Cadaverously Thin",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Bo18hlJMiANiqz4u",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.1C2wuJJyKiesDWxy"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        27,
+        39
+      ],
+      "drawn": false,
+      "_id": "YoSgiFGebHQWAHdQ",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339950,
+        "modifiedTime": 1782468850831,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Cold-blooded",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.FE7VTGvuPf4jyoh0",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.YoSgiFGebHQWAHdQ"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        40,
+        52
+      ],
+      "drawn": false,
+      "_id": "fEwALkkwKs6F0wl4",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339950,
+        "modifiedTime": 1782468850831,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Foul Touch",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.zjJ3DxbDrF3LwLbb",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.fEwALkkwKs6F0wl4"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        53,
+        64
+      ],
+      "drawn": false,
+      "_id": "9lX9bhcH2yPwqtWD",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339951,
+        "modifiedTime": 1782468850832,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Hollow Bones",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.Dz8vC2aWD0kxZzv0",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.9lX9bhcH2yPwqtWD"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        65,
+        76
+      ],
+      "drawn": false,
+      "_id": "UC772adtiznWRCDR",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339951,
+        "modifiedTime": 1782468850832,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Metallic Skeleton",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.gkfC5uH5f3pnX9l7",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.UC772adtiznWRCDR"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        77,
+        88
+      ],
+      "drawn": false,
+      "_id": "hkuT91hq66cNRqOf",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339951,
+        "modifiedTime": 1782468850832,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Slimy",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.9v2WJ8EpHjuRz6uC",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.hkuT91hq66cNRqOf"
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        89,
+        100
+      ],
+      "drawn": false,
+      "_id": "614dkQalpooXvEaF",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.364",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": 1781951339951,
+        "modifiedTime": 1782468850832,
+        "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "name": "Unhealing Wound",
+      "documentUuid": "Compendium.artantares-mutations.items.Item.XdbHWsUa59sLvLkN",
+      "description": "",
+      "_key": "!tables.results!fn1gxXX6zBkqf5u3.614dkQalpooXvEaF"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "X6xZ0hUPwh934fho",
+  "flags": {
+    "wfrp4e": {
+      "key": "mutation",
+      "column": "trivial-physical-necro"
+    }
+  },
+  "formula": "1d100",
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "14.364",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1744148797276,
+    "modifiedTime": 1782468850831,
+    "lastModifiedBy": "XtBZYPNGm0g6PJIk",
+    "exportSource": null
+  },
+  "_id": "fn1gxXX6zBkqf5u3",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!tables!fn1gxXX6zBkqf5u3"
+}

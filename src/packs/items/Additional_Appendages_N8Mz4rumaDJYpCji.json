@@ -1,0 +1,56 @@
+{
+  "name": "Additional Appendages",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Trivial Physical Mutation</strong></p><p>You sprout 1d6 additional fingers, toes or tentacles. Consult the table below to find out what and where. The new appendages are fully functional but don't provide any special modifiers or abilities.</p><p></p><table><tbody><tr><td><p>1d10</p></td><td><p>Result</p></td></tr><tr><td><p>01-04</p></td><td><p>Hand: 1d10 1-7 Fingers, 8-9 Toes, 10 Tentacles</p></td></tr><tr><td><p>05-08</p></td><td><p>Foot: 1d10 1-7 Toes, 8-9 Fingers, 10 Tentacles</p></td></tr><tr><td><p>09</p></td><td><p>Body: 1d10 1-5 Fingers, 6-9 Toes, 10 Tentacles</p></td></tr><tr><td><p>10</p></td><td><p>Head: 1d10 1-5 Fingers, 6-9 Toes, 10 Tentacles</p></td></tr></tbody></table>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.1DlNGhIEH82OLFXH",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1743353186966,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "N8Mz4rumaDJYpCji",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!N8Mz4rumaDJYpCji"
+}

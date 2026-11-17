@@ -1,0 +1,56 @@
+{
+  "name": "Touched",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Minor Mental Mutation</strong></p><p>Your mind has been touched by the otherworldly and you have trouble separating reality from hallucinations and supernatural visions. At stressful, or just inopportune times, the GM may ask you to pass an <strong>Average (+20) Cool</strong> Test or you will see, hear, smell, taste and/or feel things that others dont. The level of failure should indicate the severity of the hallucinations, ranging from flickerings in the corner of your eye and whispers, to buildings collapsing and monsters attacking. Your sensitive mind has learned the @UUID[Compendium.wfrp4e-core.items.Item.OEjUvJKi0xmBwbS2]{Second Sight} or @UUID[Compendium.wfrp4e-core.items.Item.mNoCuaVbFBflfO6X]{Sixth Sense} Talent.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "mental"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "OgoyrbRuvV9jl2Hg",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.mgRTbqwMaFpA4Z5S",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.5.1",
+    "createdTime": 1742119727837,
+    "modifiedTime": 1743371994456,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "5yjm2u4hdsmgcClo",
+  "sort": 1100000,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!5yjm2u4hdsmgcClo"
+}

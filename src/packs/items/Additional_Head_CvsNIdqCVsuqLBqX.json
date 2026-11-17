@@ -1,0 +1,56 @@
+{
+  "name": "Additional Head",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p>\n<p>Another head emerges from somewhere on your body. Roll on the Hit Locations Table (WFRP page 159) to determine where.  e head may sprout on a neck of its own or be sunken into your body so that just the face is visible.  is new head has a brain and a personality of its own!  While your rst head remains the primary that controls most Actions, the other will voice its opinions and try to in uence decisions. Describe the Motivation, Short Term and Long Term Ambition of the new head. If the new head has a direct opportunity to ful l an Ambition it will momentarily take control to do so if you fail an <b>Average (+20) Willpower</b> Test.  You gain +1d10 Initiative, +1d10 Intelligence and the @UUID[Compendium.wfrp4e-core.items.Item.IFKWu98qmWpaSfUi]{Ambidextrous} Talent. Hits to the body part that houses the new head has a 20% chance o striking the head, making any Critical Wounds into head wounds. If the primary head is destroyed, the secondary will assume control.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.5AEs3YHGpVBaVF5Z",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742119730045,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "CvsNIdqCVsuqLBqX",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!CvsNIdqCVsuqLBqX"
+}

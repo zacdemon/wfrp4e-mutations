@@ -1,0 +1,56 @@
+{
+  "name": "Rotting Flesh",
+  "type": "mutation",
+  "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+  "effects": [],
+  "flags": {
+    "_sheetTab": {},
+    "core": {}
+  },
+  "system": {
+    "description": {
+      "type": "String",
+      "label": "Description",
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>An unsettling rot has set into your esh. Your skin has taken an unhealthy hue and your body is literally drooping from your skeleton. Various in amed sores fester angrily and ma ots move freely in your putrid esh. You produce a rancid stench and an eager cloud of ies follow you in a buzzing cloud. You gain the @UUID[Compendium.wfrp4e-core.items.Item.V0c3qBU1CMm8bmsW]{Infected} and @UUID[Compendium.wfrp4e-core.items.Item.TBcdTlYSRH8Rd1x0]{Infestation} Creature Traits and your Fellowship can never be higher than 5. You can only gain this mutation once.</p>"
+    },
+    "gmdescription": {
+      "type": "String",
+      "label": "Description",
+      "value": ""
+    },
+    "mutationType": {
+      "label": "Type",
+      "type": "String",
+      "value": "physical"
+    },
+    "modifier": {
+      "value": "",
+      "type": "String",
+      "label": "Modifier"
+    },
+    "modifiesSkills": {
+      "value": false,
+      "type": "Boolean",
+      "label": "Skill Modifier?"
+    }
+  },
+  "folder": "VaF7zB2JjYBYMTtK",
+  "_stats": {
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.g9waGUEPObjdJd0i",
+    "duplicateSource": null,
+    "coreVersion": "13.342",
+    "systemId": "wfrp4e",
+    "systemVersion": "8.4.1",
+    "createdTime": 1742119730045,
+    "modifiedTime": 1742194442338,
+    "lastModifiedBy": "yWOr6WVvMImJ3rH1",
+    "exportSource": null
+  },
+  "_id": "6EaVm2s7czseDSOD",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "yWOr6WVvMImJ3rH1": 3
+  },
+  "_key": "!items!6EaVm2s7czseDSOD"
+}
