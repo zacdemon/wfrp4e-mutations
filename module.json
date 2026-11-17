@@ -24,6 +24,13 @@
         "type": "module",
         "reason": "Mutation items use icons from, and link Creature Traits, Talents and journal pages in, the WFRP4e Core Rulebook module."
       }
+    ],
+    "recommends": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "reason": "Wraps the system's mutation test and table roll cleanly; the module falls back to patching without it."
+      }
     ]
   },
   "authors": [
@@ -41,8 +48,16 @@
   ],
   "esmodules": [
     "/scripts/mutation-messages.mjs",
-    "/scripts/functions.mjs"
+    "/scripts/mutation-flow.mjs"
   ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true,
   "packs": [
     {
       "name": "items",
