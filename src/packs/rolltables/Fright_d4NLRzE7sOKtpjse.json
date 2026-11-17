@@ -138,7 +138,7 @@
       "weight": 10,
       "range": [
         26,
-        35
+        30
       ],
       "drawn": false,
       "_id": "4gu3FN5EGg1OQgRb",
@@ -163,7 +163,7 @@
       "type": "text",
       "weight": 5,
       "range": [
-        36,
+        31,
         40
       ],
       "drawn": false,
