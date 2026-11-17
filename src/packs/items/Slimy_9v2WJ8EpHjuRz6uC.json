@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Tivial Physical Mutation, Tolerable</strong></p><p>Your skin exudes a slippery, viscous liquid much like a snail. This makes you look constantly sweaty and the slime soaks through your clothing. You gain the @UUID[Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp]{Contortionist} Talent and a +20 bonus for escaping a Grapple. Reduce your Fellowship with -10. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your skin exudes a slippery, viscous liquid much like a snail. This makes you look constantly sweaty and the slime soaks through your clothing. You gain the @UUID[Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp]{Contortionist} Talent and a +20 bonus for escaping a Grapple. Reduce your Fellowship with -10. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

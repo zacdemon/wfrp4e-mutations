@@ -1,5 +1,5 @@
 {
-  "name": "Runnings Sores",
+  "name": "Batrachian Suckers",
   "type": "mutation",
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
   "effects": [],
@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your body is covered with sores that weep disgusting pus. Roll on the @Table[hitloc]{Hit Locations} Table to determine which part of the body is affected. Every time you gain this mutation it spreads to a new part of the body. Reduce your Fellowship by -10 if your head is affected.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your hands and feet develop frog-like suckers that enable you to effortlessly traverse walls and ceilings. You gain the @UUID[Compendium.wfrp4e-core.items.Item.KII1gWnxIZ8HzmU5]{Wallcrawler} Creature Trait. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",
@@ -36,21 +36,21 @@
   },
   "folder": "VaF7zB2JjYBYMTtK",
   "_stats": {
-    "compendiumSource": "Compendium.wfrp4e-core.items.Item.ovduMFevwERmtD4A",
+    "compendiumSource": "Compendium.wfrp4e-core.items.Item.2GskupooWlL9yWc9",
     "duplicateSource": null,
     "coreVersion": "13.342",
     "systemId": "wfrp4e",
-    "systemVersion": "8.5.1",
+    "systemVersion": "8.4.1",
     "createdTime": 1742119730045,
-    "modifiedTime": 1743369397246,
+    "modifiedTime": 1742192874977,
     "lastModifiedBy": "yWOr6WVvMImJ3rH1",
     "exportSource": null
   },
-  "_id": "rX4IDA03ZGAfIu0H",
+  "_id": "b1E7a0fIYEGE3LwX",
   "sort": 0,
   "ownership": {
     "default": 0,
     "yWOr6WVvMImJ3rH1": 3
   },
-  "_key": "!items!rX4IDA03ZGAfIu0H"
+  "_key": "!items!b1E7a0fIYEGE3LwX"
 }
