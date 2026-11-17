@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Major Physical Mutation</strong></p><p>One of your hands turns into carapaced pincer claws similar to that of a crab. If you are left with only one hand see @UUID[Compendium.wfrp4e-core.items.Item.zyocWSzEZEC826NS]{Ampuiated Parts (Hand)}. If you're left with no hands your dexterity drops to 0. The claws cannot wield anything or use Dexterity Skills. You gain the @UUID[Compendium.wfrp4e-core.items.Item.AtpAudHA4ybXVlWM]{Weapon} (SB+4) and @UUID[Compendium.wfrp4e-core.items.Item.KynNUYYKzTMeHrKl]{Constrictor} Creature Traits, as well as the @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace) mutation. This Mutation can only be received if you have at least one clawless hand.</p>"
+      "value": "<p><strong>Major Physical Mutation</strong></p><p>One of your hands turns into carapaced pincer claws similar to that of a crab. If you are left with only one hand see @UUID[Compendium.wfrp4e-core.items.Item.zyocWSzEZEC826NS]{Ampuiated Parts (Hand)}. If you're left with no hands your dexterity drops to 0. The claws cannot wield anything or use Dexterity Skills. You gain the @UUID[Compendium.wfrp4e-core.items.Item.AtpAudHA4ybXVlWM]{Weapon} (SB+4) and @UUID[Compendium.wfrp4e-core.items.Item.KynNUYYKzTMeHrKl]{Constrictor} Creature Traits, as well as the @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace) mutation. This Mutation can only be received if you have at least one clawless hand.</p>"
     },
     "gmdescription": {
       "type": "String",

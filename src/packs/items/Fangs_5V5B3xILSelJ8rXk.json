@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your teeth turn into sharp fangs and you gain the Bite (SB+3) Creature Trait. Roll 1d10: On a 8-9 you gain the @UUID[Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv]{Venom (Average)} Creature Trait; on a 10 you gain the @UUID[Compendium.wfrp4e-mutations.items.Item.ZoRt8G8M0xyfdQpY]{Bloodsucker} mutation. You gain +1 Damage for each time you gain this mutation.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your teeth turn into sharp fangs and you gain the Bite (SB+3) Creature Trait. Roll 1d10: On a 8-9 you gain the @UUID[Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv]{Venom (Average)} Creature Trait; on a 10 you gain the @UUID[Compendium.artantares-mutations.items.Item.ZoRt8G8M0xyfdQpY]{Bloodsucker} mutation. You gain +1 Damage for each time you gain this mutation.</p>"
     },
     "gmdescription": {
       "type": "String",

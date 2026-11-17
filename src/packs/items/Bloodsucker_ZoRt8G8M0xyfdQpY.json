@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your metabolism changes so that you can drink the blood of others to sustain and heal yourself. You heal as many Wounds as the opponent loses when you bite them. Roll 1d10: on 1-8 you gain the @UUID[Compendium.wfrp4e-mutations.items.Item.5V5B3xILSelJ8rXk]{Fangs} Mutation; on 9 10 you gain the @UUID[Compendium.wfrp4e-mutations.items.Item.Lhia23lxUCCvOQ9l]{Piercing Tongue} Mutation. You can still consume food as normal, but you can replace a meal with 1 Wound worth of blood if you wish. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your metabolism changes so that you can drink the blood of others to sustain and heal yourself. You heal as many Wounds as the opponent loses when you bite them. Roll 1d10: on 1-8 you gain the @UUID[Compendium.artantares-mutations.items.Item.5V5B3xILSelJ8rXk]{Fangs} Mutation; on 9 10 you gain the @UUID[Compendium.artantares-mutations.items.Item.Lhia23lxUCCvOQ9l]{Piercing Tongue} Mutation. You can still consume food as normal, but you can replace a meal with 1 Wound worth of blood if you wish. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

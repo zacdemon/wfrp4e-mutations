@@ -214,7 +214,7 @@
         "duplicateSource": null,
         "exportSource": null
       },
-      "description": "Bestial Limbs: @UUID[Compendium.arcturus-mutations.items.Item.kBF92bihnlMRse9Q]{Bestial Arms} or @UUID[Compendium.arcturus-mutations.items.Item.ZAueEy6k65bO02qA]{Bestial Legs}",
+      "description": "Bestial Limbs: @UUID[Compendium.artantares-mutations.items.Item.kBF92bihnlMRse9Q]{Bestial Arms} or @UUID[Compendium.artantares-mutations.items.Item.ZAueEy6k65bO02qA]{Bestial Legs}",
       "name": "",
       "_key": "!tables.results!mAAXcaXkxLlB9ODo.QPcpZSBb9zaA7L4a"
     },
@@ -1320,7 +1320,7 @@
         "duplicateSource": null,
         "exportSource": null
       },
-      "description": "Unnatural Limbs: @UUID[Compendium.arcturus-mutations.items.Item.vy9zR0zjmshnVF0q]{Unnatural Arms} or @UUID[Compendium.arcturus-mutations.items.Item.Leho2dexUvJUsXYv]{Unnatural Legs}",
+      "description": "Unnatural Limbs: @UUID[Compendium.artantares-mutations.items.Item.vy9zR0zjmshnVF0q]{Unnatural Arms} or @UUID[Compendium.artantares-mutations.items.Item.Leho2dexUvJUsXYv]{Unnatural Legs}",
       "name": "",
       "_key": "!tables.results!mAAXcaXkxLlB9ODo.J2a118ck7SgrikY9"
     },

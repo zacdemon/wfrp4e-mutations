@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your skin transforms into something that resembles vegetation. Roll 1d10: 1-5, your skin turns into a supple green plant covering; 6-8, all your hair (including on your body) turns into grass; 9-10, your body is covered by green leaves. You sustain yourself by absorbing sunlight, just like a plant. As long as you have access to water and sunlight you dont need to eat ordinary food. Your blood turns green unless you have the @UUID[Compendium.wfrp4e-mutations.items.Item.LxbHm5vyy4pmeYBm]{Corrupted Blood} mutation. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Minor Physical Mutation</strong></p><p>Your skin transforms into something that resembles vegetation. Roll 1d10: 1-5, your skin turns into a supple green plant covering; 6-8, all your hair (including on your body) turns into grass; 9-10, your body is covered by green leaves. You sustain yourself by absorbing sunlight, just like a plant. As long as you have access to water and sunlight you dont need to eat ordinary food. Your blood turns green unless you have the @UUID[Compendium.artantares-mutations.items.Item.LxbHm5vyy4pmeYBm]{Corrupted Blood} mutation. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

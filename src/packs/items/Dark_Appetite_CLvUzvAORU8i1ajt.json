@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation</strong></p><p>You crave to consume something specific thats not socially acceptable, like blood, raw meat, lth, dung, rotten food, insects, books, leather or small living animals. Whatever it is, it doesnt make you sick. Youll need to suppress (see @UUID[Compendium.wfrp4e-mutations.mutations-journal.JournalEntry.uDGFazW9Nr0N6ABS.JournalEntryPage.9sK84Dvy3Ng36qXp#self-control]{Self-Control}) the urge to not act on it at inopportune times. You can only gain this mutation once.</p>"
+      "value": "<p><strong>Trivial Mental Mutation</strong></p><p>You crave to consume something specific thats not socially acceptable, like blood, raw meat, lth, dung, rotten food, insects, books, leather or small living animals. Whatever it is, it doesnt make you sick. Youll need to suppress (see @UUID[Compendium.artantares-mutations.journal.JournalEntry.uDGFazW9Nr0N6ABS.JournalEntryPage.9sK84Dvy3Ng36qXp#self-control]{Self-Control}) the urge to not act on it at inopportune times. You can only gain this mutation once.</p>"
     },
     "gmdescription": {
       "type": "String",

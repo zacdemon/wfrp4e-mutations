@@ -10,7 +10,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.SCt3ihkr5KLfsyJS]{Pincer Claw}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace)</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.FE7VTGvuPf4jyoh0]{Cold-Blooded}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace)</li><li><strong>Legs:</strong> -1 Movement, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace)</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace), @UUID[Compendium.wfrp4e-mutations.items.Item.KKXn9ohyt22vdSNd]{Eyestalks}</li></ul>"
+      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.artantares-mutations.items.Item.SCt3ihkr5KLfsyJS]{Pincer Claw}, @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace)</li><li><strong>Body:</strong> @UUID[Compendium.artantares-mutations.items.Item.FE7VTGvuPf4jyoh0]{Cold-Blooded}, @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace)</li><li><strong>Legs:</strong> -1 Movement, @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace)</li><li><strong>Head:</strong> @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Carapace), @UUID[Compendium.artantares-mutations.items.Item.KKXn9ohyt22vdSNd]{Eyestalks}</li></ul>"
     },
     "gmdescription": {
       "type": "String",

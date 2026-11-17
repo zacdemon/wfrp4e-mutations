@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You gain the @UUID[Compendium.wfrp4e-core.items.Item.Q2MCUrG2HppMcvN0]{Animosity} Psychology towards a certain species or social group. Consult the Social Groups Table (see the @UUID[Compendium.wfrp4e-mutations.items.Item.cSg2OEDZDY6g7E0p]{Irrational Contempt} mutation) or let the GM decide. Getting this result again will upgrade your @UUID[Compendium.wfrp4e-core.items.Item.Q2MCUrG2HppMcvN0]{Animosity} to @UUID[Compendium.wfrp4e-core.items.Item.5hH73j2NgPdsLCZN]{Hatred}. Alternatively you can add another Target for your Animosity.</p>"
+      "value": "<p><strong>Trivial Mental Mutation, Tolerable</strong></p><p>You gain the @UUID[Compendium.wfrp4e-core.items.Item.Q2MCUrG2HppMcvN0]{Animosity} Psychology towards a certain species or social group. Consult the Social Groups Table (see the @UUID[Compendium.artantares-mutations.items.Item.cSg2OEDZDY6g7E0p]{Irrational Contempt} mutation) or let the GM decide. Getting this result again will upgrade your @UUID[Compendium.wfrp4e-core.items.Item.Q2MCUrG2HppMcvN0]{Animosity} to @UUID[Compendium.wfrp4e-core.items.Item.5hH73j2NgPdsLCZN]{Hatred}. Alternatively you can add another Target for your Animosity.</p>"
     },
     "gmdescription": {
       "type": "String",

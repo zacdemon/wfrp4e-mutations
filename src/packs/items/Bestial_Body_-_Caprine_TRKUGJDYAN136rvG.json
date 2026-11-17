@@ -10,7 +10,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur)</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.zImcTgEl2XNnbu5W]{Hardy}</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC]{Strider} (Rocky), +1 Movement</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.oa1XVd4fxpW3vr84]{Horns} SB+1, @UUID[Compendium.wfrp4e-core.items.Item.UaDGF5MBFBwPq5YU]{Iron Jaw}, @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur)</li></ul>"
+      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur)</li><li><strong>Body:</strong> @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.zImcTgEl2XNnbu5W]{Hardy}</li><li><strong>Legs:</strong> @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC]{Strider} (Rocky), +1 Movement</li><li><strong>Head:</strong> @UUID[Compendium.artantares-mutations.items.Item.oa1XVd4fxpW3vr84]{Horns} SB+1, @UUID[Compendium.wfrp4e-core.items.Item.UaDGF5MBFBwPq5YU]{Iron Jaw}, @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur)</li></ul>"
     },
     "gmdescription": {
       "type": "String",

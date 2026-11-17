@@ -11,7 +11,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your body seems unable to store fat anymore and you become extremely thin and gangly. You gain +5 Agility and lose -5 Toughness and -5 Fellowship. You cannot gain this mutation if you are @UUID[Compendium.wfrp4e-mutations.items.Item.q023W8aavqCmPAAg]{Grossly Corpulent}.</p>"
+      "value": "<p><strong>Trivial Physical Mutation, Tolerable</strong></p><p>Your body seems unable to store fat anymore and you become extremely thin and gangly. You gain +5 Agility and lose -5 Toughness and -5 Fellowship. You cannot gain this mutation if you are @UUID[Compendium.artantares-mutations.items.Item.q023W8aavqCmPAAg]{Grossly Corpulent}.</p>"
     },
     "gmdescription": {
       "type": "String",

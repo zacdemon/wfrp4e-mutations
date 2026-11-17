@@ -10,7 +10,7 @@
     "description": {
       "type": "String",
       "label": "Description",
-      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur)</li><li><strong>Body:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), +10 @UUID[Compendium.wfrp4e-core.items.Item.CcNJsS4jSwB6Ug1J]{Endurance}</li><li><strong>Legs:</strong> @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC]{Strider} (Woodlands)</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv]{Bite} (SB+3), @UUID[Compendium.wfrp4e-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-mutations.items.Item.ustDLWDaFxnLaV2b]{Sniffing Stalker}</li></ul>"
+      "value": "<ul><li><strong>Arms:</strong> @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur)</li><li><strong>Body:</strong> @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), +10 @UUID[Compendium.wfrp4e-core.items.Item.CcNJsS4jSwB6Ug1J]{Endurance}</li><li><strong>Legs:</strong> @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC]{Strider} (Woodlands)</li><li><strong>Head:</strong> @UUID[Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv]{Bite} (SB+3), @UUID[Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM]{Protective Skin} (Fur), @UUID[Compendium.artantares-mutations.items.Item.ustDLWDaFxnLaV2b]{Sniffing Stalker}</li></ul>"
     },
     "gmdescription": {
       "type": "String",
