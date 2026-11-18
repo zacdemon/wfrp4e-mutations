@@ -8,7 +8,82 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "talent",
+            "n": "Hardy",
+            "u": "Compendium.wfrp4e-core.items.Item.zImcTgEl2XNnbu5W"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "talent",
+            "n": "Strider",
+            "u": "Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC",
+            "s": "Woodlands"
+          },
+          {
+            "choose": "Swine legs",
+            "of": [
+              {
+                "note": "+1 Movement (by hand).",
+                "label": "+1 Movement"
+              },
+              {
+                "t": "mutation",
+                "n": "Centauroid",
+                "u": "Compendium.artantares-mutations.items.Item.GNGSBXi9wmUouw12"
+              }
+            ]
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Horns",
+            "u": "Compendium.wfrp4e-core.items.Item.BqPZn6q3VHn9HUrW",
+            "d": 2,
+            "l": "Tusks"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mutation",
+            "n": "Sniffing Stalker",
+            "u": "Compendium.artantares-mutations.items.Item.ustDLWDaFxnLaV2b"
+          }
+        ]
+      }
     }
   },
   "system": {

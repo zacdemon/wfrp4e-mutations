@@ -8,7 +8,125 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "unnatural-body"
+      "variantOf": "unnatural-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Fire"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Cold"
+          },
+          {
+            "t": "armour",
+            "n": "Metal Body",
+            "ap": 3
+          }
+        ],
+        "legs": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Fire"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Cold"
+          },
+          {
+            "t": "armour",
+            "n": "Metal Body",
+            "ap": 3
+          }
+        ],
+        "body": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Fire"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Cold"
+          },
+          {
+            "t": "armour",
+            "n": "Metal Body",
+            "ap": 3
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Fire"
+          },
+          {
+            "t": "trait",
+            "n": "Immunity",
+            "u": "Compendium.wfrp4e-core.items.Item.3wCtgMDNnu8MFmyk",
+            "s": "Cold"
+          },
+          {
+            "t": "armour",
+            "n": "Metal Body",
+            "ap": 3
+          }
+        ]
+      }
     }
   },
   "system": {

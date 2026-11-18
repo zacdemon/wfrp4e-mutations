@@ -8,7 +8,138 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "unnatural-body"
+      "variantOf": "unnatural-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Daemonic",
+            "u": "Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J",
+            "s": "10",
+            "max": true
+          },
+          {
+            "choose": "Daemonic arms",
+            "of": [
+              {
+                "t": "armour",
+                "n": "Daemonic Hide",
+                "ap": 1,
+                "label": "+1 AP"
+              },
+              {
+                "t": "mutation",
+                "n": "Razor-sharp Claws",
+                "u": "Compendium.artantares-mutations.items.Item.HCvKEsrNVqyJIIxP"
+              },
+              {
+                "note": "+10 Strength (by hand).",
+                "label": "+10 Strength"
+              }
+            ]
+          }
+        ],
+        "legs": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Daemonic",
+            "u": "Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J",
+            "s": "10",
+            "max": true
+          },
+          {
+            "choose": "Daemonic legs",
+            "of": [
+              {
+                "t": "talent",
+                "n": "Strong Legs",
+                "u": "Compendium.wfrp4e-core.items.Item.CV9btQn09S9Fn8Jk"
+              },
+              {
+                "note": "+1 Movement (by hand).",
+                "label": "+1 Movement"
+              },
+              {
+                "t": "talent",
+                "n": "Sturdy",
+                "u": "Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA"
+              }
+            ]
+          }
+        ],
+        "body": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Daemonic",
+            "u": "Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J",
+            "s": "9",
+            "max": true
+          },
+          {
+            "t": "trait",
+            "n": "Fear",
+            "u": "Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn",
+            "s": "2",
+            "max": true
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Daemonic",
+            "u": "Compendium.wfrp4e-core.items.Item.v3uzEthcq0JRar0J",
+            "s": "10",
+            "max": true
+          },
+          {
+            "t": "trait",
+            "n": "Fear",
+            "u": "Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn",
+            "s": "1",
+            "max": true
+          },
+          {
+            "choose": "Daemonic head",
+            "of": [
+              {
+                "t": "talent",
+                "n": "Night Vision",
+                "u": "Compendium.wfrp4e-core.items.Item.x0WMGwuQzReXcQrs"
+              },
+              {
+                "t": "mutation",
+                "n": "Fangs",
+                "u": "Compendium.artantares-mutations.items.Item.5V5B3xILSelJ8rXk"
+              },
+              {
+                "t": "mutation",
+                "n": "Horns",
+                "u": "Compendium.artantares-mutations.items.Item.oa1XVd4fxpW3vr84"
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   "system": {

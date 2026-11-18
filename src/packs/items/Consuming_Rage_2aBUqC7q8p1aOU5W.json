@@ -2,7 +2,120 @@
   "name": "Consuming Rage",
   "type": "mutation",
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Consuming Rage",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "4r2Vzn5IyyNb3oLu",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"levels\": [\n    [\n      {\n        \"t\": \"talent\",\n        \"n\": \"Frenzy\",\n        \"u\": \"Compendium.wfrp4e-core.items.Item.hXcfygzujgyMN1uI\"\n      }\n    ],\n    [\n      {\n        \"t\": \"psychology\",\n        \"n\": \"Hatred\",\n        \"u\": \"Compendium.wfrp4e-core.items.Item.E98mVLZgE8bX5vQW\",\n        \"ask\": \"Target group (handbook table on the mutation, or the GM's choice)\",\n        \"opts\": [\n          \"Academics\",\n          \"Wizards\",\n          \"Bretonnians\",\n          \"Burghers\",\n          \"Merchants\",\n          \"Clergy\",\n          \"Dwarfs\",\n          \"Elves\",\n          \"Estalians\",\n          \"Cathayans\",\n          \"Arabyans\",\n          \"Ogres\",\n          \"Gnomes\",\n          \"Halflings\",\n          \"Goblins\",\n          \"Beastmen\",\n          \"Humans\",\n          \"Imperials\",\n          \"Kislevites\",\n          \"Law Enforcement\",\n          \"Nobles\",\n          \"Norscans\",\n          \"Peasants\",\n          \"Tileans\",\n          \"Wastelanders\"\n        ]\n      }\n    ]\n  ]\n});",
+            "label": "Add granted Talents, Traits and items",
+            "trigger": "addItems",
+            "options": {},
+            "async": true
+          },
+          {
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.revert(this);",
+            "label": "Remove granted items",
+            "trigger": "deleteEffect",
+            "options": {},
+            "async": true
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "grants": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!2aBUqC7q8p1aOU5W.4r2Vzn5IyyNb3oLu"
+    }
+  ],
   "flags": {
     "_sheetTab": {},
     "core": {},

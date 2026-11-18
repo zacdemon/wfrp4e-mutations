@@ -2,7 +2,120 @@
   "name": "Long Spines",
   "type": "mutation",
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Long Spines",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "GFKAtw3I9GqbDBDV",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"levels\": [\n    [\n      {\n        \"t\": \"trait\",\n        \"n\": \"Horns\",\n        \"u\": \"Compendium.wfrp4e-core.items.Item.BqPZn6q3VHn9HUrW\",\n        \"d\": 1,\n        \"l\": \"Spines\"\n      },\n      {\n        \"roll\": \"1d10\",\n        \"text\": \"Spines\",\n        \"res\": [\n          [\n            1,\n            8,\n            null,\n            \"-\"\n          ],\n          [\n            9,\n            9,\n            {\n              \"note\": \"Retractable spines.\"\n            },\n            \"Retractable\"\n          ],\n          [\n            10,\n            10,\n            {\n              \"t\": \"trait\",\n              \"n\": \"Venom\",\n              \"u\": \"Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv\",\n              \"s\": \"Average\"\n            },\n            \"Venomous\"\n          ]\n        ]\n      }\n    ],\n    [\n      {\n        \"choose\": \"Long Spines again\",\n        \"of\": [\n          {\n            \"note\": \"Retractable spines.\",\n            \"label\": \"Retractable\"\n          },\n          {\n            \"t\": \"trait\",\n            \"n\": \"Venom\",\n            \"u\": \"Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv\",\n            \"s\": \"Average\",\n            \"label\": \"Venom (Average)\"\n          },\n          {\n            \"t\": \"bump\",\n            \"n\": \"Horns\",\n            \"d\": 1,\n            \"label\": \"+1 Damage\"\n          }\n        ]\n      }\n    ]\n  ]\n});",
+            "label": "Add granted Talents, Traits and items",
+            "trigger": "addItems",
+            "options": {},
+            "async": true
+          },
+          {
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.revert(this);",
+            "label": "Remove granted items",
+            "trigger": "deleteEffect",
+            "options": {},
+            "async": true
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "grants": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!dgT7aiOUjtQehLbh.GFKAtw3I9GqbDBDV"
+    }
+  ],
   "flags": {
     "_sheetTab": {},
     "core": {},

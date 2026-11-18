@@ -149,6 +149,7 @@ function mutationCounts(actor) {
   for (const item of actor.items) {
     if (item.type !== "mutation") continue;
     if (item.getFlag(MODULE_ID, "variantOf")) continue; // variants count with their parent (p10)
+    if (item.getFlag(MODULE_ID, "grantedBy")) continue;  // part of another mutation (Bestial Arms -> Protective Skin)
     const type = item.system?.mutationType?.value;
     if (type === "physical" || type === "mental") counts[type]++;
     counts.total++;
@@ -678,7 +679,8 @@ Hooks.once("setup", () => {
   }
 
   const api = { runMutationFlow, openGenerateDialog, mutationCounts, checkSpawn, findTable, speciesKey };
-  game.modules.get(MODULE_ID).api = api;
+  const mod = game.modules.get(MODULE_ID);
+  mod.api = Object.assign(mod.api ?? {}, api); // mutation-grants.mjs adds grant/revert at init
   // Back-compat with the old world-script entry point (actor, "all"|"necromancy"|god).
   game.wfrp4eMutationRoll = (actor, source) => runMutationFlow(actor, {
     source: source === "necromancy" ? "necro" : GODS.includes(source) ? source : "normal"

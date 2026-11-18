@@ -8,7 +8,88 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "unnatural-body"
+      "variantOf": "unnatural-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Infected",
+            "u": "Compendium.wfrp4e-core.items.Item.V0c3qBU1CMm8bmsW"
+          },
+          {
+            "t": "trait",
+            "n": "Regenerate",
+            "u": "Compendium.wfrp4e-core.items.Item.SfUUdOGjdYpr3KSR"
+          }
+        ],
+        "legs": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Regenerate",
+            "u": "Compendium.wfrp4e-core.items.Item.SfUUdOGjdYpr3KSR"
+          },
+          {
+            "t": "talent",
+            "n": "Strider",
+            "u": "Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC",
+            "s": "Swamp"
+          }
+        ],
+        "body": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Infected",
+            "u": "Compendium.wfrp4e-core.items.Item.V0c3qBU1CMm8bmsW"
+          },
+          {
+            "t": "trait",
+            "n": "Regenerate",
+            "u": "Compendium.wfrp4e-core.items.Item.SfUUdOGjdYpr3KSR"
+          },
+          {
+            "t": "trait",
+            "n": "Die Hard",
+            "u": "Compendium.wfrp4e-core.items.Item.UsJ2uIOOtHA7JqD5"
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Infected",
+            "u": "Compendium.wfrp4e-core.items.Item.V0c3qBU1CMm8bmsW"
+          },
+          {
+            "t": "trait",
+            "n": "Regenerate",
+            "u": "Compendium.wfrp4e-core.items.Item.SfUUdOGjdYpr3KSR"
+          },
+          {
+            "t": "mutation",
+            "n": "Dark Vision",
+            "u": "Compendium.artantares-mutations.items.Item.gvaCIj4BqHLSR5eE"
+          }
+        ]
+      }
     }
   },
   "system": {

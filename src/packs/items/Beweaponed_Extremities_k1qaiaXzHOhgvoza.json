@@ -2,7 +2,120 @@
   "name": "Beweaponed Extremities",
   "type": "mutation",
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Beweaponed Extremities",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "GOVEZXowdrJZ59sp",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"roll\": \"1d10\",\n      \"text\": \"Weapon\",\n      \"res\": [\n        [\n          1,\n          5,\n          {\n            \"t\": \"trait\",\n            \"n\": \"Weapon\",\n            \"u\": \"Compendium.wfrp4e-core.items.Item.AtpAudHA4ybXVlWM\",\n            \"l\": \"Sword\",\n            \"q\": [\n              \"damaging\"\n            ]\n          },\n          \"Sword, Damaging\"\n        ],\n        [\n          6,\n          7,\n          {\n            \"t\": \"trait\",\n            \"n\": \"Weapon\",\n            \"u\": \"Compendium.wfrp4e-core.items.Item.AtpAudHA4ybXVlWM\",\n            \"l\": \"Axe\",\n            \"q\": [\n              \"hack\"\n            ]\n          },\n          \"Axe, Hack\"\n        ],\n        [\n          8,\n          9,\n          {\n            \"t\": \"trait\",\n            \"n\": \"Weapon\",\n            \"u\": \"Compendium.wfrp4e-core.items.Item.AtpAudHA4ybXVlWM\",\n            \"l\": \"Mace\",\n            \"q\": [\n              \"pummel\"\n            ]\n          },\n          \"Mace, Pummel\"\n        ],\n        [\n          10,\n          10,\n          {\n            \"t\": \"trait\",\n            \"n\": \"Weapon\",\n            \"u\": \"Compendium.wfrp4e-core.items.Item.AtpAudHA4ybXVlWM\",\n            \"l\": \"Flail\",\n            \"q\": [\n              \"distract\",\n              \"wrap\"\n            ]\n          },\n          \"Flail, Distract and Wrap\"\n        ]\n      ]\n    },\n    {\n      \"roll\": \"1d10\",\n      \"text\": \"Arms\",\n      \"res\": [\n        [\n          1,\n          8,\n          null,\n          \"One\"\n        ],\n        [\n          9,\n          10,\n          {\n            \"note\": \"Both arms: no hands left, Dexterity drops to 0 (by hand).\"\n          },\n          \"Both\"\n        ]\n      ]\n    }\n  ]\n});",
+            "label": "Add granted Talents, Traits and items",
+            "trigger": "addItems",
+            "options": {},
+            "async": true
+          },
+          {
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.revert(this);",
+            "label": "Remove granted items",
+            "trigger": "deleteEffect",
+            "options": {},
+            "async": true
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "grants": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!k1qaiaXzHOhgvoza.GOVEZXowdrJZ59sp"
+    }
+  ],
   "flags": {
     "_sheetTab": {},
     "core": {},

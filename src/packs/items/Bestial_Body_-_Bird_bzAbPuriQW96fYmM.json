@@ -8,7 +8,85 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Feathers",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Hollow Bones",
+            "u": "Compendium.artantares-mutations.items.Item.Dz8vC2aWD0kxZzv0"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Feathers",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mutation",
+            "n": "Wings",
+            "v": "Medium",
+            "tbl": "Wings",
+            "u": "Compendium.artantares-mutations.items.Item.DuwghgXUzmFLNGVA"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Razor-sharp Claws",
+            "u": "Compendium.artantares-mutations.items.Item.HCvKEsrNVqyJIIxP"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Feathers",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "head": [
+          {
+            "choose": "Bird head",
+            "of": [
+              {
+                "t": "talent",
+                "n": "Acute Sense",
+                "u": "Compendium.wfrp4e-core.items.Item.9h82z72XGo9tfgQS",
+                "s": "Sight"
+              },
+              {
+                "t": "talent",
+                "n": "Night Vision",
+                "u": "Compendium.wfrp4e-core.items.Item.x0WMGwuQzReXcQrs"
+              }
+            ]
+          },
+          {
+            "t": "trait",
+            "n": "Bite",
+            "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
+            "d": 1,
+            "l": "Beak"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Feathers",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {

@@ -8,7 +8,80 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "skill",
+            "n": "Endurance",
+            "adv": 10
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "talent",
+            "n": "Strider",
+            "u": "Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC",
+            "s": "Woodlands"
+          },
+          {
+            "choose": "Cervid legs",
+            "of": [
+              {
+                "note": "+1 Movement (by hand).",
+                "label": "+1 Movement"
+              },
+              {
+                "t": "mutation",
+                "n": "Centauroid",
+                "u": "Compendium.artantares-mutations.items.Item.GNGSBXi9wmUouw12"
+              }
+            ]
+          }
+        ],
+        "head": [
+          {
+            "t": "mutation",
+            "n": "Horns",
+            "u": "Compendium.artantares-mutations.items.Item.oa1XVd4fxpW3vr84"
+          },
+          {
+            "t": "talent",
+            "n": "Iron Jaw",
+            "u": "Compendium.wfrp4e-core.items.Item.UaDGF5MBFBwPq5YU"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {

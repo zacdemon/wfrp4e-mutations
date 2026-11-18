@@ -48,7 +48,8 @@
   ],
   "esmodules": [
     "/scripts/mutation-messages.mjs",
-    "/scripts/mutation-flow.mjs"
+    "/scripts/mutation-flow.mjs",
+    "/scripts/mutation-grants.mjs"
   ],
   "languages": [
     {

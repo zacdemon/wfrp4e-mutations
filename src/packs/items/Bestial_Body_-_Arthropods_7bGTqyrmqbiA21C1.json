@@ -8,7 +8,60 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Pincer Claw",
+            "u": "Compendium.artantares-mutations.items.Item.SCt3ihkr5KLfsyJS"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Carapace",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Cold-Blooded",
+            "u": "Compendium.artantares-mutations.items.Item.FE7VTGvuPf4jyoh0"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Carapace",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Carapace",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "head": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Carapace",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mutation",
+            "n": "Eyestalks",
+            "u": "Compendium.artantares-mutations.items.Item.KKXn9ohyt22vdSNd"
+          }
+        ]
+      }
     }
   },
   "system": {

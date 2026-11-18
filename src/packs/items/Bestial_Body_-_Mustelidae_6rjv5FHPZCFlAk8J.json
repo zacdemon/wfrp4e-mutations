@@ -8,7 +8,52 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Razor-sharp Claws",
+            "u": "Compendium.artantares-mutations.items.Item.HCvKEsrNVqyJIIxP"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "talent",
+            "n": "Contortionist",
+            "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "talent",
+            "n": "Step Aside",
+            "u": "Compendium.wfrp4e-core.items.Item.HpGjzrSR4tdogJtl"
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Bite",
+            "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
+            "d": 2
+          }
+        ]
+      }
     }
   },
   "system": {

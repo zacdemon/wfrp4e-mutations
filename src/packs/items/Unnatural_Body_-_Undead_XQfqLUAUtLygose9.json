@@ -8,7 +8,106 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "unnatural-body"
+      "variantOf": "unnatural-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "trait",
+            "n": "Die Hard",
+            "u": "Compendium.wfrp4e-core.items.Item.UsJ2uIOOtHA7JqD5"
+          }
+        ],
+        "legs": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "trait",
+            "n": "Die Hard",
+            "u": "Compendium.wfrp4e-core.items.Item.UsJ2uIOOtHA7JqD5"
+          }
+        ],
+        "body": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "trait",
+            "n": "Die Hard",
+            "u": "Compendium.wfrp4e-core.items.Item.UsJ2uIOOtHA7JqD5"
+          },
+          {
+            "t": "trait",
+            "n": "Undead",
+            "u": "Compendium.wfrp4e-core.items.Item.PFTD9gDvRWW9uh5g"
+          },
+          {
+            "t": "trait",
+            "n": "Fear",
+            "u": "Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn",
+            "s": "2",
+            "max": true
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "mutation",
+            "n": "Dark Vision",
+            "u": "Compendium.artantares-mutations.items.Item.gvaCIj4BqHLSR5eE"
+          },
+          {
+            "t": "trait",
+            "n": "Die Hard",
+            "u": "Compendium.wfrp4e-core.items.Item.UsJ2uIOOtHA7JqD5"
+          },
+          {
+            "t": "trait",
+            "n": "Fear",
+            "u": "Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn",
+            "s": "1",
+            "max": true
+          },
+          {
+            "t": "trait",
+            "n": "Immunity to Psychology",
+            "u": "Compendium.wfrp4e-core.items.Item.IAWyzDfC286a9MPz"
+          }
+        ]
+      }
     }
   },
   "system": {

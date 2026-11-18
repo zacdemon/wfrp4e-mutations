@@ -8,7 +8,77 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "unnatural-body"
+      "variantOf": "unnatural-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "armour",
+            "n": "Rock Body",
+            "ap": 2
+          }
+        ],
+        "legs": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "armour",
+            "n": "Rock Body",
+            "ap": 2
+          }
+        ],
+        "body": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "armour",
+            "n": "Rock Body",
+            "ap": 2
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "trait",
+            "n": "Painless",
+            "u": "Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr"
+          },
+          {
+            "t": "armour",
+            "n": "Rock Body",
+            "ap": 2
+          }
+        ]
+      }
     }
   },
   "system": {

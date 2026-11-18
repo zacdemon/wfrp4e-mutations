@@ -8,7 +8,86 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Cold-Blooded",
+            "u": "Compendium.artantares-mutations.items.Item.FE7VTGvuPf4jyoh0"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "talent",
+            "n": "Contortionist",
+            "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "choose": "Snake legs",
+            "of": [
+              {
+                "note": "Legs stay (Protective Skin only).",
+                "label": "Keep legs"
+              },
+              [
+                {
+                  "t": "talent",
+                  "n": "Contortionist",
+                  "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+                },
+                {
+                  "note": "No legs: you slither; +5 Agility, -20 Climbing & Jumping (by hand)."
+                }
+              ]
+            ]
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Bite",
+            "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
+            "d": 2
+          },
+          {
+            "t": "trait",
+            "n": "Venom",
+            "u": "Compendium.wfrp4e-core.items.Item.gFkRm9wS65qe18Xv",
+            "s": "Average"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {

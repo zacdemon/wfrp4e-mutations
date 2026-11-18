@@ -8,7 +8,70 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Amphibious",
+            "u": "Compendium.wfrp4e-core.items.Item.sJ3yX1kvzu2hgNq5"
+          },
+          {
+            "t": "mutation",
+            "n": "Bachtrachian Suckers",
+            "u": "Compendium.artantares-mutations.items.Item.b1E7a0fIYEGE3LwX"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Rubbery",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Cold-Blooded",
+            "u": "Compendium.artantares-mutations.items.Item.FE7VTGvuPf4jyoh0"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Rubbery",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "legs": [
+          {
+            "t": "trait",
+            "n": "Amphibious",
+            "u": "Compendium.wfrp4e-core.items.Item.sJ3yX1kvzu2hgNq5"
+          },
+          {
+            "t": "mutation",
+            "n": "Hopper",
+            "u": "Compendium.artantares-mutations.items.Item.DVpubh6fXaalMe9T"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Rubbery",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "head": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Rubbery",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {

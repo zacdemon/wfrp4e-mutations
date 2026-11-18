@@ -94,14 +94,15 @@ for (const f of MODULE.esmodules ?? []) {
   const p = f.replace(/^\//, "");
   if (!fs.existsSync(p)) continue;
   const code = fs.readFileSync(p, "utf8");
-  const used = new Set([...code.matchAll(/\bL\("([\w.]+)"/g)].map(m => `AMUT.${m[1]}`).concat([...code.matchAll(/"(AMUT\.[\w.]+)"/g)].map(m => m[1])));
+  const prefix = code.match(/const L = [^\n]*`AMUT\.([\w.]*?)\$\{key\}`/)?.[1] ?? ""; // e.g. "Grant." in mutation-grants.mjs
+  const used = new Set([...code.matchAll(/\bL\("([\w.]+)"/g)].map(m => `AMUT.${prefix}${m[1]}`).concat([...code.matchAll(/"(AMUT\.[\w.]+)"/g)].map(m => m[1])));
   // Template keys: L(`Prefix.${x}`) - check each value the flow can pass
   const dynamic = {
     Species: ["human", "dwarf", "elf", "halfling", "gnome", "ogre"], Type: ["physical", "mental"],
     Severity: [...SEVERITIES, "chosen"], God: ["khorne", "nurgle", "slaanesh", "tzeentch"], Source: ["auto", "normal", "necro"],
     Status: ["applied", "resisted", "discarded", "patron", "retired", "cancelled", "empty"]
   };
-  for (const m of code.matchAll(/\bL\(`([\w]+)\.\$\{/g)) for (const v of dynamic[m[1]] ?? ["<unknown prefix>"]) used.add(`AMUT.${m[1]}.${v}`);
+  for (const m of code.matchAll(/\bL\(`([\w]+)\.\$\{/g)) for (const v of dynamic[m[1]] ?? ["<unknown prefix>"]) used.add(`AMUT.${prefix}${m[1]}.${v}`);
   for (const k of used) if (!(k in i18n)) errors.push(`${p}: missing localisation key ${k}`);
 }
 

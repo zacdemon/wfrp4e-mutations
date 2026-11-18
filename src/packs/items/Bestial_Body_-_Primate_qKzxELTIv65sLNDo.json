@@ -8,7 +8,82 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Arboreal",
+            "u": "Compendium.wfrp4e-core.items.Item.rOV2s6PQBBrhpMOv"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "choose": "Primate body",
+            "of": [
+              {
+                "note": "+10 Toughness (by hand).",
+                "label": "+10 Toughness"
+              },
+              [
+                {
+                  "note": "+10 Agility (by hand)."
+                },
+                {
+                  "t": "mutation",
+                  "n": "Tail",
+                  "v": "Prehensile",
+                  "tbl": "Tail",
+                  "u": "Compendium.artantares-mutations.items.Item.sGSearHVJlNXVgWb"
+                }
+              ]
+            ]
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Prehensile Feet",
+            "u": "Compendium.artantares-mutations.items.Item.pEK8RGPYHgWbt8uU"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Bite",
+            "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
+            "d": 2
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {

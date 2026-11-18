@@ -8,7 +8,73 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "talent",
+            "n": "Contortionist",
+            "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+          }
+        ],
+        "legs": [
+          {
+            "choose": "Rodent legs",
+            "of": [
+              {
+                "t": "trait",
+                "n": "Bounce",
+                "u": "Compendium.wfrp4e-core.items.Item.j6v78dnOOdCB6c3d"
+              },
+              {
+                "t": "talent",
+                "n": "Step Aside",
+                "u": "Compendium.wfrp4e-core.items.Item.HpGjzrSR4tdogJtl"
+              }
+            ]
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "head": [
+          {
+            "choose": "Rodent head",
+            "of": [
+              {
+                "t": "talent",
+                "n": "Acute Sense",
+                "u": "Compendium.wfrp4e-core.items.Item.9h82z72XGo9tfgQS",
+                "s": "Hearing"
+              },
+              {
+                "t": "talent",
+                "n": "Acute Sense",
+                "u": "Compendium.wfrp4e-core.items.Item.9h82z72XGo9tfgQS",
+                "s": "Smell"
+              }
+            ]
+          },
+          {
+            "t": "mutation",
+            "n": "Gnawer",
+            "u": "Compendium.artantares-mutations.items.Item.9x2d3zSuVdxfPB1t"
+          }
+        ]
+      }
     }
   },
   "system": {

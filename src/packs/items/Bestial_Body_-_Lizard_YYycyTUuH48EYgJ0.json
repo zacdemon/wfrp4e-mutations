@@ -8,7 +8,108 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "choose": "Lizard arms",
+            "of": [
+              {
+                "t": "trait",
+                "n": "Wallcrawler",
+                "u": "Compendium.wfrp4e-core.items.Item.KII1gWnxIZ8HzmU5"
+              },
+              {
+                "t": "talent",
+                "n": "Strong Swimmer",
+                "u": "Compendium.wfrp4e-core.items.Item.4wnQc19allWlyOGe"
+              }
+            ]
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Cold-Blooded",
+            "u": "Compendium.artantares-mutations.items.Item.FE7VTGvuPf4jyoh0"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mutation",
+            "n": "Tail",
+            "v": "Saurian",
+            "tbl": "Tail",
+            "u": "Compendium.artantares-mutations.items.Item.sGSearHVJlNXVgWb"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "choose": "Lizard legs (1)",
+            "of": [
+              {
+                "t": "trait",
+                "n": "Wallcrawler",
+                "u": "Compendium.wfrp4e-core.items.Item.KII1gWnxIZ8HzmU5"
+              },
+              {
+                "t": "talent",
+                "n": "Strong Swimmer",
+                "u": "Compendium.wfrp4e-core.items.Item.4wnQc19allWlyOGe"
+              }
+            ]
+          },
+          {
+            "choose": "Lizard legs (2)",
+            "of": [
+              {
+                "t": "talent",
+                "n": "Strong Legs",
+                "u": "Compendium.wfrp4e-core.items.Item.CV9btQn09S9Fn8Jk"
+              },
+              {
+                "t": "mutation",
+                "n": "Centauroid",
+                "u": "Compendium.artantares-mutations.items.Item.GNGSBXi9wmUouw12"
+              }
+            ]
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Bite",
+            "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
+            "d": 3
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Scales",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {

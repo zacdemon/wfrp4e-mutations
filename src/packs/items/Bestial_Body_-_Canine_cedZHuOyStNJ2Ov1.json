@@ -8,7 +8,67 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "skill",
+            "n": "Endurance",
+            "adv": 10
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "talent",
+            "n": "Strider",
+            "u": "Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC",
+            "s": "Woodlands"
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Bite",
+            "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
+            "d": 3
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Fur",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mutation",
+            "n": "Sniffing Stalker",
+            "u": "Compendium.artantares-mutations.items.Item.ustDLWDaFxnLaV2b"
+          }
+        ]
+      }
     }
   },
   "system": {

@@ -8,7 +8,170 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "unnatural-body"
+      "variantOf": "unnatural-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "armour",
+            "n": "Mechanoid Plating",
+            "ap": 3
+          },
+          {
+            "choose": "Mechanoid arms",
+            "of": [
+              {
+                "note": "+5 Strength per arm (by hand).",
+                "label": "+5 Strength per arm"
+              },
+              {
+                "t": "talent",
+                "n": "Strike Mighty Blow",
+                "u": "Compendium.wfrp4e-core.items.Item.4MJJCiOKPkBByYwW"
+              }
+            ]
+          }
+        ],
+        "legs": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "armour",
+            "n": "Mechanoid Plating",
+            "ap": 3
+          },
+          {
+            "roll": "1d10",
+            "text": "Mechanoid legs",
+            "res": [
+              [
+                1,
+                5,
+                [
+                  {
+                    "t": "talent",
+                    "n": "Strong Legs",
+                    "u": "Compendium.wfrp4e-core.items.Item.CV9btQn09S9Fn8Jk"
+                  },
+                  {
+                    "t": "talent",
+                    "n": "Sprinter",
+                    "u": "Compendium.wfrp4e-core.items.Item.AwUUEwwf2Vt4ksCN"
+                  }
+                ],
+                "Piston Legs"
+              ],
+              [
+                6,
+                7,
+                [
+                  {
+                    "t": "trait",
+                    "n": "Stride",
+                    "u": "Compendium.wfrp4e-core.items.Item.UmxGZRV0Lw3TZ0Kx"
+                  },
+                  {
+                    "note": "Wheels: +4 Movement, Movement 1 on stairs (by hand)."
+                  }
+                ],
+                "Wheels"
+              ],
+              [
+                8,
+                8,
+                {
+                  "note": "Hover: levitate up to 2 yards."
+                },
+                "Hover"
+              ],
+              [
+                9,
+                10,
+                [
+                  {
+                    "t": "trait",
+                    "n": "Stride",
+                    "u": "Compendium.wfrp4e-core.items.Item.UmxGZRV0Lw3TZ0Kx"
+                  },
+                  {
+                    "note": "Tracks: +2 Movement (by hand)."
+                  }
+                ],
+                "Tracks"
+              ]
+            ]
+          }
+        ],
+        "body": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "armour",
+            "n": "Mechanoid Plating",
+            "ap": 3
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Magical",
+            "u": "Compendium.wfrp4e-core.items.Item.mDgEMOoJpi8DkRYb"
+          },
+          {
+            "t": "armour",
+            "n": "Mechanoid Plating",
+            "ap": 3
+          },
+          {
+            "choose": "Mechanoid head: pick two",
+            "of": [
+              {
+                "t": "talent",
+                "n": "Iron Jaw",
+                "u": "Compendium.wfrp4e-core.items.Item.UaDGF5MBFBwPq5YU"
+              },
+              {
+                "t": "trait",
+                "n": "Bite",
+                "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
+                "d": 3
+              },
+              {
+                "t": "mutation",
+                "n": "Dark Vision",
+                "u": "Compendium.artantares-mutations.items.Item.gvaCIj4BqHLSR5eE"
+              },
+              {
+                "t": "talent",
+                "n": "Acute Sense",
+                "u": "Compendium.wfrp4e-core.items.Item.9h82z72XGo9tfgQS",
+                "s": "Sight"
+              },
+              {
+                "t": "talent",
+                "n": "Super Numerate",
+                "u": "Compendium.wfrp4e-core.items.Item.sBHarYXR2o7jD1VY"
+              },
+              {
+                "t": "talent",
+                "n": "Tower of Memories",
+                "u": "Compendium.wfrp4e-core.items.Item.V9N0LMnXf1WYseCL"
+              }
+            ],
+            "n": 2
+          }
+        ]
+      }
     }
   },
   "system": {

@@ -2,7 +2,120 @@
   "name": "Sensory Loss",
   "type": "mutation",
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Sensory Loss",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "a5mBYKzOVj8h50QS",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"roll\": \"1d10\",\n      \"text\": \"Sense\",\n      \"res\": [\n        [\n          1,\n          2,\n          {\n            \"note\": \"Hearing: remove Acute Sense (Hearing) and add 1d10 permanent Deafened by hand.\"\n          },\n          \"Hearing\"\n        ],\n        [\n          3,\n          4,\n          {\n            \"note\": \"Sight: remove Acute Sense (Sight) and add 1d10 permanent Blinded by hand.\"\n          },\n          \"Sight\"\n        ],\n        [\n          5,\n          6,\n          {\n            \"note\": \"Smell: remove Acute Sense (Smell) by hand.\"\n          },\n          \"Smell\"\n        ],\n        [\n          7,\n          8,\n          {\n            \"note\": \"Taste: remove Acute Sense (Taste) by hand.\"\n          },\n          \"Taste\"\n        ],\n        [\n          9,\n          10,\n          [\n            {\n              \"t\": \"trait\",\n              \"n\": \"Painless\",\n              \"u\": \"Compendium.wfrp4e-core.items.Item.wMwSRDmgiF2IdCJr\"\n            },\n            {\n              \"note\": \"Touch: remove Acute Sense (Touch); WS -1d10 and Dex -2d10 by hand.\"\n            }\n          ],\n          \"Touch\"\n        ]\n      ]\n    }\n  ]\n});",
+            "label": "Add granted Talents, Traits and items",
+            "trigger": "addItems",
+            "options": {},
+            "async": true
+          },
+          {
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.revert(this);",
+            "label": "Remove granted items",
+            "trigger": "deleteEffect",
+            "options": {},
+            "async": true
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "grants": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!fSWIrAVNeEypHeXs.a5mBYKzOVj8h50QS"
+    }
+  ],
   "flags": {
     "_sheetTab": {},
     "core": {},

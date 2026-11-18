@@ -8,7 +8,84 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "body": [
+          {
+            "choose": "Horse or Camel body",
+            "of": [
+              {
+                "t": "mutation",
+                "n": "Hump",
+                "u": "Compendium.artantares-mutations.items.Item.2st0RvZxnLq2sCTG"
+              },
+              {
+                "t": "talent",
+                "n": "Strong Back",
+                "u": "Compendium.wfrp4e-core.items.Item.FF41XPboORgyDNsv"
+              }
+            ]
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "talent",
+            "n": "Sturdy",
+            "u": "Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA"
+          },
+          {
+            "choose": "Horse or Camel legs",
+            "of": [
+              {
+                "note": "+1 Movement (by hand).",
+                "label": "+1 Movement"
+              },
+              {
+                "t": "mutation",
+                "n": "Centauroid",
+                "u": "Compendium.artantares-mutations.items.Item.GNGSBXi9wmUouw12"
+              }
+            ]
+          }
+        ],
+        "head": [
+          {
+            "t": "talent",
+            "n": "Iron Jaw",
+            "u": "Compendium.wfrp4e-core.items.Item.UaDGF5MBFBwPq5YU"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {

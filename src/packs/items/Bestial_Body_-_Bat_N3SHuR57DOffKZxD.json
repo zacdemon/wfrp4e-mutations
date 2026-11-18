@@ -8,7 +8,68 @@
     "artantares-mutations": {
       "severity": "major",
       "tolerable": false,
-      "variantOf": "bestial-body"
+      "variantOf": "bestial-body",
+      "parts": {
+        "arms": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mutation",
+            "n": "Razor-sharp Claws",
+            "u": "Compendium.artantares-mutations.items.Item.HCvKEsrNVqyJIIxP"
+          }
+        ],
+        "body": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mutation",
+            "n": "Wings",
+            "v": "Medium",
+            "tbl": "Wings",
+            "u": "Compendium.artantares-mutations.items.Item.DuwghgXUzmFLNGVA"
+          }
+        ],
+        "legs": [
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ],
+        "head": [
+          {
+            "t": "trait",
+            "n": "Dark Vision",
+            "u": "Compendium.wfrp4e-core.items.Item.JQa5DLnTs2SEzRrc",
+            "l": "Sonar"
+          },
+          {
+            "t": "mutation",
+            "n": "Fangs",
+            "u": "Compendium.artantares-mutations.items.Item.5V5B3xILSelJ8rXk"
+          },
+          {
+            "t": "mutation",
+            "n": "Protective Skin",
+            "v": "Leathery Hide",
+            "tbl": "Protective Skin",
+            "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          }
+        ]
+      }
     }
   },
   "system": {
