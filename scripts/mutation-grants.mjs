@@ -47,10 +47,12 @@
  *                             formula ("1d10", "-2d10") rolled once now and stored as a plain number
  *   { t: "mod", k, half }     halve characteristic k (or "move"), rounded up
  *   { t: "dialog", d }        add a script to the effect (a dialog option, targeter option, crit hook...)
- *   { t: "status", k, v }     k fortune|fate|resilience|resolve: change the actor's pool by v now
- *                             (undone when the mutation is deleted)
+ *   { t: "status", k, v, unless } k fortune|fate|resilience|resolve: change the actor's pool by v now
+ *                             (undone when the mutation is deleted); skipped if the granted item
+ *                             named `unless` has its own script for that pool
  * Fixed modifiers are not entries: tools/modifiers.mjs writes them straight into the effect.
  */
+import { activateOracle, endOracle, activateLunacy, longArmsReach } from "./mutation-powers.mjs";
 import { MODULE_ID as MID, STATUS, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData } from "./modifier-scripts.mjs";
 
 const MODULE_ID = MID;
@@ -72,7 +74,7 @@ Hooks.once("init", () => {
     scope: "world", config: true, type: Boolean, default: true
   });
   const mod = game.modules.get(MODULE_ID);
-  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, refreshPools, addModifier });
+  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach });
 });
 
 /* -------------------------------------------- */
@@ -480,6 +482,8 @@ async function applyStatus(e, st) {
   const path = `system.status.${e.k}.value`;
   const cur = foundry.utils.getProperty(st.actor, path);
   if (!STATUS.includes(e.k) || cur === undefined) return st.notes.push(L("NoPool", { pool: poolName(e.k), name: st.actor.name }));
+  // unless: an item this grant adds (e.g. core's Luck Talent) already changes the pool with its own script
+  if (e.unless && st.create.some(d => d.name === e.unless && JSON.stringify(d.effects ?? []).includes(`status.${e.k}`))) return;
   const next = Math.max(0, (Number(cur) || 0) + e.v);
   await st.actor.update({ [path]: next });
   st.undo.push({ actor: true, path, delta: next - (Number(cur) || 0) });
@@ -507,22 +511,6 @@ export async function adjustStatus(actor, deltas = {}, reason = "") {
   await actor.update(update);
   const message = await ChatMessage.create({ content: `<p><strong>${esc(actor.name)}</strong>: ${esc(bits.join(", "))}${reason ? ` <em>(${esc(reason)})</em>` : ""}</p>`, speaker: ChatMessage.getSpeaker({ actor }) });
   return { applied, message };
-}
-
-/** Pool bonus from the actor's active mutation effects (flags.<id>.fortune). */
-function poolBonus(actor, k) {
-  let n = 0;
-  for (const item of actor.items) for (const e of item.effects ?? []) if (!e.disabled) n += Number(e.getFlag(MODULE_ID, k)) || 0;
-  return n;
-}
-
-/** New session: Fortune = Fate + Fortune bonuses from active mutation effects (Time Warp, Power Item Obsession...). */
-export async function refreshPools(actor) {
-  const s = actor?.system?.status;
-  if (!s?.fortune || !s?.fate) return ui.notifications.warn(L("NoPool", { pool: poolName("fortune"), name: actor?.name }));
-  const fortune = Math.max(0, (Number(s.fate.value) || 0) + poolBonus(actor, "fortune"));
-  await actor.update({ "system.status.fortune.value": fortune });
-  return ChatMessage.create({ content: `<p><strong>${esc(actor.name)}</strong>: ${esc(L("Refreshed", { fortune }))}</p>`, speaker: ChatMessage.getSpeaker({ actor }) });
 }
 
 /** Add one more change to a Modifiers effect (Regeneration: -1 Fellowship per regenerated Critical). */

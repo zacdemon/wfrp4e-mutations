@@ -50,7 +50,7 @@
         },
         "scriptData": [
           {
-            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"status\",\n      \"k\": \"fortune\",\n      \"v\": 1\n    }\n  ]\n});",
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"talent\",\n      \"n\": \"Luck\"\n    },\n    {\n      \"t\": \"status\",\n      \"k\": \"fortune\",\n      \"v\": 1,\n      \"unless\": \"Luck\"\n    }\n  ]\n});",
             "label": "Add granted Talents, Traits and items",
             "trigger": "addItems",
             "options": {},
@@ -114,113 +114,6 @@
       "showIcon": 1,
       "folder": null,
       "_key": "!items.effects!BUHKnPkW8V9DXlHa.9CbkPh3JvK4oGDF0"
-    },
-    {
-      "name": "Time Warp (Modifiers)",
-      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
-      "_id": "512OilMmbClYNMEU",
-      "type": "base",
-      "system": {
-        "transferData": {
-          "type": "document",
-          "originalType": "document",
-          "documentType": "Actor",
-          "avoidTest": {
-            "value": "none",
-            "opposed": false,
-            "prevention": true,
-            "reversed": false
-          },
-          "testIndependent": false,
-          "equipTransfer": false,
-          "selfOnly": false,
-          "prompt": false,
-          "area": {
-            "templateData": {
-              "borderColor": null,
-              "fillColor": null,
-              "texture": null
-            },
-            "keep": false,
-            "aura": {
-              "transferred": false,
-              "render": false
-            },
-            "duration": "sustained"
-          },
-          "zone": {
-            "type": "zone",
-            "transferred": false,
-            "traits": {},
-            "skipImmediateOnPlacement": false,
-            "keep": false
-          }
-        },
-        "itemTargetData": {
-          "ids": [],
-          "allItems": false
-        },
-        "scriptData": [
-          {
-            "label": "New session: refresh Fortune (Fate + mutation bonuses)",
-            "trigger": "manual",
-            "script": "await game.modules.get(\"artantares-mutations\")?.api?.refreshPools(this.actor);",
-            "options": {
-              "runIfDisabled": true
-            }
-          }
-        ],
-        "zone": {
-          "type": "zone",
-          "traits": {},
-          "skipImmediateOnPlacement": false
-        },
-        "sourceData": {
-          "test": {}
-        },
-        "condition": {
-          "value": null,
-          "numbered": false
-        },
-        "changes": []
-      },
-      "disabled": false,
-      "duration": {
-        "value": null,
-        "units": "seconds",
-        "expiry": null,
-        "expired": false
-      },
-      "description": "",
-      "origin": null,
-      "tint": "#ffffff",
-      "transfer": true,
-      "statuses": [],
-      "sort": 0,
-      "flags": {
-        "wfrp4e": {
-          "manualEffectKeys": false
-        },
-        "artantares-mutations": {
-          "modifiers": true,
-          "fortune": 1
-        }
-      },
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "exportSource": null,
-        "coreVersion": "14.360",
-        "systemId": "wfrp4e",
-        "systemVersion": "10.1.2",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null
-      },
-      "start": null,
-      "showIcon": 1,
-      "folder": null,
-      "_key": "!items.effects!BUHKnPkW8V9DXlHa.512OilMmbClYNMEU"
     }
   ],
   "flags": {

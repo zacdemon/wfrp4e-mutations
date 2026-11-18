@@ -1,4 +1,4 @@
-import { statusButton, refreshButton, powerItemButtons, regenerationButton, critRollScriptData, critDealtScriptData } from "../scripts/modifier-scripts.mjs";
+import { powerItemButtons, oracleButton, oracleEndButton, lunacyButton, regenerationButton, critRollScriptData, critDealtScriptData } from "../scripts/modifier-scripts.mjs";
 
 /**
  * Fixed modifiers for the Mutant's Handbook items. `node tools/modifiers.mjs` writes them into
@@ -13,7 +13,7 @@ import { statusButton, refreshButton, powerItemButtons, regenerationButton, crit
  *   targ(label, mod, when, on)   option in the dialog of whoever targets the mutant (when/on: the
  *                                attacker's test)
  *   script(scriptData)           any other script (buttons on the effect, Critical modifiers)
- *   pool("fortune", n)           bonus to the Fortune pool while the effect is on (refresh button)
+ *   flag({...})                  extra flags on the effect (Lunacy phase keys)
  *
  * Modifiers that are rolled (1d10), chosen, or depend on a rolled sub-result (hit location, body
  * part, size step) are in tools/grants-data.mjs instead. Each copy of a mutation carries its own
@@ -29,7 +29,7 @@ const cap = (k, v) => ({ cap: k, v });
 // targ(): an option in the dialog of whoever targets the mutant (system "targeter" dialog scripts)
 const targ = (label, mod, when = {}, on = false) => ({ test: { label, mod, when, on, targeter: true } });
 const script = (d) => ({ script: d });
-const pool = (k, v) => ({ pool: k, v });
+const flag = (f) => ({ flag: f });                               // extra flags on the effect
 
 const FEL = { chars: ["fel"] };
 const ANY = { any: true };
@@ -89,11 +89,11 @@ export const MODS = {
   "Inhuman Beauty": [c("fel", 10)],
   "Insect Eyes": [c("fel", -20)],
   "Lolling Tongue": [test("Lolling Tongue: speaking -10", m(-10), { skills: ["Language"] }, true)],
-  "Lunacy": [
-    toggle("Morrslieb absent", [c("i", -10), c("wp", -10)]),
-    toggle("Morrslieb small", [c("i", -5), c("wp", -5)]),
-    toggle("Morrslieb large", [c("i", 5), c("wp", 5)]),
-    toggle("Morrslieb full (+1 Fortune)", [c("i", 10), c("wp", 10), pool("fortune", 1), script(statusButton("Full Morrslieb: +1 Fortune", "fortune", 1))])],
+  "Lunacy": [script(lunacyButton()),
+    toggle("Morrslieb absent", [c("i", -10), c("wp", -10), flag({ phase: "absent" })]),
+    toggle("Morrslieb small", [c("i", -5), c("wp", -5), flag({ phase: "small" })]),
+    toggle("Morrslieb large", [c("i", 5), c("wp", 5), flag({ phase: "large" })]),
+    toggle("Morrslieb full (+1 Fortune)", [c("i", 10), c("wp", 10), flag({ phase: "full" })])],
   "Magnetic Presence": [c("fel", 10), test("Magnetic Presence: Stealth near sentient beings -30", m(-30), STEALTH, true)],
   "Mark of Chaos": [test("Mark of Chaos: showing it to a Chaos worshipper +5", m(5), FEL),
     test("Mark of Chaos: showing it to a worshipper of the same God +10", m(10), FEL)],
@@ -103,11 +103,11 @@ export const MODS = {
   "Morbidity": [c("fel", -10)],
   "Nervous Jitters": [c("i", 5), c("bs", -5), c("dex", -5)],
   "Nihilistic Numbness": [c("fel", -10)],
-  "Oracle": [toggle("Sensing the future (+10 Initiative, +1 Fortune)", [c("i", 10), pool("fortune", 1), script(statusButton("Sensing the future: +1 Fortune", "fortune", 1))])],
+  "Oracle": [script(oracleButton()), toggle("Sensing the future (+10 Initiative)", [c("i", 10), script(oracleEndButton())])],
   "Organic Crystal": [test("Organic Crystal: opposing an incoming spell -10", m(-10), { chars: ["wp"], skills: ["Dodge"] })],
   "Overgrown Arm": [c("s", 10), c("dex", -10), c("ag", -5)],
   "Painseeker": [toggle("Wounded or wounding (1d10 Rounds)", [c("s", 5), c("t", 5), c("wp", 5)])],
-  "Power Item Obsession": [...powerItemButtons().map(script), script(refreshButton())],
+  "Power Item Obsession": powerItemButtons().map(script),
   "Prehensile Feet": [c("move", -1), test("Prehensile Feet: Climb, add Agility Bonus to SL", { slFrom: "ag" }, { skills: ["Climb"] }, true)],
   "Quantum Bulge": [c("fel", -5)],
   "Regeneration": [script(regenerationButton())],
@@ -128,7 +128,6 @@ export const MODS = {
   "Split Torso": [c("ag", -10)],
   "Tantalising Aura": [test("Tantalising Aura: Stealth near sentient beings -20", m(-20), STEALTH, true)],
   "Telepathy": [test("Telepathy: plundering memories -30", m(-30), { chars: ["wp"] })],
-  "Time Warp": [pool("fortune", 1), script(refreshButton())],
   "The Big Joke": [c("fel", -10)],
   "Third Eye": [c("bs", 10)],
   "Ticks": [c("i", -10)],
@@ -149,7 +148,7 @@ export const MANUAL = {
   "Chimeran Curse": "you take the physical Characteristics of another creature",
   "Crossbreed": "Characteristics move a share of the way to another species' table",
   "Ecstatic Milk": "the bonuses go to whoever drinks the milk, for 4 hours",
-  "Elongated Limbs": "the longer weapon Reach is by hand; the neck's +20 to head Criticals is automatic only for wound Criticals with Up in Arms Criticals on (attack-roll Criticals and core-rules wound Criticals: add it in the Critical prompt)",
+  "Elongated Limbs": "the neck's +20 to head Criticals is automatic only for wound Criticals with Up in Arms Criticals on (attack-roll Criticals and core-rules wound Criticals: add it in the Critical prompt)",
   "Fleshcrafter": "trades Characteristic points per SL as the GM rules",
   "Magic Numbers": "Initiative drops to 0 only in the situations the GM picks",
   "Pitiful Stature": "the -1 Armour steps (Monstrous to Large) are by hand; Characteristics and Movement are automated",
@@ -159,8 +158,8 @@ export const MANUAL = {
   "Vestigial Twin": "the twin's own profile (your -10 Agility is automated)",
   "Werebeast": "the Morrslieb modifiers only apply to the transformation Test",
   "Alien Mind": "the Cool Test (or Stunned) for telepaths who connect to you is the GM's call",
-  "Lunacy": "switch on the effect for the current Morrslieb phase on the actor's Effects tab, then press its +1 Fortune button at full Morrslieb",
-  "Oracle": "switch on the effect after the Willpower Test and press its +1 Fortune button (one effect per copy, so per level); unspent Fortune at the end of the scene is removed by hand",
+  "Lunacy": "press Activate Lunacy at nightfall or when Morrslieb changes; the module does not track the moon",
+  "Oracle": "press End Oracle when the scene ends (the system has no scene duration)",
   "Painseeker": "switch on the effect when it triggers; it does not stack",
   "Savagery": "+10 is automatic on attack-roll Criticals and, with Up in Arms Criticals, on wound Criticals; with core-rules wound Criticals add it in the Critical prompt",
   "Skinwalker": "the -20 is offered (unticked) to observers who target you; without Second Sight they are simply fooled (GM)",

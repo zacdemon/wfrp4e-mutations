@@ -7,7 +7,7 @@ import path from "node:path";
 import { MODS } from "./modifiers-data.mjs";
 import { GRANTS, PARTS } from "./grants-data.mjs";
 import { stableId, effectSource } from "./effect-template.mjs";
-import { MODULE_ID, CHARACTERISTICS, STATUS, changeFor, dialogScriptData, woundsScriptData, characteristicsScriptData } from "../scripts/modifier-scripts.mjs";
+import { MODULE_ID, CHARACTERISTICS, changeFor, dialogScriptData, woundsScriptData, characteristicsScriptData } from "../scripts/modifier-scripts.mjs";
 
 const DIR = path.join("src", "packs", "items");
 const check = process.argv.includes("--check");
@@ -46,7 +46,7 @@ const names = new Set([...Object.keys(MODS), ...Object.keys(GRANTS).filter(n => 
 
 // One list of entries -> changes, scripts and flags for one effect.
 function build(name, list) {
-  const changes = [], scripts = [], halve = [], toggles = [], cap = {}, pool = {};
+  const changes = [], scripts = [], halve = [], toggles = [], cap = {}, extra = {};
   let wounds = 0;
   for (const e of list) {
     if (e.c) {
@@ -65,18 +65,21 @@ function build(name, list) {
       e.test.targeter ? stats.targeter++ : stats.dialogs++;
     }
     else if (e.script) { scripts.push(e.script); stats.scripts++; }
-    else if (e.pool) {
-      if (!STATUS.includes(e.pool)) errors.push(`${name}: unknown pool "${e.pool}"`);
-      pool[e.pool] = (pool[e.pool] ?? 0) + e.v; stats.pools++;
-    }
+    else if (e.flag) Object.assign(extra, e.flag);
     else if (e.toggle) toggles.push(e);
     else errors.push(`${name}: unknown entry ${JSON.stringify(e)}`);
   }
   stats.changes += changes.length;
   if (wounds) scripts.push(woundsScriptData());
   if (halve.length || Object.keys(cap).length || changes.some(c => Number(c.value) < 0 && c.key.includes("characteristics"))) scripts.push(characteristicsScriptData());
-  const flags = { ...(wounds ? { wounds } : {}), ...(halve.length ? { halve } : {}), ...(Object.keys(cap).length ? { cap } : {}), ...pool };
+  const flags = { ...(wounds ? { wounds } : {}), ...(halve.length ? { halve } : {}), ...(Object.keys(cap).length ? { cap } : {}), ...extra };
   return { changes, scripts, flags, toggles };
+}
+
+// Mutations that no longer have modifiers lose their old generated effects.
+for (const d of docs) if (!names.has(d.data.name)) {
+  const keep = (d.data.effects ?? []).filter(e => !e.flags?.[MODULE_ID]?.modifiers && !e.flags?.[MODULE_ID]?.toggle);
+  if (keep.length !== (d.data.effects ?? []).length) { d.data.effects = keep; touched.add(d); }
 }
 
 for (const name of [...names].sort()) {
@@ -106,5 +109,5 @@ for (const name of [...names].sort()) {
 
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 if (!check) for (const d of touched) fs.writeFileSync(d.file, JSON.stringify(d.data, null, 2) + "\n");
-console.log(`${check ? "[check] " : ""}${touched.size} mutations: ${stats.fixed} with fixed modifiers (${stats.changes} changes, ${stats.wounds} Wounds, ${stats.halve} halved, ${stats.caps} capped, ${stats.dialogs} own test options, ${stats.targeter} options for people targeting the mutant, ${stats.scripts} other scripts, ${stats.pools} pool bonuses), ${stats.toggles} switchable effects, ${stats.dynamic} with rolled/chosen modifiers (${stats.dynamicOnly} of them only those)`);
+console.log(`${check ? "[check] " : ""}${touched.size} mutations: ${stats.fixed} with fixed modifiers (${stats.changes} changes, ${stats.wounds} Wounds, ${stats.halve} halved, ${stats.caps} capped, ${stats.dialogs} own test options, ${stats.targeter} options for people targeting the mutant, ${stats.scripts} other scripts), ${stats.toggles} switchable effects, ${stats.dynamic} with rolled/chosen modifiers (${stats.dynamicOnly} of them only those)`);
 console.log(`Fixed changes by key: ${Object.entries(stats.kinds).map(([k, n]) => `${k} ${n}`).join(", ")}`);

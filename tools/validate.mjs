@@ -72,7 +72,7 @@ function checkScript(code, where, sourceType = "script") {
 }
 
 // Scripts. Triggers this module uses (wfrp4e / warhammer-lib names) and the module api they call.
-const TRIGGERS = ["dialog", "manual", "woundCalc", "computeCharacteristics", "addItems", "deleteEffect", "rollTest", "applyDamage", "takeDamage", "prepareData", "immediate"];
+const TRIGGERS = ["dialog", "manual", "woundCalc", "computeCharacteristics", "addItems", "deleteEffect", "rollTest", "applyDamage", "takeDamage", "preOpposedAttacker", "preOpposedDefender", "prepareData", "immediate"];
 const API = [...fs.readFileSync("scripts/mutation-grants.mjs", "utf8").match(/mod\.api = Object\.assign\(mod\.api \?\? \{\}, \{([^}]*)\}/)[1].split(",").map(x => x.trim()),
   ...fs.readFileSync("scripts/mutation-flow.mjs", "utf8").match(/const api = \{([^}]*)\}/)[1].split(",").map(x => x.trim())];
 // Scripts

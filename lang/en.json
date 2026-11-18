@@ -127,5 +127,19 @@
   "AMUT.Grant.Pool.resilience": "Resilience",
   "AMUT.Grant.Pool.resolve": "Resolve",
   "AMUT.Grant.NoPool": "{name} has no {pool} (only characters do); change it by hand if needed.",
-  "AMUT.Grant.Refreshed": "Fortune refreshed to {fortune} (Fate + mutation bonuses)"
+  "AMUT.Power.MinorMiscast": "Minor Miscast",
+  "AMUT.Power.OracleActive": "{name} is already active: end it with its End button first.",
+  "AMUT.Power.OracleFailed": "{name}: the future stays hidden (Willpower Test failed).",
+  "AMUT.Power.OracleReason": "{name}: sensing the future, +{n} Fortune for the scene",
+  "AMUT.Power.OracleEnd": "{name}: scene over, unspent Fortune removed",
+  "AMUT.Power.LunacyAsk": "What is Morrslieb's state? (Daytime: no effect.)",
+  "AMUT.Power.LunacyFull": "Lunacy: full Morrslieb",
+  "AMUT.Power.LunacyFullEnds": "Lunacy: Morrslieb no longer full, unspent Fortune removed",
+  "AMUT.Power.Morrslieb.day": "Daytime, or not affected",
+  "AMUT.Power.Morrslieb.absent": "Morrslieb absent (-10 Initiative, -10 Willpower)",
+  "AMUT.Power.Morrslieb.small": "Morrslieb small (-5 Initiative, -5 Willpower)",
+  "AMUT.Power.Morrslieb.large": "Morrslieb large (+5 Initiative, +5 Willpower)",
+  "AMUT.Power.Morrslieb.full": "Morrslieb full (+10 Initiative, +10 Willpower, +1 Fortune)",
+  "AMUT.Power.ReachPenalty": "Elongated Limbs: -10 Penalty to <b>{attacker}</b> for having the shorter weapon ({defender}'s long arms).",
+  "AMUT.Power.ReachEven": "Elongated Limbs: {attacker}'s long arms make the weapons the same length, no shorter-weapon penalty (cancels the -10 below)."
 }

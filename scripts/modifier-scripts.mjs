@@ -85,31 +85,6 @@ export function dialogScriptData(label, mod, when = {}, active = false, { target
   };
 }
 
-/* Fortune, Fate, Resilience and Resolve
- * These are spendable pools the actor stores (system.status.<k>.value, characters only) and the sheet
- * writes back, so an ActiveEffect change would double-count every time a point is spent. Like core
- * effects (e.g. "+1 Fate" scripts), they are changed with one-off actor updates:
- *   - permanent gains/losses: a grant entry applied when the mutation is added, undone on deletion
- *   - conditional ones: a button ("manual" script) on the effect, shown on the actor's Effects tab
- *   - flags.<id>.fortune on an active effect is a bonus to the Fortune pool, used by the
- *     "refresh Fortune" button (Fortune = Fate + bonuses)
- */
-export const STATUS = ["fortune", "fate", "resilience", "resolve"];
-
-/** Button that changes a pool by n. opts.whenDisabled: show it only while the effect is off. */
-export function statusButton(label, k, n, { whenDisabled = false, whenEnabled = false } = {}) {
-  return {
-    label, trigger: "manual",
-    script: `await game.modules.get("${MODULE_ID}")?.api?.adjustStatus(this.actor, { ${k}: ${Number(n)} }, ${JSON.stringify(label)});`,
-    options: whenDisabled ? { runIfDisabled: true, hideScript: "return !this.effect.disabled;" } : whenEnabled ? { hideScript: "return this.effect.disabled;" } : {}
-  };
-}
-export const refreshButton = () => ({
-  label: "New session: refresh Fortune (Fate + mutation bonuses)", trigger: "manual",
-  script: `await game.modules.get("${MODULE_ID}")?.api?.refreshPools(this.actor);`,
-  options: { runIfDisabled: true }
-});
-
 /** A "<Mutation> (Modifiers)" effect for a mutation item that has none yet (runtime fallback). */
 export function modifierEffectData(item) {
   return {
@@ -123,23 +98,51 @@ export function modifierEffectData(item) {
   };
 }
 
+
+/* Fortune, Fate, Resilience and Resolve
+ * These are pools the actor stores (system.status.<k>.value, characters only) and the sheet spends,
+ * so an ActiveEffect change would come back every time a point is spent. Like core effects, they
+ * are changed with one-off actor updates:
+ *   - permanent: Time Warp grants a level of the Luck Talent (+1 Fortune, which session reset
+ *     macros such as GM Toolkit's Reset Fortune count) and adds the point now; undone on deletion
+ *   - temporary: buttons ("manual" scripts) on the effect, shown on the actor's Effects tab
+ */
+export const STATUS = ["fortune", "fate", "resilience", "resolve"];
 const API = `game.modules.get("${MODULE_ID}")?.api`;
 
-/** Power Item Obsession: -1 Fortune while the item is away (remembered, so getting it back returns it). */
+
+/** Power Item Obsession: -1 Fortune while the item is away; the point actually lost is remembered
+ * (not added up, so pressing it again after a session's Fortune reset is right) and given back. */
 export const powerItemButtons = () => [
   {
     label: "Power item not on me: -1 Fortune", trigger: "manual",
     script: `const r = await ${API}?.adjustStatus(this.actor, { fortune: -1 }, "Power Item Obsession: item not on you");
-await this.effect.update({ "flags.${MODULE_ID}.fortune": -1, "flags.${MODULE_ID}.lost": -(r?.applied?.fortune ?? 0) });`,
-    options: { hideScript: `return this.effect.getFlag("${MODULE_ID}", "fortune") === -1;` }
+await this.effect.update({ "flags.${MODULE_ID}.lost": -(r?.applied?.fortune ?? 0) });`,
+    options: {}
   },
   {
-    label: "Power item back: regain the Fortune point", trigger: "manual",
+    label: "Power item back: +1 Fortune", trigger: "manual",
     script: `const n = Number(this.effect.getFlag("${MODULE_ID}", "lost")) || 0;
 if (n) await ${API}?.adjustStatus(this.actor, { fortune: n }, "Power Item Obsession: item back");
-await this.effect.update({ "flags.${MODULE_ID}.fortune": 0, "flags.${MODULE_ID}.lost": 0 });`,
-    options: { hideScript: `return this.effect.getFlag("${MODULE_ID}", "fortune") !== -1;` }
+await this.effect.update({ "flags.${MODULE_ID}.lost": 0 });`,
+    options: { hideScript: `return !(Number(this.effect.getFlag("${MODULE_ID}", "lost")) > 0);` }
   }
+];
+
+// Shown once per actor, on the first copy of the mutation (the power counts every copy as a level).
+const FIRST_COPY = `return this.actor?.items?.find(i => i.type === "mutation" && i.name === this.item?.name)?.id !== this.item?.id;`;
+
+/** Oracle: "Activate Oracle" (Willpower Test, +10 Initiative and +1 Fortune per level) and its end. */
+export const oracleButton = () => ({ label: "Activate Oracle", trigger: "manual", script: `await ${API}?.activateOracle(this.actor, this.item);`, options: { hideScript: FIRST_COPY } });
+export const oracleEndButton = () => ({ label: "End Oracle (scene over): remove unspent Fortune", trigger: "manual", script: `await ${API}?.endOracle(this.actor, this.effect);`, options: {} });
+
+/** Lunacy: "Activate Lunacy" asks for Morrslieb's state and switches on that phase's effect. */
+export const lunacyButton = () => ({ label: "Activate Lunacy", trigger: "manual", script: `await ${API}?.activateLunacy(this.actor, this.item);`, options: { hideScript: FIRST_COPY } });
+
+/** Elongated Limbs (arms): weapon length in opposed melee tests (see mutation-powers.mjs). */
+export const longArmsScripts = () => [
+  { label: "Elongated Limbs: long arms Reach (attacking)", trigger: "preOpposedAttacker", script: `${API}?.longArmsReach(args, "attacker");`, options: {} },
+  { label: "Elongated Limbs: long arms Reach (defending)", trigger: "preOpposedDefender", script: `${API}?.longArmsReach(args, "defender");`, options: {} }
 ];
 
 /** Regeneration: -1 Fellowship for each regenerated Critical Wound (added to this effect). */

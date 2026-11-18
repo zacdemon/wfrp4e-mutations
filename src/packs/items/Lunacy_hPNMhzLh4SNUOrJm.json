@@ -4,6 +4,112 @@
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
   "effects": [
     {
+      "name": "Lunacy (Modifiers)",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "k9I1OlSPL27C8Je9",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "label": "Activate Lunacy",
+            "trigger": "manual",
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.activateLunacy(this.actor, this.item);",
+            "options": {
+              "hideScript": "return this.actor?.items?.find(i => i.type === \"mutation\" && i.name === this.item?.name)?.id !== this.item?.id;"
+            }
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "modifiers": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!hPNMhzLh4SNUOrJm.k9I1OlSPL27C8Je9"
+    },
+    {
       "name": "Lunacy: Morrslieb absent",
       "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
       "_id": "IWxrfFFrbdeCmzPr",
@@ -103,7 +209,8 @@
           "manualEffectKeys": false
         },
         "artantares-mutations": {
-          "toggle": true
+          "toggle": true,
+          "phase": "absent"
         }
       },
       "_stats": {
@@ -222,7 +329,8 @@
           "manualEffectKeys": false
         },
         "artantares-mutations": {
-          "toggle": true
+          "toggle": true,
+          "phase": "small"
         }
       },
       "_stats": {
@@ -334,7 +442,8 @@
           "manualEffectKeys": false
         },
         "artantares-mutations": {
-          "toggle": true
+          "toggle": true,
+          "phase": "large"
         }
       },
       "_stats": {
@@ -398,14 +507,7 @@
           "ids": [],
           "allItems": false
         },
-        "scriptData": [
-          {
-            "label": "Full Morrslieb: +1 Fortune",
-            "trigger": "manual",
-            "script": "await game.modules.get(\"artantares-mutations\")?.api?.adjustStatus(this.actor, { fortune: 1 }, \"Full Morrslieb: +1 Fortune\");",
-            "options": {}
-          }
-        ],
+        "scriptData": [],
         "zone": {
           "type": "zone",
           "traits": {},
@@ -454,7 +556,7 @@
         },
         "artantares-mutations": {
           "toggle": true,
-          "fortune": 1
+          "phase": "full"
         }
       },
       "_stats": {
