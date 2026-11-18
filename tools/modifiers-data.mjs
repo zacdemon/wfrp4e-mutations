@@ -1,3 +1,5 @@
+import { statusButton, refreshButton, powerItemButtons, regenerationButton, critRollScriptData, critDealtScriptData } from "../scripts/modifier-scripts.mjs";
+
 /**
  * Fixed modifiers for the Mutant's Handbook items. `node tools/modifiers.mjs` writes them into
  * src/packs/items as a "<Mutation> (Modifiers)" effect (see scripts/modifier-scripts.mjs).
@@ -7,6 +9,11 @@
  *   half(k)                      halve characteristic k or "move", rounded up
  *   test(label, mod, when, on)   dialog option (situational test modifier); on = ticked by default
  *   toggle(label, [c(...)...])   a separate effect on the item, switched off, for "while X" modifiers
+ *   cap(k, n)                    characteristic k can never be higher than n
+ *   targ(label, mod, when, on)   option in the dialog of whoever targets the mutant (when/on: the
+ *                                attacker's test)
+ *   script(scriptData)           any other script (buttons on the effect, Critical modifiers)
+ *   pool("fortune", n)           bonus to the Fortune pool while the effect is on (refresh button)
  *
  * Modifiers that are rolled (1d10), chosen, or depend on a rolled sub-result (hit location, body
  * part, size step) are in tools/grants-data.mjs instead. Each copy of a mutation carries its own
@@ -18,6 +25,11 @@ const wounds = (v) => ({ wounds: v });
 const half = (k) => ({ half: k });
 const test = (label, mod, when = {}, on = false) => ({ test: { label, mod, when, on } });
 const toggle = (label, list) => ({ toggle: label, list });
+const cap = (k, v) => ({ cap: k, v });
+// targ(): an option in the dialog of whoever targets the mutant (system "targeter" dialog scripts)
+const targ = (label, mod, when = {}, on = false) => ({ test: { label, mod, when, on, targeter: true } });
+const script = (d) => ({ script: d });
+const pool = (k, v) => ({ pool: k, v });
 
 const FEL = { chars: ["fel"] };
 const ANY = { any: true };
@@ -29,7 +41,9 @@ export const MODS = {
   "Aberrant Agility": [c("ag", 10), c("fel", -5)],
   "Aethyric Leak": [c("int", -5), c("i", -5)],
   "Albino": [c("fel", -10)],
-  "Alien Mind": [c("fel", -20), test("Alien Mind: resist mind-influencing magic and abilities +20", m(20), { chars: ["wp"] })],
+  "Alien Mind": [c("fel", -20), test("Alien Mind: resist mind-influencing magic and abilities +20", m(20), { chars: ["wp"] }),
+    targ("Alien Mind (target): reading their emotions, thoughts or motives -30", m(-30), { skills: ["Intuition"] }, true),
+    targ("Alien Mind (target): reading their mind with magic or telepathy -30", m(-30), { chars: ["wp"], cast: true })],
   "Anti-magic Aura": [c("i", -10), c("int", -10), c("wp", -10)],
   "Barrel Chest": [c("t", 10), c("ag", -10), c("fel", -5)],
   "Beast Alpha": [test("Beast Alpha: command a domestic (Broken) animal +20", m(20), { chars: ["wp"] }),
@@ -44,7 +58,7 @@ export const MODS = {
   "Cadaverously Thin": [c("ag", 5), c("t", -5), c("fel", -5)],
   "Centauroid": [c("move", 2), c("t", 10), c("ag", -10)],
   "Chameleon Skin": [test("Chameleon Skin: blending in +20 Stealth", m(20), STEALTH)],
-  "Chthonian Crawler": [test("Chthonian Crawler: armed fighting -20", m(-20), { melee: true }, true)],
+  "Chthonian Crawler": [test("Chthonian Crawler: armed fighting -20", m(-20), { weapon: "melee" }, true)],
   "Clubfoot": [c("move", -1), c("ag", -5), c("fel", -5)],
   "Cold-Blooded": [c("fel", -10)],
   "Contagious Madness": [c("int", -10)],
@@ -63,6 +77,7 @@ export const MODS = {
   "Grossly Corpulent": [wounds(1), c("s", 5), c("t", 5), c("move", -1), c("fel", -5)],
   "Grotesque Skin": [c("fel", -20)],
   "Hairless": [c("fel", -5)],
+  "Hideous Appearance": [cap("fel", 0)],
   "Hopper": [c("move", -2)],
   "Horrible Stench": [c("fel", -10)],
   "Hubris": [test("Hubris: social Test to take the spotlight, claim glory or deflect criticism +10", m(10), FEL),
@@ -78,7 +93,7 @@ export const MODS = {
     toggle("Morrslieb absent", [c("i", -10), c("wp", -10)]),
     toggle("Morrslieb small", [c("i", -5), c("wp", -5)]),
     toggle("Morrslieb large", [c("i", 5), c("wp", 5)]),
-    toggle("Morrslieb full (+1 Fortune by hand)", [c("i", 10), c("wp", 10)])],
+    toggle("Morrslieb full (+1 Fortune)", [c("i", 10), c("wp", 10), pool("fortune", 1), script(statusButton("Full Morrslieb: +1 Fortune", "fortune", 1))])],
   "Magnetic Presence": [c("fel", 10), test("Magnetic Presence: Stealth near sentient beings -30", m(-30), STEALTH, true)],
   "Mark of Chaos": [test("Mark of Chaos: showing it to a Chaos worshipper +5", m(5), FEL),
     test("Mark of Chaos: showing it to a worshipper of the same God +10", m(10), FEL)],
@@ -88,15 +103,21 @@ export const MODS = {
   "Morbidity": [c("fel", -10)],
   "Nervous Jitters": [c("i", 5), c("bs", -5), c("dex", -5)],
   "Nihilistic Numbness": [c("fel", -10)],
-  "Oracle": [toggle("Sensing the future (+10 Initiative; +1 Fortune per level by hand)", [c("i", 10)])],
+  "Oracle": [toggle("Sensing the future (+10 Initiative, +1 Fortune)", [c("i", 10), pool("fortune", 1), script(statusButton("Sensing the future: +1 Fortune", "fortune", 1))])],
   "Organic Crystal": [test("Organic Crystal: opposing an incoming spell -10", m(-10), { chars: ["wp"], skills: ["Dodge"] })],
   "Overgrown Arm": [c("s", 10), c("dex", -10), c("ag", -5)],
   "Painseeker": [toggle("Wounded or wounding (1d10 Rounds)", [c("s", 5), c("t", 5), c("wp", 5)])],
+  "Power Item Obsession": [...powerItemButtons().map(script), script(refreshButton())],
   "Prehensile Feet": [c("move", -1), test("Prehensile Feet: Climb, add Agility Bonus to SL", { slFrom: "ag" }, { skills: ["Climb"] }, true)],
   "Quantum Bulge": [c("fel", -5)],
+  "Regeneration": [script(regenerationButton())],
   "Regression": [test("Regression: pushing through a challenge or failure -10", m(-10), { chars: ["wp"] })],
   "Savage Grace": [c("ws", 5), c("ag", 10), test("Savage Grace: blending in among people -10", m(-10), STEALTH)],
-  "Savagery": [c("ws", 5), c("bs", -5)],
+  "Savagery": [c("ws", 5), c("bs", -5), script(critRollScriptData("Savagery: +10 to Critical Wounds you inflict", 10)),
+    script(critDealtScriptData("Savagery: +10 to Critical Wounds from damage you deal (Up in Arms Criticals)", 10))],
+  "Shapeshifter": [test("Shapeshifter: keeping your shape when Wounded (-10 per Wound lost)",
+    { expr: "args.fields.modifier -= 10 * Math.max(0, (Number(this.actor.system.status.wounds.max) || 0) - (Number(this.actor.system.status.wounds.value) || 0));" }, { skills: ["Endurance"] })],
+  "Skinwalker": [targ("Skinwalker (target): seeing through their stolen form with Second Sight -20", m(-20), { skills: ["Perception", "Intuition"] })],
   "Skin Pouch": [test("Skin Pouch: hiding the pouch from a search +20", m(20), STEALTH)],
   "Skinned Alive": [c("fel", -20)],
   "Slimy": [c("fel", -10), test("Slimy: escaping a Grapple +20", m(20), { chars: ["s"] })],
@@ -107,6 +128,7 @@ export const MODS = {
   "Split Torso": [c("ag", -10)],
   "Tantalising Aura": [test("Tantalising Aura: Stealth near sentient beings -20", m(-20), STEALTH, true)],
   "Telepathy": [test("Telepathy: plundering memories -30", m(-30), { chars: ["wp"] })],
+  "Time Warp": [pool("fortune", 1), script(refreshButton())],
   "The Big Joke": [c("fel", -10)],
   "Third Eye": [c("bs", 10)],
   "Ticks": [c("i", -10)],
@@ -127,23 +149,20 @@ export const MANUAL = {
   "Chimeran Curse": "you take the physical Characteristics of another creature",
   "Crossbreed": "Characteristics move a share of the way to another species' table",
   "Ecstatic Milk": "the bonuses go to whoever drinks the milk, for 4 hours",
-  "Elongated Limbs": "the Legs result is automated (+1 Movement); opponents' +20 and the neck's +20 to head Criticals are other people's rolls",
+  "Elongated Limbs": "the longer weapon Reach is by hand; the neck's +20 to head Criticals is automatic only for wound Criticals with Up in Arms Criticals on (attack-roll Criticals and core-rules wound Criticals: add it in the Critical prompt)",
   "Fleshcrafter": "trades Characteristic points per SL as the GM rules",
   "Magic Numbers": "Initiative drops to 0 only in the situations the GM picks",
   "Pitiful Stature": "the -1 Armour steps (Monstrous to Large) are by hand; Characteristics and Movement are automated",
-  "Power Item Obsession": "Fortune has no maximum to lower in the system; take 1 Fortune away by hand",
-  "Regeneration": "-1 Fellowship each time a Critical Wound regenerates",
-  "Savagery": "+10 when determining Critical Wounds is on the critical roll, not a test",
-  "Shapeshifter": "the -Wounds x 10 modifier changes with current Wounds",
-  "Skinwalker": "the -20 applies to observers' tests",
   "Symbiotic Twins": "the twin is a separate actor",
   "Temporal Instability": "an extra Move and Action are turn economy",
-  "Time Warp": "Fortune has no maximum to raise in the system; add 1 Fortune each session by hand",
   "Turnskin": "you take Beastman base Characteristics",
   "Vestigial Twin": "the twin's own profile (your -10 Agility is automated)",
   "Werebeast": "the Morrslieb modifiers only apply to the transformation Test",
-  "Alien Mind": "the -30 to read you applies to other people's tests (your +20 to resist and -20 Fellowship are automated)",
-  "Lunacy": "switch on the effect for the current Morrslieb phase on the actor's Effects tab; +1 Fortune at full Morrslieb is by hand",
-  "Oracle": "switch on the effect after the Willpower Test; +1 Fortune per level is by hand",
-  "Painseeker": "switch on the effect when it triggers; it does not stack"
+  "Alien Mind": "the Cool Test (or Stunned) for telepaths who connect to you is the GM's call",
+  "Lunacy": "switch on the effect for the current Morrslieb phase on the actor's Effects tab, then press its +1 Fortune button at full Morrslieb",
+  "Oracle": "switch on the effect after the Willpower Test and press its +1 Fortune button (one effect per copy, so per level); unspent Fortune at the end of the scene is removed by hand",
+  "Painseeker": "switch on the effect when it triggers; it does not stack",
+  "Savagery": "+10 is automatic on attack-roll Criticals and, with Up in Arms Criticals, on wound Criticals; with core-rules wound Criticals add it in the Critical prompt",
+  "Skinwalker": "the -20 is offered (unticked) to observers who target you; without Second Sight they are simply fooled (GM)",
+  "Shapeshifter": "the Endurance option is offered unticked (only while Wounded in an assumed shape); fooling observers without Second Sight is the GM's call"
 };

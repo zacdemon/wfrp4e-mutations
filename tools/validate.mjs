@@ -71,6 +71,10 @@ function checkScript(code, where, sourceType = "script") {
   } catch (e) { errors.push(`Script syntax error in ${where}: ${e.message}`); }
 }
 
+// Scripts. Triggers this module uses (wfrp4e / warhammer-lib names) and the module api they call.
+const TRIGGERS = ["dialog", "manual", "woundCalc", "computeCharacteristics", "addItems", "deleteEffect", "rollTest", "applyDamage", "takeDamage", "prepareData", "immediate"];
+const API = [...fs.readFileSync("scripts/mutation-grants.mjs", "utf8").match(/mod\.api = Object\.assign\(mod\.api \?\? \{\}, \{([^}]*)\}/)[1].split(",").map(x => x.trim()),
+  ...fs.readFileSync("scripts/mutation-flow.mjs", "utf8").match(/const api = \{([^}]*)\}/)[1].split(",").map(x => x.trim())];
 // Scripts
 for (const [pack, d] of all) {
   if (pack === "macros" && !isFolder(d)) checkScript(d.command, `macro ${d.name}`);
@@ -78,6 +82,11 @@ for (const [pack, d] of all) {
     for (const [i, s] of (e.system?.scriptData ?? []).entries()) {
       checkScript(s.script, `${d.name} / ${e.name} [${s.trigger} #${i}]`);
       for (const k of ["hideScript", "activateScript", "submissionScript"]) checkScript(s.options?.[k], `${d.name} / ${e.name} [${s.trigger} #${i} ${k}]`);
+      const where = `${d.name} / ${e.name} [${s.trigger} #${i}]`;
+      if (!TRIGGERS.includes(s.trigger)) errors.push(`${where}: unknown trigger`);
+      if (s.options?.targeter && s.trigger !== "dialog") errors.push(`${where}: targeter option on a non-dialog script`);
+      if (s.trigger === "manual" && !s.label) errors.push(`${where}: button without a label`);
+      if (/api\?*\.(\w+)/.test(s.script ?? "")) for (const m of s.script.matchAll(/api\?\.(\w+)/g)) if (!API.includes(m[1])) errors.push(`${where}: unknown module api ${m[1]}`);
     }
 }
 // Effect changes: v14 shape and keys the wfrp4e system offers for these modifiers

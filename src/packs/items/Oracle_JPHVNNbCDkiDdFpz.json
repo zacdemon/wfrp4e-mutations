@@ -116,7 +116,7 @@
       "_key": "!items.effects!JPHVNNbCDkiDdFpz.pYXyAEVwCEdjGqKQ"
     },
     {
-      "name": "Oracle: Sensing the future (+10 Initiative; +1 Fortune per level by hand)",
+      "name": "Oracle: Sensing the future (+10 Initiative, +1 Fortune)",
       "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
       "_id": "rAgDfAtH6FDbmPEq",
       "type": "base",
@@ -160,7 +160,14 @@
           "ids": [],
           "allItems": false
         },
-        "scriptData": [],
+        "scriptData": [
+          {
+            "label": "Sensing the future: +1 Fortune",
+            "trigger": "manual",
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.adjustStatus(this.actor, { fortune: 1 }, \"Sensing the future: +1 Fortune\");",
+            "options": {}
+          }
+        ],
         "zone": {
           "type": "zone",
           "traits": {},
@@ -201,7 +208,8 @@
           "manualEffectKeys": false
         },
         "artantares-mutations": {
-          "toggle": true
+          "toggle": true,
+          "fortune": 1
         }
       },
       "_stats": {

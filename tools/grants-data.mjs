@@ -9,7 +9,7 @@
  * result (ch(), half(), dlg() below) are entries here, so the grant run rolls or asks once and writes
  * the result into the mutation's "<Mutation> (Modifiers)" effect.
  */
-import { dialogScriptData } from "../scripts/modifier-scripts.mjs";
+import { dialogScriptData, critTakenScriptData } from "../scripts/modifier-scripts.mjs";
 
 // wfrp4e-core item ids, taken from the links in the handbook items. The runtime checks the type
 // and falls back to a name search (game.wfrp4e.utility.find) if a link is missing or wrong.
@@ -65,7 +65,10 @@ const body = (part, tbl, key) => ({ body: part, tbl, key });
 // Modifiers: ch("ag", 10) / ch("ag", "-1d10") / ch("move", 1) / ch("wounds", -1); half("bs"); dlg(label, mod, when, active)
 const ch = (k, v, o = {}) => ({ t: "mod", k, v, ...o });
 const half = (k) => ({ t: "mod", k, half: true });
-const dlg = (label, mod, when, active) => ({ t: "dialog", d: dialogScriptData(label, mod, when, active) });
+const dlg = (label, mod, when, active, opts) => ({ t: "dialog", d: dialogScriptData(label, mod, when, active, opts) });
+const scr = (d) => ({ t: "dialog", d });                          // any script, added to the Modifiers effect
+const stat = (k, v) => ({ t: "status", k, v });                   // Fortune/Fate/Resilience/Resolve +v now
+const INFIGHTING = `args.actor?.statuses?.has("infighting")`;
 // "Roll on the Hit Locations table" (WFRP p159): head 01-09 gets `head`, everything else `other`.
 const hitloc = (text, head, other = null) => roll("1d100", text,
   [1, 9, head, "Head"], [10, 24, other, "Left Arm"], [25, 44, other, "Right Arm"], [45, 79, other, "Body"],
@@ -140,9 +143,10 @@ export const GRANTS = {
     [1, 25, T("Acute Sense", { s: "Sight" }), "Eyes"], [26, 50, T("Acute Sense", { s: "Hearing" }), "Ears"],
     [51, 75, T("Acute Sense", { s: "Smell" }), "Nose"], [76, 100, T("Acute Sense", { s: "Taste" }), "Mouth"])] },
   "Elongated Limbs": { grants: [roll("1d10", "Limb",
-    [1, 4, note("Long arms: weapon Reach one step longer; opponents get +20 when in-fighting you (by hand)."), "Arms"],
+    [1, 4, [note("Long arms: weapon Reach one step longer (set it on your weapons by hand)."),
+      dlg("Elongated Limbs (target): in-fighting against long arms +20", { modifier: 20 }, { attack: "melee" }, INFIGHTING, { targeter: true })], "Arms"],
     [5, 9, ch("move", 1), "Legs"],
-    [10, 10, note("Long neck: Critical hits to the Head get +20 (by hand)."), "Neck"]),
+    [10, 10, scr(critTakenScriptData("Elongated Limbs: Critical hits to the Head +20 (Up in Arms Criticals)", 20, "head")), "Neck"]),
     roll("1d10", "Elastic", [1, 8, null, "-"], [9, 10, note("Elastic: retract to hide it, or extend 1-2 yards (about 3 yards reach)."), "Elastic"])] },
   "Ensnaring Tongue": { grants: [R("Tongue Attack", { d: 0 })] },
   "Ethereal": { grants: [R("Ethereal", { off: true }), note("Ethereal is added switched off: enable it while the power is active.")] },
@@ -161,6 +165,7 @@ export const GRANTS = {
   "Gnawer": { grants: [R("Bite", { d: 1 })] },
   "Gut Worm": { grants: [R("Hungry")] },
   "Hateful Impulses": { levels: [[P("Animosity", { ask: askGroup, opts: GROUPS })], [P("Hatred", { ask: askGroup, opts: GROUPS }), note("Upgrade: remove the old Animosity by hand if it is the same target.")]] },
+  "Time Warp": { grants: [stat("fortune", 1)] },
   "Hideous Appearance": { grants: [R("Terror", { s: "1", max: true })] },
   "Hollow Bones": { grants: [ch("ag", "1d10"), S("Athletics", "1d10")] },
   "Hopper": { grants: [R("Bounce")] },

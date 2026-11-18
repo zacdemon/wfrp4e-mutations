@@ -60,9 +60,31 @@
             }
           },
           {
-            "label": "Halved values, Characteristics not below 0",
+            "label": "Alien Mind (target): reading their emotions, thoughts or motives -30",
+            "trigger": "dialog",
+            "script": "args.fields.modifier += -30;",
+            "options": {
+              "targeter": true,
+              "hideScript": "return !([game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n)));",
+              "activateScript": "return [game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n));",
+              "submissionScript": ""
+            }
+          },
+          {
+            "label": "Alien Mind (target): reading their mind with magic or telepathy -30",
+            "trigger": "dialog",
+            "script": "args.fields.modifier += -30;",
+            "options": {
+              "targeter": true,
+              "hideScript": "return !([\"wp\"].includes(args.characteristic) || args.type == \"cast\");",
+              "activateScript": "",
+              "submissionScript": ""
+            }
+          },
+          {
+            "label": "Halved or capped values, Characteristics not below 0",
             "trigger": "computeCharacteristics",
-            "script": "const sys = this.actor.system;\nfor (const k of this.effect.getFlag(\"artantares-mutations\", \"halve\") ?? []) {\n  if (k === \"move\") sys.details.move.value = Math.ceil(Number(sys.details.move.value) / 2);\n  else if (sys.characteristics[k]) {\n    const c = sys.characteristics[k];\n    c.value = Math.ceil(c.value / 2);\n    c.bonus = Math.floor(c.value / 10) + (c.bonusMod || 0);\n  }\n}\nfor (const c of Object.values(sys.characteristics)) {\n  if (c.value < 0) { c.value = 0; c.bonus = Math.max(0, c.bonusMod || 0); }\n}",
+            "script": "const sys = this.actor.system;\nconst rebonus = (c) => { c.bonus = Math.max(0, Math.floor(c.value / 10) + (c.bonusMod || 0)); };\nfor (const k of this.effect.getFlag(\"artantares-mutations\", \"halve\") ?? []) {\n  if (k === \"move\") sys.details.move.value = Math.ceil(Number(sys.details.move.value) / 2);\n  else if (sys.characteristics[k]) { const c = sys.characteristics[k]; c.value = Math.ceil(c.value / 2); rebonus(c); }\n}\nfor (const [k, max] of Object.entries(this.effect.getFlag(\"artantares-mutations\", \"cap\") ?? {})) {\n  const c = sys.characteristics[k];\n  if (c && c.value > max) { c.value = max; rebonus(c); }\n}\nfor (const c of Object.values(sys.characteristics)) {\n  if (c.value < 0) { c.value = 0; c.bonus = Math.max(0, c.bonusMod || 0); }\n}",
             "options": {}
           }
         ],

@@ -7,7 +7,7 @@ import path from "node:path";
 import { MODS } from "./modifiers-data.mjs";
 import { GRANTS, PARTS } from "./grants-data.mjs";
 import { stableId, effectSource } from "./effect-template.mjs";
-import { MODULE_ID, CHARACTERISTICS, changeFor, dialogScriptData, woundsScriptData, characteristicsScriptData } from "../scripts/modifier-scripts.mjs";
+import { MODULE_ID, CHARACTERISTICS, STATUS, changeFor, dialogScriptData, woundsScriptData, characteristicsScriptData } from "../scripts/modifier-scripts.mjs";
 
 const DIR = path.join("src", "packs", "items");
 const check = process.argv.includes("--check");
@@ -40,17 +40,13 @@ function dynamicSpec(name) {
   return hasEntry(nodes, isMod) ? nodes : null;
 }
 
-const stats = { fixed: 0, changes: 0, wounds: 0, halve: 0, dialogs: 0, toggles: 0, dynamicOnly: 0, dynamic: 0, kinds: {} };
+const stats = { fixed: 0, changes: 0, wounds: 0, halve: 0, caps: 0, dialogs: 0, targeter: 0, scripts: 0, pools: 0, toggles: 0, dynamicOnly: 0, dynamic: 0, kinds: {} };
 const touched = new Set();
 const names = new Set([...Object.keys(MODS), ...Object.keys(GRANTS).filter(n => dynamicSpec(n))]);
 
-for (const name of [...names].sort()) {
-  const d = byName.get(name);
-  if (!d) { errors.push(`no item named "${name}"`); continue; }
-  const item = d.data;
-  const list = MODS[name] ?? [];
-  const dyn = dynamicSpec(name);
-  const changes = [], scripts = [], halve = [], toggles = [];
+// One list of entries -> changes, scripts and flags for one effect.
+function build(name, list) {
+  const changes = [], scripts = [], halve = [], toggles = [], cap = {}, pool = {};
   let wounds = 0;
   for (const e of list) {
     if (e.c) {
@@ -60,28 +56,49 @@ for (const name of [...names].sort()) {
     }
     else if (e.wounds) { wounds += e.wounds; stats.wounds++; }
     else if (e.half) { halve.push(e.half); stats.halve++; }
-    else if (e.test) { scripts.push(dialogScriptData(e.test.label, e.test.mod, e.test.when, e.test.on)); stats.dialogs++; }
+    else if (e.cap) {
+      if (!CHARACTERISTICS.includes(e.cap)) errors.push(`${name}: unknown characteristic "${e.cap}"`);
+      cap[e.cap] = e.v; stats.caps++;
+    }
+    else if (e.test) {
+      scripts.push(dialogScriptData(e.test.label, e.test.mod, e.test.when, e.test.on, { targeter: !!e.test.targeter }));
+      e.test.targeter ? stats.targeter++ : stats.dialogs++;
+    }
+    else if (e.script) { scripts.push(e.script); stats.scripts++; }
+    else if (e.pool) {
+      if (!STATUS.includes(e.pool)) errors.push(`${name}: unknown pool "${e.pool}"`);
+      pool[e.pool] = (pool[e.pool] ?? 0) + e.v; stats.pools++;
+    }
     else if (e.toggle) toggles.push(e);
     else errors.push(`${name}: unknown entry ${JSON.stringify(e)}`);
   }
   stats.changes += changes.length;
   if (wounds) scripts.push(woundsScriptData());
-  if (halve.length || changes.some(c => Number(c.value) < 0 && c.key.includes("characteristics"))) scripts.push(characteristicsScriptData());
+  if (halve.length || Object.keys(cap).length || changes.some(c => Number(c.value) < 0 && c.key.includes("characteristics"))) scripts.push(characteristicsScriptData());
+  const flags = { ...(wounds ? { wounds } : {}), ...(halve.length ? { halve } : {}), ...(Object.keys(cap).length ? { cap } : {}), ...pool };
+  return { changes, scripts, flags, toggles };
+}
+
+for (const name of [...names].sort()) {
+  const d = byName.get(name);
+  if (!d) { errors.push(`no item named "${name}"`); continue; }
+  const item = d.data;
+  const dyn = dynamicSpec(name);
+  const { changes, scripts, flags, toggles } = build(name, MODS[name] ?? []);
 
   item.effects = (item.effects ?? []).filter(e => !e.flags?.[MODULE_ID]?.modifiers && !e.flags?.[MODULE_ID]?.toggle);
-  if (changes.length || scripts.length || dyn) {
+  if (changes.length || scripts.length || dyn || Object.keys(flags).length) {
     const id = stableId(`${item._id}-modifiers`);
-    const flags = { [MODULE_ID]: { modifiers: true, ...(wounds ? { wounds } : {}), ...(halve.length ? { halve } : {}) } };
-    item.effects.push(effectSource({ item, id, name: `${item.name} (Modifiers)`, scriptData: scripts, changes, flags }));
+    item.effects.push(effectSource({ item, id, name: `${item.name} (Modifiers)`, scriptData: scripts, changes, flags: { [MODULE_ID]: { modifiers: true, ...flags } } }));
     if (changes.length || scripts.length) stats.fixed++;
     if (dyn) stats.dynamic++;
     if (dyn && !changes.length && !scripts.length) stats.dynamicOnly++;
   }
   toggles.forEach((t, i) => {
     const id = stableId(`${item._id}-toggle-${i}`);
-    const tchanges = t.list.map(e => changeFor(e.c, e.v));
-    const tscripts = tchanges.some(c => Number(c.value) < 0) ? [characteristicsScriptData()] : [];
-    item.effects.push(effectSource({ item, id, name: `${item.name}: ${t.toggle}`, scriptData: tscripts, changes: tchanges, disabled: true, flags: { [MODULE_ID]: { toggle: true } } }));
+    const b = build(name, t.list);
+    if (b.toggles.length) errors.push(`${name}: nested toggle`);
+    item.effects.push(effectSource({ item, id, name: `${item.name}: ${t.toggle}`, scriptData: b.scripts, changes: b.changes, disabled: true, flags: { [MODULE_ID]: { toggle: true, ...b.flags } } }));
     stats.toggles++;
   });
   touched.add(d);
@@ -89,5 +106,5 @@ for (const name of [...names].sort()) {
 
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 if (!check) for (const d of touched) fs.writeFileSync(d.file, JSON.stringify(d.data, null, 2) + "\n");
-console.log(`${check ? "[check] " : ""}${touched.size} mutations: ${stats.fixed} with fixed modifiers (${stats.changes} changes, ${stats.wounds} Wounds, ${stats.halve} halved, ${stats.dialogs} test options), ${stats.toggles} switchable effects, ${stats.dynamic} with rolled/chosen modifiers (${stats.dynamicOnly} of them only those)`);
+console.log(`${check ? "[check] " : ""}${touched.size} mutations: ${stats.fixed} with fixed modifiers (${stats.changes} changes, ${stats.wounds} Wounds, ${stats.halve} halved, ${stats.caps} capped, ${stats.dialogs} own test options, ${stats.targeter} options for people targeting the mutant, ${stats.scripts} other scripts, ${stats.pools} pool bonuses), ${stats.toggles} switchable effects, ${stats.dynamic} with rolled/chosen modifiers (${stats.dynamicOnly} of them only those)`);
 console.log(`Fixed changes by key: ${Object.entries(stats.kinds).map(([k, n]) => `${k} ${n}`).join(", ")}`);

@@ -121,5 +121,11 @@
   "AMUT.Grant.Movement": "Movement",
   "AMUT.Grant.Wounds": "Wounds",
   "AMUT.Grant.Halved": "{name} halved",
-  "AMUT.Grant.TestModifier": "Test option: {label}"
+  "AMUT.Grant.TestModifier": "Added to the Modifiers effect: {label}",
+  "AMUT.Grant.Pool.fortune": "Fortune",
+  "AMUT.Grant.Pool.fate": "Fate",
+  "AMUT.Grant.Pool.resilience": "Resilience",
+  "AMUT.Grant.Pool.resolve": "Resolve",
+  "AMUT.Grant.NoPool": "{name} has no {pool} (only characters do); change it by hand if needed.",
+  "AMUT.Grant.Refreshed": "Fortune refreshed to {fortune} (Fate + mutation bonuses)"
 }

@@ -46,10 +46,12 @@
  *   { t: "mod", k, v }        k a characteristic key (ws..fel), "move" or "wounds"; v a number or a dice
  *                             formula ("1d10", "-2d10") rolled once now and stored as a plain number
  *   { t: "mod", k, half }     halve characteristic k (or "move"), rounded up
- *   { t: "dialog", d }        add a dialog script (situational test modifier) to the effect
+ *   { t: "dialog", d }        add a script to the effect (a dialog option, targeter option, crit hook...)
+ *   { t: "status", k, v }     k fortune|fate|resilience|resolve: change the actor's pool by v now
+ *                             (undone when the mutation is deleted)
  * Fixed modifiers are not entries: tools/modifiers.mjs writes them straight into the effect.
  */
-import { MODULE_ID as MID, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData } from "./modifier-scripts.mjs";
+import { MODULE_ID as MID, STATUS, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData } from "./modifier-scripts.mjs";
 
 const MODULE_ID = MID;
 const PACK_ITEMS = `${MODULE_ID}.items`;
@@ -70,7 +72,7 @@ Hooks.once("init", () => {
     scope: "world", config: true, type: Boolean, default: true
   });
   const mod = game.modules.get(MODULE_ID);
-  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems });
+  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, refreshPools, addModifier });
 });
 
 /* -------------------------------------------- */
@@ -128,9 +130,10 @@ export async function revert(ctx) {
     await actor.deleteEmbeddedDocuments("Item", ids);
   }
   for (const u of [...(item.getFlag(MODULE_ID, "undo") ?? [])].reverse()) {
-    const target = actor.items.get(u.id);
+    const target = u.actor ? actor : actor.items.get(u.id);
     if (!target) continue;
-    if (u.delta !== undefined) await target.update({ [u.path]: (Number(foundry.utils.getProperty(target, u.path)) || 0) - u.delta });
+    if (u.actor) await target.update({ [u.path]: Math.max(0, (Number(foundry.utils.getProperty(target, u.path)) || 0) - u.delta) });
+    else if (u.delta !== undefined) await target.update({ [u.path]: (Number(foundry.utils.getProperty(target, u.path)) || 0) - u.delta });
     else await target.update({ [u.path]: u.value });
   }
 }
@@ -231,7 +234,7 @@ function dedupe(list) {
   const map = new Map();
   const out = [];
   for (const e of list) {
-    if (e.t === "bump" || e.t === "size" || e.t === "mod" || e.t === "dialog") { out.push(e); continue; }
+    if (e.t === "bump" || e.t === "size" || e.t === "mod" || e.t === "dialog" || e.t === "status") { out.push(e); continue; }
     const key = e.t === "armour" ? `armour|${e.n}`
       : e.max ? `${e.t}|${e.n}`
       : `${e.t}|${e.n}|${e.s ?? ""}|${e.d ?? ""}|${e.l ?? ""}|${e.v ?? ""}|${e.ask ?? ""}`;
@@ -262,6 +265,7 @@ async function applyEntry(e, st) {
     case "size": return applySize(e, st);
     case "mod": return applyMod(e, st);
     case "dialog": st.mods.push({ dialog: e.d }); return st.log.push(L("TestModifier", { label: e.d.label }));
+    case "status": return applyStatus(e, st);
   }
 }
 
@@ -470,6 +474,69 @@ async function applyMod(e, st) {
   st.mods.push({ k: e.k, value: Number(value) });
 }
 
+const poolName = (k) => game.i18n.localize(`AMUT.Grant.Pool.${k}`);
+
+async function applyStatus(e, st) {
+  const path = `system.status.${e.k}.value`;
+  const cur = foundry.utils.getProperty(st.actor, path);
+  if (!STATUS.includes(e.k) || cur === undefined) return st.notes.push(L("NoPool", { pool: poolName(e.k), name: st.actor.name }));
+  const next = Math.max(0, (Number(cur) || 0) + e.v);
+  await st.actor.update({ [path]: next });
+  st.undo.push({ actor: true, path, delta: next - (Number(cur) || 0) });
+  st.log.push(`${poolName(e.k)} ${signed(e.v)} (${cur} > ${next})`);
+}
+
+/**
+ * Change Fortune / Fate / Resilience / Resolve by the given amounts (never below 0) and say so in chat.
+ * Used by the buttons on mutation effects, e.g. Lunacy "Morrslieb full": +1 Fortune.
+ * Returns { applied: { fortune: <actual change> ... } }.
+ */
+export async function adjustStatus(actor, deltas = {}, reason = "") {
+  if (!actor) return;
+  const update = {}, bits = [], applied = {};
+  for (const [k, d] of Object.entries(deltas)) {
+    const path = `system.status.${k}.value`;
+    const cur = foundry.utils.getProperty(actor, path);
+    if (!STATUS.includes(k) || cur === undefined) { ui.notifications.warn(L("NoPool", { pool: poolName(k), name: actor.name })); continue; }
+    const next = Math.max(0, (Number(cur) || 0) + Number(d));
+    update[path] = next;
+    applied[k] = next - (Number(cur) || 0);
+    bits.push(`${poolName(k)} ${cur} > ${next}`);
+  }
+  if (foundry.utils.isEmpty(update)) return { applied };
+  await actor.update(update);
+  const message = await ChatMessage.create({ content: `<p><strong>${esc(actor.name)}</strong>: ${esc(bits.join(", "))}${reason ? ` <em>(${esc(reason)})</em>` : ""}</p>`, speaker: ChatMessage.getSpeaker({ actor }) });
+  return { applied, message };
+}
+
+/** Pool bonus from the actor's active mutation effects (flags.<id>.fortune). */
+function poolBonus(actor, k) {
+  let n = 0;
+  for (const item of actor.items) for (const e of item.effects ?? []) if (!e.disabled) n += Number(e.getFlag(MODULE_ID, k)) || 0;
+  return n;
+}
+
+/** New session: Fortune = Fate + Fortune bonuses from active mutation effects (Time Warp, Power Item Obsession...). */
+export async function refreshPools(actor) {
+  const s = actor?.system?.status;
+  if (!s?.fortune || !s?.fate) return ui.notifications.warn(L("NoPool", { pool: poolName("fortune"), name: actor?.name }));
+  const fortune = Math.max(0, (Number(s.fate.value) || 0) + poolBonus(actor, "fortune"));
+  await actor.update({ "system.status.fortune.value": fortune });
+  return ChatMessage.create({ content: `<p><strong>${esc(actor.name)}</strong>: ${esc(L("Refreshed", { fortune }))}</p>`, speaker: ChatMessage.getSpeaker({ actor }) });
+}
+
+/** Add one more change to a Modifiers effect (Regeneration: -1 Fellowship per regenerated Critical). */
+export async function addModifier(effect, k, v, reason = "") {
+  if (!effect) return;
+  const data = effect.toObject();
+  const changes = [...(data.system?.changes ?? []), changeFor(k, v)];
+  const scripts = [...(data.system?.scriptData ?? [])];
+  if (Number(v) < 0 && !scripts.some(s => s.trigger === "computeCharacteristics")) scripts.push(characteristicsScriptData());
+  await effect.update({ "system.changes": changes, "system.scriptData": scripts });
+  const actor = effect.actor ?? effect.parent?.actor;
+  return ChatMessage.create({ content: `<p><strong>${esc(actor?.name ?? "")}</strong>: ${esc(`${modName(k)} ${signed(Number(v))}`)}${reason ? ` <em>(${esc(reason)})</em>` : ""}</p>`, speaker: ChatMessage.getSpeaker({ actor }) });
+}
+
 /** Write rolled / chosen modifiers into the mutation's Modifiers effect (created if missing). */
 async function applyModifiers(st) {
   let effect = st.item.effects?.find(e => e.getFlag(MODULE_ID, "modifiers"));
@@ -510,6 +577,7 @@ function labelOf(e) {
   if (e.choose) return e.choose;
   if (e.t === "mod") return e.half ? L("Halved", { name: modName(e.k) }) : `${typeof e.v === "number" ? signed(e.v) : e.v} ${modName(e.k)}`;
   if (e.t === "dialog") return e.d.label;
+  if (e.t === "status") return `${signed(e.v)} ${poolName(e.k)}`;
   const bits = [e.n];
   if (e.s) bits.push(`(${e.s})`);
   if (e.l) bits.push(`(${e.l})`);
