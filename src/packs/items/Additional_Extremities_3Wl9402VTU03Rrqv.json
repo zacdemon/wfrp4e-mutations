@@ -50,7 +50,7 @@
         },
         "scriptData": [
           {
-            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"roll\": \"1d10\",\n      \"text\": \"Limbs\",\n      \"res\": [\n        [\n          1,\n          4,\n          {\n            \"roll\": \"1d10\",\n            \"text\": \"Amount\",\n            \"res\": [\n              [\n                1,\n                3,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 1\n                  },\n                  {\n                    \"note\": \"+1 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"One\"\n              ],\n              [\n                4,\n                6,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 2\n                  },\n                  {\n                    \"note\": \"+2 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"Two\"\n              ],\n              [\n                7,\n                8,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 3\n                  },\n                  {\n                    \"note\": \"+3 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"Three\"\n              ],\n              [\n                9,\n                10,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 4\n                  },\n                  {\n                    \"note\": \"+4 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"Four\"\n              ]\n            ]\n          },\n          \"Arms\"\n        ],\n        [\n          5,\n          7,\n          {\n            \"roll\": \"1d10\",\n            \"text\": \"Amount\",\n            \"res\": [\n              [\n                1,\n                3,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 1\n                  },\n                  {\n                    \"note\": \"+1 extra leg(s): +1 Sturdy level each; +1 Movement per pair (by hand).\"\n                  }\n                ],\n                \"One\"\n              ],\n              [\n                4,\n                6,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 2\n                  },\n                  {\n                    \"note\": \"+2 extra leg(s): +1 Sturdy level each; +1 Movement per pair (by hand).\"\n                  }\n                ],\n                \"Two\"\n              ],\n              [\n                7,\n                8,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 3\n                  },\n                  {\n                    \"note\": \"+3 extra leg(s): +1 Sturdy level each; +1 Movement per pair (by hand).\"\n                  }\n                ],\n                \"Three\"\n              ],\n              [\n                9,\n                10,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 4\n                  },\n                  {\n                    \"note\": \"+4 extra leg(s): +1 Sturdy level each; +1 Movement per pair (by hand).\"\n                  }\n                ],\n                \"Four\"\n              ]\n            ]\n          },\n          \"Legs\"\n        ],\n        [\n          8,\n          10,\n          {\n            \"roll\": \"1d10\",\n            \"text\": \"Amount\",\n            \"res\": [\n              [\n                1,\n                3,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"1\"\n                },\n                \"One\"\n              ],\n              [\n                4,\n                6,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"2\"\n                },\n                \"Two\"\n              ],\n              [\n                7,\n                8,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"3\"\n                },\n                \"Three\"\n              ],\n              [\n                9,\n                10,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"4\"\n                },\n                \"Four\"\n              ]\n            ]\n          },\n          \"Tentacles\"\n        ]\n      ]\n    }\n  ]\n});",
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"roll\": \"1d10\",\n      \"text\": \"Limbs\",\n      \"res\": [\n        [\n          1,\n          4,\n          {\n            \"roll\": \"1d10\",\n            \"text\": \"Amount\",\n            \"res\": [\n              [\n                1,\n                3,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 1\n                  },\n                  {\n                    \"note\": \"+1 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"One\"\n              ],\n              [\n                4,\n                6,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 2\n                  },\n                  {\n                    \"note\": \"+2 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"Two\"\n              ],\n              [\n                7,\n                8,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 3\n                  },\n                  {\n                    \"note\": \"+3 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"Three\"\n              ],\n              [\n                9,\n                10,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Furious Assault\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.BlHVzfs0Ow6IYEDw\",\n                    \"x\": 4\n                  },\n                  {\n                    \"note\": \"+4 extra arm(s): +1 Furious Assault level each.\"\n                  }\n                ],\n                \"Four\"\n              ]\n            ]\n          },\n          \"Arms\"\n        ],\n        [\n          5,\n          7,\n          {\n            \"roll\": \"1d10\",\n            \"text\": \"Amount\",\n            \"res\": [\n              [\n                1,\n                3,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 1\n                  },\n                  null,\n                  {\n                    \"note\": \"+1 extra leg(s): +1 Sturdy level each; +1 Movement per pair.\"\n                  }\n                ],\n                \"One\"\n              ],\n              [\n                4,\n                6,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 2\n                  },\n                  {\n                    \"t\": \"mod\",\n                    \"k\": \"move\",\n                    \"v\": 1\n                  },\n                  {\n                    \"note\": \"+2 extra leg(s): +1 Sturdy level each; +1 Movement per pair.\"\n                  }\n                ],\n                \"Two\"\n              ],\n              [\n                7,\n                8,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 3\n                  },\n                  {\n                    \"t\": \"mod\",\n                    \"k\": \"move\",\n                    \"v\": 1\n                  },\n                  {\n                    \"note\": \"+3 extra leg(s): +1 Sturdy level each; +1 Movement per pair.\"\n                  }\n                ],\n                \"Three\"\n              ],\n              [\n                9,\n                10,\n                [\n                  {\n                    \"t\": \"talent\",\n                    \"n\": \"Sturdy\",\n                    \"u\": \"Compendium.wfrp4e-core.items.Item.qZ4cFy6z482ZONuA\",\n                    \"x\": 4\n                  },\n                  {\n                    \"t\": \"mod\",\n                    \"k\": \"move\",\n                    \"v\": 2\n                  },\n                  {\n                    \"note\": \"+4 extra leg(s): +1 Sturdy level each; +1 Movement per pair.\"\n                  }\n                ],\n                \"Four\"\n              ]\n            ]\n          },\n          \"Legs\"\n        ],\n        [\n          8,\n          10,\n          {\n            \"roll\": \"1d10\",\n            \"text\": \"Amount\",\n            \"res\": [\n              [\n                1,\n                3,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"1\"\n                },\n                \"One\"\n              ],\n              [\n                4,\n                6,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"2\"\n                },\n                \"Two\"\n              ],\n              [\n                7,\n                8,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"3\"\n                },\n                \"Three\"\n              ],\n              [\n                9,\n                10,\n                {\n                  \"t\": \"trait\",\n                  \"n\": \"Tentacles\",\n                  \"u\": \"Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh\",\n                  \"d\": 3,\n                  \"l\": \"4\"\n                },\n                \"Four\"\n              ]\n            ]\n          },\n          \"Tentacles\"\n        ]\n      ]\n    }\n  ]\n});",
             "label": "Add granted Talents, Traits and items",
             "trigger": "addItems",
             "options": {},
@@ -114,6 +114,103 @@
       "showIcon": 1,
       "folder": null,
       "_key": "!items.effects!3Wl9402VTU03Rrqv.WR3MNI954MWnGH9f"
+    },
+    {
+      "name": "Additional Extremities (Modifiers)",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "ymo5fwNattzs6GSM",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "modifiers": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!3Wl9402VTU03Rrqv.ymo5fwNattzs6GSM"
     }
   ],
   "flags": {

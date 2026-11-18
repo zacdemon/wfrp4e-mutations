@@ -29,6 +29,11 @@
             "t": "talent",
             "n": "Contortionist",
             "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+          },
+          {
+            "t": "mod",
+            "k": "ag",
+            "v": 10
           }
         ],
         "legs": [
@@ -51,6 +56,11 @@
             "n": "Bite",
             "u": "Compendium.wfrp4e-core.items.Item.pLW9SVX0TVTYPiPv",
             "d": 2
+          },
+          {
+            "t": "mod",
+            "k": "i",
+            "v": 10
           }
         ]
       }

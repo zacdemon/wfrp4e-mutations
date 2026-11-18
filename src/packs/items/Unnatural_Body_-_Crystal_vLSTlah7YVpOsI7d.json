@@ -31,6 +31,21 @@
             "t": "armour",
             "n": "Crystal Body",
             "ap": 4
+          },
+          {
+            "t": "mod",
+            "k": "ag",
+            "v": -5
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 5
+          },
+          {
+            "t": "mod",
+            "k": "wounds",
+            "v": -2
           }
         ],
         "legs": [
@@ -54,6 +69,21 @@
             "t": "armour",
             "n": "Crystal Body",
             "ap": 4
+          },
+          {
+            "t": "mod",
+            "k": "ag",
+            "v": -5
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 5
+          },
+          {
+            "t": "mod",
+            "k": "wounds",
+            "v": -2
           }
         ],
         "body": [
@@ -77,6 +107,21 @@
             "t": "armour",
             "n": "Crystal Body",
             "ap": 4
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 10
+          },
+          {
+            "t": "mod",
+            "k": "ag",
+            "v": -5
+          },
+          {
+            "t": "mod",
+            "k": "wounds",
+            "v": -2
           }
         ],
         "head": [
@@ -100,6 +145,16 @@
             "t": "armour",
             "n": "Crystal Body",
             "ap": 4
+          },
+          {
+            "t": "mod",
+            "k": "i",
+            "v": -5
+          },
+          {
+            "t": "mod",
+            "k": "wounds",
+            "v": -1
           }
         ]
       }

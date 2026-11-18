@@ -24,6 +24,11 @@
             "t": "talent",
             "n": "Contortionist",
             "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+          },
+          {
+            "t": "mod",
+            "k": "ag",
+            "v": 10
           }
         ],
         "legs": [
@@ -72,6 +77,11 @@
             "t": "mutation",
             "n": "Gnawer",
             "u": "Compendium.artantares-mutations.items.Item.9x2d3zSuVdxfPB1t"
+          },
+          {
+            "t": "mod",
+            "k": "i",
+            "v": 10
           }
         ]
       }

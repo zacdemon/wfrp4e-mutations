@@ -17,6 +17,16 @@
             "v": "Leathery Hide",
             "tbl": "Protective Skin",
             "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mod",
+            "k": "s",
+            "v": 10
+          },
+          {
+            "t": "mod",
+            "k": "dex",
+            "v": -5
           }
         ],
         "body": [
@@ -31,6 +41,11 @@
             "t": "talent",
             "n": "Strong Back",
             "u": "Compendium.wfrp4e-core.items.Item.FF41XPboORgyDNsv"
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 10
           }
         ],
         "legs": [
@@ -50,8 +65,9 @@
             "choose": "Bovine legs",
             "of": [
               {
-                "note": "+1 Movement (by hand).",
-                "label": "+1 Movement"
+                "t": "mod",
+                "k": "move",
+                "v": 1
               },
               {
                 "t": "mutation",

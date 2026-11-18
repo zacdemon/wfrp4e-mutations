@@ -2,7 +2,120 @@
   "name": "Contagious Madness",
   "type": "mutation",
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Contagious Madness (Modifiers)",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "bbxltkYPlR43mn2v",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "label": "Halved values, Characteristics not below 0",
+            "trigger": "computeCharacteristics",
+            "script": "const sys = this.actor.system;\nfor (const k of this.effect.getFlag(\"artantares-mutations\", \"halve\") ?? []) {\n  if (k === \"move\") sys.details.move.value = Math.ceil(Number(sys.details.move.value) / 2);\n  else if (sys.characteristics[k]) {\n    const c = sys.characteristics[k];\n    c.value = Math.ceil(c.value / 2);\n    c.bonus = Math.floor(c.value / 10) + (c.bonusMod || 0);\n  }\n}\nfor (const c of Object.values(sys.characteristics)) {\n  if (c.value < 0) { c.value = 0; c.bonus = Math.max(0, c.bonusMod || 0); }\n}",
+            "options": {}
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": [
+          {
+            "key": "system.characteristics.int.modifier",
+            "type": "add",
+            "value": "-10",
+            "phase": "initial",
+            "priority": null
+          }
+        ]
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "modifiers": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!GuTq80P4tRojiczG.bbxltkYPlR43mn2v"
+    }
+  ],
   "flags": {
     "_sheetTab": {},
     "core": {},

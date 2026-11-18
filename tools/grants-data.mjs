@@ -4,9 +4,12 @@
  *
  * Keys are item names. PARTS are stored as flags.artantares-mutations.parts on the Bestial Body /
  * Unnatural Body variant items and read by Bestial/Unnatural Arms, Legs, Head and Body.
- * Characteristic, Movement, Wounds and situational test modifiers are not items and are left to
- * the GM (the item text still lists them).
+ * Fixed Characteristic, Movement and Wounds modifiers, situational test modifiers and switchable
+ * effects live in tools/modifiers-data.mjs. Modifiers that are rolled, chosen or depend on a sub-table
+ * result (ch(), half(), dlg() below) are entries here, so the grant run rolls or asks once and writes
+ * the result into the mutation's "<Mutation> (Modifiers)" effect.
  */
+import { dialogScriptData } from "../scripts/modifier-scripts.mjs";
 
 // wfrp4e-core item ids, taken from the links in the handbook items. The runtime checks the type
 // and falls back to a name search (game.wfrp4e.utility.find) if a link is missing or wrong.
@@ -59,6 +62,14 @@ const roll = (formula, text, ...res) => ({ roll: formula, text, res });
 const note = (text) => ({ note: text });
 const variant = (tbl, key, map) => ({ variant: map, tbl, key });
 const body = (part, tbl, key) => ({ body: part, tbl, key });
+// Modifiers: ch("ag", 10) / ch("ag", "-1d10") / ch("move", 1) / ch("wounds", -1); half("bs"); dlg(label, mod, when, active)
+const ch = (k, v, o = {}) => ({ t: "mod", k, v, ...o });
+const half = (k) => ({ t: "mod", k, half: true });
+const dlg = (label, mod, when, active) => ({ t: "dialog", d: dialogScriptData(label, mod, when, active) });
+// "Roll on the Hit Locations table" (WFRP p159): head 01-09 gets `head`, everything else `other`.
+const hitloc = (text, head, other = null) => roll("1d100", text,
+  [1, 9, head, "Head"], [10, 24, other, "Left Arm"], [25, 44, other, "Right Arm"], [45, 79, other, "Body"],
+  [80, 89, other, "Left Leg"], [90, 100, other, "Right Leg"]);
 
 const venom = () => R("Venom", { s: "Average" });
 const PS = (v) => M("Protective Skin", { v, tbl: "Protective Skin" });
@@ -73,6 +84,10 @@ const SUSPECTS = ["Academics", "Agitators", "Burghers", "Enemies of Men", "Cult 
   "Peasants", "Rogues", "Tax Collectors", "Undead", "Witches", "Wizards", "Witchhunters"];
 const askGroup = "Target group (handbook table on the mutation, or the GM's choice)";
 
+// Unbelievable Tumour: per 30 lb, +1 Wound and a 1d10 roll.
+const tumourRoll = () => roll("1d10", "Tumour", [1, 3, ch("move", -1), "-1 Movement"], [4, 6, ch("ag", -10), "-10 Agility"], [7, 10, ch("fel", -10), "-10 Fellowship"]);
+const tumour = (n) => [ch("wounds", n), ...Array.from({ length: n }, tumourRoll)];
+
 // Additional Extremities: limb type x amount.
 const limbs = (mk) => [1, 2, 3, 4].map(n => mk(n));
 const amount = (mk) => roll("1d10", "Amount", [1, 3, mk(1), "One"], [4, 6, mk(2), "Two"], [7, 8, mk(3), "Three"], [9, 10, mk(4), "Four"]);
@@ -80,12 +95,12 @@ const amount = (mk) => roll("1d10", "Amount", [1, 3, mk(1), "One"], [4, 6, mk(2)
 export const GRANTS = {
   "Additional Extremities": { grants: [roll("1d10", "Limbs",
     [1, 4, amount(n => [T("Furious Assault", { x: n }), note(`+${n} extra arm(s): +1 Furious Assault level each.`)]), "Arms"],
-    [5, 7, amount(n => [T("Sturdy", { x: n }), note(`+${n} extra leg(s): +1 Sturdy level each; +1 Movement per pair (by hand).`)]), "Legs"],
+    [5, 7, amount(n => [T("Sturdy", { x: n }), Math.floor(n / 2) ? ch("move", Math.floor(n / 2)) : null, note(`+${n} extra leg(s): +1 Sturdy level each; +1 Movement per pair.`)]), "Legs"],
     [8, 10, amount(n => R("Tentacles", { d: 3, l: `${n}` })), "Tentacles"])] },
-  "Additional Head": { grants: [T("Ambidextrous")] },
+  "Additional Head": { grants: [T("Ambidextrous"), ch("i", "1d10"), ch("int", "1d10")] },
   "Additional Sensory Organs": { grants: [note("An eye in the back may grant Combat Aware if the GM is feeling generous (add by hand).")] },
   "Aethyric Leak": { grants: [T("Witch!")] },
-  "Alluring Shape": { grants: [T("Attractive")] },
+  "Alluring Shape": { grants: [T("Attractive"), ch("fel", "1d10")] },
   "Androgynous": { grants: [T("Attractive")] },
   "Aquatic Adaptation": { grants: [R("Amphibious")] },
   "Bachtrachian Suckers": { grants: [R("Wallcrawler")] },
@@ -103,6 +118,7 @@ export const GRANTS = {
   "Bizarre Denial": { grants: [T("Argumentative")] },
   "Blissful Ignorance": { grants: [T("Fearless", { s: "Everything" })] },
   "Blood Lust": { grants: [R("Belligerent")] },
+  "Brain Rot": { grants: [ch("int", "-1d10")] },
   "Bloodsucker": { grants: [roll("1d10", "Bloodsucker", [1, 8, M("Fangs"), "Fangs"], [9, 10, M("Piercing Tongue"), "Piercing Tongue"])] },
   "Burning Body": { grants: [imm("Fire")] },
   "Centauroid": { grants: [R("Stride")] },
@@ -110,6 +126,7 @@ export const GRANTS = {
   "Chthonian Crawler": { grants: [M("Dark Vision"), T("Tunnel Rat"), T("Scale Sheer Surfaces")] },
   "Cold-Blooded": { grants: [R("Cold-blooded"), note("Vulnerability (Cold): double damage from cold (no item; apply by hand).")] },
   "Consuming Rage": { levels: [[T("Frenzy")], [P("Hatred", { ask: askGroup, opts: GROUPS })]] },
+  "Cyclopean Horror": { grants: [roll("1d10", "Eye", [1, 5, half("bs"), "Eyes merge: halve BS"], [6, 10, note("A head-sized eye grows on the body: roll Hit Location for where (custom armour there; 20% of hits there strike the eye with Damaging)."), "Extra eye"])] },
   "Corrosive Vomit": { levels: [[R("Vomit")], [bump("Vomit")]] },
   "Corrupted Blood": { grants: [variant("Corrupted Blood", "corrupted-blood", {
     "Green Ooze": [R("Corrosive Blood")], "Mercury": [], "Molten Metal": [R("Corrosive Blood")],
@@ -117,13 +134,21 @@ export const GRANTS = {
   "Crawling Skin": { grants: [R("Distracting")] },
   "Dark Fate": { grants: [T("Doomed")] },
   "Dark Vision": { grants: [R("Dark Vision")] },
+  "Distended Digits": { grants: [ch("dex", "1d10")] },
   "Doom Prophet": { grants: [T("Impassioned Zeal")] },
   "Enlarged Sensory Organ": { grants: [roll("1d100", "Organ",
     [1, 25, T("Acute Sense", { s: "Sight" }), "Eyes"], [26, 50, T("Acute Sense", { s: "Hearing" }), "Ears"],
     [51, 75, T("Acute Sense", { s: "Smell" }), "Nose"], [76, 100, T("Acute Sense", { s: "Taste" }), "Mouth"])] },
+  "Elongated Limbs": { grants: [roll("1d10", "Limb",
+    [1, 4, note("Long arms: weapon Reach one step longer; opponents get +20 when in-fighting you (by hand)."), "Arms"],
+    [5, 9, ch("move", 1), "Legs"],
+    [10, 10, note("Long neck: Critical hits to the Head get +20 (by hand)."), "Neck"]),
+    roll("1d10", "Elastic", [1, 8, null, "-"], [9, 10, note("Elastic: retract to hide it, or extend 1-2 yards (about 3 yards reach)."), "Elastic"])] },
   "Ensnaring Tongue": { grants: [R("Tongue Attack", { d: 0 })] },
   "Ethereal": { grants: [R("Ethereal", { off: true }), note("Ethereal is added switched off: enable it while the power is active.")] },
+  "Extra Joints": { grants: [ch("ag", "1d10")] },
   "Eyestalks": { grants: [T("Combat Aware")] },
+  "Facial Symmetry": { grants: [ch("fel", "1d10")] },
   "False Wizard": { grants: [T("Blather")] },
   "Fangs": { levels: [[R("Bite", { d: 3 }), roll("1d10", "Fangs", [1, 7, null, "-"], [8, 9, venom(), "Venom (Average)"], [10, 10, M("Bloodsucker"), "Bloodsucker"])], [bump("Bite")]] },
   "Fate of Glory": { grants: [T("Fearless", { s: "Everything" })] },
@@ -137,8 +162,10 @@ export const GRANTS = {
   "Gut Worm": { grants: [R("Hungry")] },
   "Hateful Impulses": { levels: [[P("Animosity", { ask: askGroup, opts: GROUPS })], [P("Hatred", { ask: askGroup, opts: GROUPS }), note("Upgrade: remove the old Animosity by hand if it is the same target.")]] },
   "Hideous Appearance": { grants: [R("Terror", { s: "1", max: true })] },
-  "Hollow Bones": { grants: [S("Athletics", "1d10")] },
+  "Hollow Bones": { grants: [ch("ag", "1d10"), S("Athletics", "1d10")] },
   "Hopper": { grants: [R("Bounce")] },
+  "Hump": { grants: [S("Endurance", 10)] },
+  "Hunchback": { grants: [ch("ag", "-1d10")] },
   "Horns": { levels: [[R("Horns", { d: 3 })], [bump("Horns")]] },
   "Horrible Stench": { grants: [R("Distracting")] },
   "Horrid Feeler": { grants: [R("Tentacles", { d: 3 }), T("Acute Sense", { s: "Touch" })] },
@@ -152,11 +179,13 @@ export const GRANTS = {
   "Infernal Furnace": { grants: [R("Breath", { l: "Fire" }), imm("Fire"), imm("Cold")] },
   "Inhuman Beauty": { grants: [T("Attractive")] },
   "Insect Eyes": { grants: [T("Combat Aware")] },
+  "Itching Rash": { grants: [hitloc("Rash", ch("fel", -10))] },
   "Irrational Contempt": { levels: [
     [P("Prejudice", { ask: askGroup, opts: GROUPS })],
     [choose("Irrational Contempt again", P("Animosity", { ask: askGroup, opts: GROUPS, label: "Upgrade to Animosity" }), P("Prejudice", { ask: askGroup, opts: GROUPS, label: "Another Prejudice target" }))],
     [choose("Irrational Contempt again", P("Hatred", { ask: askGroup, opts: GROUPS, label: "Upgrade to Hatred" }), P("Prejudice", { ask: askGroup, opts: GROUPS, label: "Another Prejudice target" }))]] },
   "Levitation": { grants: [R("Flight", { s: "30", off: true }), note("Flight is added switched off: enable it while levitating (rating = 30 x levels in Levitation).")] },
+  "Lolling Tongue": { grants: [ch("fel", "-1d10")] },
   "Long Spines": { levels: [
     [R("Horns", { d: 1, l: "Spines" }), roll("1d10", "Spines", [1, 8, null, "-"], [9, 9, note("Retractable spines."), "Retractable"], [10, 10, venom(), "Venomous"])],
     [choose("Long Spines again", { note: "Retractable spines.", label: "Retractable" }, { ...venom(), label: "Venom (Average)" }, { ...bump("Horns"), label: "+1 Damage" })]] },
@@ -169,9 +198,17 @@ export const GRANTS = {
       [1, 16, T("Arcane Magic", { s: "Daemonology" }), "Daemonology"], [17, 32, T("Arcane Magic", { s: "Necromancy" }), "Necromancy"],
       [33, 48, T("Arcane Magic", { s: "Witchcraft" }), "Witchcraft"], [49, 64, T("Chaos Magic", { s: "Nurgle" }), "Nurgle"],
       [65, 80, T("Chaos Magic", { s: "Slaanesh" }), "Slaanesh"], [81, 100, T("Chaos Magic", { s: "Tzeentch" }), "Tzeentch"])] }] },
+  "Mark of Chaos": { grants: [hitloc("Mark")] },
+  "Massive Intellect": { grants: [ch("ag", "-1d10"), roll("1d10", "Head", [1, 9, note("Head doubles in size: Arms or Body hit locations that roll doubles strike the Head."), "Doubled"],
+    [10, 10, note("Skull cracked open: hits to the Head gain Damaging even through a helmet; an unhelmed called shot is a Critical Wound."), "Cracked"])] },
   "Metamorphosis": { grants: [choose("Metamorphosis", T("Artistic"), T("Pharmacist"), T("Surgery"))] },
   "Miasma of Terror": { grants: [R("Terror", { s: "1", max: true })] },
-  "Monstrous Growth": { grants: [size(1, { enor: [R("Stride")] }), note("Characteristic, Movement, Armour and Wounds changes for the new size are by hand.")] },
+  "Monstrous Growth": { grants: [size(1, {
+    avg: [ch("move", 1), ch("s", 10), ch("t", 10)],
+    lrg: [ch("move", 2), ch("s", 15), ch("t", 15), ch("ag", -5)],
+    enor: [R("Stride"), ch("s", 10), ch("t", 5), ch("ag", -10), A("Monstrous Hide", 1)],
+    mnst: [ch("move", 2), ch("s", 20), ch("t", 10), ch("ag", -10), A("Monstrous Hide", 1)] }),
+    note("Wounds follow the new Size automatically.")] },
   "Nihilistic Numbness": { grants: [T("Fearless", { s: "All" }), R("Painless")] },
   "Oracle": { grants: [S("Augury", 10, { c: "int", ref: "Winds of Magic p44" })] },
   "Organic Crystal": { grants: [T("Magical Sense"), T("Detect Artefact")] },
@@ -181,7 +218,15 @@ export const GRANTS = {
   "Pin Head": { grants: [R("Stupid")] },
   "Pincer Claw": { grants: [R("Weapon", { d: 4, l: "Pincer Claw" }), R("Constrictor"), { ...PS("Carapace"), locs: ["rArm"] },
     note("Protective Skin (Carapace) covers the clawed arm only (set to the right arm; edit the armour item if it is the left).")] },
-  "Pitiful Stature": { grants: [size(-1), note("Characteristic, Movement, Armour and Wounds changes for the new size are by hand (Enormous to Large also loses Stride).")] },
+  "Painful Boils": { grants: [ch("ag", "-1d10"), ch("t", "-1d10")] },
+  "Pitiful Stature": { grants: [size(-1, {
+    enor: [ch("move", -2), ch("s", -20), ch("t", -10), ch("ag", 10), note("-1 Armour: lower any natural armour by hand.")],
+    lrg: [ch("s", -10), ch("t", -5), ch("ag", 10), note("-1 Armour and lose Stride: by hand.")],
+    avg: [ch("move", -2), ch("s", -15), ch("t", -15), ch("ag", 5)],
+    sml: [ch("move", -1), ch("s", -10), ch("t", -10)],
+    ltl: [ch("s", -5), ch("t", -5)],
+    tiny: [ch("move", -1), ch("s", -5), ch("t", -5)] }),
+    note("Wounds follow the new Size automatically.")] },
   "Possessed": { grants: [roll("1d100", "Possessed",
     [1, 25, T("Menacing"), "Khorne"], [26, 50, T("Resistance", { s: "Disease" }), "Nurgle"],
     [51, 75, T("Attractive"), "Slaanesh"], [76, 100, T("Cat-tongued"), "Tzeentch"])] },
@@ -194,11 +239,13 @@ export const GRANTS = {
     "Bark": [A("Protective Skin (Bark)", 1)],
     "Scales": [A("Protective Skin (Scales)", 2, { q: ["flexible"] })],
     "Carapace": [A("Protective Skin (Carapace)", 2, { q: ["impenetrable"], f: ["weakpoints"] })],
-    "Metal Plating": [A("Protective Skin (Metal Plating)", 3, { q: ["impenetrable"], f: ["weakpoints"], text: "-10 Stealth." })],
+    "Metal Plating": [A("Protective Skin (Metal Plating)", 3, { q: ["impenetrable"], f: ["weakpoints"], text: "-10 Stealth." }),
+      dlg("Metal Plating: Stealth -10", { modifier: -10 }, { skills: ["Stealth"] }, true)],
     "Arcane Runes": [A("Protective Skin (Arcane Runes)", 2, { text: "Only against non-magical attacks; non-magical weapons gain Undamaging against you." })] })] },
   "Quantum Bulge": { grants: [T("Orientation")] },
   "Rebellious Mind": { grants: [T("Impassioned Zeal")] },
   "Regeneration": { grants: [R("Regenerate"), roll("1d10", "Regeneration", [1, 9, null, "-"], [10, 10, R("Die Hard"), "Die Hard"])] },
+  "Running Sores": { grants: [hitloc("Sores", ch("fel", -10))] },
   "Rotting Flesh": { grants: [R("Infected"), R("Infestation")] },
   "Saint of the Damned": { grants: [choose("Saint of the Damned", T("Attractive"), T("Cat-tongued"))] },
   "Savage Grace": { grants: [T("Combat Master"), T("Relentless")] },
@@ -209,7 +256,7 @@ export const GRANTS = {
     [3, 4, note("Sight: remove Acute Sense (Sight) and add 1d10 permanent Blinded by hand."), "Sight"],
     [5, 6, note("Smell: remove Acute Sense (Smell) by hand."), "Smell"],
     [7, 8, note("Taste: remove Acute Sense (Taste) by hand."), "Taste"],
-    [9, 10, [R("Painless"), note("Touch: remove Acute Sense (Touch); WS -1d10 and Dex -2d10 by hand.")], "Touch"])] },
+    [9, 10, [R("Painless"), ch("ws", "-1d10"), ch("dex", "-2d10"), note("Touch: remove Acute Sense (Touch) by hand.")], "Touch"])] },
   "Slimy": { grants: [T("Contortionist")] },
   "Sniffing Stalker": { grants: [T("Acute Sense", { s: "Smell" }), S("Track", 10), R("Tracker")] },
   "Soft-hearted": { grants: [T("Impassioned Zeal")] },
@@ -223,12 +270,17 @@ export const GRANTS = {
   "The Big Joke": { grants: [T("Fearless", { s: "All" })] },
   "Third Eye": { grants: [T("Sure Shot")] },
   "Thorns": { grants: [roll("1d10", "Thorns", [1, 7, null, "-"], [8, 10, venom(), "Poisonous"])] },
+  "Twisted Body": { grants: [ch("ag", "-2d10"), ch("t", "-1d10")] },
   "Touched": { grants: [choose("Touched", T("Second Sight"), T("Sixth Sense"))] },
+  "Unbelievable Tumour": { grants: [hitloc("Tumour"), roll("1d10", "Weight (1d10 x 10 lb; +1 Wound and a roll per 30 lb)",
+    [1, 2, note("Under 30 lb: no further effect."), "10-20 lb"],
+    [3, 5, tumour(1), "30-50 lb"], [6, 8, tumour(2), "60-80 lb"], [9, 10, tumour(3), "90-100 lb"])] },
   "Unending Malice": { grants: [T("Frightening")] },
   "Unnatural Arms": { grants: [body("arms", "Unnatural Body", "unnatural-body")] },
   "Unnatural Body": { grants: [body("all", "Unnatural Body", "unnatural-body")] },
   "Unnatural Head": { grants: [body("head", "Unnatural Body", "unnatural-body")] },
   "Unnatural Legs": { grants: [body("legs", "Unnatural Body", "unnatural-body")] },
+  "Unhealing Wound": { grants: [hitloc("Wound", ch("fel", -10))] },
   "Unseen Presence": { grants: [T("Beneath Notice")] },
   "Warp Spasm": { grants: [T("Frenzy"), T("Berserk Charge"), T("Contortionist"), R("Painless", { off: true }), R("Fear", { s: "1", off: true }),
     note("Painless and Fear 1 are added switched off: enable them during a Warp Spasm.")] },
@@ -240,47 +292,47 @@ export const GRANTS = {
 // Bestial / Unnatural Body parts. Armour and Protective Skin cover only the part's hit locations.
 export const PARTS = {
   "Bestial Body - Amphibian": {
-    arms: [R("Amphibious"), M("Bachtrachian Suckers"), PS("Rubbery")],
+    arms: [R("Amphibious"), M("Bachtrachian Suckers"), PS("Rubbery"), ch("dex", -10)],
     body: [M("Cold-Blooded"), PS("Rubbery")],
     legs: [R("Amphibious"), M("Hopper"), PS("Rubbery")],
     head: [PS("Rubbery")] },
   "Bestial Body - Arthropods": {
     arms: [M("Pincer Claw"), PS("Carapace")], body: [M("Cold-Blooded"), PS("Carapace")],
-    legs: [PS("Carapace")], head: [PS("Carapace"), M("Eyestalks")] },
+    legs: [PS("Carapace"), ch("move", -1)], head: [PS("Carapace"), M("Eyestalks")] },
   "Bestial Body - Bat": {
     arms: [PS("Leathery Hide"), M("Razor-sharp Claws")], body: [PS("Leathery Hide"), wings("Medium")],
-    legs: [PS("Leathery Hide")], head: [R("Dark Vision", { l: "Sonar" }), M("Fangs"), PS("Leathery Hide")] },
+    legs: [PS("Leathery Hide"), ch("move", -2)], head: [R("Dark Vision", { l: "Sonar" }), M("Fangs"), PS("Leathery Hide")] },
   "Bestial Body - Bear": {
-    arms: [M("Razor-sharp Claws"), PS("Fur")], body: [T("Hardy"), PS("Fur")],
+    arms: [M("Razor-sharp Claws"), PS("Fur"), ch("s", 15), ch("dex", -10)], body: [T("Hardy"), PS("Fur"), ch("t", 10)],
     legs: [PS("Fur"), T("Sturdy")], head: [R("Bite", { d: 5 }), PS("Fur")] },
   "Bestial Body - Bird": {
     arms: [PS("Feathers")], body: [M("Hollow Bones"), PS("Feathers"), wings("Medium")],
     legs: [M("Razor-sharp Claws"), PS("Feathers")],
     head: [choose("Bird head", T("Acute Sense", { s: "Sight" }), T("Night Vision")), R("Bite", { d: 1, l: "Beak" }), PS("Feathers")] },
   "Bestial Body - Bovine": {
-    arms: [PS("Leathery Hide")], body: [PS("Leathery Hide"), T("Strong Back")],
-    legs: [PS("Leathery Hide"), T("Sturdy"), choose("Bovine legs", { note: "+1 Movement (by hand).", label: "+1 Movement" }, M("Centauroid"))],
+    arms: [PS("Leathery Hide"), ch("s", 10), ch("dex", -5)], body: [PS("Leathery Hide"), T("Strong Back"), ch("t", 10)],
+    legs: [PS("Leathery Hide"), T("Sturdy"), choose("Bovine legs", ch("move", 1), M("Centauroid"))],
     head: [R("Horns", { d: 2 }), T("Iron Jaw"), PS("Leathery Hide")] },
   "Bestial Body - Canine": {
     arms: [PS("Fur")], body: [PS("Fur"), S("Endurance", 10)],
     legs: [PS("Fur"), T("Strider", { s: "Woodlands" })], head: [R("Bite", { d: 3 }), PS("Fur"), M("Sniffing Stalker")] },
   "Bestial Body - Caprine": {
     arms: [PS("Fur")], body: [PS("Fur"), T("Hardy")],
-    legs: [PS("Fur"), T("Strider", { s: "Rocky" })], head: [R("Horns", { d: 1 }), T("Iron Jaw"), PS("Fur")] },
+    legs: [PS("Fur"), T("Strider", { s: "Rocky" }), ch("move", 1)], head: [R("Horns", { d: 1 }), T("Iron Jaw"), PS("Fur")] },
   "Bestial Body - Cervid": {
     arms: [PS("Leathery Hide")], body: [PS("Leathery Hide"), S("Endurance", 10)],
-    legs: [PS("Leathery Hide"), T("Strider", { s: "Woodlands" }), choose("Cervid legs", { note: "+1 Movement (by hand).", label: "+1 Movement" }, M("Centauroid"))],
+    legs: [PS("Leathery Hide"), T("Strider", { s: "Woodlands" }), choose("Cervid legs", ch("move", 1), M("Centauroid"))],
     head: [M("Horns"), T("Iron Jaw"), PS("Leathery Hide")] },
   "Bestial Body - Feline": {
-    arms: [M("Razor-sharp Claws"), PS("Fur")], body: [PS("Fur"), tail("Balanced")],
+    arms: [M("Razor-sharp Claws"), PS("Fur")], body: [PS("Fur"), tail("Balanced"), ch("ag", 10)],
     legs: [PS("Fur"), T("Strong Legs")], head: [R("Bite", { d: 3 }), T("Night Vision"), PS("Fur"), R("Tracker")] },
   "Bestial Body - Fish": {
     arms: [R("Amphibious"), PS("Scales")], body: [M("Cold-Blooded"), PS("Scales")],
-    legs: [R("Amphibious"), PS("Scales"), choose("Fish legs", { note: "-1 Movement (by hand).", label: "-1 Movement" }, { note: "Fish tail: Movement 1 on land and 8 in water (by hand).", label: "Fish tail" })],
+    legs: [R("Amphibious"), PS("Scales"), choose("Fish legs", ch("move", -1), { note: "Fish tail: Movement 1 on land and 8 in water (by hand).", label: "Fish tail" })],
     head: [R("Bite", { d: 3 }), M("Aquatic Adaptation"), PS("Scales")] },
   "Bestial Body - Horse or Camel": {
-    arms: [PS("Leathery Hide")], body: [choose("Horse or Camel body", M("Hump"), T("Strong Back")), PS("Leathery Hide")],
-    legs: [PS("Leathery Hide"), T("Sturdy"), choose("Horse or Camel legs", { note: "+1 Movement (by hand).", label: "+1 Movement" }, M("Centauroid"))],
+    arms: [PS("Leathery Hide")], body: [choose("Horse or Camel body", M("Hump"), T("Strong Back")), PS("Leathery Hide"), ch("t", 10)],
+    legs: [PS("Leathery Hide"), T("Sturdy"), choose("Horse or Camel legs", ch("move", 1), M("Centauroid"))],
     head: [T("Iron Jaw"), PS("Leathery Hide")] },
   "Bestial Body - Insect": {
     arms: [PS("Carapace"), R("Wallcrawler")], body: [M("Cold-Blooded"), PS("Carapace"), choose("Insect body", tail("Scorpion"), wings("Medium"))],
@@ -291,63 +343,65 @@ export const PARTS = {
     legs: [PS("Scales"), choose("Lizard legs (1)", R("Wallcrawler"), T("Strong Swimmer")), choose("Lizard legs (2)", T("Strong Legs"), M("Centauroid"))],
     head: [R("Bite", { d: 3 }), PS("Scales")] },
   "Bestial Body - Mollusks": {
-    arms: [PS("Rubbery"), R("Tentacles", { d: 3 })], body: [M("Cold-Blooded"), PS("Rubbery"), T("Contortionist")],
-    legs: [PS("Rubbery"), choose("Mollusk legs", [R("Tentacles", { d: 3 }), note("-2 Movement (by hand).")], M("Blob"))],
+    arms: [PS("Rubbery"), R("Tentacles", { d: 3 }), ch("dex", -20)], body: [M("Cold-Blooded"), PS("Rubbery"), T("Contortionist"), ch("ag", 10)],
+    legs: [PS("Rubbery"), choose("Mollusk legs", [R("Tentacles", { d: 3 }), ch("move", -2)], M("Blob"))],
     head: [R("Bite", { d: 2, l: "Beak" }), PS("Rubbery"), M("Aquatic Adaptation")] },
   "Bestial Body - Mustelidae": {
-    arms: [M("Razor-sharp Claws"), PS("Fur")], body: [T("Contortionist")],
-    legs: [PS("Fur"), T("Step Aside")], head: [R("Bite", { d: 2 })] },
+    arms: [M("Razor-sharp Claws"), PS("Fur")], body: [T("Contortionist"), ch("ag", 10)],
+    legs: [PS("Fur"), T("Step Aside")], head: [R("Bite", { d: 2 }), ch("i", 10)] },
   "Bestial Body - Pachyderm": {
-    arms: [PS("Leathery Hide")], body: [PS("Leathery Hide"), T("Robust"), T("Strong Back")],
-    legs: [PS("Leathery Hide"), T("Sturdy"), choose("Pachyderm legs", { note: "+1 Movement (by hand).", label: "+1 Movement" }, M("Centauroid"))],
+    arms: [PS("Leathery Hide"), ch("s", 15)], body: [PS("Leathery Hide"), T("Robust"), T("Strong Back")],
+    legs: [PS("Leathery Hide"), T("Sturdy"), choose("Pachyderm legs", ch("move", 1), M("Centauroid"))],
     head: [choose("Pachyderm head", R("Horns", { d: 3, l: "Tusks" }), R("Bite", { d: 5 })), PS("Leathery Hide")] },
   "Bestial Body - Primate": {
-    arms: [R("Arboreal"), PS("Fur")], body: [PS("Fur"), choose("Primate body", { note: "+10 Toughness (by hand).", label: "+10 Toughness" }, [note("+10 Agility (by hand)."), tail("Prehensile")])],
+    arms: [R("Arboreal"), PS("Fur"), ch("s", 10)], body: [PS("Fur"), choose("Primate body", ch("t", 10), [ch("ag", 10), tail("Prehensile")])],
     legs: [M("Prehensile Feet"), PS("Fur")], head: [R("Bite", { d: 2 }), PS("Fur")] },
   "Bestial Body - Rodent": {
-    arms: [PS("Fur")], body: [T("Contortionist")],
+    arms: [PS("Fur")], body: [T("Contortionist"), ch("ag", 10)],
     legs: [choose("Rodent legs", R("Bounce"), T("Step Aside")), PS("Fur")],
-    head: [choose("Rodent head", T("Acute Sense", { s: "Hearing" }), T("Acute Sense", { s: "Smell" })), M("Gnawer")] },
+    head: [choose("Rodent head", T("Acute Sense", { s: "Hearing" }), T("Acute Sense", { s: "Smell" })), M("Gnawer"), ch("i", 10)] },
   "Bestial Body - Snake": {
-    arms: [PS("Scales")], body: [M("Cold-Blooded"), PS("Scales"), T("Contortionist")],
-    legs: [PS("Scales"), choose("Snake legs", { note: "Legs stay (Protective Skin only).", label: "Keep legs" }, [T("Contortionist"), note("No legs: you slither; +5 Agility, -20 Climbing & Jumping (by hand).")])],
+    arms: [PS("Scales")], body: [M("Cold-Blooded"), PS("Scales"), T("Contortionist"), ch("ag", 10)],
+    legs: [PS("Scales"), choose("Snake legs", { note: "Legs stay (Protective Skin only).", label: "Keep legs" }, [T("Contortionist"), ch("ag", 5),
+      dlg("No legs: Climb -20", { modifier: -20 }, { skills: ["Climb"] }, true),
+      dlg("No legs: jumping -20", { modifier: -20 }, { skills: ["Athletics"] }, false), note("No legs: you slither instead of walking.")])],
     head: [R("Bite", { d: 2 }), venom(), PS("Scales")] },
   "Bestial Body - Spider": {
     arms: [PS("Carapace"), R("Wallcrawler")], body: [M("Cold-Blooded"), PS("Carapace"), M("Spiderkin")],
     legs: [PS("Carapace"), T("Strong Legs"), R("Wallcrawler")], head: [R("Bite", { d: 1 }), venom(), M("Insect Eyes"), PS("Carapace")] },
   "Bestial Body - Swine": {
     arms: [PS("Leathery Hide")], body: [PS("Leathery Hide"), T("Hardy")],
-    legs: [PS("Leathery Hide"), T("Strider", { s: "Woodlands" }), choose("Swine legs", { note: "+1 Movement (by hand).", label: "+1 Movement" }, M("Centauroid"))],
+    legs: [PS("Leathery Hide"), T("Strider", { s: "Woodlands" }), choose("Swine legs", ch("move", 1), M("Centauroid"))],
     head: [R("Horns", { d: 2, l: "Tusks" }), PS("Leathery Hide"), M("Sniffing Stalker")] },
 
-  "Unnatural Body - Crystal": {
-    arms: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4)],
-    legs: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4)],
-    body: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4)],
-    head: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4)] },
+  "Unnatural Body - Crystal": {   // "per arm" / "per leg" counts two of each
+    arms: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4), ch("ag", -5), ch("t", 5), ch("wounds", -2)],
+    legs: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4), ch("ag", -5), ch("t", 5), ch("wounds", -2)],
+    body: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4), ch("t", 10), ch("ag", -5), ch("wounds", -2)],
+    head: [R("Magical"), R("Painless"), imm("Fire"), A("Crystal Body", 4), ch("i", -5), ch("wounds", -1)] },
   "Unnatural Body - Daemonic": {
-    arms: [R("Magical"), R("Daemonic", { s: "10", max: true }), choose("Daemonic arms", A("Daemonic Hide", 1, { label: "+1 AP" }), M("Razor-sharp Claws"), { note: "+10 Strength (by hand).", label: "+10 Strength" })],
-    legs: [R("Magical"), R("Daemonic", { s: "10", max: true }), choose("Daemonic legs", T("Strong Legs"), { note: "+1 Movement (by hand).", label: "+1 Movement" }, T("Sturdy"))],
-    body: [R("Magical"), R("Daemonic", { s: "9", max: true }), R("Fear", { s: "2", max: true })],
+    arms: [R("Magical"), R("Daemonic", { s: "10", max: true }), choose("Daemonic arms", A("Daemonic Hide", 1, { label: "+1 AP" }), M("Razor-sharp Claws"), ch("s", 10))],
+    legs: [R("Magical"), R("Daemonic", { s: "10", max: true }), choose("Daemonic legs", T("Strong Legs"), ch("move", 1), T("Sturdy"))],
+    body: [R("Magical"), R("Daemonic", { s: "9", max: true }), R("Fear", { s: "2", max: true }), ch("t", 10)],
     head: [R("Magical"), R("Daemonic", { s: "10", max: true }), R("Fear", { s: "1", max: true }), choose("Daemonic head", T("Night Vision"), M("Fangs"), M("Horns"))] },
   "Unnatural Body - Fenbeast": {
     arms: [R("Magical"), R("Infected"), R("Regenerate")], legs: [R("Magical"), R("Regenerate"), T("Strider", { s: "Swamp" })],
-    body: [R("Magical"), R("Infected"), R("Regenerate"), R("Die Hard")], head: [R("Magical"), R("Infected"), R("Regenerate"), M("Dark Vision")] },
+    body: [R("Magical"), R("Infected"), R("Regenerate"), R("Die Hard"), ch("t", 10)], head: [R("Magical"), R("Infected"), R("Regenerate"), M("Dark Vision")] },
   "Unnatural Body - Mechanoid": {
-    arms: [R("Magical"), A("Mechanoid Plating", 3), choose("Mechanoid arms", { note: "+5 Strength per arm (by hand).", label: "+5 Strength per arm" }, T("Strike Mighty Blow"))],
+    arms: [R("Magical"), A("Mechanoid Plating", 3), choose("Mechanoid arms", { ...ch("s", 10), label: "+5 Strength per arm (+10)" }, T("Strike Mighty Blow"))],
     legs: [R("Magical"), A("Mechanoid Plating", 3), roll("1d10", "Mechanoid legs",
-      [1, 5, [T("Strong Legs"), T("Sprinter")], "Piston Legs"], [6, 7, [R("Stride"), note("Wheels: +4 Movement, Movement 1 on stairs (by hand).")], "Wheels"],
-      [8, 8, note("Hover: levitate up to 2 yards."), "Hover"], [9, 10, [R("Stride"), note("Tracks: +2 Movement (by hand).")], "Tracks"])],
-    body: [R("Magical"), A("Mechanoid Plating", 3)],
-    head: [R("Magical"), A("Mechanoid Plating", 3), chooseN(2, "Mechanoid head: pick two", T("Iron Jaw"), R("Bite", { d: 3 }), M("Dark Vision"), T("Acute Sense", { s: "Sight" }), T("Super Numerate"), T("Tower of Memories"))] },
-  "Unnatural Body - Metal": {
-    arms: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3)],
-    legs: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3)],
-    body: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3)],
-    head: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3)] },
+      [1, 5, [T("Strong Legs"), T("Sprinter")], "Piston Legs"], [6, 7, [R("Stride"), ch("move", 4), note("Wheels: Movement 1 on stairs (by hand).")], "Wheels"],
+      [8, 8, note("Hover: levitate up to 2 yards."), "Hover"], [9, 10, [R("Stride"), ch("move", 2)], "Tracks"])],
+    body: [R("Magical"), A("Mechanoid Plating", 3), ch("s", 10), ch("t", 20), ch("ag", -10)],
+    head: [R("Magical"), A("Mechanoid Plating", 3), ch("wp", 10), chooseN(2, "Mechanoid head: pick two", T("Iron Jaw"), R("Bite", { d: 3 }), M("Dark Vision"), T("Acute Sense", { s: "Sight" }), T("Super Numerate"), T("Tower of Memories"))] },
+  "Unnatural Body - Metal": {   // "-5 Agility per arm/leg": two of each
+    arms: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3), ch("s", 5), ch("ag", -10)],
+    legs: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3), ch("s", 5), ch("ag", -10)],
+    body: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3), ch("t", 30)],
+    head: [R("Magical"), R("Painless"), imm("Fire"), imm("Cold"), A("Metal Body", 3), ch("i", -10)] },
   "Unnatural Body - Rock": {
-    arms: [R("Magical"), R("Painless"), A("Rock Body", 2)], legs: [R("Magical"), R("Painless"), A("Rock Body", 2)],
-    body: [R("Magical"), R("Painless"), A("Rock Body", 2)], head: [R("Magical"), R("Painless"), A("Rock Body", 2)] },
+    arms: [R("Magical"), R("Painless"), A("Rock Body", 2), ch("s", 5), ch("ag", -10)], legs: [R("Magical"), R("Painless"), A("Rock Body", 2), ch("s", 5), ch("ag", -10)],
+    body: [R("Magical"), R("Painless"), A("Rock Body", 2), ch("t", 20)], head: [R("Magical"), R("Painless"), A("Rock Body", 2), ch("i", -5)] },
   "Unnatural Body - Undead": {
     arms: [R("Magical"), R("Painless"), R("Die Hard")], legs: [R("Magical"), R("Painless"), R("Die Hard")],
     body: [R("Magical"), R("Painless"), R("Die Hard"), R("Undead"), R("Fear", { s: "2", max: true })],

@@ -88,8 +88,8 @@
   "AMUT.Warn.NoResilience": "{name} has no Resilience to spend.",
   "AMUT.Warn.NoGM": "A GM must be logged in to spend Resilience on this card.",
   "AMUT.Warn.Rerolled": "The Dissolution test for {name} was rerolled or had SL added. The mutation card from the first roll stands; if the test now passes, discard that card (Corruption already lost must be restored by hand).",
-  "AMUT.Settings.AutoGrants.Name": "Add the Talents, Traits and items a mutation grants",
-  "AMUT.Settings.AutoGrants.Hint": "When a handbook mutation is added to an actor, also add the Talents, Creature Traits, Psychology, Skill advances, natural armour and linked mutations its text grants, asking for choices and rolling the in-text sub-tables. Deleting the mutation removes them again. Characteristic and Movement modifiers are still applied by hand.",
+  "AMUT.Settings.AutoGrants.Name": "Add the Talents, Traits, items and rolled modifiers a mutation grants",
+  "AMUT.Settings.AutoGrants.Hint": "When a handbook mutation is added to an actor, also add the Talents, Creature Traits, Psychology, Skill advances, natural armour and linked mutations its text grants, asking for choices and rolling the in-text sub-tables, and roll or ask for its variable Characteristic, Movement and Wounds modifiers (1d10 rolls, hit locations, body parts, size steps). Deleting the mutation removes them again. Fixed modifiers are ordinary effects on the item and apply either way.",
   "AMUT.Grant.Title": "{name}: granted items",
   "AMUT.Grant.Added": "Added",
   "AMUT.Grant.Level": "Level {n} of this mutation",
@@ -117,5 +117,9 @@
   "AMUT.Grant.Ok": "OK",
   "AMUT.Grant.Skip": "Skip",
   "AMUT.Grant.RollTable": "Roll on the {table} table",
-  "AMUT.Grant.PickVariant": "No {table} result is recorded on this mutation. Roll it, or pick one:"
+  "AMUT.Grant.PickVariant": "No {table} result is recorded on this mutation. Roll it, or pick one:",
+  "AMUT.Grant.Movement": "Movement",
+  "AMUT.Grant.Wounds": "Wounds",
+  "AMUT.Grant.Halved": "{name} halved",
+  "AMUT.Grant.TestModifier": "Test option: {label}"
 }

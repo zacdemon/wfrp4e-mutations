@@ -38,8 +38,9 @@
                 "u": "Compendium.artantares-mutations.items.Item.HCvKEsrNVqyJIIxP"
               },
               {
-                "note": "+10 Strength (by hand).",
-                "label": "+10 Strength"
+                "t": "mod",
+                "k": "s",
+                "v": 10
               }
             ]
           }
@@ -66,8 +67,9 @@
                 "u": "Compendium.wfrp4e-core.items.Item.CV9btQn09S9Fn8Jk"
               },
               {
-                "note": "+1 Movement (by hand).",
-                "label": "+1 Movement"
+                "t": "mod",
+                "k": "move",
+                "v": 1
               },
               {
                 "t": "talent",
@@ -96,6 +98,11 @@
             "u": "Compendium.wfrp4e-core.items.Item.pTorrE0l3VybAbtn",
             "s": "2",
             "max": true
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 10
           }
         ],
         "head": [

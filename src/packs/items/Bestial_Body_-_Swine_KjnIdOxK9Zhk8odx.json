@@ -51,8 +51,9 @@
             "choose": "Swine legs",
             "of": [
               {
-                "note": "+1 Movement (by hand).",
-                "label": "+1 Movement"
+                "t": "mod",
+                "k": "move",
+                "v": 1
               },
               {
                 "t": "mutation",

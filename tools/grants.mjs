@@ -2,8 +2,8 @@
 // Usage: node tools/grants.mjs [--check]   (--check: report only, write nothing)
 import fs from "node:fs";
 import path from "node:path";
-import crypto from "node:crypto";
 import { GRANTS, PARTS } from "./grants-data.mjs";
+import { stableId, effectSource } from "./effect-template.mjs";
 
 const MODULE_ID = "artantares-mutations";
 const DIR = path.join("src", "packs", "items");
@@ -15,8 +15,6 @@ const docs = files.map(f => ({ file: path.join(DIR, f), data: JSON.parse(fs.read
 const byName = new Map(docs.map(d => [d.data.name, d]));
 const errors = [];
 
-const ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-const stableId = (seed) => [...crypto.createHash("sha256").update(seed).digest()].slice(0, 16).map(b => ALPHA[b % ALPHA.length]).join("");
 
 // Fill module UUIDs into mutation entries and strip undefined keys.
 function link(node, where) {
@@ -44,32 +42,14 @@ function script(spec) {
 
 function effect(item, spec) {
   const id = stableId(`${item._id}-grants`);
-  return {
-    name: item.name, img: item.img, _id: id, type: "base",
-    system: {
-      transferData: {
-        type: "document", originalType: "document", documentType: "Actor",
-        avoidTest: { value: "none", opposed: false, prevention: true, reversed: false },
-        testIndependent: false, equipTransfer: false, selfOnly: false, prompt: false,
-        area: { templateData: { borderColor: null, fillColor: null, texture: null }, keep: false, aura: { transferred: false, render: false }, duration: "sustained" },
-        zone: { type: "zone", transferred: false, traits: {}, skipImmediateOnPlacement: false, keep: false }
-      },
-      itemTargetData: { ids: [], allItems: false },
-      scriptData: [
-        { script: script(spec), label: "Add granted Talents, Traits and items", trigger: "addItems", options: {}, async: true },
-        { script: `await game.modules.get("${MODULE_ID}")?.api?.revert(this);`, label: "Remove granted items", trigger: "deleteEffect", options: {}, async: true }
-      ],
-      zone: { type: "zone", traits: {}, skipImmediateOnPlacement: false },
-      sourceData: { test: {} }, condition: { value: null, numbered: false }, changes: []
-    },
-    disabled: false,
-    duration: { value: null, units: "seconds", expiry: null, expired: false },
-    description: "", origin: null, tint: "#ffffff", transfer: true, statuses: [], sort: 0,
-    flags: { wfrp4e: { manualEffectKeys: false }, [MODULE_ID]: { grants: true } },
-    _stats: { compendiumSource: null, duplicateSource: null, exportSource: null, coreVersion: "14.360", systemId: "wfrp4e", systemVersion: "10.1.2", createdTime: null, modifiedTime: null, lastModifiedBy: null },
-    start: null, showIcon: 1, folder: null,
-    _key: `!items.effects!${item._id}.${id}`
-  };
+  return effectSource({
+    item, id, name: item.name,
+    scriptData: [
+      { script: script(spec), label: "Add granted Talents, Traits and items", trigger: "addItems", options: {}, async: true },
+      { script: `await game.modules.get("${MODULE_ID}")?.api?.revert(this);`, label: "Remove granted items", trigger: "deleteEffect", options: {}, async: true }
+    ],
+    flags: { [MODULE_ID]: { grants: true } }
+  });
 }
 
 const stats = { effects: 0, parts: 0, nolink: new Set() };

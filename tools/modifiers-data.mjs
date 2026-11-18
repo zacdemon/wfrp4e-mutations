@@ -1,0 +1,149 @@
+/**
+ * Fixed modifiers for the Mutant's Handbook items. `node tools/modifiers.mjs` writes them into
+ * src/packs/items as a "<Mutation> (Modifiers)" effect (see scripts/modifier-scripts.mjs).
+ *
+ *   c(k, n)                      ActiveEffect change: characteristic k (ws..fel) or "move" +n
+ *   wounds(n)                    +n max Wounds (woundCalc script)
+ *   half(k)                      halve characteristic k or "move", rounded up
+ *   test(label, mod, when, on)   dialog option (situational test modifier); on = ticked by default
+ *   toggle(label, [c(...)...])   a separate effect on the item, switched off, for "while X" modifiers
+ *
+ * Modifiers that are rolled (1d10), chosen, or depend on a rolled sub-result (hit location, body
+ * part, size step) are in tools/grants-data.mjs instead. Each copy of a mutation carries its own
+ * effect, so repeated mutations add their modifiers again (p10).
+ */
+
+const c = (k, v) => ({ c: k, v });
+const wounds = (v) => ({ wounds: v });
+const half = (k) => ({ half: k });
+const test = (label, mod, when = {}, on = false) => ({ test: { label, mod, when, on } });
+const toggle = (label, list) => ({ toggle: label, list });
+
+const FEL = { chars: ["fel"] };
+const ANY = { any: true };
+const STEALTH = { skills: ["Stealth"] };
+const m = (n) => ({ modifier: n });
+const scene = (what) => toggle(`${what}: -10 Fellowship (rest of the scene)`, [c("fel", -10)]);
+
+export const MODS = {
+  "Aberrant Agility": [c("ag", 10), c("fel", -5)],
+  "Aethyric Leak": [c("int", -5), c("i", -5)],
+  "Albino": [c("fel", -10)],
+  "Alien Mind": [c("fel", -20), test("Alien Mind: resist mind-influencing magic and abilities +20", m(20), { chars: ["wp"] })],
+  "Anti-magic Aura": [c("i", -10), c("int", -10), c("wp", -10)],
+  "Barrel Chest": [c("t", 10), c("ag", -10), c("fel", -5)],
+  "Beast Alpha": [test("Beast Alpha: command a domestic (Broken) animal +20", m(20), { chars: ["wp"] }),
+    test("Beast Alpha: command a monster -20", m(-20), { chars: ["wp"] })],
+  "Beset by Tragedy": [scene("Bawling")],
+  "Bestial Head": [c("fel", -20)],
+  "Bizarre Colouration": [test("Bizarre Colouration: Stealth -10", m(-10), STEALTH, true)],
+  "Blob": [half("move"), c("ag", -20), c("t", 10)],
+  "Brain Rot": [c("fel", -5)],
+  "Broken Mind": [c("int", -20), c("i", -20)],
+  "Bulging Eyes": [c("fel", -10)],
+  "Cadaverously Thin": [c("ag", 5), c("t", -5), c("fel", -5)],
+  "Centauroid": [c("move", 2), c("t", 10), c("ag", -10)],
+  "Chameleon Skin": [test("Chameleon Skin: blending in +20 Stealth", m(20), STEALTH)],
+  "Chthonian Crawler": [test("Chthonian Crawler: armed fighting -20", m(-20), { melee: true }, true)],
+  "Clubfoot": [c("move", -1), c("ag", -5), c("fel", -5)],
+  "Cold-Blooded": [c("fel", -10)],
+  "Contagious Madness": [c("int", -10)],
+  "Corrosive Vomit": [test("Corrosive Vomit: Stealth -10", m(-10), STEALTH, true)],
+  "Crawling Skin": [c("fel", -30)],
+  "Distended Digits": [c("fel", -5)],
+  "Enlarged Sensory Organ": [c("fel", -5)],
+  "Entrancement": [test("Entrancement: social Test with someone you entranced +20", m(20), FEL),
+    test("Entrancement: Stealth near sentient beings -20", m(-20), STEALTH, true)],
+  "Excessive Vanity": [scene("Vanity strikes")],
+  "False Tongue": [scene("Caught lying")],
+  "Featureless Face": [c("fel", -30)],
+  "Forgetful Mind": [c("i", -5), scene("Zoned out")],
+  "Freakish Quickness": [c("i", 10)],
+  "Glowing Skin": [test("Glowing Skin: visibility-based Stealth -20", m(-20), STEALTH, true)],
+  "Grossly Corpulent": [wounds(1), c("s", 5), c("t", 5), c("move", -1), c("fel", -5)],
+  "Grotesque Skin": [c("fel", -20)],
+  "Hairless": [c("fel", -5)],
+  "Hopper": [c("move", -2)],
+  "Horrible Stench": [c("fel", -10)],
+  "Hubris": [test("Hubris: social Test to take the spotlight, claim glory or deflect criticism +10", m(10), FEL),
+    test("Hubris: helping someone else to glory, or appearing humble -10", m(-10), ANY)],
+  "Hulking Brute": [c("s", 10), c("t", 10), c("ag", -10), c("int", -10)],
+  "Hunchback": [c("move", -1), c("fel", -5)],
+  "Hungering Maw": [test("Hungering Maw: dealing with Ogres +20", m(20), FEL)],
+  "Imminent Precognition": [c("i", 10), c("fel", -10)],
+  "Inhuman Beauty": [c("fel", 10)],
+  "Insect Eyes": [c("fel", -20)],
+  "Lolling Tongue": [test("Lolling Tongue: speaking -10", m(-10), { skills: ["Language"] }, true)],
+  "Lunacy": [
+    toggle("Morrslieb absent", [c("i", -10), c("wp", -10)]),
+    toggle("Morrslieb small", [c("i", -5), c("wp", -5)]),
+    toggle("Morrslieb large", [c("i", 5), c("wp", 5)]),
+    toggle("Morrslieb full (+1 Fortune by hand)", [c("i", 10), c("wp", 10)])],
+  "Magnetic Presence": [c("fel", 10), test("Magnetic Presence: Stealth near sentient beings -30", m(-30), STEALTH, true)],
+  "Mark of Chaos": [test("Mark of Chaos: showing it to a Chaos worshipper +5", m(5), FEL),
+    test("Mark of Chaos: showing it to a worshipper of the same God +10", m(10), FEL)],
+  "Massive Intellect": [c("int", 20), c("i", 10)],
+  "Metallic Skeleton": [c("t", 10)],
+  "Midnight Skin": [test("Midnight Skin: in shadows and darkness +20 Stealth", m(20), STEALTH)],
+  "Morbidity": [c("fel", -10)],
+  "Nervous Jitters": [c("i", 5), c("bs", -5), c("dex", -5)],
+  "Nihilistic Numbness": [c("fel", -10)],
+  "Oracle": [toggle("Sensing the future (+10 Initiative; +1 Fortune per level by hand)", [c("i", 10)])],
+  "Organic Crystal": [test("Organic Crystal: opposing an incoming spell -10", m(-10), { chars: ["wp"], skills: ["Dodge"] })],
+  "Overgrown Arm": [c("s", 10), c("dex", -10), c("ag", -5)],
+  "Painseeker": [toggle("Wounded or wounding (1d10 Rounds)", [c("s", 5), c("t", 5), c("wp", 5)])],
+  "Prehensile Feet": [c("move", -1), test("Prehensile Feet: Climb, add Agility Bonus to SL", { slFrom: "ag" }, { skills: ["Climb"] }, true)],
+  "Quantum Bulge": [c("fel", -5)],
+  "Regression": [test("Regression: pushing through a challenge or failure -10", m(-10), { chars: ["wp"] })],
+  "Savage Grace": [c("ws", 5), c("ag", 10), test("Savage Grace: blending in among people -10", m(-10), STEALTH)],
+  "Savagery": [c("ws", 5), c("bs", -5)],
+  "Skin Pouch": [test("Skin Pouch: hiding the pouch from a search +20", m(20), STEALTH)],
+  "Skinned Alive": [c("fel", -20)],
+  "Slimy": [c("fel", -10), test("Slimy: escaping a Grapple +20", m(20), { chars: ["s"] })],
+  "Soft-hearted": [test("Soft-hearted: hurting or exploiting someone -10", m(-10), ANY),
+    test("Soft-hearted: helping or showing kindness +10", m(10), ANY)],
+  "Soul Destruction": [c("wp", -20)],
+  "Spilled Guts": [c("fel", -5)],
+  "Split Torso": [c("ag", -10)],
+  "Tantalising Aura": [test("Tantalising Aura: Stealth near sentient beings -20", m(-20), STEALTH, true)],
+  "Telepathy": [test("Telepathy: plundering memories -30", m(-30), { chars: ["wp"] })],
+  "The Big Joke": [c("fel", -10)],
+  "Third Eye": [c("bs", 10)],
+  "Ticks": [c("i", -10)],
+  "Twisted Body": [c("move", -1)],
+  "Unending Malice": [test("Unending Malice: hurting or exploiting someone +10", m(10), ANY),
+    test("Unending Malice: helping or showing kindness -10", m(-10), ANY)],
+  "Unhealing Wound": [wounds(-1)],
+  "Unnatural Head": [c("fel", -20)],
+  "Urgent Profanity": [c("fel", -10)],
+  "Vestigial Twin": [c("ag", -10)]
+};
+
+// Mutations with modifiers in the text that are left to the GM, and why (shown in the README).
+export const MANUAL = {
+  "Atrophy": "what a withered part costs depends on the part (GM call)",
+  "Blissful Ignorance": "always last in Initiative order is a combat-tracker rule, not a value",
+  "Bodysnatcher Drone": "-2d10 Willpower falls on the drone's victim, and the drone is its own creature",
+  "Chimeran Curse": "you take the physical Characteristics of another creature",
+  "Crossbreed": "Characteristics move a share of the way to another species' table",
+  "Ecstatic Milk": "the bonuses go to whoever drinks the milk, for 4 hours",
+  "Elongated Limbs": "the Legs result is automated (+1 Movement); opponents' +20 and the neck's +20 to head Criticals are other people's rolls",
+  "Fleshcrafter": "trades Characteristic points per SL as the GM rules",
+  "Magic Numbers": "Initiative drops to 0 only in the situations the GM picks",
+  "Pitiful Stature": "the -1 Armour steps (Monstrous to Large) are by hand; Characteristics and Movement are automated",
+  "Power Item Obsession": "Fortune has no maximum to lower in the system; take 1 Fortune away by hand",
+  "Regeneration": "-1 Fellowship each time a Critical Wound regenerates",
+  "Savagery": "+10 when determining Critical Wounds is on the critical roll, not a test",
+  "Shapeshifter": "the -Wounds x 10 modifier changes with current Wounds",
+  "Skinwalker": "the -20 applies to observers' tests",
+  "Symbiotic Twins": "the twin is a separate actor",
+  "Temporal Instability": "an extra Move and Action are turn economy",
+  "Time Warp": "Fortune has no maximum to raise in the system; add 1 Fortune each session by hand",
+  "Turnskin": "you take Beastman base Characteristics",
+  "Vestigial Twin": "the twin's own profile (your -10 Agility is automated)",
+  "Werebeast": "the Morrslieb modifiers only apply to the transformation Test",
+  "Alien Mind": "the -30 to read you applies to other people's tests (your +20 to resist and -20 Fellowship are automated)",
+  "Lunacy": "switch on the effect for the current Morrslieb phase on the actor's Effects tab; +1 Fortune at full Morrslieb is by hand",
+  "Oracle": "switch on the effect after the Willpower Test; +1 Fortune per level is by hand",
+  "Painseeker": "switch on the effect when it triggers; it does not stack"
+};

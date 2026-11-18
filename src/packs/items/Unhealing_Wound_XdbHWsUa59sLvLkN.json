@@ -2,7 +2,225 @@
   "name": "Unhealing Wound",
   "type": "mutation",
   "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Unhealing Wound",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "IVa6CgRGyDkmtDJi",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"roll\": \"1d100\",\n      \"text\": \"Wound\",\n      \"res\": [\n        [\n          1,\n          9,\n          {\n            \"t\": \"mod\",\n            \"k\": \"fel\",\n            \"v\": -10\n          },\n          \"Head\"\n        ],\n        [\n          10,\n          24,\n          null,\n          \"Left Arm\"\n        ],\n        [\n          25,\n          44,\n          null,\n          \"Right Arm\"\n        ],\n        [\n          45,\n          79,\n          null,\n          \"Body\"\n        ],\n        [\n          80,\n          89,\n          null,\n          \"Left Leg\"\n        ],\n        [\n          90,\n          100,\n          null,\n          \"Right Leg\"\n        ]\n      ]\n    }\n  ]\n});",
+            "label": "Add granted Talents, Traits and items",
+            "trigger": "addItems",
+            "options": {},
+            "async": true
+          },
+          {
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.revert(this);",
+            "label": "Remove granted items",
+            "trigger": "deleteEffect",
+            "options": {},
+            "async": true
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "grants": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!XdbHWsUa59sLvLkN.IVa6CgRGyDkmtDJi"
+    },
+    {
+      "name": "Unhealing Wound (Modifiers)",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "QvOSGFPaDJJf72kk",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [
+          {
+            "label": "Wounds from this mutation",
+            "trigger": "woundCalc",
+            "script": "args.wounds = Math.max(1, args.wounds + (Number(this.effect.getFlag(\"artantares-mutations\", \"wounds\")) || 0));",
+            "options": {}
+          }
+        ],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "modifiers": true,
+          "wounds": -1
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!XdbHWsUa59sLvLkN.QvOSGFPaDJJf72kk"
+    }
+  ],
   "flags": {
     "_sheetTab": {},
     "core": {},

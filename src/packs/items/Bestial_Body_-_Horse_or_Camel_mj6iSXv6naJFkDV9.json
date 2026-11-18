@@ -41,6 +41,11 @@
             "v": "Leathery Hide",
             "tbl": "Protective Skin",
             "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 10
           }
         ],
         "legs": [
@@ -60,8 +65,9 @@
             "choose": "Horse or Camel legs",
             "of": [
               {
-                "note": "+1 Movement (by hand).",
-                "label": "+1 Movement"
+                "t": "mod",
+                "k": "move",
+                "v": 1
               },
               {
                 "t": "mutation",

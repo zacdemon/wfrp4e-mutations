@@ -46,6 +46,11 @@
             "n": "Strider",
             "u": "Compendium.wfrp4e-core.items.Item.1dUizIgLBgn4jICC",
             "s": "Rocky"
+          },
+          {
+            "t": "mod",
+            "k": "move",
+            "v": 1
           }
         ],
         "head": [

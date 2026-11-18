@@ -65,6 +65,11 @@
             "t": "trait",
             "n": "Die Hard",
             "u": "Compendium.wfrp4e-core.items.Item.UsJ2uIOOtHA7JqD5"
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 10
           }
         ],
         "head": [

@@ -42,9 +42,16 @@
  *   { body: "arms"|"legs"|"head"|"all", tbl, key } Bestial / Unnatural parts of the recorded variant
  *   { patron: { god: [Entry...] }, else: [Entry...] }
  *   { note: text }                                  shown on the summary card
+ * Entry (modifiers, written into the mutation's "<Mutation> (Modifiers)" effect, see modifier-scripts.mjs)
+ *   { t: "mod", k, v }        k a characteristic key (ws..fel), "move" or "wounds"; v a number or a dice
+ *                             formula ("1d10", "-2d10") rolled once now and stored as a plain number
+ *   { t: "mod", k, half }     halve characteristic k (or "move"), rounded up
+ *   { t: "dialog", d }        add a dialog script (situational test modifier) to the effect
+ * Fixed modifiers are not entries: tools/modifiers.mjs writes them straight into the effect.
  */
+import { MODULE_ID as MID, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData } from "./modifier-scripts.mjs";
 
-const MODULE_ID = "artantares-mutations";
+const MODULE_ID = MID;
 const PACK_ITEMS = `${MODULE_ID}.items`;
 const PACK_TABLES = `${MODULE_ID}.rolltables`;
 const LOCS = { arms: ["lArm", "rArm"], body: ["body"], legs: ["lLeg", "rLeg"], head: ["head"] };
@@ -86,7 +93,7 @@ export async function grant(ctx, spec = {}) {
     && baseName(i.name) === baseName(item.name)).length;
   const list = spec.levels ? spec.levels[Math.min(copies, spec.levels.length - 1)] : (spec.grants ?? []);
 
-  const st = { actor, item, log: [], notes: [], undo: [], create: [], rename: null, variants: null };
+  const st = { actor, item, log: [], notes: [], undo: [], create: [], rename: null, variants: null, mods: [], rolled: [] };
   if (copies) st.log.push(L("Level", { n: copies + 1 }));
   try {
     const flat = dedupe(await expand(list, st, { locs: item.getFlag(MODULE_ID, "locs") ?? null }));
@@ -97,6 +104,7 @@ export async function grant(ctx, spec = {}) {
       for (const data of st.create) foundry.utils.setProperty(data, `flags.${MODULE_ID}.grantedBy`, item.id);
       created = await actor.createEmbeddedDocuments("Item", st.create);
     }
+    if (st.mods.length) await applyModifiers(st);
     const update = {};
     if (st.undo.length) update[`flags.${MODULE_ID}.undo`] = [...(item.getFlag(MODULE_ID, "undo") ?? []), ...st.undo];
     if (st.rename) update.name = st.rename;
@@ -223,7 +231,7 @@ function dedupe(list) {
   const map = new Map();
   const out = [];
   for (const e of list) {
-    if (e.t === "bump" || e.t === "size") { out.push(e); continue; }
+    if (e.t === "bump" || e.t === "size" || e.t === "mod" || e.t === "dialog") { out.push(e); continue; }
     const key = e.t === "armour" ? `armour|${e.n}`
       : e.max ? `${e.t}|${e.n}`
       : `${e.t}|${e.n}|${e.s ?? ""}|${e.d ?? ""}|${e.l ?? ""}|${e.v ?? ""}|${e.ask ?? ""}`;
@@ -252,6 +260,8 @@ async function applyEntry(e, st) {
     case "armour": return applyArmour(e, st);
     case "bump": return applyBump(e, st);
     case "size": return applySize(e, st);
+    case "mod": return applyMod(e, st);
+    case "dialog": st.mods.push({ dialog: e.d }); return st.log.push(L("TestModifier", { label: e.d.label }));
   }
 }
 
@@ -432,6 +442,64 @@ async function applySize(e, st) {
 }
 
 /* -------------------------------------------- */
+/*  Modifiers                                   */
+/* -------------------------------------------- */
+
+const signed = (n) => (n >= 0 ? `+${n}` : `${n}`);
+
+function modName(k) {
+  if (k === "move") return L("Movement");
+  if (k === "wounds") return L("Wounds");
+  return game.i18n.localize(game.wfrp4e.config.characteristics?.[k] ?? k);
+}
+
+async function applyMod(e, st) {
+  if (e.half) {
+    st.mods.push({ half: e.k });
+    return st.log.push(L("Halved", { name: modName(e.k) }));
+  }
+  let value = e.v;
+  if (typeof value === "string") {
+    const neg = value.trim().startsWith("-");
+    const roll = await new Roll(value.trim().replace(/^[-+]\s*/, "")).evaluate();
+    value = neg ? -roll.total : roll.total;
+    st.rolled.push({ k: e.k, formula: e.v, value });
+    st.log.push(`${modName(e.k)} ${e.v}: ${signed(value)}`);
+  }
+  else st.log.push(`${modName(e.k)} ${signed(Number(value))}`);
+  st.mods.push({ k: e.k, value: Number(value) });
+}
+
+/** Write rolled / chosen modifiers into the mutation's Modifiers effect (created if missing). */
+async function applyModifiers(st) {
+  let effect = st.item.effects?.find(e => e.getFlag(MODULE_ID, "modifiers"));
+  if (!effect) [effect] = await st.item.createEmbeddedDocuments("ActiveEffect", [modifierEffectData(st.item)]);
+  if (!effect) return;
+  const data = effect.toObject();
+  const flags = data.flags?.[MODULE_ID] ?? {};
+  const changes = [...(data.system?.changes ?? [])];
+  const scripts = [...(data.system?.scriptData ?? [])];
+  const halve = [...(flags.halve ?? [])];
+  let wounds = Number(flags.wounds) || 0;
+  for (const m of st.mods) {
+    if (m.dialog) scripts.push(m.dialog);
+    else if (m.half) halve.push(m.half);
+    else if (m.k === "wounds") wounds += m.value;
+    else if (m.value) changes.push(changeFor(m.k, m.value));
+  }
+  if (wounds && !scripts.some(s => s.trigger === "woundCalc")) scripts.push(woundsScriptData());
+  const lowers = halve.length || changes.some(c => Number(c.value) < 0 && c.key.startsWith("system.characteristics."));
+  if (lowers && !scripts.some(s => s.trigger === "computeCharacteristics")) scripts.push(characteristicsScriptData());
+  await effect.update({
+    "system.changes": changes,
+    "system.scriptData": scripts,
+    [`flags.${MODULE_ID}.wounds`]: wounds,
+    [`flags.${MODULE_ID}.halve`]: halve,
+    [`flags.${MODULE_ID}.rolled`]: [...(flags.rolled ?? []), ...st.rolled]
+  });
+}
+
+/* -------------------------------------------- */
 /*  Prompts                                     */
 /* -------------------------------------------- */
 
@@ -440,6 +508,8 @@ function labelOf(e) {
   if (e.label) return e.label;
   if (e.note) return e.note;
   if (e.choose) return e.choose;
+  if (e.t === "mod") return e.half ? L("Halved", { name: modName(e.k) }) : `${typeof e.v === "number" ? signed(e.v) : e.v} ${modName(e.k)}`;
+  if (e.t === "dialog") return e.d.label;
   const bits = [e.n];
   if (e.s) bits.push(`(${e.s})`);
   if (e.l) bits.push(`(${e.l})`);

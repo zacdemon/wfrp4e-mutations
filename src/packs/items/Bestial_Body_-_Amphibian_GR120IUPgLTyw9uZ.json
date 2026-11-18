@@ -27,6 +27,11 @@
             "v": "Rubbery",
             "tbl": "Protective Skin",
             "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mod",
+            "k": "dex",
+            "v": -10
           }
         ],
         "body": [

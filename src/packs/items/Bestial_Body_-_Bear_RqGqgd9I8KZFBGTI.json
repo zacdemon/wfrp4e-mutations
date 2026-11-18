@@ -22,6 +22,16 @@
             "v": "Fur",
             "tbl": "Protective Skin",
             "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mod",
+            "k": "s",
+            "v": 15
+          },
+          {
+            "t": "mod",
+            "k": "dex",
+            "v": -10
           }
         ],
         "body": [
@@ -36,6 +46,11 @@
             "v": "Fur",
             "tbl": "Protective Skin",
             "u": "Compendium.artantares-mutations.items.Item.JIv9RZGeYoaPPGiM"
+          },
+          {
+            "t": "mod",
+            "k": "t",
+            "v": 10
           }
         ],
         "legs": [

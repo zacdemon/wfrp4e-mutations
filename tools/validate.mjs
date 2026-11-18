@@ -75,12 +75,28 @@ function checkScript(code, where, sourceType = "script") {
 for (const [pack, d] of all) {
   if (pack === "macros" && !isFolder(d)) checkScript(d.command, `macro ${d.name}`);
   for (const e of d.effects ?? [])
-    for (const [i, s] of (e.system?.scriptData ?? []).entries()) checkScript(s.script, `${d.name} / ${e.name} [${s.trigger} #${i}]`);
+    for (const [i, s] of (e.system?.scriptData ?? []).entries()) {
+      checkScript(s.script, `${d.name} / ${e.name} [${s.trigger} #${i}]`);
+      for (const k of ["hideScript", "activateScript", "submissionScript"]) checkScript(s.options?.[k], `${d.name} / ${e.name} [${s.trigger} #${i} ${k}]`);
+    }
 }
-for (const f of MODULE.esmodules ?? []) {
-  const p = f.replace(/^\//, "");
-  if (!fs.existsSync(p)) { errors.push(`module.json esmodule missing: ${f}`); continue; }
-  checkScript(fs.readFileSync(p, "utf8"), p, "module");
+// Effect changes: v14 shape and keys the wfrp4e system offers for these modifiers
+const CHANGE_KEY = /^system\.(characteristics\.(ws|bs|s|t|i|ag|dex|int|wp|fel)\.(modifier|initial|bonusMod|calculationBonusModifier)|details\.move\.value)$/;
+for (const [, d] of all) for (const e of d.effects ?? []) {
+  if (e.changes?.length) errors.push(`${d.name} / ${e.name}: root-level changes (use system.changes)`);
+  for (const c of e.system?.changes ?? []) {
+    stats.changes = (stats.changes ?? 0) + 1;
+    if (!CHANGE_KEY.test(c.key ?? "")) errors.push(`${d.name} / ${e.name}: unexpected change key "${c.key}"`);
+    if (c.type !== "add" || !Number.isFinite(Number(c.value)) || typeof c.value !== "string") errors.push(`${d.name} / ${e.name}: change ${JSON.stringify(c)} is not { type: "add", value: "<number>" }`);
+  }
+}
+// Module scripts: everything under scripts/ (esmodules and the files they import)
+for (const f of MODULE.esmodules ?? []) if (!fs.existsSync(f.replace(/^\//, ""))) errors.push(`module.json esmodule missing: ${f}`);
+for (const f of fs.readdirSync("scripts").filter(f => f.endsWith(".mjs") || f.endsWith(".js"))) {
+  const p = path.join("scripts", f);
+  const code = fs.readFileSync(p, "utf8");
+  checkScript(code, p, "module");
+  for (const m of code.matchAll(/^import [^;]* from "(\.[^"]+)"/gm)) if (!fs.existsSync(path.join("scripts", m[1]))) errors.push(`${p}: import ${m[1]} not found`);
 }
 if (!MODULE.relationships?.requires?.some(r => r.id === "wfrp4e-core")) errors.push("module.json does not declare wfrp4e-core in relationships.requires");
 
@@ -197,7 +213,7 @@ for (const t of Object.values(docs.rolltables).filter(d => !isFolder(d))) {
   }
 }
 
-console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts.`);
+console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts, ${stats.changes ?? 0} effect changes.`);
 if (notes.length) console.log(`\n${notes.length} note(s), as printed in the handbook:\n  ${notes.join("\n  ")}`);
 if (warnings.length) console.log(`\n${warnings.length} known open issue(s):\n  ${warnings.join("\n  ")}`);
 if (errors.length) { console.error(`\n${errors.length} error(s):\n  ${errors.join("\n  ")}`); process.exit(1); }

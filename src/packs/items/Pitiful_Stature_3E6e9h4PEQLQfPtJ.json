@@ -50,7 +50,7 @@
         },
         "scriptData": [
           {
-            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"size\",\n      \"step\": -1,\n      \"u\": \"Compendium.wfrp4e-core.items.Item.8slW8CJ2oVTxeQ6q\"\n    },\n    {\n      \"note\": \"Characteristic, Movement, Armour and Wounds changes for the new size are by hand (Enormous to Large also loses Stride).\"\n    }\n  ]\n});",
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"size\",\n      \"step\": -1,\n      \"u\": \"Compendium.wfrp4e-core.items.Item.8slW8CJ2oVTxeQ6q\",\n      \"at\": {\n        \"enor\": [\n          {\n            \"t\": \"mod\",\n            \"k\": \"move\",\n            \"v\": -2\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"s\",\n            \"v\": -20\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"t\",\n            \"v\": -10\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"ag\",\n            \"v\": 10\n          },\n          {\n            \"note\": \"-1 Armour: lower any natural armour by hand.\"\n          }\n        ],\n        \"lrg\": [\n          {\n            \"t\": \"mod\",\n            \"k\": \"s\",\n            \"v\": -10\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"t\",\n            \"v\": -5\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"ag\",\n            \"v\": 10\n          },\n          {\n            \"note\": \"-1 Armour and lose Stride: by hand.\"\n          }\n        ],\n        \"avg\": [\n          {\n            \"t\": \"mod\",\n            \"k\": \"move\",\n            \"v\": -2\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"s\",\n            \"v\": -15\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"t\",\n            \"v\": -15\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"ag\",\n            \"v\": 5\n          }\n        ],\n        \"sml\": [\n          {\n            \"t\": \"mod\",\n            \"k\": \"move\",\n            \"v\": -1\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"s\",\n            \"v\": -10\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"t\",\n            \"v\": -10\n          }\n        ],\n        \"ltl\": [\n          {\n            \"t\": \"mod\",\n            \"k\": \"s\",\n            \"v\": -5\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"t\",\n            \"v\": -5\n          }\n        ],\n        \"tiny\": [\n          {\n            \"t\": \"mod\",\n            \"k\": \"move\",\n            \"v\": -1\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"s\",\n            \"v\": -5\n          },\n          {\n            \"t\": \"mod\",\n            \"k\": \"t\",\n            \"v\": -5\n          }\n        ]\n      }\n    },\n    {\n      \"note\": \"Wounds follow the new Size automatically.\"\n    }\n  ]\n});",
             "label": "Add granted Talents, Traits and items",
             "trigger": "addItems",
             "options": {},
@@ -114,6 +114,103 @@
       "showIcon": 1,
       "folder": null,
       "_key": "!items.effects!3E6e9h4PEQLQfPtJ.ViROiFkvGKfReTJt"
+    },
+    {
+      "name": "Pitiful Stature (Modifiers)",
+      "img": "modules/wfrp4e-core/icons/mutations/mutation.png",
+      "_id": "1yaLqYVajmfsj9Rt",
+      "type": "base",
+      "system": {
+        "transferData": {
+          "type": "document",
+          "originalType": "document",
+          "documentType": "Actor",
+          "avoidTest": {
+            "value": "none",
+            "opposed": false,
+            "prevention": true,
+            "reversed": false
+          },
+          "testIndependent": false,
+          "equipTransfer": false,
+          "selfOnly": false,
+          "prompt": false,
+          "area": {
+            "templateData": {
+              "borderColor": null,
+              "fillColor": null,
+              "texture": null
+            },
+            "keep": false,
+            "aura": {
+              "transferred": false,
+              "render": false
+            },
+            "duration": "sustained"
+          },
+          "zone": {
+            "type": "zone",
+            "transferred": false,
+            "traits": {},
+            "skipImmediateOnPlacement": false,
+            "keep": false
+          }
+        },
+        "itemTargetData": {
+          "ids": [],
+          "allItems": false
+        },
+        "scriptData": [],
+        "zone": {
+          "type": "zone",
+          "traits": {},
+          "skipImmediateOnPlacement": false
+        },
+        "sourceData": {
+          "test": {}
+        },
+        "condition": {
+          "value": null,
+          "numbered": false
+        },
+        "changes": []
+      },
+      "disabled": false,
+      "duration": {
+        "value": null,
+        "units": "seconds",
+        "expiry": null,
+        "expired": false
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "wfrp4e": {
+          "manualEffectKeys": false
+        },
+        "artantares-mutations": {
+          "modifiers": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.360",
+        "systemId": "wfrp4e",
+        "systemVersion": "10.1.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "start": null,
+      "showIcon": 1,
+      "folder": null,
+      "_key": "!items.effects!3E6e9h4PEQLQfPtJ.1yaLqYVajmfsj9Rt"
     }
   ],
   "flags": {

@@ -23,6 +23,11 @@
             "n": "Tentacles",
             "u": "Compendium.wfrp4e-core.items.Item.4xF7M6ylIiGntekh",
             "d": 3
+          },
+          {
+            "t": "mod",
+            "k": "dex",
+            "v": -20
           }
         ],
         "body": [
@@ -42,6 +47,11 @@
             "t": "talent",
             "n": "Contortionist",
             "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+          },
+          {
+            "t": "mod",
+            "k": "ag",
+            "v": 10
           }
         ],
         "legs": [
@@ -63,7 +73,9 @@
                   "d": 3
                 },
                 {
-                  "note": "-2 Movement (by hand)."
+                  "t": "mod",
+                  "k": "move",
+                  "v": -2
                 }
               ],
               {

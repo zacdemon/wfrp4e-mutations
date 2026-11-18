@@ -55,8 +55,9 @@
             "choose": "Fish legs",
             "of": [
               {
-                "note": "-1 Movement (by hand).",
-                "label": "-1 Movement"
+                "t": "mod",
+                "k": "move",
+                "v": -1
               },
               {
                 "note": "Fish tail: Movement 1 on land and 8 in water (by hand).",

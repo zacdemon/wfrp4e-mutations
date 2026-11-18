@@ -36,6 +36,11 @@
             "t": "talent",
             "n": "Contortionist",
             "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
+          },
+          {
+            "t": "mod",
+            "k": "ag",
+            "v": 10
           }
         ],
         "legs": [
@@ -60,7 +65,38 @@
                   "u": "Compendium.wfrp4e-core.items.Item.TaYriYcJkFuIdBKp"
                 },
                 {
-                  "note": "No legs: you slither; +5 Agility, -20 Climbing & Jumping (by hand)."
+                  "t": "mod",
+                  "k": "ag",
+                  "v": 5
+                },
+                {
+                  "t": "dialog",
+                  "d": {
+                    "label": "No legs: Climb -20",
+                    "trigger": "dialog",
+                    "script": "args.fields.modifier += -20;",
+                    "options": {
+                      "hideScript": "return !([game.i18n.localize(\"NAME.Climb\")].some(n => args.skill?.name?.startsWith(n)));",
+                      "activateScript": "return [game.i18n.localize(\"NAME.Climb\")].some(n => args.skill?.name?.startsWith(n));",
+                      "submissionScript": ""
+                    }
+                  }
+                },
+                {
+                  "t": "dialog",
+                  "d": {
+                    "label": "No legs: jumping -20",
+                    "trigger": "dialog",
+                    "script": "args.fields.modifier += -20;",
+                    "options": {
+                      "hideScript": "return !([game.i18n.localize(\"NAME.Athletics\")].some(n => args.skill?.name?.startsWith(n)));",
+                      "activateScript": "",
+                      "submissionScript": ""
+                    }
+                  }
+                },
+                {
+                  "note": "No legs: you slither instead of walking."
                 }
               ]
             ]
