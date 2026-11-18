@@ -43,9 +43,9 @@
   "AMUT.Step.Cancelled": "cancelled",
   "AMUT.Step.Result": "Result",
   "AMUT.Card.Title": "Dissolution of Body and Mind",
-  "AMUT.Card.Apply": "GM: add this mutation",
+  "AMUT.Card.Apply": "Add Mutation",
   "AMUT.Card.Resist": "Spend 1 Resilience to avoid it",
-  "AMUT.Card.Discard": "GM: discard",
+  "AMUT.Card.Discard": "Discard",
   "AMUT.Card.Retire": "Retire the character",
   "AMUT.Card.ChosenText": "The character is Chosen by a Chaos God (p9). The GM picks the patron; from now on every mutation comes from the patron's table (p74). Picking a god also rolls this mutation on that table.",
   "AMUT.Status.pending": "Waiting for the GM",
@@ -141,5 +141,8 @@
   "AMUT.Power.Morrslieb.large": "Morrslieb large (+5 Initiative, +5 Willpower)",
   "AMUT.Power.Morrslieb.full": "Morrslieb full (+10 Initiative, +10 Willpower, +1 Fortune)",
   "AMUT.Power.ReachPenalty": "Elongated Limbs: -10 Penalty to <b>{attacker}</b> for having the shorter weapon ({defender}'s long arms).",
-  "AMUT.Power.ReachEven": "Elongated Limbs: {attacker}'s long arms make the weapons the same length, no shorter-weapon penalty (cancels the -10 below)."
+  "AMUT.Power.ReachEven": "Elongated Limbs: {attacker}'s long arms make the weapons the same length, no shorter-weapon penalty (cancels the -10 below).",
+  "AMUT.Warn.NoPermission": "You lack permission to do that: only a GM can use this button.",
+  "AMUT.Warn.NoPermissionAdd": "You lack permission to add mutations to {name}.",
+  "AMUT.Warn.NoGMCard": "The mutation was added, but no GM is logged in to mark this card as resolved."
 }

@@ -416,13 +416,13 @@ async function renderCardHTML(state) {
       const variants = c.variants.map(v => `<li>${esc(v.table)} (${esc(v.roll)}): ${v.uuid ? `@UUID[${v.uuid}]{${esc(v.full)}}` : esc(stripHTML(v.text) || v.full)}</li>`).join("");
       const notes = c.notes.map(n => `<li><em>${esc(n)}</em></li>`).join("");
       const meta = [c.severity && L(`Severity.${c.severity}`), c.type && L(`Type.${c.type}`)].filter(Boolean).join(" ");
-      const button = state.status === "pending" ? `<button type="button" class="amut-gm" data-amut-action="apply" data-index="${i}">${L("Card.Apply")}</button>` : "";
+      const button = state.status === "pending" ? `<button type="button" data-amut-action="apply" data-index="${i}">${L("Card.Apply")}</button>` : "";
       return `<div class="amut-candidate"><p><img src="${esc(c.img)}" width="24" height="24" style="vertical-align:middle;border:none"> @UUID[${c.uuid}]{${esc(c.name)}} <span>(${esc(meta)})</span></p>
         ${variants || notes ? `<ul>${variants}${notes}</ul>` : ""}${button}</div>`;
     }).join("");
     if (state.status === "pending" && state.candidates.length)
       body += `<div class="amut-buttons"><button type="button" data-amut-action="resist">${L("Card.Resist")}</button>
-        <button type="button" class="amut-gm" data-amut-action="discard">${L("Card.Discard")}</button></div>`;
+        <button type="button" data-amut-action="discard">${L("Card.Discard")}</button></div>`;
   }
   const notes = state.notes.length ? `<ul>${state.notes.map(n => `<li><em>${esc(n)}</em></li>`).join("")}</ul>` : "";
   const status = state.status !== "pending" ? `<p class="amut-status"><strong>${esc(state.statusText ?? L(`Status.${state.status}`))}</strong></p>` : "";
@@ -469,19 +469,21 @@ async function onCardAction(message, action, dataset) {
     }
     return resist(message, state, actor, game.user);
   }
-  if (!game.user.isGM) return;
-
   if (action === "apply") {
+    // Players may add a mutation to an actor they own; the GM to any.
+    if (!(game.user.isGM || actor.isOwner)) return ui.notifications.error(L("Warn.NoPermissionAdd", { name: actor.name }));
     const cand = state.candidates[Number(dataset.index)];
     if (!cand) return;
+    // Created by the clicking user, so the grant scripts (onCreate) and their choice dialogs run for them.
     const item = await applyCandidate(actor, cand, state);
     if (!item) return;
-    state.status = "applied";
-    state.statusText = L("Status.appliedName", { name: item.name, user: game.user.name });
-    await updateCard(message, state);
+    await markCard(message, state, { status: "applied", name: item.name });
     await checkSpawn(actor);
+    return;
   }
-  else if (action === "discard") {
+  if (!game.user.isGM) return ui.notifications.error(L("Warn.NoPermission"));
+
+  if (action === "discard") {
     state.status = "discarded";
     state.statusText = L("Status.discardedBy", { user: game.user.name });
     await updateCard(message, state);
@@ -500,6 +502,17 @@ async function onCardAction(message, action, dataset) {
     state.status = "retired";
     await updateCard(message, state);
   }
+}
+
+/** Mark the card resolved: directly if this user may edit the message, otherwise through the active GM. */
+async function markCard(message, state, { status, name }) {
+  if (message.canUserModify(game.user, "update")) {
+    state.status = status;
+    state.statusText = L("Status.appliedName", { name, user: game.user.name });
+    return updateCard(message, state);
+  }
+  if (!game.users.activeGM) return ui.notifications.warn(L("Warn.NoGMCard"));
+  game.socket.emit(SOCKET, { action: "applied", messageId: message.id, userId: game.user.id, name });
 }
 
 async function resist(message, state, actor, user) {
@@ -558,6 +571,8 @@ async function checkSpawn(actor) {
 Hooks.on("renderChatMessageHTML", (message, html) => {
   if (!message.getFlag(MODULE_ID, TEMPLATE_FLAG)) return;
   const state = message.getFlag(MODULE_ID, TEMPLATE_FLAG);
+  // Cards posted by older builds marked Add / Discard GM-only; those buttons are now shown to everyone.
+  html.querySelectorAll('[data-amut-action="apply"].amut-gm, [data-amut-action="discard"].amut-gm').forEach(el => el.classList.remove("amut-gm"));
   if (!game.user.isGM) html.querySelectorAll(".amut-gm").forEach(el => el.remove());
   const actor = fromUuidSync(state.actorUuid);
   if (!game.user.isGM && !actor?.isOwner) html.querySelectorAll('[data-amut-action="resist"]').forEach(el => el.remove());
@@ -689,13 +704,17 @@ Hooks.once("setup", () => {
 
 Hooks.once("ready", () => {
   game.socket.on(SOCKET, async (data) => {
-    if (data?.action !== "resist" || !game.users.activeGM?.isSelf) return;
+    if (!["resist", "applied"].includes(data?.action) || !game.users.activeGM?.isSelf) return;
     const message = game.messages.get(data.messageId);
     const user = game.users.get(data.userId);
     const state = foundry.utils.deepClone(message?.getFlag(MODULE_ID, TEMPLATE_FLAG));
     if (!state || state.status !== "pending" || !user) return;
     const actor = await fromUuid(state.actorUuid);
     if (!actor?.testUserPermission(user, "OWNER")) return;
-    await resist(message, state, actor, user);
+    if (data.action === "resist") return resist(message, state, actor, user);
+    // A player added the mutation to their own actor; the GM marks the card (the player cannot edit it).
+    state.status = "applied";
+    state.statusText = L("Status.appliedName", { name: String(data.name ?? ""), user: user.name });
+    await updateCard(message, state);
   });
 });
