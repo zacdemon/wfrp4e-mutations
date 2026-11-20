@@ -106,6 +106,8 @@
   "AMUT.Grant.Advanced": "{name} +{n} advances",
   "AMUT.Grant.SkillStub": "Placeholder for {name} ({ref}), added by a mutation. Check its Characteristic against the book.",
   "AMUT.Grant.SkillStubNote": "{name} was not found in any compendium, so a placeholder skill was made ({ref}); check its Characteristic.",
+  "AMUT.Grant.SkillStubModule": "Placeholder for {name} ({ref}), added by a mutation because {module} is not active. Replace it with the real skill once the module is enabled.",
+  "AMUT.Grant.SkillStubModuleNote": "{module} is not active, so {name} was added as a placeholder skill ({char}, Advanced; {ref}). Swap in the real skill once the module is enabled.",
   "AMUT.Grant.GrantedFrom": "Granted by {name}",
   "AMUT.Grant.NaturalArmour": "Natural armour from {name}. Deleting that mutation removes this item.",
   "AMUT.Grant.NoBump": "No {name} trait to add Damage to; adjust by hand.",

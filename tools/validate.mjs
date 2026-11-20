@@ -16,7 +16,8 @@ const MODULE = JSON.parse(fs.readFileSync("module.json", "utf8"));
 const MODULE_ID = MODULE.id;
 const PACKS = Object.fromEntries(MODULE.packs.map(p => [p.name, p.type]));
 const STALE_IDS = ["wfrp4e-mutations", "arcturus-mutations"];
-const EXTERNAL_OK = new Set(["wfrp4e-core", "wfrp4e"]);
+// The system, wfrp4e-core, and any module declared in module.json (requires or recommends; e.g. wfrp4e-wom).
+const EXTERNAL_OK = new Set(["wfrp4e-core", "wfrp4e", ...["requires", "recommends"].flatMap(k => (MODULE.relationships?.[k] ?? []).map(r => r.id))]);
 const SEVERITIES = ["trivial", "minor", "major"];
 // Table keys provided by the wfrp4e system or the wfrp4e-core module, used in mutation text.
 const EXTERNAL_TABLE_KEYS = new Set(["hitloc", "minormis", "majormis", "species", "eyes", "stinking-drunk", "corruption", "mutatephys", "mutatemental"]);

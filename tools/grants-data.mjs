@@ -53,6 +53,8 @@ const CORE = {
 // Psychology items whose name is shared with a Talent or Trait ("Hatred" above is the Talent;
 // the Psychology is "Hatred (Target)").
 const CORE_PSY = { "Hatred": "5hH73j2NgPdsLCZN", "Animosity": "Q2MCUrG2HppMcvN0", "Prejudice": "klCJX0mNpXYH5AIx" };
+// Winds of Magic (wfrp4e-wom 8.0.0) items: Augury and Psychometry (both Int, Advanced, no specialisation).
+const wom = (id) => `Compendium.wfrp4e-wom.items.Item.${id}`;
 const cu = (n) => CORE[n] ? `Compendium.wfrp4e-core.items.Item.${CORE[n]}` : undefined;
 const cuPsy = (n) => CORE_PSY[n] ? `Compendium.wfrp4e-core.items.Item.${CORE_PSY[n]}` : cu(n);
 
@@ -225,7 +227,7 @@ export const GRANTS = {
     mnst: [ch("move", 2), ch("s", 20), ch("t", 10), ch("ag", -10), A("Monstrous Hide", 1)] }),
     note("Wounds follow the new Size automatically.")] },
   "Nihilistic Numbness": { grants: [T("Fearless", { s: "All" }), R("Painless")] },
-  "Oracle": { grants: [S("Augury", 10, { c: "int", ref: "Winds of Magic p44" })] },
+  "Oracle": { grants: [S("Augury", 10, { c: "int", u: wom("GlcVY8MTqHTS1JWX"), mod: "wfrp4e-wom", ref: "Winds of Magic p44" })] },
   "Organic Crystal": { grants: [T("Magical Sense"), T("Detect Artefact")] },
   "Overgrown Arm": { grants: [T("Strike Mighty Blow"), note("Strike Mighty Blow only applies to attacks with the overgrown arm.")] },
   "Petrifying Gaze": { grants: [R("Petrifying Gaze")] },
@@ -265,7 +267,7 @@ export const GRANTS = {
   "Saint of the Damned": { grants: [choose("Saint of the Damned", T("Attractive"), T("Cat-tongued"))] },
   "Savage Grace": { grants: [T("Combat Master"), T("Relentless")] },
   "Savage Mind": { grants: [T("Animal Affinity")] },
-  "Scrying Touch": { grants: [S("Psychometry", 10, { c: "int", ref: "Winds of Magic p47" })] },
+  "Scrying Touch": { grants: [S("Psychometry", 10, { c: "int", u: wom("GxfrW2whVdNJABVQ"), mod: "wfrp4e-wom", ref: "Winds of Magic p47" })] },
   "Sensory Loss": { grants: [roll("1d10", "Sense",
     [1, 2, note("Hearing: remove Acute Sense (Hearing) and add 1d10 permanent Deafened by hand."), "Hearing"],
     [3, 4, note("Sight: remove Acute Sense (Sight) and add 1d10 permanent Blinded by hand."), "Sight"],

@@ -50,7 +50,7 @@
         },
         "scriptData": [
           {
-            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"skill\",\n      \"n\": \"Augury\",\n      \"adv\": 10,\n      \"c\": \"int\",\n      \"ref\": \"Winds of Magic p44\"\n    }\n  ]\n});",
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"skill\",\n      \"n\": \"Augury\",\n      \"adv\": 10,\n      \"c\": \"int\",\n      \"u\": \"Compendium.wfrp4e-wom.items.Item.GlcVY8MTqHTS1JWX\",\n      \"mod\": \"wfrp4e-wom\",\n      \"ref\": \"Winds of Magic p44\"\n    }\n  ]\n});",
             "label": "Add granted Talents, Traits and items",
             "trigger": "addItems",
             "options": {},

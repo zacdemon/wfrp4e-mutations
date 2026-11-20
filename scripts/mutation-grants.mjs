@@ -31,7 +31,8 @@
  *        system.specification.value, as wfrp4e 10.1.x does), l name label "Name (l)" (replaces a
  *        "#" in the name, e.g. "# Tentacles" -> "2 Tentacles"), set { path: value } overrides, q [qualities], off true = add disabled (toggle on when the ability is used),
  *        max true = one rating only; a higher rating replaces a lower one
- *   { t: "skill", n, adv }                 adv number or dice formula; adds advances or the skill
+ *   { t: "skill", n, adv, c?, u?, mod?, ref? }  adv number or dice formula; adds advances or the skill
+ *        (u: uuid in module mod, used when it is active; else a placeholder with Characteristic c)
  *   { t: "mutation", n, u, v?, tbl? }      a module mutation; v pre-sets its sub-table result
  *   { t: "armour", n, ap, q?, f? }         natural armour item on the affected locations
  *   { t: "bump", n, d }                    +d damage to a trait the actor already has
@@ -372,15 +373,22 @@ async function applySkill(e, st) {
     return st.log.push(L("Advanced", { name: have.name, n: adv }));
   }
   let doc = null;
-  try { doc = await game.wfrp4e.utility.findSkill(e.n); } catch { doc = null; }
+  // A skill from another module (u, e.g. Winds of Magic): only when that module is active.
+  const modActive = !e.mod || !!game.modules.get(e.mod)?.active;
+  if (e.u && modActive) { try { doc = await fromUuid(e.u); } catch { doc = null; } if (doc && doc.type !== "skill") doc = null; }
+  if (!doc) { try { doc = await game.wfrp4e.utility.findSkill(e.n); } catch { doc = null; } }
+  const modTitle = e.mod ? (game.modules.get(e.mod)?.title ?? e.mod) : "";
+  const stubText = e.mod && !modActive ? L("SkillStubModule", { name: e.n, module: modTitle, ref: e.ref ?? "" }) : L("SkillStub", { name: e.n, ref: e.ref ?? "" });
   const data = doc ? itemData(doc) : {
     name: e.n, type: "skill", img: "systems/wfrp4e/icons/blank.png",
     system: { characteristic: { value: e.c ?? "int" }, advanced: { value: "adv" }, grouped: { value: "noSpec" },
-      description: { value: `<p>${esc(L("SkillStub", { name: e.n, ref: e.ref ?? "" }))}</p>` } }
+      description: { value: `<p>${esc(stubText)}</p>` } },
+    flags: { [MODULE_ID]: { stubFor: e.u ?? null } }
   };
   data.name = e.n;
   foundry.utils.setProperty(data, "system.advances.value", adv);
-  if (!doc) st.notes.push(L("SkillStubNote", { name: e.n, ref: e.ref ?? "" }));
+  if (!doc) st.notes.push(e.mod && !modActive ? L("SkillStubModuleNote", { name: e.n, module: modTitle, ref: e.ref ?? "", char: game.i18n.localize(game.wfrp4e.config.characteristics?.[e.c] ?? e.c) })
+    : L("SkillStubNote", { name: e.n, ref: e.ref ?? "" }));
   st.create.push(data);
 }
 

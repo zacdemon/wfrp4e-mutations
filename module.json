@@ -30,6 +30,11 @@
         "id": "lib-wrapper",
         "type": "module",
         "reason": "Wraps the system's mutation test and table roll cleanly; the module falls back to patching without it."
+      },
+      {
+        "id": "wfrp4e-wom",
+        "type": "module",
+        "reason": "Oracle and Scrying Touch grant the Augury and Psychometry skills from Winds of Magic; without it they get placeholder skills."
       }
     ]
   },
