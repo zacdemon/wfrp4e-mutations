@@ -78,7 +78,12 @@
                     "options": {
                       "hideScript": "return !([game.i18n.localize(\"NAME.Climb\")].some(n => args.skill?.name?.startsWith(n)));",
                       "activateScript": "return [game.i18n.localize(\"NAME.Climb\")].some(n => args.skill?.name?.startsWith(n));",
-                      "submissionScript": ""
+                      "submissionScript": "",
+                      "dialog": {
+                        "hideScript": "return !([game.i18n.localize(\"NAME.Climb\")].some(n => args.skill?.name?.startsWith(n)));",
+                        "activateScript": "return [game.i18n.localize(\"NAME.Climb\")].some(n => args.skill?.name?.startsWith(n));",
+                        "submissionScript": ""
+                      }
                     }
                   }
                 },
@@ -91,7 +96,12 @@
                     "options": {
                       "hideScript": "return !([game.i18n.localize(\"NAME.Athletics\")].some(n => args.skill?.name?.startsWith(n)));",
                       "activateScript": "",
-                      "submissionScript": ""
+                      "submissionScript": "",
+                      "dialog": {
+                        "hideScript": "return !([game.i18n.localize(\"NAME.Athletics\")].some(n => args.skill?.name?.startsWith(n)));",
+                        "activateScript": "",
+                        "submissionScript": ""
+                      }
                     }
                   }
                 },

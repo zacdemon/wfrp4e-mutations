@@ -58,7 +58,7 @@
           {
             "label": "Savagery: +10 to Critical Wounds from damage you deal (Up in Arms Criticals)",
             "trigger": "applyDamage",
-            "script": "args.critModifier = (Number(args.critModifier) || 0) + 10;",
+            "script": "/*amut-crit {\"side\":\"dealt\",\"n\":10} */",
             "options": {}
           },
           {

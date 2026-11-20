@@ -27,8 +27,9 @@
  *        n name, u wfrp4e-core UUID (falls back to a name search), s specialisation (talent/psych:
  *        "Name (s)"; trait: specification), ask = prompt text for the specialisation, opts =
  *        suggestions, x = how many copies (Talent levels)
- *   trait extras: d damage bonus (attack traits: system.attack.damage.value), l name label
- *        "Name (l)", q [qualities], off true = add disabled (toggle on when the ability is used),
+ *   trait extras: d damage bonus (the +X over the bonus characteristic; stored in
+ *        system.specification.value, as wfrp4e 10.1.x does), l name label "Name (l)" (replaces a
+ *        "#" in the name, e.g. "# Tentacles" -> "2 Tentacles"), set { path: value } overrides, q [qualities], off true = add disabled (toggle on when the ability is used),
  *        max true = one rating only; a higher rating replaces a lower one
  *   { t: "skill", n, adv }                 adv number or dice formula; adds advances or the skill
  *   { t: "mutation", n, u, v?, tbl? }      a module mutation; v pre-sets its sub-table result
@@ -53,7 +54,7 @@
  * Fixed modifiers are not entries: tools/modifiers.mjs writes them straight into the effect.
  */
 import { activateOracle, endOracle, activateLunacy, longArmsReach } from "./mutation-powers.mjs";
-import { MODULE_ID as MID, STATUS, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData } from "./modifier-scripts.mjs";
+import { MODULE_ID as MID, STATUS, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData, critHookModifier } from "./modifier-scripts.mjs";
 
 const MODULE_ID = MID;
 const PACK_ITEMS = `${MODULE_ID}.items`;
@@ -75,6 +76,7 @@ Hooks.once("init", () => {
   });
   const mod = game.modules.get(MODULE_ID);
   mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach });
+  Hooks.on("wfrp4e:rollTable", critHookModifier);   // wound-Critical modifiers (see modifier-scripts.mjs)
 });
 
 /* -------------------------------------------- */
@@ -316,17 +318,24 @@ async function applyNamed(e, st) {
   for (let i = 0; i < (e.x ?? 1); i++) st.create.push(foundry.utils.deepClone(data));
 }
 
+// Core placeholder names: "Horns (Feature)", "Tongue Attack (Range)", "Hatred (Target)"...
+const PLACEHOLDER = /\s*\((Feature|Target|Range|Rating)\)$/;
+
 async function applyTrait(e, st) {
   const doc = await resolve(e);
   if (!doc) return st.notes.push(L("NotFound", { name: e.n, type: e.t }));
   const data = itemData(doc);
   const spec = await specFor(e, st);
-  if (e.l) data.name = `${baseName(doc.name)} (${e.l})`;
+  if (e.l) data.name = doc.name.includes("#") ? doc.name.replace("#", e.l) : `${baseName(doc.name)} (${e.l})`;
+  else if (PLACEHOLDER.test(doc.name)) data.name = baseName(doc.name);   // "Horns (Feature)" -> "Horns"
   if (spec) foundry.utils.setProperty(data, "system.specification.value", String(spec));
   if (e.d !== undefined && e.d !== null) {
+    // wfrp4e 10.1.x: damage lives in the specification (+ rollable.bonusCharacteristic). Later
+    // system builds migrate it to system.attack, so honour that shape if a trait has it.
     if (data.system?.attack?.type) data.system.attack.damage.value = Number(e.d);
     else foundry.utils.setProperty(data, "system.specification.value", String(e.d));
   }
+  for (const [path, value] of Object.entries(e.set ?? {})) foundry.utils.setProperty(data, path, value);
   if (e.q?.length) data.system.qualities = { value: [...(data.system.qualities?.value ?? []), ...e.q.map(name => ({ name }))] };
   if (e.off) data.system.disabled = true;
 

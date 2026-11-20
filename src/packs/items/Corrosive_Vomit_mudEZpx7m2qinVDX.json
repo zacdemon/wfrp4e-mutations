@@ -50,7 +50,7 @@
         },
         "scriptData": [
           {
-            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"levels\": [\n    [\n      {\n        \"t\": \"trait\",\n        \"n\": \"Vomit\"\n      }\n    ],\n    [\n      {\n        \"t\": \"bump\",\n        \"n\": \"Vomit\",\n        \"d\": 1\n      }\n    ]\n  ]\n});",
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"levels\": [\n    [\n      {\n        \"t\": \"trait\",\n        \"n\": \"Vomit\",\n        \"u\": \"Compendium.wfrp4e-core.items.Item.JzeN9MZ0xUDvpE2l\"\n      }\n    ],\n    [\n      {\n        \"t\": \"bump\",\n        \"n\": \"Vomit\",\n        \"d\": 1\n      }\n    ]\n  ]\n});",
             "label": "Add granted Talents, Traits and items",
             "trigger": "addItems",
             "options": {},
@@ -168,7 +168,12 @@
             "options": {
               "hideScript": "return !([game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n)));",
               "activateScript": "return [game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n));",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n)));",
+                "activateScript": "return [game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n));",
+                "submissionScript": ""
+              }
             }
           }
         ],

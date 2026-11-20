@@ -74,15 +74,15 @@ export function dialogScriptData(label, mod, when = {}, active = false, { target
   if (mod.slFrom) body.push(`args.fields.slBonus += Number(this.actor.system.characteristics.${mod.slFrom}.bonus) || 0;`);
   if (mod.expr) body.push(mod.expr);
   const activate = typeof active === "string" ? `return (${cond}) && (${active});` : active ? `return ${cond};` : "";
-  return {
-    label, trigger: "dialog", script: body.join("\n"),
-    options: {
-      ...(targeter ? { targeter: true } : {}),
-      hideScript: conds.length && !when.any ? `return !(${cond});` : "",
-      activateScript: activate,
-      submissionScript: ""
-    }
+  // Same option shape as core's own dialog scripts (e.g. Magic Resistance): flat options, which
+  // warhammer-lib reads, plus the nested "dialog" copy the wfrp4e 10.x script editor writes.
+  const dialog = {
+    ...(targeter ? { targeter: true } : {}),
+    hideScript: conds.length && !when.any ? `return !(${cond});` : "",
+    activateScript: activate,
+    submissionScript: ""
   };
+  return { label, trigger: "dialog", script: body.join("\n"), options: { ...dialog, dialog: { ...dialog } } };
 }
 
 /** A "<Mutation> (Modifiers)" effect for a mutation item that has none yet (runtime fallback). */
@@ -156,8 +156,10 @@ export const regenerationButton = () => ({
  * Critical modifiers.
  * Attack-roll Criticals (doubles that hit): rollTest runs after the system has built the Critical
  * link (result.tables.critical), so both the stored modifier and the link are raised (like core's
- * head +40 scripts). Wound Criticals: the system adds args.critModifier from applyDamage (attacker)
- * and takeDamage (target) scripts to the link only with the "Up in Arms" Criticals setting on.
+ * head +40 scripts). Wound Criticals ("Up in Arms" Criticals setting): wfrp4e 10.1.2 builds the
+ * Critical link in applyDamage after the scripts ran and does not read a modifier back from them,
+ * so these entries only carry a marker; the module's "wfrp4e:rollTable" hook (critHookModifier)
+ * adds them when the link of that opposed test is clicked (attacker: dealt, defender: taken).
  */
 export const critRollScriptData = (label, n) => ({
   label, trigger: "rollTest",
@@ -169,10 +171,41 @@ if (r.tables?.critical && !r.tables.critical.nulled) {
 }`,
   options: {}
 });
-export const critDealtScriptData = (label, n) => ({ label, trigger: "applyDamage", script: `args.critModifier = (Number(args.critModifier) || 0) + ${Number(n)};`, options: {} });
-export const critTakenScriptData = (label, n, loc) => ({
-  label, trigger: "takeDamage",
-  script: `if (${loc ? `args.loc == ${JSON.stringify(loc)}` : "true"}) args.critModifier = (Number(args.critModifier) || 0) + ${Number(n)};`,
-  options: {}
-});
+export const CRIT_MARK = "/*amut-crit ";
+const critMark = (o) => `${CRIT_MARK}${JSON.stringify(o)} */`;
+export const critDealtScriptData = (label, n) => ({ label, trigger: "applyDamage", script: critMark({ side: "dealt", n: Number(n) }), options: {} });
+export const critTakenScriptData = (label, n, loc) => ({ label, trigger: "takeDamage", script: critMark({ side: "taken", n: Number(n), ...(loc ? { loc } : {}) }), options: {} });
+
+/** Sum of an actor's active wound-Critical markers for one side ("dealt"/"taken") and location. */
+export function critMarkTotal(actor, side, loc) {
+  let total = 0;
+  const effects = typeof actor?.allApplicableEffects === "function" ? [...actor.allApplicableEffects()] : [];
+  for (const e of effects) {
+    if (e.disabled || e.isSuppressed) continue;
+    for (const s of e.system?.scriptData ?? []) {
+      const src = String(s.script ?? "");
+      if (!src.startsWith(CRIT_MARK)) continue;
+      let o; try { o = JSON.parse(src.slice(CRIT_MARK.length, src.lastIndexOf("*/"))); } catch { continue; }
+      if (o.side === side && (!o.loc || o.loc === loc)) total += Number(o.n) || 0;
+    }
+  }
+  return total;
+}
+
+/**
+ * "wfrp4e:rollTable" hook (synchronous, before the roll; options are passed on by reference).
+ * Only Critical tables rolled from an opposed-test message (where damage was applied), only with
+ * the Up in Arms Criticals setting, and once per roll.
+ */
+export function critHookModifier({ tableKey, options } = {}) {
+  if (!options || options._amutCrit || !game.settings.get("wfrp4e", "uiaCrits")) return;
+  const m = /^crit(.+)$/.exec(String(tableKey ?? ""));
+  if (!m) return;
+  const ot = game.messages.get(options.messageId)?.system?.opposedTest;
+  if (!ot) return;
+  const loc = m[1];
+  const n = critMarkTotal(ot.attackerTest?.actor, "dealt", loc) + critMarkTotal(ot.defenderTest?.actor, "taken", loc);
+  options._amutCrit = true;
+  if (n) options.modifier = (Number(options.modifier) || 0) + n;
+}
 

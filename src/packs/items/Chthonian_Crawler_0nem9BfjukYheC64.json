@@ -168,7 +168,12 @@
             "options": {
               "hideScript": "return !(!!args.weapon?.system?.isMelee);",
               "activateScript": "return !!args.weapon?.system?.isMelee;",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !(!!args.weapon?.system?.isMelee);",
+                "activateScript": "return !!args.weapon?.system?.isMelee;",
+                "submissionScript": ""
+              }
             }
           }
         ],

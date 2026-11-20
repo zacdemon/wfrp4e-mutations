@@ -168,7 +168,12 @@
             "options": {
               "hideScript": "return !([\"fel\"].includes(args.characteristic));",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([\"fel\"].includes(args.characteristic));",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           },
           {
@@ -178,7 +183,12 @@
             "options": {
               "hideScript": "",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           }
         ],

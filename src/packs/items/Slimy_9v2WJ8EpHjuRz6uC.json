@@ -168,7 +168,12 @@
             "options": {
               "hideScript": "return !([\"s\"].includes(args.characteristic));",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([\"s\"].includes(args.characteristic));",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           },
           {

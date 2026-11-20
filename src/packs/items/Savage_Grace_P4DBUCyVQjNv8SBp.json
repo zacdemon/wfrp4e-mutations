@@ -168,7 +168,12 @@
             "options": {
               "hideScript": "return !([game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n)));",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n)));",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           }
         ],

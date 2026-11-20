@@ -56,7 +56,12 @@
             "options": {
               "hideScript": "return !([\"wp\"].includes(args.characteristic));",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([\"wp\"].includes(args.characteristic));",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           },
           {
@@ -67,7 +72,13 @@
               "targeter": true,
               "hideScript": "return !([game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n)));",
               "activateScript": "return [game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n));",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "targeter": true,
+                "hideScript": "return !([game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n)));",
+                "activateScript": "return [game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n));",
+                "submissionScript": ""
+              }
             }
           },
           {
@@ -78,7 +89,13 @@
               "targeter": true,
               "hideScript": "return !([\"wp\"].includes(args.characteristic) || args.type == \"cast\");",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "targeter": true,
+                "hideScript": "return !([\"wp\"].includes(args.characteristic) || args.type == \"cast\");",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           },
           {

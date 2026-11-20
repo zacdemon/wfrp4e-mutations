@@ -56,7 +56,12 @@
             "options": {
               "hideScript": "return !([\"fel\"].includes(args.characteristic));",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([\"fel\"].includes(args.characteristic));",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           },
           {
@@ -66,7 +71,12 @@
             "options": {
               "hideScript": "return !([game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n)));",
               "activateScript": "return [game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n));",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n)));",
+                "activateScript": "return [game.i18n.localize(\"NAME.Stealth\")].some(n => args.skill?.name?.startsWith(n));",
+                "submissionScript": ""
+              }
             }
           }
         ],

@@ -44,13 +44,21 @@ const CORE = {
   "Surgery": "NP4EHyyh1yOLbsPU", "Swarm": "E2Es82TvBKa7CoDG", "Tentacles": "4xF7M6ylIiGntekh",
   "Tower of Memories": "V9N0LMnXf1WYseCL", "Tracker": "ClOlztW6hH8rslbp", "Tunnel Rat": "Z91GFaT6FhEwyESU",
   "Undead": "PFTD9gDvRWW9uh5g", "Venom": "gFkRm9wS65qe18Xv", "Wallcrawler": "KII1gWnxIZ8HzmU5",
-  "Weapon": "AtpAudHA4ybXVlWM", "Web": "Bw6tQyzOhcl7aQ46", "Witch!": "qdMbxW09FUoYBzmB"
+  "Weapon": "AtpAudHA4ybXVlWM", "Web": "Bw6tQyzOhcl7aQ46", "Witch!": "qdMbxW09FUoYBzmB",
+  // Checked against the wfrp4e-core 8.0.1 items pack (no handbook link for these):
+  "Luck": "u0CFf3xwiyidD9T5", "Cold Blooded": "mCh1KK9jomwFZcLB", "Tongue Attack (Range)": "xg6z63j6BH5AaqLL",
+  "Ethereal": "tNWrJUOArwfWXsPw", "Petrifying Gaze": "0eEJ280MIC0IbEop", "Tail Attack": "UnJ25lL8aUzem5JO",
+  "Terror": "kJNAY1YRaCy9IgmT", "Vomit": "JzeN9MZ0xUDvpE2l"
 };
+// Psychology items whose name is shared with a Talent or Trait ("Hatred" above is the Talent;
+// the Psychology is "Hatred (Target)").
+const CORE_PSY = { "Hatred": "5hH73j2NgPdsLCZN", "Animosity": "Q2MCUrG2HppMcvN0", "Prejudice": "klCJX0mNpXYH5AIx" };
 const cu = (n) => CORE[n] ? `Compendium.wfrp4e-core.items.Item.${CORE[n]}` : undefined;
+const cuPsy = (n) => CORE_PSY[n] ? `Compendium.wfrp4e-core.items.Item.${CORE_PSY[n]}` : cu(n);
 
 const T = (n, o = {}) => ({ t: "talent", n, u: cu(n), ...o });
 const R = (n, o = {}) => ({ t: "trait", n, u: cu(n), ...o });
-const P = (n, o = {}) => ({ t: "psychology", n, u: cu(n), ...o });
+const P = (n, o = {}) => ({ t: "psychology", n, u: cuPsy(n), ...o });
 const S = (n, adv, o = {}) => ({ t: "skill", n, adv, ...o });
 const M = (n, o = {}) => ({ t: "mutation", n, ...o });           // uuid filled in by tools/grants.mjs
 const A = (n, ap, o = {}) => ({ t: "armour", n, ap, ...o });
@@ -127,7 +135,7 @@ export const GRANTS = {
   "Centauroid": { grants: [R("Stride")] },
   "Chosen One": { grants: [T("Blather")] },
   "Chthonian Crawler": { grants: [M("Dark Vision"), T("Tunnel Rat"), T("Scale Sheer Surfaces")] },
-  "Cold-Blooded": { grants: [R("Cold-blooded"), note("Vulnerability (Cold): double damage from cold (no item; apply by hand).")] },
+  "Cold-Blooded": { grants: [R("Cold Blooded"), note("Vulnerability (Cold): double damage from cold (no item; apply by hand).")] },
   "Consuming Rage": { levels: [[T("Frenzy")], [P("Hatred", { ask: askGroup, opts: GROUPS })]] },
   "Cyclopean Horror": { grants: [roll("1d10", "Eye", [1, 5, half("bs"), "Eyes merge: halve BS"], [6, 10, note("A head-sized eye grows on the body: roll Hit Location for where (custom armour there; 20% of hits there strike the eye with Damaging)."), "Extra eye"])] },
   "Corrosive Vomit": { levels: [[R("Vomit")], [bump("Vomit")]] },
@@ -148,7 +156,7 @@ export const GRANTS = {
     [5, 9, ch("move", 1), "Legs"],
     [10, 10, scr(critTakenScriptData("Elongated Limbs: Critical hits to the Head +20 (Up in Arms Criticals)", 20, "head")), "Neck"]),
     roll("1d10", "Elastic", [1, 8, null, "-"], [9, 10, note("Elastic: retract to hide it, or extend 1-2 yards (about 3 yards reach)."), "Elastic"])] },
-  "Ensnaring Tongue": { grants: [R("Tongue Attack", { d: 0 })] },
+  "Ensnaring Tongue": { grants: [R("Tongue Attack (Range)", { d: 0, l: "TB x2 yards", set: { "system.rollable.bonusCharacteristic": "s" } })] },
   "Ethereal": { grants: [R("Ethereal", { off: true }), note("Ethereal is added switched off: enable it while the power is active.")] },
   "Extra Joints": { grants: [ch("ag", "1d10")] },
   "Eyestalks": { grants: [T("Combat Aware")] },
@@ -167,7 +175,7 @@ export const GRANTS = {
   "Hateful Impulses": { levels: [[P("Animosity", { ask: askGroup, opts: GROUPS })], [P("Hatred", { ask: askGroup, opts: GROUPS }), note("Upgrade: remove the old Animosity by hand if it is the same target.")]] },
   // +1 Fortune the way the Luck Talent gives it (a Luck level, counted by session Fortune resets),
   // plus the point now unless core's Luck already adds it with its own script.
-  "Time Warp": { grants: [T("Luck"), stat("fortune", 1, { unless: "Luck" })] },
+  "Time Warp": { grants: [T("Luck")] },   // exactly core Luck: a Luck Talent item, no Fortune change
   "Hideous Appearance": { grants: [R("Terror", { s: "1", max: true })] },
   "Hollow Bones": { grants: [ch("ag", "1d10"), S("Athletics", "1d10")] },
   "Hopper": { grants: [R("Bounce")] },
@@ -175,7 +183,7 @@ export const GRANTS = {
   "Hunchback": { grants: [ch("ag", "-1d10")] },
   "Horns": { levels: [[R("Horns", { d: 3 })], [bump("Horns")]] },
   "Horrible Stench": { grants: [R("Distracting")] },
-  "Horrid Feeler": { grants: [R("Tentacles", { d: 3 }), T("Acute Sense", { s: "Touch" })] },
+  "Horrid Feeler": { grants: [R("Tentacles", { d: 3, l: "1" }), T("Acute Sense", { s: "Touch" })] },
   "Hubris": { grants: [T("Commanding Presence")] },
   "Hulking Brute": { grants: [T("Hardy")] },
   "Hungering Maw": { grants: [R("Bite", { d: 5 }), R("Hungry")] },
@@ -350,8 +358,8 @@ export const PARTS = {
     legs: [PS("Scales"), choose("Lizard legs (1)", R("Wallcrawler"), T("Strong Swimmer")), choose("Lizard legs (2)", T("Strong Legs"), M("Centauroid"))],
     head: [R("Bite", { d: 3 }), PS("Scales")] },
   "Bestial Body - Mollusks": {
-    arms: [PS("Rubbery"), R("Tentacles", { d: 3 }), ch("dex", -20)], body: [M("Cold-Blooded"), PS("Rubbery"), T("Contortionist"), ch("ag", 10)],
-    legs: [PS("Rubbery"), choose("Mollusk legs", [R("Tentacles", { d: 3 }), ch("move", -2)], M("Blob"))],
+    arms: [PS("Rubbery"), R("Tentacles", { d: 3, l: "2" }), ch("dex", -20)], body: [M("Cold-Blooded"), PS("Rubbery"), T("Contortionist"), ch("ag", 10)],
+    legs: [PS("Rubbery"), choose("Mollusk legs", [R("Tentacles", { d: 3, l: "2" }), ch("move", -2)], M("Blob"))],
     head: [R("Bite", { d: 2, l: "Beak" }), PS("Rubbery"), M("Aquatic Adaptation")] },
   "Bestial Body - Mustelidae": {
     arms: [M("Razor-sharp Claws"), PS("Fur")], body: [T("Contortionist"), ch("ag", 10)],

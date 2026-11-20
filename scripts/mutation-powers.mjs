@@ -119,7 +119,8 @@ export function hasLongArms(actor) {
  * longer, so this re-runs that comparison with the longer Reach before the system applies its own:
  *   - the mutant defends with the same Reach as the attacker: the attacker gets the -10
  *   - the mutant attacks a weapon one step longer: lengths are equal, the system's -10 is offset
- * In-fighting (or the Infighter Talent) ignores weapon length, as in the system.
+ * As in wfrp4e 10.1.2 checkPostModifiers: only the Infighter Talent (attackerTest.result.infighter)
+ * skips the comparison; the In-fighting status works through the weapons it makes Improvised.
  * Called from preOpposedAttacker / preOpposedDefender; runs once per opposed test.
  */
 export function longArmsReach(args, side) {
@@ -129,7 +130,7 @@ export function longArmsReach(args, side) {
   if (atk.weapon?.attackType != "melee" || def.weapon?.attackType != "melee") return;
   const aLong = hasLongArms(atk.actor), dLong = hasLongArms(def.actor);
   if (side === "attacker" && dLong) return;   // the defender's script handles both
-  if (atk.result?.infighter || atk.actor?.statuses?.has("infighting") || def.actor?.statuses?.has("infighting")) return;
+  if (atk.result?.infighter) return;          // the system skips weapon length only for the Infighter Talent
   const a = Number(atk.item?.reachNum) || 0, d = Number(def.item?.reachNum) || 0;
   const systemPenalty = d > a;
   const penalty = d + (dLong ? 1 : 0) > a + (aLong ? 1 : 0);

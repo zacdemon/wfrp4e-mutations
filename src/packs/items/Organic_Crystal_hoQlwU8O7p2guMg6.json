@@ -168,7 +168,12 @@
             "options": {
               "hideScript": "return !([game.i18n.localize(\"NAME.Dodge\")].some(n => args.skill?.name?.startsWith(n)) || [\"wp\"].includes(args.characteristic));",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "hideScript": "return !([game.i18n.localize(\"NAME.Dodge\")].some(n => args.skill?.name?.startsWith(n)) || [\"wp\"].includes(args.characteristic));",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           }
         ],

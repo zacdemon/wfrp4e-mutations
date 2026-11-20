@@ -57,7 +57,13 @@
               "targeter": true,
               "hideScript": "return !([game.i18n.localize(\"NAME.Perception\"), game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n)));",
               "activateScript": "",
-              "submissionScript": ""
+              "submissionScript": "",
+              "dialog": {
+                "targeter": true,
+                "hideScript": "return !([game.i18n.localize(\"NAME.Perception\"), game.i18n.localize(\"NAME.Intuition\")].some(n => args.skill?.name?.startsWith(n)));",
+                "activateScript": "",
+                "submissionScript": ""
+              }
             }
           }
         ],

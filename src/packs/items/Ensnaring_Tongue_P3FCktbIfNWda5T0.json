@@ -50,7 +50,7 @@
         },
         "scriptData": [
           {
-            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"trait\",\n      \"n\": \"Tongue Attack\",\n      \"d\": 0\n    }\n  ]\n});",
+            "script": "const api = game.modules.get(\"artantares-mutations\")?.api;\nif (!api?.grant) return ui.notifications.warn(`${this.item.name}: Antares | Mutant's Handbook is not active, so nothing was added.`);\nawait api.grant(this, {\n  \"grants\": [\n    {\n      \"t\": \"trait\",\n      \"n\": \"Tongue Attack (Range)\",\n      \"u\": \"Compendium.wfrp4e-core.items.Item.xg6z63j6BH5AaqLL\",\n      \"d\": 0,\n      \"l\": \"TB x2 yards\",\n      \"set\": {\n        \"system.rollable.bonusCharacteristic\": \"s\"\n      }\n    }\n  ]\n});",
             "label": "Add granted Talents, Traits and items",
             "trigger": "addItems",
             "options": {},
