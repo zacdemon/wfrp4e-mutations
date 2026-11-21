@@ -134,12 +134,14 @@ export async function revert(ctx) {
     ui.notifications.info(L("Removing", { name: item.name, items: ids.map(id => actor.items.get(id)?.name).join(", ") }));
     await actor.deleteEmbeddedDocuments("Item", ids);
   }
+  // Mutation changes are free: skipExperienceChecks stops the system's "Advancement Cost" XP prompt.
+  const opts = { skipExperienceChecks: true };
   for (const u of [...(item.getFlag(MODULE_ID, "undo") ?? [])].reverse()) {
     const target = u.actor ? actor : actor.items.get(u.id);
     if (!target) continue;
-    if (u.actor) await target.update({ [u.path]: Math.max(0, (Number(foundry.utils.getProperty(target, u.path)) || 0) - u.delta) });
-    else if (u.delta !== undefined) await target.update({ [u.path]: (Number(foundry.utils.getProperty(target, u.path)) || 0) - u.delta });
-    else await target.update({ [u.path]: u.value });
+    if (u.actor) await target.update({ [u.path]: Math.max(0, (Number(foundry.utils.getProperty(target, u.path)) || 0) - u.delta) }, opts);
+    else if (u.delta !== undefined) await target.update({ [u.path]: (Number(foundry.utils.getProperty(target, u.path)) || 0) - u.delta }, opts);
+    else await target.update({ [u.path]: u.value }, opts);
   }
 }
 
@@ -369,7 +371,7 @@ async function applySkill(e, st) {
   if (have) {
     if (!adv) return st.log.push(L("AlreadyHas", { name: have.name }));
     st.undo.push({ id: have.id, path: "system.advances.value", delta: adv });
-    await have.update({ "system.advances.value": (have.system.advances.value ?? 0) + adv });
+    await have.update({ "system.advances.value": (have.system.advances.value ?? 0) + adv }, { skipExperienceChecks: true });   // free advances: no XP prompt
     return st.log.push(L("Advanced", { name: have.name, n: adv }));
   }
   let doc = null;
@@ -502,7 +504,7 @@ async function applyStatus(e, st) {
   // unless: an item this grant adds (e.g. core's Luck Talent) already changes the pool with its own script
   if (e.unless && st.create.some(d => d.name === e.unless && JSON.stringify(d.effects ?? []).includes(`status.${e.k}`))) return;
   const next = Math.max(0, (Number(cur) || 0) + e.v);
-  await st.actor.update({ [path]: next });
+  await st.actor.update({ [path]: next }, { skipExperienceChecks: true });
   st.undo.push({ actor: true, path, delta: next - (Number(cur) || 0) });
   st.log.push(`${poolName(e.k)} ${signed(e.v)} (${cur} > ${next})`);
 }
@@ -525,7 +527,7 @@ export async function adjustStatus(actor, deltas = {}, reason = "") {
     bits.push(`${poolName(k)} ${cur} > ${next}`);
   }
   if (foundry.utils.isEmpty(update)) return { applied };
-  await actor.update(update);
+  await actor.update(update, { skipExperienceChecks: true });
   const message = await ChatMessage.create({ content: `<p><strong>${esc(actor.name)}</strong>: ${esc(bits.join(", "))}${reason ? ` <em>(${esc(reason)})</em>` : ""}</p>`, speaker: ChatMessage.getSpeaker({ actor }) });
   return { applied, message };
 }
