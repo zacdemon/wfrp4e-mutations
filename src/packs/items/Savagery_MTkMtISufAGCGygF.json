@@ -52,7 +52,7 @@
           {
             "label": "Savagery: +10 to Critical Wounds you inflict",
             "trigger": "rollTest",
-            "script": "const r = args.test.result;\nif (r.tables?.critical && !r.tables.critical.nulled) {\n  r.critModifier = (Number(r.critModifier) || 0) + 10;\n  r.tables.critical.modifier = (Number(r.tables.critical.modifier) || 0) + 10;\n  r.tables.critical.label += \" (+10 Savagery)\";\n}",
+            "script": "const r = args.test.result;\nif (r.tables?.critical && !r.tables.critical.nulled) {\n  r.critModifier = (Number(r.critModifier) || 0) + 10;\n  r.tables.critical.modifier = (Number(r.tables.critical.modifier) || 0) + 10;\n  r.tables.critical.label += \" (Savagery)\";   // the system appends the total modifier itself\n}",
             "options": {}
           },
           {

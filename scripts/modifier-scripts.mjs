@@ -167,7 +167,7 @@ export const critRollScriptData = (label, n) => ({
 if (r.tables?.critical && !r.tables.critical.nulled) {
   r.critModifier = (Number(r.critModifier) || 0) + ${Number(n)};
   r.tables.critical.modifier = (Number(r.tables.critical.modifier) || 0) + ${Number(n)};
-  r.tables.critical.label += " (${n >= 0 ? "+" : ""}${Number(n)} ${label.split(":")[0]})";
+  r.tables.critical.label += " (${label.split(":")[0]})";   // the system appends the total modifier itself
 }`,
   options: {}
 });
