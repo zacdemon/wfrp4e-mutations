@@ -126,7 +126,7 @@ for (const f of MODULE.esmodules ?? []) {
   const dynamic = {
     Species: ["human", "dwarf", "elf", "halfling", "gnome", "ogre"], Type: ["physical", "mental"],
     Severity: [...SEVERITIES, "chosen"], God: ["khorne", "nurgle", "slaanesh", "tzeentch"], Source: ["auto", "normal", "necro"],
-    Status: ["applied", "resisted", "discarded", "patron", "retired", "cancelled", "empty"]
+    Status: ["applied", "resisted", "discarded", "patron", "retired", "cancelled", "empty", "avoided"], Reroll: ["fortune", "sl", "reroll"]
   };
   for (const m of code.matchAll(/\bL\(`([\w]+)\.\$\{/g)) for (const v of dynamic[m[1]] ?? ["<unknown prefix>"]) used.add(`AMUT.${prefix}${m[1]}.${v}`);
   for (const k of used) if (!(k in i18n)) errors.push(`${p}: missing localisation key ${k}`);

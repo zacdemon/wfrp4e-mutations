@@ -8,6 +8,14 @@
  *  - game.wfrp4e.tables.formatChatRoll        (keys corruption, mutatephys, mutatemental: /table and @Table links)
  * Both use libWrapper when it is active and fall back to patching otherwise. With the world setting
  * "Use Mutant's Handbook rules" off, both pass straight through to the system.
+ *
+ * Fortune / rerolls
+ *  The first failure stores a flow id in the test's context (test.context.amutFlow, saved with the test
+ *  message in system.testData). Every card the flow posts carries the same id with what it changed
+ *  (Corruption removed, mutation items added, Resilience spent, patron set). When the test is rerolled
+ *  or gets +1 SL (wfrp4e: context.reroll / context.fortuneUsedAddSL, context.previousResult) and now
+ *  passes, revertFlow() undoes those changes (deleting a mutation runs its own revert, so granted
+ *  items cascade) and marks the cards avoided. A result that still fails only adds a note.
  */
 import { MutationMessages } from "./mutation-messages.mjs";
 
@@ -192,13 +200,21 @@ function actorFromContext(options = {}) {
  * @param {string|null} [opts.source] "normal", "necro" or a god key. Null = patron if any, else ask/normal.
  * @param {boolean} [opts.prompt=true] Allow the source dialog.
  */
-export async function runMutationFlow(actor, { applyCorruption = false, type = null, source = null, prompt = true } = {}) {
+export async function runMutationFlow(actor, opts = {}) {
+  const flowId = opts.flowId ?? null;
+  const owned = flowId && !flows.has(flowId);
+  if (owned) flows.set(flowId, { notes: [], cancel: null });
+  try { return await mutationFlow(actor, opts); }
+  finally { if (owned) flows.delete(flowId); }
+}
+
+async function mutationFlow(actor, { applyCorruption = false, type = null, source = null, prompt = true, flowId = null } = {}) {
   if (!actor) return ui.notifications.warn(L("Warn.NoActor"));
   if (applyCorruption && !actor.isOwner) return ui.notifications.warn(L("Warn.NotOwner", { name: actor.name }));
 
   const steps = [];
   const patron = actor.getFlag(MODULE_ID, "patron");
-  const state = { actorUuid: actor.uuid, actorName: actor.name, steps, candidates: [], notes: [], status: "pending" };
+  const state = { actorUuid: actor.uuid, actorName: actor.name, steps, candidates: [], notes: [], status: "pending", flowId, appliedItemIds: [] };
 
   // Chosen of Chaos: the patron's table, no species or severity roll (p74).
   const godSource = GODS.includes(source) ? source : (!source && patron ? patron : null);
@@ -209,7 +225,7 @@ export async function runMutationFlow(actor, { applyCorruption = false, type = n
     if (applyCorruption) {
       // Type is only known once the item is rolled; use the first candidate's type.
       const t = state.candidates[0]?.type;
-      if (t) await loseCorruption(actor, t, steps);
+      if (t) await loseCorruption(actor, t, steps, state);
     }
     return postCard(state, actor, { flavour: godSource });
   }
@@ -234,7 +250,7 @@ export async function runMutationFlow(actor, { applyCorruption = false, type = n
   state.type = mtype;
 
   // 3. Corruption loss: TB physical, WPB mental, kept even if Resilience is spent (p8-9).
-  if (applyCorruption) await loseCorruption(actor, mtype, steps);
+  if (applyCorruption) await loseCorruption(actor, mtype, steps, state);
 
   // 4. Severity (p9).
   const counts = mutationCounts(actor);
@@ -260,9 +276,10 @@ export async function runMutationFlow(actor, { applyCorruption = false, type = n
 
   // 5. Source.
   let src = source;
-  if (!src) src = (prompt && setting("promptSource")) ? await promptSource(actor, mtype, severity) : "normal";
+  if (!src) src = (prompt && setting("promptSource")) ? await promptSource(actor, mtype, severity, flows.get(flowId)) : "normal";
   if (!src) {
-    steps.push({ label: L("Step.Source"), value: L("Step.Cancelled") });
+    // Closed by a reroll that passed (cancelFlowEntry): the card says so; no "Cancelled" step.
+    if (!flows.get(flowId)?.cancel) steps.push({ label: L("Step.Source"), value: L("Step.Cancelled") });
     state.status = "cancelled";
     return postCard(state, actor);
   }
@@ -294,12 +311,13 @@ export async function runMutationFlow(actor, { applyCorruption = false, type = n
   return postCard(state, actor, { flavour: mtype, severity });
 }
 
-async function loseCorruption(actor, type, steps) {
+async function loseCorruption(actor, type, steps, state = null) {
   const bonus = type === "physical" ? actor.system.characteristics.t.bonus : actor.system.characteristics.wp.bonus;
   const current = Number(actor.system.status.corruption.value) || 0;
   const value = Math.max(0, current - bonus);
   // skipCorruption stops the system's corruption check from looping (same as the stock handler).
   await actor.update({ "system.status.corruption.value": value }, { skipCorruption: true });
+  if (state) state.corruption = { from: current, to: value }; // restored exactly if a reroll passes
   steps.push({
     label: L("Step.Corruption"),
     value: L("Step.CorruptionLoss", { bonus, char: type === "physical" ? "TB" : "WPB", from: current, to: value }) + " (p8)"
@@ -369,7 +387,7 @@ function variantFrom(table, result, rollText) {
   };
 }
 
-async function promptSource(actor, type, severity) {
+async function promptSource(actor, type, severity, entry = null) {
   const DialogV2 = foundry.applications.api.DialogV2;
   const content = `<p>${L("Dialog.SourceIntro", { name: esc(actor.name), severity: L(`Severity.${severity}`), type: L(`Type.${type}`) })}</p>
     <div class="form-group"><label>${L("Dialog.Source")}</label>
@@ -378,8 +396,11 @@ async function promptSource(actor, type, severity) {
       <option value="necro">${L("Source.necro")}</option>
       ${GODS.map(g => `<option value="${g}">${L(`God.${g}`)}</option>`).join("")}
     </select></div>`;
+  if (entry?.cancel) return null;
   return DialogV2.wait({
     window: { title: L("Dialog.SourceTitle") }, content, rejectClose: false,
+    // Kept so a Fortune reroll that passes can close it (cancelFlowEntry).
+    render: (event, dialog) => { if (entry) entry.dialog = dialog ?? event?.target; },
     buttons: [
       { action: "ok", label: L("Dialog.Roll"), default: true, callback: (event, button) => button.form.elements.source.value },
       { action: "cancel", label: L("Dialog.Cancel"), callback: () => null }
@@ -425,7 +446,8 @@ async function renderCardHTML(state) {
         <button type="button" data-amut-action="discard">${L("Card.Discard")}</button></div>`;
   }
   const notes = state.notes.length ? `<ul>${state.notes.map(n => `<li><em>${esc(n)}</em></li>`).join("")}</ul>` : "";
-  const status = state.status !== "pending" ? `<p class="amut-status"><strong>${esc(state.statusText ?? L(`Status.${state.status}`))}</strong></p>` : "";
+  let status = state.status !== "pending" ? `<p class="amut-status"><strong>${esc(state.statusText ?? L(`Status.${state.status}`))}</strong></p>` : "";
+  if (state.revertLog?.length) status += `<ul class="amut-revert">${state.revertLog.map(n => `<li>${esc(n)}</li>`).join("")}</ul>`;
   const html = `<div class="amut-card">
     <h3>${L("Card.Title")}</h3>
     ${state.flavour ? `<p><em>${esc(state.flavour)}</em></p>` : ""}
@@ -439,11 +461,18 @@ async function postCard(state, actor, { flavour, severity } = {}) {
   state.kind ??= "result";
   if (state.kind === "result" && !state.candidates.length && state.status === "pending") state.status = "empty";
   state.flavour = flavour ? flavourLine(flavour, severity) : "";
+  // The test was rerolled while this flow was still running (e.g. the source dialog was open).
+  const entry = state.flowId ? flows.get(state.flowId) : null;
+  if (entry?.notes.length) state.notes.push(...entry.notes.splice(0));
+  if (entry?.cancel) await undoState(state, actor, entry.cancel);
   const content = await renderCardHTML(state);
   const chatData = game.wfrp4e.utility.chatDataSetup(content);
   chatData.speaker = ChatMessage.getSpeaker({ actor });
   chatData.flags = { [MODULE_ID]: { [TEMPLATE_FLAG]: state } };
-  return ChatMessage.create(chatData);
+  const message = await ChatMessage.create(chatData);
+  // Rerolled while the card was being created.
+  if (entry?.cancel && state.status !== "avoided") await requestRevert(state.flowId, entry.cancel);
+  return message;
 }
 
 async function updateCard(message, state) {
@@ -477,7 +506,7 @@ async function onCardAction(message, action, dataset) {
     // Created by the clicking user, so the grant scripts (onCreate) and their choice dialogs run for them.
     const item = await applyCandidate(actor, cand, state);
     if (!item) return;
-    await markCard(message, state, { status: "applied", name: item.name });
+    await markCard(message, state, { status: "applied", name: item.name, itemId: item.id });
     await checkSpawn(actor);
     return;
   }
@@ -491,12 +520,14 @@ async function onCardAction(message, action, dataset) {
   else if (action === "patron") {
     const god = dataset.god;
     if (!GODS.includes(god)) return;
+    const previous = actor.getFlag(MODULE_ID, "patron") ?? null;
     await actor.setFlag(MODULE_ID, "patron", god);
+    state.patronSet = { god, previous };
     state.status = "patron";
     state.statusText = L("Status.patronSet", { god: L(`God.${god}`) });
     await updateCard(message, state);
     // Roll the patron's table for this mutation; it goes through the normal confirm / Resilience card.
-    await runMutationFlow(actor, { source: god, prompt: false });
+    await runMutationFlow(actor, { source: god, prompt: false, flowId: state.flowId ?? null });
   }
   else if (action === "retire") {
     state.status = "retired";
@@ -505,14 +536,15 @@ async function onCardAction(message, action, dataset) {
 }
 
 /** Mark the card resolved: directly if this user may edit the message, otherwise through the active GM. */
-async function markCard(message, state, { status, name }) {
+async function markCard(message, state, { status, name, itemId }) {
   if (message.canUserModify(game.user, "update")) {
     state.status = status;
     state.statusText = L("Status.appliedName", { name, user: game.user.name });
+    if (itemId) state.appliedItemIds = [...(state.appliedItemIds ?? []), itemId];
     return updateCard(message, state);
   }
   if (!game.users.activeGM) return ui.notifications.warn(L("Warn.NoGMCard"));
-  game.socket.emit(SOCKET, { action: "applied", messageId: message.id, userId: game.user.id, name });
+  game.socket.emit(SOCKET, { action: "applied", messageId: message.id, userId: game.user.id, name, itemId });
 }
 
 async function resist(message, state, actor, user) {
@@ -522,6 +554,7 @@ async function resist(message, state, actor, user) {
     return;
   }
   await actor.update({ "system.status.resilience.value": value - 1 });
+  state.resilienceSpent = 1;
   state.status = "resisted";
   state.statusText = L("Status.resistedBy", { name: actor.name, from: value, to: value - 1 });
   await updateCard(message, state);
@@ -642,19 +675,156 @@ export async function openGenerateDialog() {
 /* -------------------------------------------- */
 
 function handleMutationResultWrapper(wrapped, ...args) {
-  if (!setting("useHandbook") || !this.failed) return wrapped(...args);
-  if (this.context?.reroll || this.context?.fortuneUsedAddSL) {
-    // The first (failed) roll already ran the flow; don't run it twice on a reroll / +SL.
-    ChatMessage.create({
-      content: `<p>${L("Warn.Rerolled", { name: esc(this.actor?.name) })}</p>`,
-      whisper: ChatMessage.getWhisperRecipients("GM").map(u => u.id)
-    });
+  if (!setting("useHandbook")) return wrapped(...args);
+  const ctx = this.context ?? {};
+  const again = !!(ctx.reroll || ctx.fortuneUsedAddSL);
+  const prevFailed = again && ctx.previousResult?.outcome === "failure";
+  const flowId = ctx.amutFlow ?? null;
+  const info = rerollInfo(this);
+
+  if (!this.failed) {
+    // Rerolled / +1 SL and now passed: undo the first roll's mutation flow.
+    if (prevFailed && flowId) requestRevert(flowId, info).catch(err => console.error(`${MODULE_ID} |`, err));
+    else if (prevFailed) legacyRerollWarning(this);
+    return wrapped(...args);
+  }
+  if (prevFailed) {
+    // Still failed: the first flow stands; never run it twice.
+    if (flowId) addFlowNote(flowId, L("Note.StillFailed", info)).catch(err => console.error(`${MODULE_ID} |`, err));
+    else legacyRerollWarning(this);
     return;
   }
+  // First failure (or a reroll turned a pass into a failure): run the flow, linked to this test.
   const actor = this.actor;
+  const id = foundry.utils.randomID();
+  ctx.amutFlow = id; // saved with the test message (system.testData.context), carried over to rerolls
   // Don't hold up the test card while dialogs are open.
-  Promise.resolve().then(() => runMutationFlow(actor, { applyCorruption: true }))
+  Promise.resolve().then(() => runMutationFlow(actor, { applyCorruption: true, flowId: id }))
     .catch(err => { console.error(`${MODULE_ID} |`, err); ui.notifications.error(err.message); });
+}
+
+/** Tests rolled before flows were linked to them: tell the GM to sort it out by hand. */
+function legacyRerollWarning(test) {
+  ChatMessage.create({
+    content: `<p>${L("Warn.Rerolled", { name: esc(test.actor?.name) })}</p>`,
+    whisper: ChatMessage.getWhisperRecipients("GM").map(u => u.id)
+  });
+}
+
+function rerollInfo(test) {
+  const ctx = test.context ?? {};
+  const kind = ctx.reroll ? (ctx.fortuneUsedReroll ? "fortune" : "reroll") : "sl";
+  const r = test.result ?? {};
+  return {
+    kind, how: L(`Reroll.${kind}`), name: test.actor?.name ?? "",
+    roll: r.roll ?? "?", target: r.target ?? "?", sl: r.SL ?? "?"
+  };
+}
+
+/* -------------------------------------------- */
+/*  Reroll / Fortune: undo or annotate a flow   */
+/* -------------------------------------------- */
+
+// Flows still running on this client (dialogs open, card not posted yet), by flow id.
+const flows = new Map();
+const reverting = new Set();
+
+/** Cancel a flow that is still running here: close its open dialog; postCard() posts it as avoided. */
+function cancelFlowEntry(entry, info) {
+  entry.cancel = info ?? { kind: "fortune" };
+  entry.dialog?.close?.().catch?.(() => {});
+}
+
+const flowCards = (flowId) => game.messages.filter(m => m.getFlag(MODULE_ID, TEMPLATE_FLAG)?.flowId === flowId);
+
+/** Undo a flow here if this user may, otherwise ask the active GM. Pending flows are cancelled. */
+async function requestRevert(flowId, info) {
+  const cards = flowCards(flowId);
+  if (!cards.length) {
+    // The flow hasn't posted its card yet: cancel it where it runs.
+    const entry = flows.get(flowId);
+    if (entry) cancelFlowEntry(entry, info);
+    else game.socket.emit(SOCKET, { action: "flowCancel", flowId, info, userId: game.user.id });
+    return;
+  }
+  const actor = await fromUuid(cards[0].getFlag(MODULE_ID, TEMPLATE_FLAG).actorUuid);
+  if (actor?.isOwner && cards.every(m => m.canUserModify(game.user, "update"))) return revertFlow(flowId, info);
+  if (!game.users.activeGM) return ui.notifications.warn(L("Warn.NoGMRevert"));
+  game.socket.emit(SOCKET, { action: "flowRevert", flowId, info, userId: game.user.id });
+}
+
+/** Undo everything a flow did and mark its cards "Avoided with Fortune". */
+export async function revertFlow(flowId, info) {
+  if (reverting.has(flowId)) return;
+  reverting.add(flowId);
+  try {
+    for (const message of flowCards(flowId)) {
+      const state = foundry.utils.deepClone(message.getFlag(MODULE_ID, TEMPLATE_FLAG));
+      if (state.status === "avoided") continue;
+      const actor = await fromUuid(state.actorUuid);
+      if (!actor) continue;
+      await undoState(state, actor, info);
+      await updateCard(message, state);
+    }
+  }
+  finally { reverting.delete(flowId); }
+}
+
+/** Undo one card's changes on the actor and set its status; the caller saves or posts the card. */
+async function undoState(state, actor, info) {
+  const log = [];
+  const ids = (state.appliedItemIds ?? []).filter(id => actor.items.has(id));
+  if (ids.length) {
+    const names = ids.map(id => actor.items.get(id).name);
+    // Deleting the mutation runs its deleteEffect script (mutation-grants revert): granted items and changes go too.
+    await actor.deleteEmbeddedDocuments("Item", ids);
+    log.push(L("Revert.Removed", { items: names.join(", ") }));
+  }
+  else if (state.status === "applied") log.push(L("Revert.Untracked"));
+  if (state.resilienceSpent) {
+    const from = Number(actor.system.status?.resilience?.value) || 0;
+    await actor.update({ "system.status.resilience.value": from + state.resilienceSpent });
+    log.push(L("Revert.Resilience", { from, to: from + state.resilienceSpent }));
+  }
+  if (state.patronSet && actor.getFlag(MODULE_ID, "patron") === state.patronSet.god) {
+    if (state.patronSet.previous) await actor.setFlag(MODULE_ID, "patron", state.patronSet.previous);
+    else await actor.unsetFlag(MODULE_ID, "patron");
+    log.push(L("Revert.Patron", { god: L(`God.${state.patronSet.god}`) }));
+  }
+  if (state.corruption) {
+    const lost = Math.max(0, state.corruption.from - state.corruption.to);
+    const from = Number(actor.system.status.corruption.value) || 0;
+    // skipCorruption: restoring it above the maximum must not start another Dissolution test.
+    if (lost) await actor.update({ "system.status.corruption.value": from + lost }, { skipCorruption: true });
+    log.push(L("Revert.Corruption", { n: lost, from, to: from + lost }));
+  }
+  state.previousStatus = state.status;
+  state.status = "avoided";
+  state.statusText = L(info?.kind === "reroll" ? "Status.avoidedReroll" : "Status.avoided");
+  state.revertLog = [L("Revert.Passed", info ?? {}), ...log];
+}
+
+/** "Still failed" note on the flow's cards (or on the card it is about to post). */
+async function addFlowNote(flowId, note) {
+  const entry = flows.get(flowId);
+  if (entry) { entry.notes.push(note); return; }
+  const cards = flowCards(flowId);
+  if (!cards.length) return game.socket.emit(SOCKET, { action: "flowNote", flowId, note, userId: game.user.id });
+  for (const message of cards) {
+    if (!message.canUserModify(game.user, "update")) {
+      if (game.users.activeGM) game.socket.emit(SOCKET, { action: "flowNote", flowId, note, userId: game.user.id });
+      return;
+    }
+  }
+  return noteCards(cards, note);
+}
+
+async function noteCards(cards, note) {
+  for (const message of cards) {
+    const state = foundry.utils.deepClone(message.getFlag(MODULE_ID, TEMPLATE_FLAG));
+    state.notes = [...(state.notes ?? []), note];
+    await updateCard(message, state);
+  }
 }
 
 async function formatChatRollWrapper(wrapped, table, options = {}, column = null, ...rest) {
@@ -693,7 +863,7 @@ Hooks.once("setup", () => {
     };
   }
 
-  const api = { runMutationFlow, openGenerateDialog, mutationCounts, checkSpawn, findTable, speciesKey };
+  const api = { runMutationFlow, revertFlow, openGenerateDialog, mutationCounts, checkSpawn, findTable, speciesKey };
   const mod = game.modules.get(MODULE_ID);
   mod.api = Object.assign(mod.api ?? {}, api); // mutation-grants.mjs adds grant/revert at init
   // Back-compat with the old world-script entry point (actor, "all"|"necromancy"|god).
@@ -704,17 +874,37 @@ Hooks.once("setup", () => {
 
 Hooks.once("ready", () => {
   game.socket.on(SOCKET, async (data) => {
-    if (!["resist", "applied"].includes(data?.action) || !game.users.activeGM?.isSelf) return;
+    const user = game.users.get(data?.userId);
+    if (!user) return;
+    // Flow still running on this client: every client checks, whoever runs it acts.
+    if (["flowCancel", "flowNote"].includes(data.action)) {
+      const entry = flows.get(data.flowId);
+      if (entry) {
+        if (data.action === "flowCancel") cancelFlowEntry(entry, data.info);
+        else entry.notes.push(String(data.note ?? ""));
+        return;
+      }
+    }
+    if (!game.users.activeGM?.isSelf) return;
+    if (["flowRevert", "flowNote"].includes(data.action)) {
+      const cards = flowCards(data.flowId);
+      if (!cards.length) return;
+      const actor = await fromUuid(cards[0].getFlag(MODULE_ID, TEMPLATE_FLAG).actorUuid);
+      if (!actor?.testUserPermission(user, "OWNER")) return;
+      if (data.action === "flowRevert") return revertFlow(data.flowId, data.info);
+      return noteCards(cards, String(data.note ?? ""));
+    }
+    if (!["resist", "applied"].includes(data.action)) return;
     const message = game.messages.get(data.messageId);
-    const user = game.users.get(data.userId);
     const state = foundry.utils.deepClone(message?.getFlag(MODULE_ID, TEMPLATE_FLAG));
-    if (!state || state.status !== "pending" || !user) return;
+    if (!state || state.status !== "pending") return;
     const actor = await fromUuid(state.actorUuid);
     if (!actor?.testUserPermission(user, "OWNER")) return;
     if (data.action === "resist") return resist(message, state, actor, user);
     // A player added the mutation to their own actor; the GM marks the card (the player cannot edit it).
     state.status = "applied";
     state.statusText = L("Status.appliedName", { name: String(data.name ?? ""), user: user.name });
+    if (data.itemId && actor.items.has(data.itemId)) state.appliedItemIds = [...(state.appliedItemIds ?? []), data.itemId];
     await updateCard(message, state);
   });
 });
