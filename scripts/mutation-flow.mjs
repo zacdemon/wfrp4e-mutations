@@ -855,7 +855,15 @@ Hooks.once("setup", () => {
 
   const tables = game.wfrp4e?.tables;
   if (!tables?.formatChatRoll) console.warn(`${MODULE_ID} | game.wfrp4e.tables.formatChatRoll not found; table hook disabled.`);
-  else if (useLib) globalThis.libWrapper.register(MODULE_ID, "game.wfrp4e.tables.formatChatRoll", formatChatRollWrapper, "MIXED");
+  else if (useLib) {
+    globalThis.libWrapper.register(MODULE_ID, "game.wfrp4e.tables.formatChatRoll", formatChatRollWrapper, "MIXED");
+    // For its own keys (corruption, mutatephys, mutatemental) this wrapper runs the handbook flow
+    // in place of the table roll, so it doesn't call the next wrapper. libWrapper reports that as a
+    // possible conflict with every module wrapped below it. The sibling modules below only act on
+    // other keys (crit*, miscast tables), so it isn't one; tell libWrapper not to warn about them.
+    // Any other module wrapping this function is still reported.
+    globalThis.libWrapper.ignore_conflicts?.(MODULE_ID, ["artantares-advanced-criticals", "wfrp4e-automated-miscasts"], "game.wfrp4e.tables.formatChatRoll");
+  }
   else {
     originalFormatChatRoll = tables.formatChatRoll;
     tables.formatChatRoll = function (...args) {
