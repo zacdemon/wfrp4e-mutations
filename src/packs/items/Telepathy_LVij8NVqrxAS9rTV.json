@@ -63,6 +63,14 @@
                 "submissionScript": ""
               }
             }
+          },
+          {
+            "label": "Activate Telepathy",
+            "trigger": "manual",
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.activatePower(this.actor, this.item, \"telepathy\");",
+            "options": {
+              "hideScript": "return this.actor?.items?.find(i => i.type === \"mutation\" && i.name === this.item?.name)?.id !== this.item?.id;"
+            }
           }
         ],
         "zone": {

@@ -63,6 +63,14 @@
                 "submissionScript": ""
               }
             }
+          },
+          {
+            "label": "Suppress Chameleon Skin (Cool Test)",
+            "trigger": "manual",
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.activatePower(this.actor, this.item, \"chameleonSkin\");",
+            "options": {
+              "hideScript": "return this.actor?.items?.find(i => i.type === \"mutation\" && i.name === this.item?.name)?.id !== this.item?.id;"
+            }
           }
         ],
         "zone": {

@@ -55,6 +55,7 @@
  * Fixed modifiers are not entries: tools/modifiers.mjs writes them straight into the effect.
  */
 import { activateOracle, endOracle, activateLunacy, longArmsReach } from "./mutation-powers.mjs";
+import { activatePower, endPower, resetPower } from "./mutation-activations.mjs";
 import { MODULE_ID as MID, STATUS, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData, critHookModifier } from "./modifier-scripts.mjs";
 
 const MODULE_ID = MID;
@@ -76,7 +77,7 @@ Hooks.once("init", () => {
     scope: "world", config: true, type: Boolean, default: true
   });
   const mod = game.modules.get(MODULE_ID);
-  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach });
+  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach, activatePower, endPower, resetPower });
   Hooks.on("wfrp4e:rollTable", critHookModifier);   // wound-Critical modifiers (see modifier-scripts.mjs)
 });
 

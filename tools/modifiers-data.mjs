@@ -1,4 +1,4 @@
-import { powerItemButtons, oracleButton, oracleEndButton, lunacyButton, regenerationButton, critRollScriptData, critDealtScriptData } from "../scripts/modifier-scripts.mjs";
+import { powerItemButtons, oracleButton, oracleEndButton, lunacyButton, regenerationButton, critRollScriptData, critDealtScriptData, POWER_BUTTONS, powerButton, powerRestButton } from "../scripts/modifier-scripts.mjs";
 
 /**
  * Fixed modifiers for the Mutant's Handbook items. `node tools/modifiers.mjs` writes them into
@@ -140,6 +140,12 @@ export const MODS = {
   "Vestigial Twin": [c("ag", -10)]
 };
 
+// Test-activated powers: an "Activate X" button on the mutation's Modifiers effect (first copy only).
+for (const [key, [name]] of Object.entries(POWER_BUTTONS)) {
+  MODS[name] = [...(MODS[name] ?? []), script(powerButton(key))];
+  if (key === "dimensionalInstability") MODS[name].push(script(powerRestButton(key)));
+}
+
 // Mutations with modifiers in the text that are left to the GM, and why (shown in the README).
 export const MANUAL = {
   "Atrophy": "what a withered part costs depends on the part (GM call)",
@@ -153,10 +159,10 @@ export const MANUAL = {
   "Magic Numbers": "Initiative drops to 0 only in the situations the GM picks",
   "Pitiful Stature": "the -1 Armour steps (Monstrous to Large) are by hand; Characteristics and Movement are automated",
   "Symbiotic Twins": "the twin is a separate actor",
-  "Temporal Instability": "an extra Move and Action are turn economy",
+  "Temporal Instability": "Activate Temporal Instability rolls the Test and the ageing 1d10 (age +1 on a 10); the extra Move and Action are turn economy",
   "Turnskin": "you take Beastman base Characteristics",
   "Vestigial Twin": "the twin's own profile (your -10 Agility is automated)",
-  "Werebeast": "the Morrslieb modifiers only apply to the transformation Test",
+  "Werebeast": "Activate Werebeast applies the Morrslieb modifier to the transformation Test; the Bestial Body attributes of the form are by hand",
   "Alien Mind": "the Cool Test (or Stunned) for telepaths who connect to you is the GM's call",
   "Lunacy": "press Activate Lunacy at nightfall or when Morrslieb changes; the module does not track the moon",
   "Oracle": "press End Oracle when the scene ends (the system has no scene duration)",

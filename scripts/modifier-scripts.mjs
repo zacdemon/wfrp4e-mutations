@@ -136,6 +136,49 @@ const FIRST_COPY = `return this.actor?.items?.find(i => i.type === "mutation" &&
 export const oracleButton = () => ({ label: "Activate Oracle", trigger: "manual", script: `await ${API}?.activateOracle(this.actor, this.item);`, options: { hideScript: FIRST_COPY } });
 export const oracleEndButton = () => ({ label: "End Oracle (scene over): remove unspent Fortune", trigger: "manual", script: `await ${API}?.endOracle(this.actor, this.effect);`, options: {} });
 
+/**
+ * Test-activated powers (scripts/mutation-activations.mjs): one button per mutation, on its first copy.
+ * key -> [mutation name, button label]. The handbook's Difficulty, the Test and what a success does
+ * live in POWERS in mutation-activations.mjs; tools/validate.mjs checks both lists match.
+ */
+export const POWER_BUTTONS = {
+  ethereal: ["Ethereal", "Activate Ethereal"],
+  invisibility: ["Invisibility", "Activate Invisibility"],
+  levitation: ["Levitation", "Activate Levitation"],
+  swarmform: ["Swarmform", "Activate Swarmform"],
+  shapeshifter: ["Shapeshifter", "Activate Shapeshifter"],
+  werebeast: ["Werebeast", "Activate Werebeast"],
+  mirrorImage: ["Mirror Image", "Activate Mirror Image"],
+  phantasmalMind: ["Phantasmal Mind", "Activate Phantasmal Mind"],
+  temporalInstability: ["Temporal Instability", "Activate Temporal Instability"],
+  dimensionalInstability: ["Dimensional Instability", "Activate Dimensional Instability"],
+  telekinesis: ["Telekinesis", "Activate Telekinesis"],
+  pyrokinesis: ["Pyrokinesis", "Activate Pyrokinesis"],
+  greenSovereign: ["Green Sovereign", "Activate Green Sovereign"],
+  windCaller: ["Wind Caller", "Activate Wind Caller"],
+  thunderhead: ["Thunderhead", "Activate Thunderhead"],
+  telepathy: ["Telepathy", "Activate Telepathy"],
+  lifeLeech: ["Life Leech", "Activate Life Leech"],
+  bloomblightTouch: ["Bloomblight Touch", "Activate Bloomblight Touch"],
+  evilEye: ["Evil Eye", "Activate Evil Eye"],
+  entrancement: ["Entrancement", "Activate Entrancement"],
+  beastAlpha: ["Beast Alpha", "Activate Beast Alpha"],
+  fleshcrafter: ["Fleshcrafter", "Activate Fleshcrafter"],
+  chameleonSkin: ["Chameleon Skin", "Suppress Chameleon Skin (Cool Test)"],
+  splittingHeadaches: ["Splitting Headaches", "Splitting Headache strikes (Cool Test)"],
+  possessed: ["Possessed", "Resist the demon (Willpower Test)"],
+  chosenOne: ["Chosen One", "Morning Cool Test"],
+  falseWizard: ["False Wizard", "Morning Cool Test"],
+  doomProphet: ["Doom Prophet", "Morning Cool Test"],
+  metamorphosis: ["Metamorphosis", "Morning Cool Test"],
+  rebelliousMind: ["Rebellious Mind", "Morning Cool Test"],
+  saintOfTheDamned: ["Saint of the Damned", "Morning Cool Test"]
+};
+export const powerButton = (key) => ({ label: POWER_BUTTONS[key][1], trigger: "manual", script: `await ${API}?.activatePower(this.actor, this.item, "${key}");`, options: { hideScript: FIRST_COPY } });
+/** Dimensional Instability: after 8 hours of rest the Difficulty goes back to Average. */
+export const powerRestButton = (key) => ({ label: "Rested 8 hours: reset the teleport Difficulty", trigger: "manual", script: `await ${API}?.resetPower(this.actor, this.item, "${key}");`,
+  options: { hideScript: `return !(Number(this.item?.getFlag("${MODULE_ID}", "uses.${key}")) > 0);` } });
+
 /** Lunacy: "Activate Lunacy" asks for Morrslieb's state and switches on that phase's effect. */
 export const lunacyButton = () => ({ label: "Activate Lunacy", trigger: "manual", script: `await ${API}?.activateLunacy(this.actor, this.item);`, options: { hideScript: FIRST_COPY } });
 

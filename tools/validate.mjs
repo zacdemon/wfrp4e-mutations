@@ -132,6 +132,34 @@ for (const f of MODULE.esmodules ?? []) {
   for (const k of used) if (!(k in i18n)) errors.push(`${p}: missing localisation key ${k}`);
 }
 
+// Test-activated powers: every POWER_BUTTONS entry has its button on the mutation and a POWERS
+// entry in scripts/mutation-activations.mjs, and every localisation key the powers build exists.
+{
+  const { POWER_BUTTONS } = await import("../scripts/modifier-scripts.mjs");
+  const act = fs.readFileSync("scripts/mutation-activations.mjs", "utf8");
+  const powersBlock = act.slice(act.indexOf("export const POWERS = {"), act.indexOf("// Swarmform creature table"));
+  const powerKeys = new Set([...powersBlock.matchAll(/^  (\w+): /gm)].map(m => m[1]));
+  for (const m of powersBlock.matchAll(/(\w+): morning\("/g)) powerKeys.add(m[1]);
+  const mutations = Object.values(docs.items).filter(d => d.type === "mutation");
+  for (const [key, [name, label]] of Object.entries(POWER_BUTTONS)) {
+    if (!powerKeys.has(key)) errors.push(`Power ${key}: no POWERS entry in scripts/mutation-activations.mjs`);
+    const item = mutations.find(d => d.name === name && !d.flags?.[MODULE_ID]?.variantOf);
+    if (!item) { errors.push(`Power ${key}: no mutation named ${name}`); continue; }
+    const has = (item.effects ?? []).some(e => (e.system?.scriptData ?? []).some(sd => sd.trigger === "manual" && sd.label === label && sd.script?.includes(`activatePower(this.actor, this.item, "${key}")`)));
+    if (!has) errors.push(`Power ${key}: mutation ${name} has no "${label}" button (run npm run effects)`);
+    for (const id of [...powersBlock.slice(powersBlock.indexOf(`${key}: `)).split(/\n  \w+: /)[0].matchAll(/\{ id: "(\w+)"/g)].map(m => m[1]))
+      if (!(`AMUT.Act.${key}.Use.${id}` in i18n)) errors.push(`Power ${key}: missing localisation key AMUT.Act.${key}.Use.${id}`);
+  }
+  for (const k of powerKeys) if (!POWER_BUTTONS[k]) errors.push(`Power ${k}: in POWERS but not in POWER_BUTTONS (no button)`);
+  for (const m of act.matchAll(/F\("(AMUT\.[\w.]+)"/g)) if (!(m[1] in i18n)) errors.push(`scripts/mutation-activations.mjs: missing localisation key ${m[1]}`);
+  for (const k of ["chosenOne", "falseWizard", "doomProphet", "metamorphosis", "rebelliousMind", "saintOfTheDamned"])
+    for (const r of ["Pass", "Fail"]) if (!(`AMUT.Act.${k}.${r}` in i18n)) errors.push(`missing localisation key AMUT.Act.${k}.${r}`);
+  const dyn = { "swarmform.Type": act.match(/SWARM_TYPES = \[(.*)\];/)[1], "bloomblightTouch.Symptom": act.match(/BLOOM_SYMPTOMS = \[(.*)\];/)[1], "werebeast.Phase": act.match(/WEREBEAST_MOD = \{(.*)\};/)[1] };
+  for (const [pre, src] of Object.entries(dyn)) for (const m of src.matchAll(/"?(\w+)"?(?:\]|:)/g)) if (!/^\d+$/.test(m[1]) && !(`AMUT.Act.${pre}.${m[1]}` in i18n)) errors.push(`missing localisation key AMUT.Act.${pre}.${m[1]}`);
+  for (const n of [1, 2, 3]) if (!(`AMUT.Act.possessed.Unit.${n}` in i18n)) errors.push(`missing localisation key AMUT.Act.possessed.Unit.${n}`);
+  stats.powers = Object.keys(POWER_BUTTONS).length;
+}
+
 // Tables the mutation flow looks up by key/column
 {
   const cols = new Set(Object.values(docs.rolltables).filter(d => !isFolder(d)).map(d => `${d.flags?.wfrp4e?.key}|${d.flags?.wfrp4e?.column ?? ""}`));
@@ -223,7 +251,7 @@ for (const t of Object.values(docs.rolltables).filter(d => !isFolder(d))) {
   }
 }
 
-console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts, ${stats.changes ?? 0} effect changes.`);
+console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts, ${stats.changes ?? 0} effect changes, ${stats.powers ?? 0} power buttons.`);
 if (notes.length) console.log(`\n${notes.length} note(s), as printed in the handbook:\n  ${notes.join("\n  ")}`);
 if (warnings.length) console.log(`\n${warnings.length} known open issue(s):\n  ${warnings.join("\n  ")}`);
 if (errors.length) { console.error(`\n${errors.length} error(s):\n  ${errors.join("\n  ")}`); process.exit(1); }
