@@ -12,11 +12,13 @@
  *     is known, everything the module cannot judge is a GM note on the card.
  *   - a Fumble rolls the Miscast the text names.
  * Opposed powers (Evil Eye, Entrancement, Beast Alpha, Telepathy's mind reading, Thunderhead's shock)
- * roll against the targeted token through the system's opposed Test; the winner is only known once
- * the defender rolls, so their outcome is a GM note.
+ * roll against the targeted token through the system's opposed Test. The attacker's roll message is
+ * flagged; once the defender rolls, the system's "wfrp4e:opposedTestResult" hook hands the result to the
+ * active GM, who applies the outcome once per defender (Conditions, timed marker effects) and sends any
+ * follow-up Test (Evil Eye's Endurance Test, Pyrokinesis' Ablaze, Bloomblight's symptom) to the
+ * creature's active player, else rolls it on the GM's client.
  */
 const MODULE_ID = "artantares-mutations";
-const SOCKET = `module.${MODULE_ID}`;
 const F = (key, data) => data ? game.i18n.format(key, data) : game.i18n.localize(key);
 const esc = (s) => foundry.utils.escapeHTML(String(s ?? ""));
 const baseName = (name) => String(name ?? "").split("(")[0].trim();
@@ -33,6 +35,24 @@ const worsen = (diff, steps) => DIFFS[Math.min(DIFFS.length - 1, DIFFS.indexOf(d
 const diffLabel = (d) => game.i18n.localize(game.wfrp4e.config.difficultyLabels[d] ?? d);
 const targetActor = (c) => c.targets.length === 1 ? c.targets[0] : null;   // targets as they were before the roll (the system may clear them)
 async function roll(formula) { const r = await new Roll(formula).evaluate(); return r.total; }
+async function hitLoc() { return (await game.wfrp4e.tables.rollTable("hitloc"))?.result ?? "body"; }
+const locName = (loc) => game.i18n.localize(game.wfrp4e.config.locations[loc] ?? loc);
+/** A marker effect with a duration (Entranced, a mind that can't be read again yet). */
+function markerEffect(o, name, value, units, text) {
+  return { name, img: o.item?.img ?? "icons/svg/aura.svg", description: `<p>${esc(text)}</p>`, duration: { value, units },
+    flags: { [MODULE_ID]: { marker: o.key, source: o.actor.uuid } } };
+}
+/** One of the system's disease symptoms (set up by the core module) as a timed effect. */
+function symptomEffect(key, days, source) {
+  const src = game.wfrp4e.config.symptomEffects?.[key];
+  if (!src) return null;
+  const e = foundry.utils.deepClone(src);
+  delete e._id;
+  e.name = `${game.i18n.localize(e.name ?? key)} (${source})`;
+  e.duration = { value: days, units: "days" };
+  foundry.utils.setProperty(e, `flags.${MODULE_ID}.marker`, "bloomblightTouch");
+  return e;
+}
 
 /* Power effects on the actor ------------------------------------------------ */
 
@@ -90,32 +110,186 @@ Hooks.on("deleteActiveEffect", async (effect, options, userId) => {
   await ChatMessage.create({ content: `<p>${esc(F(options?.expired ? "AMUT.Act.Expired" : "AMUT.Act.Ended", { name: effect.name }))}</p>`, speaker: ChatMessage.getSpeaker({ actor }) });
 });
 
-/* Targets the user cannot update: the active GM applies it ----------------- */
+/* Applying results to actors ------------------------------------------------- */
+/*
+ * Results are lists of operations on one actor:
+ *   { condition: "fatigued", n } | { removeCondition: "bleeding", n } | { heal: n } | { effect: data }
+ *   { damage: n, ignoreAP, loc } (the system's applyBasicDamage, which routes itself to the owner)
+ *   { test: { char | skill }, difficulty, title, pass: [ops], fail: [ops], passText, failText }
+ * Changes to an actor this user can't update go to the active GM (query "applyOps"). A follow-up
+ * Test is rolled by the actor's active player, else the GM (query "rollTest"), like the crits
+ * module's "Who rolls" default; its outcome is then applied on that client.
+ */
+const Q_APPLY = `${MODULE_ID}.applyOps`, Q_TEST = `${MODULE_ID}.rollTest`, Q_OPPOSED = `${MODULE_ID}.opposedResult`;
+const TEST_TIMEOUT = 5 * 60 * 1000;
+const nameOf = (a) => a?.token?.name ?? a?.prototypeToken?.name ?? a?.name ?? "";
 
-async function onTarget(ctx, target, action, data) {
-  if (!target) return false;
-  if (target.isOwner) { await TARGET_ACTIONS[action](target, data); return true; }
-  if (!game.users.activeGM) { ctx.gm.push(F("AMUT.Act.NoGM")); return false; }
-  game.socket.emit(SOCKET, { action: "powerTarget", op: action, targetUuid: target.uuid, actorUuid: ctx.actor.uuid, data, userId: game.user.id });
+function rollerFor(actor) {
+  const owner = game.users.find(u => u.active && !u.isGM && actor.testUserPermission(u, "OWNER"));
+  return owner ?? game.users.activeGM ?? game.user;
+}
+
+/** Apply ops to an actor; returns false if nobody could (no GM connected). */
+export async function applyOps(actor, ops, meta = {}) {
+  if (!actor || !ops?.length) return true;
+  const tests = ops.filter(o => o.test), direct = ops.filter(o => !o.test);
+  if (direct.length) {
+    if (actor.isOwner) await applyDirect(actor, direct);
+    else if (game.users.activeGM) await game.users.activeGM.query(Q_APPLY, { actorUuid: actor.uuid, ops: direct, sourceUuid: meta.sourceUuid });
+    else return false;
+  }
+  for (const op of tests) followUp(actor, op, meta);   // not awaited: the roller may take a while
   return true;
 }
-const TARGET_ACTIONS = {
-  heal: async (actor, { n }) => {
-    const w = actor.system.status.wounds;
-    await actor.update({ "system.status.wounds.value": Math.min(Number(w.max) || 0, (Number(w.value) || 0) + n) });
-  },
-  removeCondition: async (actor, { id, n }) => { if (actor.hasCondition(id)) await actor.removeCondition(id, n); }
-};
-Hooks.once("ready", () => {
-  game.socket.on(SOCKET, async (msg) => {
-    if (msg?.action !== "powerTarget" || !game.users.activeGM?.isSelf || !TARGET_ACTIONS[msg.op]) return;
-    const user = game.users.get(msg.userId);
-    const source = await fromUuid(msg.actorUuid).catch(() => null);
-    if (!user || !source?.testUserPermission(user, "OWNER")) return;   // only for a power of a character the player owns
-    const target = await fromUuid(msg.targetUuid).catch(() => null);
-    if (target) await TARGET_ACTIONS[msg.op](target.actor ?? target, msg.data ?? {});
-  });
+
+async function applyDirect(actor, ops) {
+  for (const o of ops) {
+    if (o.condition) await actor.addCondition(o.condition, o.n ?? 1);
+    else if (o.removeCondition) { if (actor.hasCondition(o.removeCondition)) await actor.removeCondition(o.removeCondition, o.n ?? 1); }
+    else if (o.heal) {
+      const w = actor.system.status.wounds;
+      await actor.update({ "system.status.wounds.value": Math.min(Number(w.max) || 0, (Number(w.value) || 0) + o.heal) });
+    }
+    else if (o.damage) await actor.applyBasicDamage(o.damage, { damageType: game.wfrp4e.config.DAMAGE_TYPE[o.ignoreAP ? "IGNORE_AP" : "NORMAL"], minimumOne: true, loc: o.loc ?? "body" });
+    else if (o.effect) await actor.createEmbeddedDocuments("ActiveEffect", [o.effect]);
+  }
+}
+
+async function followUp(actor, op, meta) {
+  const roller = rollerFor(actor);
+  let result = null;
+  try {
+    if (roller.isSelf) result = await rollFollowUp(actor, op);
+    else {
+      ui.notifications.info(F("AMUT.Act.Waiting", { user: roller.name, test: describe(op), actor: nameOf(actor) }));
+      result = await roller.query(Q_TEST, { actorUuid: actor.uuid, op, sourceUuid: meta.sourceUuid }, { timeout: TEST_TIMEOUT });
+    }
+  } catch (e) {
+    console.warn(`${MODULE_ID} | follow-up Test not rolled by ${roller.name}`, e);
+    // The player left before answering: roll it here. Any other error (timeout, an error after the roll) is left to the GM.
+    if (/not (currently )?(active|connected)|offline|inactive/i.test(String(e?.message ?? e))) result = await rollFollowUp(actor, op).catch(() => null);
+  }
+  if (!result) await note(actor, F("AMUT.Act.NotRolled", { test: describe(op), title: op.title ?? "", actor: nameOf(actor) }));
+  return result;
+}
+
+/** On the roller's client: roll the Test, then apply what its outcome gives. */
+async function rollFollowUp(actor, op) {
+  // A Test rolled while the actor is still flagged as the defender of the opposed Test that called for it
+  // would be taken as a second defence: wait for the system to clear that flag.
+  // If it never clears (the system's defence fails part-way when one player defends against another
+  // player's Test: it may not update that player's opposed message), clear it here.
+  for (let i = 0; i < 15 && actor.isOpposing; i++) await new Promise(r => setTimeout(r, 200));
+  if (actor.isOpposing && (op.oppose ?? []).includes(actor.flags.oppose?.opposeMessageId))
+    await actor.update({ "flags.oppose": new foundry.data.operators.ForcedDeletion() });
+  const context = { skipTargets: true, appendTitle: ` - ${op.title ?? ""}`, fields: { difficulty: op.difficulty ?? "challenging" }, context: {} };
+  if (op.passText) context.context.success = `<strong>${esc(op.title)}</strong>: ${esc(op.passText)}`;
+  if (op.failText) context.context.failure = `<strong>${esc(op.title)}</strong>: ${esc(op.failText)}`;
+  const options = { resolveClose: true };
+  let test;
+  try {
+    test = op.test.char ? await actor.setupCharacteristic(op.test.char, context, options)
+      : await actor.setupSkill(op.test.skill.startsWith("NAME.") ? game.i18n.localize(op.test.skill) : op.test.skill, context, options);
+  } catch (e) { return null; }
+  if (!test) return null;
+  await test.roll();
+  const ok = !!test.succeeded;
+  await applyOps(actor, ok ? op.pass : op.fail, {});
+  return { succeeded: ok, SL: test.result?.SL };
+}
+
+function describe(op) {
+  const what = op.test.char ? game.wfrp4e.config.characteristics[op.test.char] : game.i18n.localize(op.test.skill);
+  return `${diffLabel(op.difficulty ?? "challenging")} ${game.i18n.localize(what)}`;
+}
+
+function note(actor, text) {
+  const whisper = game.users.filter(u => u.isGM || actor.testUserPermission(u, "OWNER")).map(u => u.id);
+  return ChatMessage.create({ content: `<p>${esc(text)}</p>`, speaker: ChatMessage.getSpeaker({ actor }), whisper });
+}
+
+Hooks.once("init", () => {
+  // GM: apply changes a player's power makes to an actor that player can't update.
+  CONFIG.queries[Q_APPLY] = async ({ actorUuid, ops, sourceUuid } = {}, { user } = {}) => {
+    if (!game.user.isGM) throw new Error("not GM");
+    const source = sourceUuid ? await fromUuid(sourceUuid).catch(() => null) : null;
+    if (!user?.isGM && !source?.testUserPermission(user, "OWNER")) throw new Error("not the owner of the mutant");   // only a power of a character the player owns
+    const doc = await fromUuid(actorUuid).catch(() => null), actor = doc?.actor ?? doc;
+    if (!actor) throw new Error("no actor");
+    await applyDirect(actor, (ops ?? []).filter(o => !o.test));
+    return true;
+  };
+  // The actor's owner rolls a follow-up Test.
+  CONFIG.queries[Q_TEST] = async ({ actorUuid, op } = {}) => {
+    const doc = await fromUuid(actorUuid).catch(() => null), actor = doc?.actor ?? doc;
+    if (!actor?.isOwner || !op?.test) return null;
+    return rollFollowUp(actor, op);
+  };
+  // GM: resolve an opposed power Test (returns at once; follow-up Tests run on their own).
+  CONFIG.queries[Q_OPPOSED] = async (data) => { if (game.user.isGM) resolveOpposed(data); return true; };
 });
+
+/* Opposed powers: once the defender has rolled -------------------------------- */
+
+const resolved = new Set();
+Hooks.on("wfrp4e:opposedTestResult", (opposedTest, attackerTest, defenderTest) => {
+  const msg = attackerTest?.message;
+  if (!msg?.getFlag(MODULE_ID, "powerTest")) return;
+  const r = opposedTest?.result ?? {};
+  // Once per defender: a Fortune reroll or a later Test re-runs the opposed Test.
+  const data = { attackerMessageId: msg.id, defenderKey: defenderTest?.actor?.uuid ?? "unopposed",
+    defenderUuid: defenderTest?.actor?.uuid, winner: r.winner, differenceSL: Number(r.differenceSL) || 0,
+    critical: attackerTest.isCriticalFumble === "critical", opposeIds: [...(attackerTest.context?.opposedMessageIds ?? [])] };
+  const gm = game.users.activeGM;
+  if (gm && !gm.isSelf) gm.query(Q_OPPOSED, data).catch(e => console.warn(`${MODULE_ID} | opposed power result not sent`, e));
+  else resolveOpposed(data);
+});
+
+async function resolveOpposed({ attackerMessageId, defenderKey, defenderUuid, winner, differenceSL, critical, opposeIds = [] }) {
+  const msg = game.messages.get(attackerMessageId);
+  const p = msg?.getFlag(MODULE_ID, "powerTest");
+  if (!p || !winner) return;
+  const id = `${attackerMessageId}.${defenderKey}`;
+  if (resolved.has(id) || (msg.getFlag(MODULE_ID, "powerResolved") ?? []).includes(defenderKey)) return;   // once per defender (a Fortune reroll re-runs the opposed Test)
+  resolved.add(id);
+  if (msg.isOwner) await msg.setFlag(MODULE_ID, "powerResolved", [...(msg.getFlag(MODULE_ID, "powerResolved") ?? []), defenderKey]);
+  const actor = await fromUuid(p.actorUuid).catch(() => null);
+  const item = await fromUuid(p.itemUuid).catch(() => null);
+  const tdoc = await fromUuid(defenderUuid).catch(() => null), target = tdoc?.actor ?? tdoc;
+  if (!actor || !target) return;
+  if (!user_owns(msg.author, actor)) return;   // the power card's author must own the mutant
+  const power = POWERS[p.key], spec = p.use ? power?.uses?.find(u => u.id === p.use) : power;
+  const handler = spec?.opposed === true ? null : spec?.opposed;
+  if (!handler) return;
+  const o = { actor, item, target, key: p.key, use: p.use, win: winner === "attacker", diff: differenceSL, critical,
+    wpb: p.wpb, wp: p.wp, levels: p.levels, lines: [], gm: [], opposeIds };
+  await handler(o);
+  // The system leaves a player's character flagged as defending when that player defends against another
+  // player's Test (it can't update the attacker's opposed message), so its next Test would defend again.
+  setTimeout(() => {
+    if (target.isOwner && target.isOpposing && opposeIds.includes(target.flags.oppose?.opposeMessageId))
+      target.update({ "flags.oppose": new foundry.data.operators.ForcedDeletion() }).catch(() => {});
+  }, 4000);
+  const head = F(o.win ? "AMUT.Act.OpposedWon" : "AMUT.Act.OpposedLost", { actor: nameOf(actor), target: nameOf(target), sl: differenceSL });
+  const content = `<div class="amut-power">
+<p><strong>${esc(nameOf(actor))}</strong> &middot; ${esc(item?.name ?? "")}${p.use ? `: ${esc(F(`AMUT.Act.${p.key}.Use.${p.use}`))}` : ""}</p>
+<p><em>${esc(head)}</em></p>
+${o.lines.map(l => `<p>${esc(l)}</p>`).join("")}
+${o.gm.map(l => `<p><strong>${esc(F("AMUT.Act.GMNote"))}</strong> ${esc(l)}</p>`).join("")}</div>`;
+  await ChatMessage.create({ content, speaker: ChatMessage.getSpeaker({ actor }), whisper: msg.whisper?.length ? msg.whisper : undefined,
+    flags: { [MODULE_ID]: { powerResult: p.key } } });
+}
+const user_owns = (user, actor) => !!user && (user.isGM || actor.testUserPermission(user, "OWNER"));
+
+/** Apply ops to the mutant's target (or anyone): line on success, a "no GM" note otherwise. */
+async function onActor(c, actor, ops, line) {
+  if (!actor) return false;
+  if (c.opposeIds) ops = ops.map(o => o.test ? { ...o, oppose: c.opposeIds } : o);
+  const ok = await applyOps(actor, ops, { sourceUuid: c.actor.uuid });
+  if (!ok) c.gm.push(F("AMUT.Act.NoGM"));
+  else if (line) c.lines.push(line);
+  return ok;
+}
 
 /* The powers --------------------------------------------------------------- */
 
@@ -237,9 +411,21 @@ export const POWERS = {
       success: (c) => c.lines.push(F("AMUT.Act.telekinesis.Hurl", { wpb: c.wpb })) }] },
   pyrokinesis: { uses: [
     { id: "ignite", test: WP, difficulty: "average", miscast: "minormis",
-      success: (c) => c.lines.push(F("AMUT.Act.pyrokinesis.Ignite", { yards: c.wp })) },
+      success: async (c) => {
+        c.lines.push(F("AMUT.Act.pyrokinesis.Ignite", { yards: c.wp }));
+        for (const t of c.targets) await onActor(c, t, [{ condition: "ablaze" }], F("AMUT.Act.pyrokinesis.Ablaze", { target: nameOf(t) }));
+      } },
     { id: "blast", test: WP, difficulty: "challenging", miscast: "minormis",
-      success: (c) => c.lines.push(F("AMUT.Act.pyrokinesis.Blast", { dmg: c.wpb + c.sl, wpb: c.wpb, sl: c.sl, yards: c.wpb })) }] },
+      success: async (c) => {
+        const dmg = c.wpb + c.sl;
+        c.lines.push(F(c.targets.length ? "AMUT.Act.pyrokinesis.BlastAt" : "AMUT.Act.pyrokinesis.Blast", { dmg, wpb: c.wpb, sl: c.sl, yards: c.wpb }));
+        for (const t of c.targets) {
+          const loc = await hitLoc();
+          await onActor(c, t, [{ damage: dmg, loc }, { test: END, difficulty: "average", title: c.item.name,
+            failText: F("AMUT.Act.pyrokinesis.FailText"), fail: [{ condition: "ablaze" }] }],
+            F("AMUT.Act.pyrokinesis.BlastHit", { target: nameOf(t), dmg, loc: locName(loc) }));
+        }
+      } }] },
   greenSovereign: { uses: [
     { id: "small", test: WP, difficulty: "average", miscast: "minormis",
       success: (c) => c.lines.push(F("AMUT.Act.greenSovereign.Small", { yards: c.wp })) },
@@ -251,31 +437,47 @@ export const POWERS = {
     { id: "gust", test: WP, difficulty: "challenging", miscast: "minormis",
       success: (c) => c.lines.push(F("AMUT.Act.windCaller.Gust", { wpb: c.wpb })) }] },
   thunderhead: { uses: [
-    { id: "shock", test: WP, difficulty: "challenging", opposed: true, miscast: "minormis",
-      after: (c) => c.gm.push(F("AMUT.Act.thunderhead.Shock")) },
+    { id: "shock", test: WP, difficulty: "challenging", miscast: "minormis",
+      opposed: async (o) => {
+        if (!o.win) return o.lines.push(F("AMUT.Act.thunderhead.ShockLost", { target: nameOf(o.target) }));
+        await onActor(o, o.target, [{ condition: "stunned" }], F("AMUT.Act.thunderhead.ShockWon", { target: nameOf(o.target) }));
+      },
+      after: (c) => c.lines.push(F(c.targets.length ? "AMUT.Act.thunderhead.ShockTouch" : "AMUT.Act.thunderhead.Shock")) },
     { id: "bolt", test: WP, difficulty: "challenging", miscast: "minormis",
-      success: (c) => {
-        c.lines.push(F("AMUT.Act.thunderhead.Bolt", { dmg: c.wpb + c.sl, wpb: c.wpb, sl: c.sl, yards: c.wpb }));
-        c.gm.push(F("AMUT.Act.thunderhead.BoltGM"));
+      success: async (c) => {
+        const dmg = c.wpb + c.sl, target = targetActor(c);
+        if (!target) {
+          c.lines.push(F("AMUT.Act.thunderhead.Bolt", { dmg, wpb: c.wpb, sl: c.sl, yards: c.wpb }));
+          return c.gm.push(F("AMUT.Act.thunderhead.BoltGM"));
+        }
+        const loc = await hitLoc();
+        const ap = (target.system.status.armour?.[loc]?.layers ?? []).filter(l => !l.metal).reduce((t, l) => t + (Number(l.value) || 0), 0);
+        await onActor(c, target, [{ damage: Math.max(1, dmg - ap), ignoreAP: true, loc }, { condition: "blinded" }],
+          F("AMUT.Act.thunderhead.BoltHit", { dmg, wpb: c.wpb, sl: c.sl, target: nameOf(target), loc: locName(loc), ap }));
       } }] },
   telepathy: { uses: [
     { id: "project", test: WP, difficulty: "average", miscast: "minormis",
       success: (c) => c.lines.push(F("AMUT.Act.telepathy.Project", { yards: c.wp })) },
-    { id: "pluck", test: WP, difficulty: "challenging", opposed: true, miscast: "minormis",
-      after: (c) => c.gm.push(F("AMUT.Act.telepathy.Pluck")) }] },
+    { id: "pluck", test: WP, difficulty: "challenging", miscast: "minormis",
+      opposed: async (o) => {
+        if (o.win) return o.lines.push(F(o.diff >= 2 ? "AMUT.Act.telepathy.Unnoticed" : "AMUT.Act.telepathy.Noticed", { target: nameOf(o.target), sl: o.diff }));
+        await onActor(o, o.actor, [{ effect: markerEffect(o, F("AMUT.Act.telepathy.Effect", { target: nameOf(o.target) }), 8, "hours",
+          F("AMUT.Act.telepathy.EffectText", { target: nameOf(o.target) })) }], F("AMUT.Act.telepathy.Lost", { target: nameOf(o.target) }));
+      },
+      after: (c) => c.lines.push(F("AMUT.Act.telepathy.Pluck")) }] },
   lifeLeech: { test: WP, difficulty: "challenging", miscast: "minormis",
     success: async (c) => {
       const dmg = Math.max(0, c.sl) + (c.levels - 1);
       const target = targetActor(c);
       if (!target) {                                // an object: SL Armour Point reduction, healed in full
-        await TARGET_ACTIONS.heal(c.actor, { n: dmg });
+        await applyDirect(c.actor, [{ heal: dmg }]);
         return c.lines.push(F("AMUT.Act.lifeLeech.Object", { dmg }));
       }
       // As the system applies it: Toughness Bonus off, at least 1 Wound for a hit that does damage.
       const tb = Number(target.system.characteristics.t.bonus) || 0;
       const dealt = dmg > 0 ? Math.min(Number(target.system.status.wounds.value) || 0, Math.max(1, dmg - tb)) : 0;
       if (dmg > 0) await target.applyBasicDamage(dmg, { damageType: game.wfrp4e.config.DAMAGE_TYPE.IGNORE_AP, minimumOne: true });
-      await TARGET_ACTIONS.heal(c.actor, { n: dealt });
+      if (dealt) await applyDirect(c.actor, [{ heal: dealt }]);
       c.lines.push(F("AMUT.Act.lifeLeech.Creature", { dmg, dealt, target: target.prototypeToken?.name ?? target.name }));
       c.gm.push(F("AMUT.Act.lifeLeech.GM"));
     } },
@@ -283,26 +485,48 @@ export const POWERS = {
     success: async (c) => {
       const n = c.fel + c.sl, target = targetActor(c);
       const r = await roll("1d100"), days = await roll("1d10");
-      const symptom = F(`AMUT.Act.bloomblightTouch.Symptom.${BLOOM_SYMPTOMS.find(([hi]) => r <= hi)[1]}`);
-      if (await onTarget(c, target, "heal", { n })) c.lines.push(F("AMUT.Act.bloomblightTouch.Healed", { n, fel: c.fel, sl: c.sl, target: target.prototypeToken?.name ?? target.name }));
-      else c.lines.push(F("AMUT.Act.bloomblightTouch.Heal", { n, fel: c.fel, sl: c.sl }));
-      c.gm.push(F("AMUT.Act.bloomblightTouch.GM", { r, symptom, days }));
+      const key = BLOOM_SYMPTOMS.find(([hi]) => r <= hi)[1], symptom = F(`AMUT.Act.bloomblightTouch.Symptom.${key}`);
+      if (!target) {
+        c.lines.push(F("AMUT.Act.bloomblightTouch.Heal", { n, fel: c.fel, sl: c.sl }));
+        return c.gm.push(F("AMUT.Act.bloomblightTouch.GM", { r, symptom, days }));
+      }
+      const effect = symptomEffect(key, days, c.item.name);
+      const fail = effect ? [{ effect }] : [];
+      const failText = F("AMUT.Act.bloomblightTouch.FailText", { symptom, days });
+      const ok = await onActor(c, target, [{ heal: n }, { test: END, difficulty: "challenging", title: c.item.name, failText, fail }],
+        F("AMUT.Act.bloomblightTouch.Healed", { n, fel: c.fel, sl: c.sl, target: nameOf(target) }));
+      if (ok) c.lines.push(F("AMUT.Act.bloomblightTouch.Test", { target: nameOf(target), symptom, days, r }));
+      if (ok && !effect) c.gm.push(F("AMUT.Act.bloomblightTouch.NoSymptom", { symptom, days }));
     } },
-  evilEye: { test: WP, difficulty: "challenging", opposed: true,
-    after: (c) => c.gm.push(F("AMUT.Act.evilEye.GM")) },
-  entrancement: { test: WP, difficulty: "challenging", opposed: true,
-    after: (c) => c.gm.push(F("AMUT.Act.entrancement.GM", { wpb: c.wpb, max: c.wpb })) },
-  beastAlpha: { test: WP, difficulty: "challenging", opposed: true,
-    after: (c) => c.gm.push(F("AMUT.Act.beastAlpha.GM")) },
+  evilEye: { test: WP, difficulty: "challenging", opposed: async (o) => {
+      if (!o.win) return onActor(o, o.actor, [{ condition: "stunned" }], F("AMUT.Act.evilEye.Lost", { actor: nameOf(o.actor) }));
+      await onActor(o, o.target, [{ condition: "fatigued" }, { test: END, difficulty: "hard", title: o.item?.name,
+        failText: F("AMUT.Act.evilEye.FailText"), fail: [{ condition: "prone" }] }], F("AMUT.Act.evilEye.Won", { target: nameOf(o.target) }));
+    },
+    after: (c) => { if (!c.targets.length) c.gm.push(F("AMUT.Act.evilEye.GM")); } },
+  entrancement: { test: WP, difficulty: "challenging", opposed: async (o) => {
+      if (!o.win) return o.lines.push(F("AMUT.Act.entrancement.Lost", { target: nameOf(o.target) }));
+      const n = Math.max(1, o.wpb + o.diff);
+      await onActor(o, o.target, [{ effect: markerEffect(o, F("AMUT.Act.entrancement.Effect", { actor: nameOf(o.actor) }), n, "hours",
+        F("AMUT.Act.entrancement.EffectText", { actor: nameOf(o.actor) })) }],
+        F("AMUT.Act.entrancement.Won", { target: nameOf(o.target), n, wpb: o.wpb, sl: o.diff }));
+      if (o.critical) o.lines.push(F("AMUT.Act.entrancement.Critical", { target: nameOf(o.target) }));
+      o.lines.push(F("AMUT.Act.entrancement.Max", { max: o.wpb }));
+    },
+    after: (c) => { if (!c.targets.length) c.gm.push(F("AMUT.Act.entrancement.GM", { wpb: c.wpb, max: c.wpb })); } },
+  beastAlpha: { test: WP, difficulty: "challenging", opposed: async (o) => {
+      o.lines.push(F(o.win ? "AMUT.Act.beastAlpha.Won" : "AMUT.Act.beastAlpha.Lost", { target: nameOf(o.target) }));
+    },
+    after: (c) => c.lines.push(F("AMUT.Act.beastAlpha.Rules")) },
   fleshcrafter: { uses: [
     { id: "cosmetic", test: { skill: "Trade (Fleshcrafter)" }, difficulty: "challenging", success: (c) => c.gm.push(F("AMUT.Act.fleshcrafter.Cosmetic")) },
     { id: "drastic", test: { skill: "Trade (Fleshcrafter)" }, difficulty: "difficult", success: (c) => c.gm.push(F("AMUT.Act.fleshcrafter.Drastic", { sl: Math.max(0, c.sl) })) },
     { id: "bone", test: { skill: "Trade (Fleshcrafter)" }, difficulty: "hard", success: (c) => c.gm.push(F("AMUT.Act.fleshcrafter.Bone")) },
     { id: "bleeding", test: { skill: "Trade (Fleshcrafter)" }, difficulty: "challenging",
       success: async (c) => {
-        const target = targetActor(c) ?? c.actor, n = Math.max(0, c.sl), name = target.prototypeToken?.name ?? target.name;
+        const target = targetActor(c) ?? c.actor, n = Math.max(0, c.sl);
         if (!n) return c.lines.push(F("AMUT.Act.fleshcrafter.NoSL"));
-        if (await onTarget(c, target, "removeCondition", { id: "bleeding", n })) c.lines.push(F("AMUT.Act.fleshcrafter.Bleeding", { n, target: name }));
+        await onActor(c, target, [{ removeCondition: "bleeding", n }], F("AMUT.Act.fleshcrafter.Bleeding", { n, target: nameOf(target) }));
       } }],
     fumble: (c) => c.gm.push(F("AMUT.Act.fleshcrafter.Fumble")) },
   chameleonSkin: { test: COOL, difficulty: "average",
@@ -364,7 +588,10 @@ export async function activatePower(actor, item, key) {
   if (c.fumble && miscast) await rollMiscast(actor, miscast);
   if (c.fumble) await (spec.fumble ?? power.fumble)?.(c);
   const handler = test.succeeded ? (spec.success ?? power.success) : (spec.failure ?? power.failure);
-  if (spec.opposed && c.targets.length) c.lines.push(F("AMUT.Act.Opposed"));
+  if (spec.opposed && c.targets.length) {
+    c.lines.push(F("AMUT.Act.Opposed", { target: c.targets.map(nameOf).join(", ") }));
+    await test.message?.setFlag(MODULE_ID, "powerTest", { key, use: c.use, actorUuid: actor.uuid, itemUuid: item.uuid, wpb: c.wpb, wp: c.wp, levels: c.levels });
+  }
   else if (!test.succeeded && !handler) c.lines.push(F("AMUT.Act.Failed"));
   await handler?.(c);
   await (spec.after ?? power.after)?.(c);
