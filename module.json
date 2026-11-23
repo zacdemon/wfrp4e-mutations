@@ -1,0 +1,134 @@
+{
+  "id": "artantares-mutations",
+  "title": "Antares | Mutant's Handbook [WFRP4E]",
+  "description": "A module with homebrew rules for mutation and corruption for WFRP 4e, based on the work by Anders Hellspong",
+  "version": "3.0.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "9.0.0",
+          "verified": "10.1.2"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "wfrp4e-core",
+        "type": "module",
+        "reason": "Mutation items use icons from, and link Creature Traits, Talents and journal pages in, the WFRP4e Core Rulebook module."
+      }
+    ],
+    "recommends": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "reason": "Wraps the system's mutation test and table roll cleanly; the module falls back to patching without it."
+      },
+      {
+        "id": "wfrp4e-wom",
+        "type": "module",
+        "reason": "Oracle and Scrying Touch grant the Augury and Psychometry skills from Winds of Magic; without it they get placeholder skills."
+      }
+    ]
+  },
+  "authors": [
+    {
+      "name": "antares",
+      "url": "https://github.com/artptz",
+      "discord": "artantares",
+      "flags": {}
+    },
+    {
+      "name": "Anders Hellspong",
+      "discord": "hellspong",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "/scripts/mutation-messages.mjs",
+    "/scripts/mutation-flow.mjs",
+    "/scripts/mutation-grants.mjs"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true,
+  "packs": [
+    {
+      "name": "items",
+      "label": "Items (Mutations)",
+      "path": "packs/items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "wfrp4e",
+      "flags": {}
+    },
+    {
+      "name": "journal",
+      "label": "Journal Entries (Mutations)",
+      "path": "packs/journal",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "wfrp4e",
+      "flags": {}
+    },
+    {
+      "name": "macros",
+      "label": "Macros (Mutations)",
+      "path": "packs/macros",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "wfrp4e",
+      "flags": {}
+    },
+    {
+      "name": "rolltables",
+      "label": "Tables (Mutations)",
+      "path": "packs/rolltables",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "wfrp4e",
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Mutant's Handbook",
+      "sorting": "m",
+      "packs": [
+        "items",
+        "journal",
+        "rolltables",
+        "macros"
+      ],
+      "color": "#21c493",
+      "folders": []
+    }
+  ],
+  "manifest": "https://github.com/artptz/wfrp4e-mutations/releases/latest/download/module.json",
+  "download": "https://github.com/artptz/wfrp4e-mutations/releases/latest/download/artantares-mutations.zip",
+  "flags": {}
+}
