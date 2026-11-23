@@ -14,8 +14,27 @@
         "type": "system",
         "compatibility": {
           "minimum": "9.0.0",
-          "verified": "9.6.1"
+          "verified": "10.1.2"
         }
+      }
+    ],
+    "requires": [
+      {
+        "id": "wfrp4e-core",
+        "type": "module",
+        "reason": "Mutation items use icons from, and link Creature Traits, Talents and journal pages in, the WFRP4e Core Rulebook module."
+      }
+    ],
+    "recommends": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "reason": "Wraps the system's mutation test and table roll cleanly; the module falls back to patching without it."
+      },
+      {
+        "id": "wfrp4e-wom",
+        "type": "module",
+        "reason": "Oracle and Scrying Touch grant the Augury and Psychometry skills from Winds of Magic; without it they get placeholder skills."
       }
     ]
   },
@@ -34,8 +53,17 @@
   ],
   "esmodules": [
     "/scripts/mutation-messages.mjs",
-    "/scripts/functions.mjs"
+    "/scripts/mutation-flow.mjs",
+    "/scripts/mutation-grants.mjs"
   ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true,
   "packs": [
     {
       "name": "items",
