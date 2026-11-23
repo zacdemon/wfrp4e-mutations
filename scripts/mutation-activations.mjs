@@ -37,7 +37,7 @@ const targetActor = (c) => c.targets.length === 1 ? c.targets[0] : null;   // ta
 async function roll(formula) { const r = await new Roll(formula).evaluate(); return r.total; }
 async function hitLoc() { return (await game.wfrp4e.tables.rollTable("hitloc"))?.result ?? "body"; }
 const locName = (loc) => game.i18n.localize(game.wfrp4e.config.locations[loc] ?? loc);
-/** A marker effect with a duration (Entranced, a mind that can't be read again yet). */
+/** A marker effect with a duration (Entranced). */
 function markerEffect(o, name, value, units, text) {
   return { name, img: o.item?.img ?? "icons/svg/aura.svg", description: `<p>${esc(text)}</p>`, duration: { value, units },
     flags: { [MODULE_ID]: { marker: o.key, source: o.actor.uuid } } };
@@ -461,8 +461,7 @@ export const POWERS = {
     { id: "pluck", test: WP, difficulty: "challenging", miscast: "minormis",
       opposed: async (o) => {
         if (o.win) return o.lines.push(F(o.diff >= 2 ? "AMUT.Act.telepathy.Unnoticed" : "AMUT.Act.telepathy.Noticed", { target: nameOf(o.target), sl: o.diff }));
-        await onActor(o, o.actor, [{ effect: markerEffect(o, F("AMUT.Act.telepathy.Effect", { target: nameOf(o.target) }), 8, "hours",
-          F("AMUT.Act.telepathy.EffectText", { target: nameOf(o.target) })) }], F("AMUT.Act.telepathy.Lost", { target: nameOf(o.target) }));
+        o.lines.push(F("AMUT.Act.telepathy.Lost", { target: nameOf(o.target) }));   // no lasting state: every use is its own Test
       },
       after: (c) => c.lines.push(F("AMUT.Act.telepathy.Pluck")) }] },
   lifeLeech: { test: WP, difficulty: "challenging", miscast: "minormis",

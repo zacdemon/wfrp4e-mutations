@@ -150,6 +150,10 @@ for (const f of MODULE.esmodules ?? []) {
     for (const id of [...powersBlock.slice(powersBlock.indexOf(`${key}: `)).split(/\n  \w+: /)[0].matchAll(/\{ id: "(\w+)"/g)].map(m => m[1]))
       if (!(`AMUT.Act.${key}.Use.${id}` in i18n)) errors.push(`Power ${key}: missing localisation key AMUT.Act.${key}.Use.${id}`);
   }
+  // Telepathy keeps no state: no timed effect, no stored uses, every press rolls its Test.
+  const tele = powersBlock.slice(powersBlock.indexOf("  telepathy: {"), powersBlock.indexOf("  lifeLeech: {"));
+  if (!tele) errors.push("Power telepathy: POWERS entry not found");
+  else if (/startPower|markerEffect|effect:|setFlag|timed:|uses\./.test(tele.replace(/uses: \[/, ""))) errors.push("Power telepathy: must not create effects, durations or stored state");
   for (const k of powerKeys) if (!POWER_BUTTONS[k]) errors.push(`Power ${k}: in POWERS but not in POWER_BUTTONS (no button)`);
   for (const m of act.matchAll(/F\("(AMUT\.[\w.]+)"/g)) if (!(m[1] in i18n)) errors.push(`scripts/mutation-activations.mjs: missing localisation key ${m[1]}`);
   for (const k of ["chosenOne", "falseWizard", "doomProphet", "metamorphosis", "rebelliousMind", "saintOfTheDamned"])
