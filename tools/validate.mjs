@@ -221,6 +221,27 @@ for (const d of Object.values(docs.items).filter(d => d.type === "mutation")) {
   if (Boolean(m[3]) !== Boolean(fl.tolerable)) errors.push(`Mutation ${d.name}: tolerable flag mismatch`);
 }
 
+// Choices: a mutation whose text offers the character a choice must prompt for it (a control entry in
+// tools/grants-data.mjs, or a power button's use picker) or be listed in CHOICE_EXCEPTIONS with a reason.
+{
+  const { GRANTS, PARTS, CHOICE_EXCEPTIONS } = await import("./grants-data.mjs");
+  const CHOICE_TEXT = /\b(choose|chooses|chosen|choice|pick|select|either\b[^.]{0,80}\bor\b|may instead|of (your|their) choice)/i;
+  const CONTROL = ["choose", "label", "fright", "override", "variant", "body", "roll", "patron", "ask"];
+  const prompts = (v) => Array.isArray(v) ? v.some(prompts) : v && typeof v === "object" && (CONTROL.some(k => k in v && v[k] !== undefined && v.t === undefined) || Object.values(v).some(prompts));
+  const pickers = new Set([...fs.readFileSync("scripts/mutation-activations.mjs", "utf8").matchAll(/^  "?([\w-]+)"?: \{[^\n]*\buses: \[/gm)].map(m => m[1]));
+  const names = new Set(Object.values(docs.items).filter(d => d.type === "mutation").map(d => d.name));
+  for (const n of Object.keys(CHOICE_EXCEPTIONS)) if (!names.has(n)) errors.push(`CHOICE_EXCEPTIONS: no mutation named ${n}`);
+  for (const d of Object.values(docs.items).filter(d => d.type === "mutation" && !d.flags?.[MODULE_ID]?.variantOf)) {
+    const text = (d.system?.description?.value ?? "").replace(/@\w+\[[^\]]*\]\{([^}]*)\}/g, "$1").replace(/<[^>]+>/g, " ");
+    const m = text.match(CHOICE_TEXT);
+    if (!m) continue;
+    stats.choices = (stats.choices ?? 0) + 1;
+    const key = d.flags?.[MODULE_ID]?.power;
+    if (CHOICE_EXCEPTIONS[d.name] || prompts(GRANTS[d.name]) || prompts(PARTS[d.name]) || (key && pickers.has(key))) continue;
+    errors.push(`Mutation ${d.name}: the text offers a choice ("${m[0]}") but nothing prompts for it (add a choose/label entry or a CHOICE_EXCEPTIONS reason)`);
+  }
+}
+
 // Tables
 for (const t of Object.values(docs.rolltables).filter(d => !isFolder(d))) {
   stats.tables++;
@@ -255,7 +276,7 @@ for (const t of Object.values(docs.rolltables).filter(d => !isFolder(d))) {
   }
 }
 
-console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts, ${stats.changes ?? 0} effect changes, ${stats.powers ?? 0} power buttons.`);
+console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts, ${stats.changes ?? 0} effect changes, ${stats.powers ?? 0} power buttons, ${stats.choices ?? 0} choice texts.`);
 if (notes.length) console.log(`\n${notes.length} note(s), as printed in the handbook:\n  ${notes.join("\n  ")}`);
 if (warnings.length) console.log(`\n${warnings.length} known open issue(s):\n  ${warnings.join("\n  ")}`);
 if (errors.length) { console.error(`\n${errors.length} error(s):\n  ${errors.join("\n  ")}`); process.exit(1); }

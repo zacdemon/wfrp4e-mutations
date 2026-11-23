@@ -329,5 +329,18 @@
   "AMUT.Act.pyrokinesis.FailText": "Gains 1 Ablaze Condition.",
   "AMUT.Act.bloomblightTouch.Test": "{target} must pass a Challenging (+0) Endurance Test or suffer {symptom} for {days} days (1d100 = {r}, 1d10 days).",
   "AMUT.Act.bloomblightTouch.FailText": "Afflicted by {symptom} for {days} days.",
-  "AMUT.Act.bloomblightTouch.NoSymptom": "The {symptom} symptom isn't set up (core module needed): apply it for {days} days by hand if the Endurance Test fails."
+  "AMUT.Act.bloomblightTouch.NoSymptom": "The {symptom} symptom isn't set up (core module needed): apply it for {days} days by hand if the Endurance Test fails.",
+  "AMUT.Grant.Asking": "Asking {user} to choose for {name}.",
+  "AMUT.Grant.Fright.Repeat": "Another Fright: raise the Terror of a fear you already have, or add a new source?",
+  "AMUT.Grant.Fright.Increase": "Raise the Terror for {source} to {n}",
+  "AMUT.Grant.Fright.AddSource": "Add another source of fright",
+  "AMUT.Grant.Fright.Terror": "Terror {n}",
+  "AMUT.Grant.Fright.Increased": "Terror for {source} raised to {n}",
+  "AMUT.Grant.Fright.Specific": "Source of your fright ({source}): if it is a category, pick something specific",
+  "AMUT.Grant.Fright.Source": "Source of fright: {source} (Terror 1)",
+  "AMUT.Grant.Override.Ask": "You already have natural armour there ({names}). Does the new Protective Skin replace it?",
+  "AMUT.Grant.Override.Replace": "Replace it: {names} no longer counts (worn again if this mutation is removed)",
+  "AMUT.Grant.Override.Keep": "Keep both",
+  "AMUT.Grant.Override.Kept": "Protective Skin kept alongside {names}",
+  "AMUT.Grant.Override.Replaced": "Protective Skin replaces {names} (unequipped)"
 }

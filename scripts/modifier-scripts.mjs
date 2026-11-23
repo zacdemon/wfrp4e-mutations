@@ -132,6 +132,10 @@ await this.effect.update({ "flags.${MODULE_ID}.lost": 0 });`,
 // Shown once per actor, on the first copy of the mutation (the power counts every copy as a level).
 const FIRST_COPY = `return this.actor?.items?.find(i => i.type === "mutation" && i.name === this.item?.name)?.id !== this.item?.id;`;
 
+/** Fright: post the Terror Test for this source at its rating (repeats that raised the rating have no button). */
+export const frightButton = () => ({ label: "Face your fright (Terror Test)", trigger: "manual", script: `await ${API}?.faceFright(this.actor, this.item);`,
+  options: { hideScript: `return !!this.item?.getFlag("${MODULE_ID}", "frightOf");` } });
+
 /** Oracle: "Activate Oracle" (Willpower Test, +10 Initiative and +1 Fortune per level) and its end. */
 export const oracleButton = () => ({ label: "Activate Oracle", trigger: "manual", script: `await ${API}?.activateOracle(this.actor, this.item);`, options: { hideScript: FIRST_COPY } });
 export const oracleEndButton = () => ({ label: "End Oracle (scene over): remove unspent Fortune", trigger: "manual", script: `await ${API}?.endOracle(this.actor, this.effect);`, options: {} });

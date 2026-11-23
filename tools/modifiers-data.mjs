@@ -1,4 +1,4 @@
-import { powerItemButtons, oracleButton, oracleEndButton, lunacyButton, regenerationButton, critRollScriptData, critDealtScriptData, POWER_BUTTONS, powerButton, powerRestButton } from "../scripts/modifier-scripts.mjs";
+import { powerItemButtons, oracleButton, oracleEndButton, frightButton, lunacyButton, regenerationButton, critRollScriptData, critDealtScriptData, POWER_BUTTONS, powerButton, powerRestButton } from "../scripts/modifier-scripts.mjs";
 
 /**
  * Fixed modifiers for the Mutant's Handbook items. `node tools/modifiers.mjs` writes them into
@@ -103,6 +103,7 @@ export const MODS = {
   "Morbidity": [c("fel", -10)],
   "Nervous Jitters": [c("i", 5), c("bs", -5), c("dex", -5)],
   "Nihilistic Numbness": [c("fel", -10)],
+  "Fright": [script(frightButton())],
   "Oracle": [script(oracleButton()), toggle("Sensing the future (+10 Initiative)", [c("i", 10), script(oracleEndButton())])],
   "Organic Crystal": [test("Organic Crystal: opposing an incoming spell -10", m(-10), { chars: ["wp"], skills: ["Dodge"] })],
   "Overgrown Arm": [c("s", 10), c("dex", -10), c("ag", -5)],

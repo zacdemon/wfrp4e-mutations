@@ -44,6 +44,14 @@
  *   { body: "arms"|"legs"|"head"|"all", tbl, key } Bestial / Unnatural parts of the recorded variant
  *   { patron: { god: [Entry...] }, else: [Entry...] }
  *   { note: text }                                  shown on the summary card
+ *   { label: text, opts }                           ask the owner; the mutation becomes "Name (answer)" (first copy only)
+ *   { fright: true }                                Fright: on a repeat, raise an existing source's Terror or add a
+ *                                                  source; pick something specific from a category; Terror rating kept
+ *                                                  in flags.terror for the "Face your fright" button
+ *   { override: "skin" }                            Protective Skin over natural armour already on those locations:
+ *                                                  replace it (unequipped, re-equipped on revert) or keep both
+ * Choices made for the text (label, fright, override) are asked of the actor's active player, else the
+ * GM (query "ask"); closing the dialog or no answer in 5 minutes leaves a note on the GM summary card.
  * Entry (modifiers, written into the mutation's "<Mutation> (Modifiers)" effect, see modifier-scripts.mjs)
  *   { t: "mod", k, v }        k a characteristic key (ws..fel), "move" or "wounds"; v a number or a dice
  *                             formula ("1d10", "-2d10") rolled once now and stored as a plain number
@@ -77,7 +85,7 @@ Hooks.once("init", () => {
     scope: "world", config: true, type: Boolean, default: true
   });
   const mod = game.modules.get(MODULE_ID);
-  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach, activatePower, endPower, resetPower });
+  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach, activatePower, endPower, resetPower, faceFright });
   Hooks.on("wfrp4e:rollTable", critHookModifier);   // wound-Critical modifiers (see modifier-scripts.mjs)
 });
 
@@ -101,7 +109,7 @@ export async function grant(ctx, spec = {}) {
     && baseName(i.name) === baseName(item.name)).length;
   const list = spec.levels ? spec.levels[Math.min(copies, spec.levels.length - 1)] : (spec.grants ?? []);
 
-  const st = { actor, item, log: [], notes: [], undo: [], create: [], rename: null, variants: null, mods: [], rolled: [] };
+  const st = { actor, item, copies, log: [], notes: [], undo: [], create: [], rename: null, variants: null, mods: [], rolled: [], flags: {} };
   if (copies) st.log.push(L("Level", { n: copies + 1 }));
   try {
     const flat = dedupe(await expand(list, st, { locs: item.getFlag(MODULE_ID, "locs") ?? null }));
@@ -117,6 +125,7 @@ export async function grant(ctx, spec = {}) {
     if (st.undo.length) update[`flags.${MODULE_ID}.undo`] = [...(item.getFlag(MODULE_ID, "undo") ?? []), ...st.undo];
     if (st.rename) update.name = st.rename;
     if (st.variants) update[`flags.${MODULE_ID}.variants`] = st.variants;
+    for (const [k, v] of Object.entries(st.flags)) update[`flags.${MODULE_ID}.${k}`] = v;
     if (!foundry.utils.isEmpty(update)) await item.update(update);
     await postSummary(st, created);
   }
@@ -156,6 +165,9 @@ async function expand(list, st, ctx) {
     if (e == null) continue;
     if (Array.isArray(e)) out.push(...await expand(e, st, ctx));
     else if (e.note) st.notes.push(e.note);
+    else if (e.label) await expandLabel(e, st);
+    else if (e.fright) out.push(...await expandFright(st));
+    else if (e.override) await expandOverride(st, ctx);
     else if (e.choose) {
       const picks = await choose(st.item.name, e.choose, e.of.map(labelOf), e.n ?? 1);
       if (!picks) { st.notes.push(L("NoChoice", { text: e.choose })); continue; }
@@ -178,6 +190,106 @@ async function expand(list, st, ctx) {
     else out.push(ctx.locs && !e.locs && (e.t === "armour" || e.t === "mutation") ? { ...e, locs: ctx.locs } : { ...e });
   }
   return out;
+}
+
+/* Choices asked of the owner ------------------------------------------------ */
+
+const Q_ASK = `${MODULE_ID}.ask`;
+const ASK_TIMEOUT = 5 * 60 * 1000;
+Hooks.once("init", () => {
+  CONFIG.queries[Q_ASK] = async ({ kind, title, text, labels, n, opts, value } = {}) =>
+    kind === "text" ? askText(title, text, opts ?? [], value ?? "") : choose(title, text, labels ?? [], n ?? 1);
+});
+
+/** Ask the actor's active player (else the GM; else whoever is adding it). null = no answer. */
+async function askOwner(st, q) {
+  const player = game.users.find(u => u.active && !u.isGM && st.actor.testUserPermission(u, "OWNER"));
+  const user = player ?? (game.user.isGM ? game.user : game.users.activeGM ?? game.user);
+  const data = { title: st.item.name, ...q };
+  if (user.isSelf) return CONFIG.queries[Q_ASK](data);
+  ui.notifications.info(L("Asking", { user: user.name, name: st.item.name }));
+  try { return await user.query(Q_ASK, data, { timeout: ASK_TIMEOUT }); }
+  catch (err) { console.warn(`${MODULE_ID} | ${user.name} did not answer for ${st.item.name}`, err); return null; }
+}
+
+/** "Face your fright": the system's Terror card for this source at its rating. */
+export async function faceFright(actor, item) {
+  if (!actor || !item) return;
+  const n = terrorOf(item), source = frightSource(item);
+  const Psych = CONFIG.ChatMessage.dataModels?.psych;
+  if (Psych?.createTerrorMessage) return Psych.createTerrorMessage(n, source);
+  return game.wfrp4e.utility.postTerror(n, source);
+}
+
+const renameWith = (st, answer) => { st.rename = `${baseName(st.rename ?? st.item.name)} (${answer})`; };
+
+async function expandLabel(e, st) {
+  if (st.copies) return;
+  const current = /\(([^)]*)\)\s*$/.exec(st.item.name)?.[1] ?? "";
+  const answer = await askOwner(st, { kind: "text", text: e.label, opts: e.opts ?? [], value: current });
+  if (!answer) return st.notes.push(L("NoChoice", { text: e.label }));
+  renameWith(st, answer);
+  st.log.push(`${e.label}: ${answer}`);
+}
+
+const frightSource = (i) => /\(([^)]*)\)\s*$/.exec(i.name)?.[1]?.replace(/:.*$/, "").trim() || i.name;
+const terrorOf = (i) => Number(i.getFlag(MODULE_ID, "terror")) || 1;
+
+async function expandFright(st) {
+  const others = st.actor.items.filter(i => i.id !== st.item.id && i.type === "mutation" && baseName(i.name) === "Fright" && !i.getFlag(MODULE_ID, "frightOf"));
+  if (others.length) {
+    const labels = [...others.map(o => L("Fright.Increase", { source: frightSource(o), n: terrorOf(o) + 1 })), L("Fright.AddSource")];
+    const pick = await askOwner(st, { kind: "choose", text: L("Fright.Repeat"), labels });
+    if (!pick) { st.notes.push(L("NoChoice", { text: L("Fright.Repeat") })); return []; }
+    if (pick[0] < others.length) {
+      const o = others[pick[0]], n = terrorOf(o) + 1;
+      st.undo.push({ id: o.id, path: `flags.${MODULE_ID}.terror`, value: terrorOf(o) });
+      await o.update({ [`flags.${MODULE_ID}.terror`]: n });
+      st.flags.frightOf = o.id;
+      st.rename = `Fright (${frightSource(o)}: ${L("Fright.Terror", { n })})`;
+      st.log.push(L("Fright.Increased", { source: frightSource(o), n }));
+      return [];
+    }
+  }
+  // The source: the recorded Fright table result, or rolled / picked now; then something specific.
+  let source = (await recordedVariant(st, "Fright"))?.label ?? null;
+  if (!source) {
+    const table = await findTable("fright");
+    const results = table ? table.results.contents.sort((a, b) => a.range[0] - b.range[0]).map(r => r.name || r.description) : [];
+    const pick = await askOwner(st, { kind: "choose", text: L("PickVariant", { table: "Fright" }), labels: [L("RollTable", { table: "Fright" }), ...results] });
+    if (!pick) st.notes.push(L("NoVariant", { table: "Fright" }));
+    else if (pick[0] > 0) source = results[pick[0] - 1];
+    else if (table) {
+      const draw = await table.draw({ displayChat: false });
+      source = draw.results[0] ? (draw.results[0].name || draw.results[0].description) : null;
+      st.log.push(`Fright (${table.formula}): ${draw.roll.total}`);
+    }
+    if (source) recordVariant(st, "Fright", source);
+  }
+  if (source) {
+    const examples = /\(([^)]*)\)/.exec(source)?.[1]?.split(/,\s*/).map(x => x.replace(/[.…]+$/, "").trim()).filter(Boolean) ?? [];
+    const specific = await askOwner(st, { kind: "text", text: L("Fright.Specific", { source }), opts: examples, value: source.replace(/\s*\(.*\)\s*$/, "") });
+    if (specific) { renameWith(st, specific); st.log.push(L("Fright.Source", { source: specific })); }
+    else st.notes.push(L("NoChoice", { text: L("Fright.Specific", { source }) }));
+  }
+  st.flags.terror = 1;
+  return [];
+}
+
+async function expandOverride(st, ctx) {
+  const locs = ctx?.locs ?? st.item.getFlag(MODULE_ID, "locs") ?? ALL_LOCS;
+  const existing = st.actor.itemTypes.armour.filter(a => a.getFlag(MODULE_ID, "grantedBy") && a.getFlag(MODULE_ID, "grantedBy") !== st.item.id
+    && a.system.equipped?.value && locs.some(l => Number(a.system.AP?.[l]) > 0));
+  if (!existing.length) return;
+  const names = existing.map(a => a.name).join(", ");
+  const pick = await askOwner(st, { kind: "choose", text: L("Override.Ask", { names }), labels: [L("Override.Replace", { names }), L("Override.Keep")] });
+  if (!pick) return st.notes.push(L("NoChoice", { text: L("Override.Ask", { names }) }));
+  if (pick[0] !== 0) return st.log.push(L("Override.Kept", { names }));
+  for (const a of existing) {
+    st.undo.push({ id: a.id, path: "system.equipped.value", value: true });
+    await a.update({ "system.equipped.value": false });
+  }
+  st.log.push(L("Override.Replaced", { names }));
 }
 
 /** The sub-table result the flow recorded on the item (flags.variants), or one picked/rolled now. */
@@ -616,20 +728,21 @@ async function choose(title, text, labels, n = 1) {
   return picks.slice(0, n);
 }
 
-async function askText(title, text, opts = []) {
+async function askText(title, text, opts = [], initial = "") {
   const DialogV2 = foundry.applications.api.DialogV2;
   const id = `amut-opts-${foundry.utils.randomID()}`;
   const content = `<div class="form-group"><label>${esc(text)}</label>
-    <input type="text" name="value" list="${id}" autofocus>
+    <input type="text" name="value" list="${id}" value="${esc(initial)}" autofocus>
     <datalist id="${id}">${opts.map(o => `<option value="${esc(o)}"></option>`).join("")}</datalist></div>`;
   const value = await DialogV2.wait({
     window: { title }, content, rejectClose: false,
     buttons: [
-      { action: "ok", label: L("Ok"), default: true, callback: (event, button) => button.form.elements.value.value.trim() },
-      { action: "cancel", label: L("Skip"), callback: () => null }
+      { action: "ok", label: L("Ok"), default: true, callback: (event, button) => ({ answer: button.form.elements.value.value.trim() }) },
+      { action: "cancel", label: L("Skip") }
     ]
   });
-  return typeof value === "string" ? value : null;
+  // DialogV2 resolves to the action name when a callback returns nothing, so only an { answer } counts.
+  return typeof value?.answer === "string" && value.answer ? value.answer : null;
 }
 
 async function findTable(key) {

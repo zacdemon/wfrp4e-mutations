@@ -70,6 +70,14 @@ const choose = (text, ...of) => ({ choose: text, of });
 const chooseN = (n, text, ...of) => ({ choose: text, of, n });
 const roll = (formula, text, ...res) => ({ roll: formula, text, res });
 const note = (text) => ({ note: text });
+// Choices the text leaves to the character, asked of the actor's owner (player if online, else the GM):
+// label(text, opts) renames the mutation "Name (answer)" (first copy only); fright() handles Fright's
+// source and repeats; overrideSkin() asks whether a new Protective Skin replaces natural armour already there.
+const label = (text, opts = []) => ({ label: text, opts });
+const fright = () => ({ fright: true });
+const overrideSkin = () => ({ override: "skin" });
+const LORES = ["Beasts", "Death", "Fire", "Heavens", "Metal", "Life", "Light", "Shadows", "Hedgecraft", "Witchcraft", "Daemonology", "Necromancy", "Petty Magic"];
+const DEITIES = ["Sigmar", "Ulric", "Taal", "Rhya", "Manann", "Morr", "Myrmidia", "Ranald", "Shallya", "Verena", "Handrich", "Khaine", "Khorne", "Nurgle", "Slaanesh", "Tzeentch"];
 const variant = (tbl, key, map) => ({ variant: map, tbl, key });
 const body = (part, tbl, key) => ({ body: part, tbl, key });
 // Modifiers: ch("ag", 10) / ch("ag", "-1d10") / ch("move", 1) / ch("wounds", -1); half("bs"); dlg(label, mod, when, active)
@@ -106,6 +114,9 @@ const limbs = (mk) => [1, 2, 3, 4].map(n => mk(n));
 const amount = (mk) => roll("1d10", "Amount", [1, 3, mk(1), "One"], [4, 6, mk(2), "Two"], [7, 8, mk(3), "Three"], [9, 10, mk(4), "Four"]);
 
 export const GRANTS = {
+  "Bizarre Colouration": { grants: [label("Your skin pattern (the colour range is rolled on the table)", ["Stripes", "Dots", "Patches", "Swirls", "Mottled", "Scales"])] },
+  "Glowing Heart": { levels: [[label("Which hue does the light take on?", ["Red", "Orange", "Golden", "Green", "Blue", "Violet", "White", "Sickly yellow"])],
+    [note("The light and its radius double (12 yards for two copies, 24 for three...).")]] },
   "Additional Extremities": { grants: [roll("1d10", "Limbs",
     [1, 4, amount(n => [T("Furious Assault", { x: n }), note(`+${n} extra arm(s): +1 Furious Assault level each.`)]), "Arms"],
     [5, 7, amount(n => [T("Sturdy", { x: n }), Math.floor(n / 2) ? ch("move", Math.floor(n / 2)) : null, note(`+${n} extra leg(s): +1 Sturdy level each; +1 Movement per pair.`)]), "Legs"],
@@ -135,7 +146,7 @@ export const GRANTS = {
   "Bloodsucker": { grants: [roll("1d10", "Bloodsucker", [1, 8, M("Fangs"), "Fangs"], [9, 10, M("Piercing Tongue"), "Piercing Tongue"])] },
   "Burning Body": { grants: [imm("Fire")] },
   "Centauroid": { grants: [R("Stride")] },
-  "Chosen One": { grants: [T("Blather")] },
+  "Chosen One": { grants: [T("Blather"), label("Which god has chosen you? (confer with the GM)", DEITIES)] },
   "Chthonian Crawler": { grants: [M("Dark Vision"), T("Tunnel Rat"), T("Scale Sheer Surfaces")] },
   "Cold-Blooded": { grants: [R("Cold Blooded"), note("Vulnerability (Cold): double damage from cold (no item; apply by hand).")] },
   "Consuming Rage": { levels: [[T("Frenzy")], [P("Hatred", { ask: askGroup, opts: GROUPS })]] },
@@ -163,14 +174,14 @@ export const GRANTS = {
   "Extra Joints": { grants: [ch("ag", "1d10")] },
   "Eyestalks": { grants: [T("Combat Aware")] },
   "Facial Symmetry": { grants: [ch("fel", "1d10")] },
-  "False Wizard": { grants: [T("Blather")] },
+  "False Wizard": { grants: [T("Blather"), label("Which kind of magic do you believe you've mastered?", LORES)] },
   "Fangs": { levels: [[R("Bite", { d: 3 }), roll("1d10", "Fangs", [1, 7, null, "-"], [8, 9, venom(), "Venom (Average)"], [10, 10, M("Bloodsucker"), "Bloodsucker"])], [bump("Bite")]] },
   "Fate of Glory": { grants: [T("Fearless", { s: "Everything" })] },
   "Fixation": { grants: [T("Savant", { ask: "Lore related to your Target" })] },
   "Fleshcrafter": { grants: [S("Trade (Fleshcrafter)", 0)] },
   "Foul Touch": { grants: [R("Infected")] },
   "Freakish Quickness": { grants: [T("Relentless")] },
-  "Fright": { grants: [T("Flee!"), note("Flee! only applies when fleeing from the source of your fright.")] },
+  "Fright": { levels: [[fright(), T("Flee!"), note("Flee! only applies when fleeing from the source of your fright.")], [fright()]] },
   "Frostbite": { grants: [imm("Cold")] },
   "Gnawer": { grants: [R("Bite", { d: 1 })] },
   "Gut Worm": { grants: [R("Hungry")] },
@@ -195,7 +206,7 @@ export const GRANTS = {
   "Imminent Precognition": { grants: [T("Combat Aware")] },
   "Infernal Furnace": { grants: [R("Breath", { l: "Fire" }), imm("Fire"), imm("Cold")] },
   "Inhuman Beauty": { grants: [T("Attractive")] },
-  "Insect Eyes": { grants: [T("Combat Aware")] },
+  "Insect Eyes": { grants: [T("Combat Aware"), label("Which eyes do you grow?", ["Fly-like compound eyes", "Several small spider eyes"])] },
   "Itching Rash": { grants: [hitloc("Rash", ch("fel", -10))] },
   "Irrational Contempt": { levels: [
     [P("Prejudice", { ask: askGroup, opts: GROUPS })],
@@ -247,8 +258,8 @@ export const GRANTS = {
   "Possessed": { grants: [roll("1d100", "Possessed",
     [1, 25, T("Menacing"), "Khorne"], [26, 50, T("Resistance", { s: "Disease" }), "Nurgle"],
     [51, 75, T("Attractive"), "Slaanesh"], [76, 100, T("Cat-tongued"), "Tzeentch"])] },
-  "Prince of Nothing": { grants: [T("Commanding Presence")] },
-  "Protective Skin": { grants: [variant("Protective Skin", "protective-skin", {
+  "Prince of Nothing": { grants: [T("Commanding Presence"), label("The family name and status you believe you were born to")] },
+  "Protective Skin": { grants: [overrideSkin(), variant("Protective Skin", "protective-skin", {
     "Leathery Hide": [A("Protective Skin (Leathery Hide)", 1, { q: ["flexible"] })],
     "Fur": [A("Protective Skin (Fur)", 1, { q: ["flexible"], text: "Immune to Exposure (Cold), double effects from Exposure (Heat)." })],
     "Feathers": [A("Protective Skin (Feathers)", 1, { q: ["flexible"] })],
@@ -260,7 +271,7 @@ export const GRANTS = {
       dlg("Metal Plating: Stealth -10", { modifier: -10 }, { skills: ["Stealth"] }, true)],
     "Arcane Runes": [A("Protective Skin (Arcane Runes)", 2, { text: "Only against non-magical attacks; non-magical weapons gain Undamaging against you." })] })] },
   "Quantum Bulge": { grants: [T("Orientation")] },
-  "Rebellious Mind": { grants: [T("Impassioned Zeal")] },
+  "Rebellious Mind": { grants: [T("Impassioned Zeal"), label("The cause or reason for your rebellion")] },
   "Regeneration": { grants: [R("Regenerate"), roll("1d10", "Regeneration", [1, 9, null, "-"], [10, 10, R("Die Hard"), "Die Hard"])] },
   "Running Sores": { grants: [hitloc("Sores", ch("fel", -10))] },
   "Rotting Flesh": { grants: [R("Infected"), R("Infestation")] },
@@ -423,4 +434,20 @@ export const PARTS = {
     arms: [R("Magical"), R("Painless"), R("Die Hard")], legs: [R("Magical"), R("Painless"), R("Die Hard")],
     body: [R("Magical"), R("Painless"), R("Die Hard"), R("Undead"), R("Fear", { s: "2", max: true })],
     head: [R("Magical"), R("Painless"), M("Dark Vision"), R("Die Hard"), R("Fear", { s: "1", max: true }), R("Immunity to Psychology")] }
+};
+
+// Mutation texts that offer a choice the module does not prompt for, with why (checked by validate.mjs).
+// Everything else that offers one is prompted: choose()/chooseN(), label(), fright(), overrideSkin(),
+// sub-table variants and body parts (pick or roll), or the power button's own dialog.
+export const CHOICE_EXCEPTIONS = {
+  "Atrophy": "cosmetic: the part falls off or hangs useless either way",
+  "Beast Alpha": "how nearby beasts react is the GM's call",
+  "Bizarre Denial": "the target is rolled on the table, not chosen",
+  "Crossbreed": "Crossbreed is applied by hand (species table, transformation share, one Creature Trait per 25%, and on a repeat a new species or +25%)",
+  "Elongated Limbs": "a long neck's shape (serpentine or giraffe-like) is cosmetic",
+  "Hungering Maw": "bite or grapple is chosen at each attack (the Bite Trait or an opposed Melee (Brawling) Test)",
+  "Organic Crystal": "the Wind is the magic-user's, not a choice for the mutant",
+  "Mismatched Eyes": "the GM may pick another species' eye colour table",
+  "Shapeshifter": "hair, eye colour and so on are picked at each shift",
+  "Telepathy": "the target (seen or known to be near) is chosen by targeting a token",
 };
