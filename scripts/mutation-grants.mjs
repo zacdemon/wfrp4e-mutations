@@ -64,6 +64,7 @@
  */
 import { activateOracle, endOracle, activateLunacy, longArmsReach } from "./mutation-powers.mjs";
 import { activatePower, endPower, resetPower } from "./mutation-activations.mjs";
+import { triggerMutation } from "./mutation-triggers.mjs";
 import { MODULE_ID as MID, STATUS, changeFor, modifierEffectData, woundsScriptData, characteristicsScriptData, critHookModifier } from "./modifier-scripts.mjs";
 
 const MODULE_ID = MID;
@@ -85,7 +86,7 @@ Hooks.once("init", () => {
     scope: "world", config: true, type: Boolean, default: true
   });
   const mod = game.modules.get(MODULE_ID);
-  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach, activatePower, endPower, resetPower, faceFright });
+  mod.api = Object.assign(mod.api ?? {}, { grant, revert, grantedItems, adjustStatus, addModifier, activateOracle, endOracle, activateLunacy, longArmsReach, activatePower, endPower, resetPower, faceFright, triggerMutation });
   Hooks.on("wfrp4e:rollTable", critHookModifier);   // wound-Critical modifiers (see modifier-scripts.mjs)
 });
 

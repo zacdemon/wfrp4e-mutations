@@ -168,6 +168,14 @@
             "options": {
               "hideScript": "return this.actor?.items?.find(i => i.type === \"mutation\" && i.name === this.item?.name)?.id !== this.item?.id;"
             }
+          },
+          {
+            "label": "Doom not preached today: fail tonight's Rest Test, +1 Fatigued",
+            "trigger": "manual",
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.triggerMutation(this.actor, this.item, \"doomProphet\");",
+            "options": {
+              "hideScript": "return this.actor?.items?.find(i => i.type === \"mutation\" && i.name === this.item?.name)?.id !== this.item?.id;"
+            }
           }
         ],
         "zone": {

@@ -164,6 +164,31 @@ for (const f of MODULE.esmodules ?? []) {
   stats.powers = Object.keys(POWER_BUTTONS).length;
 }
 
+// In-play triggers: every TRIGGER_BUTTONS entry has its button on the mutation and a TRIGGERS entry
+// in scripts/mutation-triggers.mjs, and every localisation key they use exists.
+{
+  const { TRIGGER_BUTTONS } = await import("../scripts/modifier-scripts.mjs");
+  const src = fs.readFileSync("scripts/mutation-triggers.mjs", "utf8");
+  const block = src.slice(src.indexOf("export const TRIGGERS = {"), src.indexOf("async function postFear"));
+  const keys = new Set([...block.matchAll(/^  (\w+): /gm)].map(m => m[1]));
+  for (const m of block.matchAll(/(\w+): (?:fatigued|restless)\("/g)) keys.add(m[1]);
+  const mutations = Object.values(docs.items).filter(d => d.type === "mutation");
+  for (const [key, [name, label]] of Object.entries(TRIGGER_BUTTONS)) {
+    if (!keys.has(key)) errors.push(`Trigger ${key}: no TRIGGERS entry in scripts/mutation-triggers.mjs`);
+    if (!(`AMUT.Trig.${key}.Line` in i18n)) errors.push(`Trigger ${key}: missing localisation key AMUT.Trig.${key}.Line`);
+    const item = mutations.find(d => d.name === name && !d.flags?.[MODULE_ID]?.variantOf);
+    if (!item) { errors.push(`Trigger ${key}: no mutation named ${name}`); continue; }
+    const has = (item.effects ?? []).some(e => (e.system?.scriptData ?? []).some(sd => sd.trigger === "manual" && sd.label === label && sd.script?.includes(`triggerMutation(this.actor, this.item, "${key}")`)));
+    if (!has) errors.push(`Trigger ${key}: mutation ${name} has no "${label}" button (run npm run effects)`);
+  }
+  for (const k of keys) if (!TRIGGER_BUTTONS[k]) errors.push(`Trigger ${k}: in TRIGGERS but not in TRIGGER_BUTTONS (no button)`);
+  for (const m of src.matchAll(/(?:F\("|T\(")(AMUT\.[\w.]+|[\w.]+)"/g)) {
+    const k = m[1].startsWith("AMUT.") ? m[1] : `AMUT.Trig.${m[1]}`;
+    if (!(k in i18n)) errors.push(`scripts/mutation-triggers.mjs: missing localisation key ${k}`);
+  }
+  stats.triggers = Object.keys(TRIGGER_BUTTONS).length;
+}
+
 // Tables the mutation flow looks up by key/column
 {
   const cols = new Set(Object.values(docs.rolltables).filter(d => !isFolder(d)).map(d => `${d.flags?.wfrp4e?.key}|${d.flags?.wfrp4e?.column ?? ""}`));
@@ -276,7 +301,7 @@ for (const t of Object.values(docs.rolltables).filter(d => !isFolder(d))) {
   }
 }
 
-console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts, ${stats.changes ?? 0} effect changes, ${stats.powers ?? 0} power buttons, ${stats.choices ?? 0} choice texts.`);
+console.log(`Checked ${stats.files} files (${stats.docs} documents, ${stats.mutations} mutations), ${stats.tables} tables / ${stats.results} results, ${stats.links} compendium links, ${stats.scripts} scripts, ${stats.changes ?? 0} effect changes, ${stats.powers ?? 0} power buttons, ${stats.triggers ?? 0} trigger buttons, ${stats.choices ?? 0} choice texts.`);
 if (notes.length) console.log(`\n${notes.length} note(s), as printed in the handbook:\n  ${notes.join("\n  ")}`);
 if (warnings.length) console.log(`\n${warnings.length} known open issue(s):\n  ${warnings.join("\n  ")}`);
 if (errors.length) { console.error(`\n${errors.length} error(s):\n  ${errors.join("\n  ")}`); process.exit(1); }

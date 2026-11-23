@@ -63,6 +63,14 @@
                 "submissionScript": ""
               }
             }
+          },
+          {
+            "label": "Aura this Round (targets: Willpower or drawn in, Surprised)",
+            "trigger": "manual",
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.triggerMutation(this.actor, this.item, \"tantalisingAura\");",
+            "options": {
+              "hideScript": "return this.actor?.items?.find(i => i.type === \"mutation\" && i.name === this.item?.name)?.id !== this.item?.id;"
+            }
           }
         ],
         "zone": {

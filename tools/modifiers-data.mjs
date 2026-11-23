@@ -1,4 +1,4 @@
-import { powerItemButtons, oracleButton, oracleEndButton, frightButton, lunacyButton, regenerationButton, critRollScriptData, critDealtScriptData, POWER_BUTTONS, powerButton, powerRestButton } from "../scripts/modifier-scripts.mjs";
+import { powerItemButtons, oracleButton, oracleEndButton, frightButton, lunacyButton, regenerationButton, critRollScriptData, critDealtScriptData, POWER_BUTTONS, powerButton, powerRestButton, TRIGGER_BUTTONS, triggerButton } from "../scripts/modifier-scripts.mjs";
 
 /**
  * Fixed modifiers for the Mutant's Handbook items. `node tools/modifiers.mjs` writes them into
@@ -147,6 +147,9 @@ for (const [key, [name]] of Object.entries(POWER_BUTTONS)) {
   if (key === "dimensionalInstability") MODS[name].push(script(powerRestButton(key)));
 }
 
+// In-play triggers: "Ate the wrong food: +1 Fatigued" and the like (first copy only).
+for (const [key, [name]] of Object.entries(TRIGGER_BUTTONS)) MODS[name] = [...(MODS[name] ?? []), script(triggerButton(key))];
+
 // Mutations with modifiers in the text that are left to the GM, and why (shown in the README).
 export const MANUAL = {
   "Atrophy": "what a withered part costs depends on the part (GM call)",
@@ -157,14 +160,14 @@ export const MANUAL = {
   "Ecstatic Milk": "the bonuses go to whoever drinks the milk, for 4 hours",
   "Elongated Limbs": "the neck's +20 to head Criticals is automatic only for wound Criticals with Up in Arms Criticals on (attack-roll Criticals and core-rules wound Criticals: add it in the Critical prompt)",
   "Fleshcrafter": "trades Characteristic points per SL as the GM rules",
-  "Magic Numbers": "Initiative drops to 0 only in the situations the GM picks",
+  "Magic Numbers": "the GM picks the situations (Transfixed by numbers rolls the Cool Test); Initiative 0 is set by hand",
   "Pitiful Stature": "the -1 Armour steps (Monstrous to Large) are by hand; Characteristics and Movement are automated",
   "Symbiotic Twins": "the twin is a separate actor",
   "Temporal Instability": "Activate Temporal Instability rolls the Test and the ageing 1d10 (age +1 on a 10); the extra Move and Action are turn economy",
   "Turnskin": "you take Beastman base Characteristics",
   "Vestigial Twin": "the twin's own profile (your -10 Agility is automated)",
   "Werebeast": "Activate Werebeast applies the Morrslieb modifier to the transformation Test; the Bestial Body attributes of the form are by hand",
-  "Alien Mind": "the Cool Test (or Stunned) for telepaths who connect to you is the GM's call",
+  "Alien Mind": "the telepath's Cool Test (or Stunned) is rolled by Telepathy itself, and for other telepathy by the button with the telepath targeted",
   "Lunacy": "press Activate Lunacy at nightfall or when Morrslieb changes; the module does not track the moon",
   "Oracle": "press End Oracle when the scene ends (the system has no scene duration)",
   "Painseeker": "switch on the effect when it triggers; it does not stack",

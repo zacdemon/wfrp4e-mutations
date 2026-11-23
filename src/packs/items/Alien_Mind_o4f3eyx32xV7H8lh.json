@@ -99,6 +99,14 @@
             }
           },
           {
+            "label": "Telepath touched your mind: targeted telepath tests Cool",
+            "trigger": "manual",
+            "script": "await game.modules.get(\"artantares-mutations\")?.api?.triggerMutation(this.actor, this.item, \"alienMind\");",
+            "options": {
+              "hideScript": "return this.actor?.items?.find(i => i.type === \"mutation\" && i.name === this.item?.name)?.id !== this.item?.id;"
+            }
+          },
+          {
             "label": "Halved or capped values, Characteristics not below 0",
             "trigger": "computeCharacteristics",
             "script": "const sys = this.actor.system;\nconst rebonus = (c) => { c.bonus = Math.max(0, Math.floor(c.value / 10) + (c.bonusMod || 0)); };\nfor (const k of this.effect.getFlag(\"artantares-mutations\", \"halve\") ?? []) {\n  if (k === \"move\") sys.details.move.value = Math.ceil(Number(sys.details.move.value) / 2);\n  else if (sys.characteristics[k]) { const c = sys.characteristics[k]; c.value = Math.ceil(c.value / 2); rebonus(c); }\n}\nfor (const [k, max] of Object.entries(this.effect.getFlag(\"artantares-mutations\", \"cap\") ?? {})) {\n  const c = sys.characteristics[k];\n  if (c && c.value > max) { c.value = max; rebonus(c); }\n}\nfor (const c of Object.values(sys.characteristics)) {\n  if (c.value < 0) { c.value = 0; c.bonus = Math.max(0, c.bonusMod || 0); }\n}",

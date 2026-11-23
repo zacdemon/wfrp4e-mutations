@@ -291,6 +291,14 @@ async function onActor(c, actor, ops, line) {
   return ok;
 }
 
+/** Alien Mind: a telepath connecting to that mind must pass a Challenging Cool Test or gain Stunned. */
+export const hasMutation = (actor, name) => !!actor?.items?.some(i => i.type === "mutation" && baseName(i.name) === name);
+async function alienMinds(c) {
+  for (const t of c.targets.filter(t => hasMutation(t, "Alien Mind")))
+    await onActor(c, c.actor, [{ test: COOL, difficulty: "challenging", title: F("AMUT.Act.AlienMind.Title"),
+      failText: F("AMUT.Act.AlienMind.FailText"), fail: [{ condition: "stunned" }] }], F("AMUT.Act.AlienMind.Line", { target: nameOf(t) }));
+}
+
 /* The powers --------------------------------------------------------------- */
 
 const WP = { char: "wp" };
@@ -457,13 +465,13 @@ export const POWERS = {
       } }] },
   telepathy: { uses: [
     { id: "project", test: WP, difficulty: "average", miscast: "minormis",
-      success: (c) => c.lines.push(F("AMUT.Act.telepathy.Project", { yards: c.wp })) },
+      success: async (c) => { c.lines.push(F("AMUT.Act.telepathy.Project", { yards: c.wp })); await alienMinds(c); } },
     { id: "pluck", test: WP, difficulty: "challenging", miscast: "minormis",
       opposed: async (o) => {
         if (o.win) return o.lines.push(F(o.diff >= 2 ? "AMUT.Act.telepathy.Unnoticed" : "AMUT.Act.telepathy.Noticed", { target: nameOf(o.target), sl: o.diff }));
         o.lines.push(F("AMUT.Act.telepathy.Lost", { target: nameOf(o.target) }));   // no lasting state: every use is its own Test
       },
-      after: (c) => c.lines.push(F("AMUT.Act.telepathy.Pluck")) }] },
+      after: async (c) => { c.lines.push(F("AMUT.Act.telepathy.Pluck")); await alienMinds(c); } }] },
   lifeLeech: { test: WP, difficulty: "challenging", miscast: "minormis",
     success: async (c) => {
       const dmg = Math.max(0, c.sl) + (c.levels - 1);
@@ -540,6 +548,12 @@ export const POWERS = {
       const unit = F(`AMUT.Act.possessed.Unit.${Math.min(3, c.levels)}`);
       c.lines.push(F("AMUT.Act.possessed.Fail", { n: Math.max(1, Math.abs(c.sl)), unit }));
     } },
+  magicNumbers: { test: COOL, difficulty: "average",
+    success: (c) => c.lines.push(F("AMUT.Act.magicNumbers.Pass")),
+    failure: (c) => { c.lines.push(F("AMUT.Act.magicNumbers.Fail")); c.gm.push(F("AMUT.Act.magicNumbers.GM")); } },
+  touched: { test: COOL, difficulty: "average",
+    success: (c) => c.lines.push(F("AMUT.Act.touched.Pass")),
+    failure: (c) => { const sl = Math.abs(c.sl); c.lines.push(F(sl >= 4 ? "AMUT.Act.touched.Severe" : sl >= 2 ? "AMUT.Act.touched.Strong" : "AMUT.Act.touched.Mild", { sl })); } },
   chosenOne: morning("chosenOne"), falseWizard: morning("falseWizard"), doomProphet: morning("doomProphet"),
   metamorphosis: morning("metamorphosis"), rebelliousMind: morning("rebelliousMind"), saintOfTheDamned: morning("saintOfTheDamned")
 };

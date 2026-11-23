@@ -176,9 +176,40 @@ export const POWER_BUTTONS = {
   doomProphet: ["Doom Prophet", "Morning Cool Test"],
   metamorphosis: ["Metamorphosis", "Morning Cool Test"],
   rebelliousMind: ["Rebellious Mind", "Morning Cool Test"],
-  saintOfTheDamned: ["Saint of the Damned", "Morning Cool Test"]
+  saintOfTheDamned: ["Saint of the Damned", "Morning Cool Test"],
+  magicNumbers: ["Magic Numbers", "Transfixed by numbers (Cool Test)"],
+  touched: ["Touched", "Visions strike (Cool Test)"]
 };
 export const powerButton = (key) => ({ label: POWER_BUTTONS[key][1], trigger: "manual", script: `await ${API}?.activatePower(this.actor, this.item, "${key}");`, options: { hideScript: FIRST_COPY } });
+/**
+ * In-play triggers (scripts/mutation-triggers.mjs): buttons for things the handbook says happen when
+ * something comes up in play ("Eating the wrong food will make you gain 1 Fatigued Condition"). No
+ * Test by the mutant: the button applies the Condition to the mutant, or rolls the Test the text gives
+ * the targeted creatures. key -> [mutation name, button label]; what each does is TRIGGERS in
+ * mutation-triggers.mjs (tools/validate.mjs checks both lists match).
+ */
+export const TRIGGER_BUTTONS = {
+  acquiredTaste: ["Acquired Taste", "Ate the wrong food: +1 Fatigued"],
+  princeOfNothing: ["Prince of Nothing", "Acted beneath your station: +1 Fatigued"],
+  scryingTouch: ["Scrying Touch", "Bare hands, not scrying: +1 Fatigued"],
+  chaoticDreams: ["Chaotic Dreams", "Woke up: 1 Fatigued for the first two hours"],
+  doomProphet: ["Doom Prophet", "Doom not preached today: fail tonight's Rest Test, +1 Fatigued"],
+  metamorphosis: ["Metamorphosis", "No experiment today: fail tonight's Rest Test, +1 Fatigued"],
+  rebelliousMind: ["Rebellious Mind", "Rebellion not preached today: fail tonight's Rest Test, +1 Fatigued"],
+  saintOfTheDamned: ["Saint of the Damned", "Nobody led astray today: fail tonight's Rest Test, +1 Fatigued"],
+  warpSpasm: ["Warp Spasm", "Warp Spasm ends: +1 Fatigued"],
+  darkFate: ["Dark Fate", "Signs of your dark fate (Fear 1)"],
+  suspiciousMind: ["Suspicious Mind", "Faced with your Target (Fear 1)"],
+  alienMind: ["Alien Mind", "Telepath touched your mind: targeted telepath tests Cool"],
+  horridScream: ["Horrid Scream", "Horrid Scream (targets: Deafened, Fear 1)"],
+  frostbite: ["Frostbite", "Icy touch (target: Endurance or Stunned)"],
+  burningBody: ["Burning Body", "Engaged foes burn (targets: Endurance or +1 Ablaze)"],
+  infernalFurnace: ["Infernal Furnace", "Critical Wound to the body (targets within 2 yards: Endurance or Ablaze)"],
+  infernalFurnaceDeath: ["Infernal Furnace", "Death: explode (targets: TBx3 Damage, 1 Ablaze)"],
+  miasmaOfTerror: ["Miasma of Terror", "Accustomed allies exposed (targets: +1 Fatigued)"],
+  tantalisingAura: ["Tantalising Aura", "Aura this Round (targets: Willpower or drawn in, Surprised)"]
+};
+export const triggerButton = (key) => ({ label: TRIGGER_BUTTONS[key][1], trigger: "manual", script: `await ${API}?.triggerMutation(this.actor, this.item, "${key}");`, options: { hideScript: FIRST_COPY } });
 /** Dimensional Instability: after 8 hours of rest the Difficulty goes back to Average. */
 export const powerRestButton = (key) => ({ label: "Rested 8 hours: reset the teleport Difficulty", trigger: "manual", script: `await ${API}?.resetPower(this.actor, this.item, "${key}");`,
   options: { hideScript: `return !(Number(this.item?.getFlag("${MODULE_ID}", "uses.${key}")) > 0);` } });
